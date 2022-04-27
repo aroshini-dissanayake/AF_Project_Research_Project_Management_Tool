@@ -4,7 +4,7 @@ const Studentgroups = require("../../models/SS_models/studentgroups");
 const router = express.Router();
 
 //add student groups
-router.post('/studentgroups/add',(req, res) => {
+router.post('/addpanelmember',(req, res) => {
   let newStudentgroups = new Studentgroups(req.body);
   newStudentgroups.save((err) => {
     if (err) {

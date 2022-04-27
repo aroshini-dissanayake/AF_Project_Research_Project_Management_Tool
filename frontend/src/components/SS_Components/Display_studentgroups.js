@@ -1,19 +1,16 @@
 import React,{Component} from 'react' ;
 import axios from "axios";
 
-
-export default class App extends Component{
+export default class Display_studentgroups extends Component{
     constructor(props){
         super(props);
         this.state = {
             studentgroups:[]
         };
     }
-
    componentDidMount(){
        this.retrieveStudentGroups();
    }
-
     retrieveStudentGroups(){
         axios.get("http://localhost:8070/displaystudentgroups").then(res=>{
             if(res.data.success){
@@ -24,11 +21,9 @@ export default class App extends Component{
             }
         })
     }
-
     render(){
         return(
         <div className='container'>
-            <p>All Student Groups</p>
             <table class="table">
                 <thead>
                     <tr>
@@ -36,7 +31,7 @@ export default class App extends Component{
                         <th scope='col'>Student Name</th>
                         <th scope='col'>Group Name</th>
                         <th scope='col'>Panel Member</th>
-                        <th scope='col'> Add Panel Member</th>
+                        <th scope='col'>Add Panel Member</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,7 +42,7 @@ export default class App extends Component{
                         <td>{studentgroups.groupName}</td>
                         <td>{studentgroups.panelMember}</td>
                         <td>
-                            <a className='btn btn-warning' href="#">
+                            <a className='btn btn-success' href="/addpanelmember" >
                                 <i className='fa fa-user-plus'></i>
                             </a>
                         </td>
