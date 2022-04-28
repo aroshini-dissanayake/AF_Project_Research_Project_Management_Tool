@@ -8,6 +8,9 @@ export default class Display_studentgroups extends Component{
             studentgroups:[]
         };
     }
+    onReadirect(id){
+        window.location.href = `/addpanelmember/${id}`
+    }
    componentDidMount(){
        this.retrieveStudentGroups();
    }
@@ -42,9 +45,10 @@ export default class Display_studentgroups extends Component{
                         <td>{studentgroups.groupName}</td>
                         <td>{studentgroups.panelMember}</td>
                         <td>
-                            <a className='btn btn-success' href="/addpanelmember" >
-                                <i className='fa fa-user-plus'></i>
-                            </a>
+                           <button onClick={()=>this.onReadirect(studentgroups._id)}>
+                               edit
+                           </button>
+                              
                         </td>
                     </tr>
                 ))}

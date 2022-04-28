@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class Edit_panem_member extends Component{
+export default class Edit_panel_member extends Component{
     render(){
         return( 
         <div>

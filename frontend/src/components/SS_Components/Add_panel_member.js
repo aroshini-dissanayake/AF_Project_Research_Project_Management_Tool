@@ -3,9 +3,12 @@ import axios from "axios";
 
 export default class Add_panel_member extends Component{
 
+    
     constructor(props){
+       
         super(props);
         this.state={
+            ID:"",
             panelMember:"",
         }
      } 
@@ -17,17 +20,28 @@ export default class Add_panel_member extends Component{
            [name]:value
         })
      }
+
+    onSubmit = (e)=>{
+       e.preventDefault();
       
-onSubmit = (e)=>{
-    e.preventDefault();
-    const{panelMember} = this.state;
-    const data = {
-        panelMember:panelMember,
+        const id = this.props.match.params.id; 
+        const{panelMember} = this.state;
+        const data = {
+            panelMember:panelMember,
+        }
+    
+        console.log(id);
+
+        axios.post(`http://localhost:3000/addpanelmember/${id}`,data).then((res)=>{
+            if(res.data.success){
+            this.setState({
+                 panelMember:"" ,
+           })
     }
-    console.log(data);
+    })
   }
 
-    render(){
+  render(){
         return( 
         <div className='col-md-8 mt-4 mx-auto'>
             <h1 className='h3 mb-3 font-weight-normal'>ADD PANEL MEMBER</h1>
@@ -49,7 +63,7 @@ onSubmit = (e)=>{
                  type='add' 
                  style={{marginTop:'15px'}}
                  onClick={this.onSubmit}>
-                     <i className='fa fa-paper-plane'></i> &nbsp; ADD
+                     <i className='fa fa-plus-circle'></i> &nbsp; ADD
                  </button>
             </form>
            
