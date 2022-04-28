@@ -110,17 +110,17 @@ return token;
 
 // @Action - Find student by credentials
 studentSchema.statics.findByCredentials = async (student_id, pwd) => {
-  const student1 = await student.findOne({ student_id });
-  if (!student1) {
-    throw new Error("Please enter authorized student ID");
-  }
-  const isMatch = await bcrypt.compare(pwd, student1.pwd);
-  if (!isMatch) {
-    throw new Error("Password is not matched");
-  }
-  return student1;
-  };
-  
-  const student = mongoose.model("students", studentSchema);
+const student1 = await student.findOne({ student_id });
+if (!student1) {
+  throw new Error("Please enter authorized student ID");
+}
+const isMatch = await bcrypt.compare(pwd, student1.pwd);
+if (!isMatch) {
+  throw new Error("Password is not matched");
+}
+return student1;
+};
+
+const student = mongoose.model("students", studentSchema);
 
 module.exports = student;
