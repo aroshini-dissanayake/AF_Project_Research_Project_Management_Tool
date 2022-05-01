@@ -11,7 +11,7 @@ export default class Display_studentgroups extends Component{
     onReadirect(id){
         window.location.href = `/addpanelmember/${id}`
     }
-   componentDidMount(){
+    componentDidMount(){
        this.retrieveStudentGroups();
    }
     retrieveStudentGroups(){
@@ -45,10 +45,29 @@ export default class Display_studentgroups extends Component{
                         <td>{studentgroups.groupName}</td>
                         <td>{studentgroups.panelMember}</td>
                         <td>
-                           <button onClick={()=>this.onReadirect(studentgroups._id)}>
-                               edit
-                           </button>
-                              
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           {/* <button 
+                            className='btn btn-success'
+                            type='add' 
+                            style={{marginTop:'15px'}}
+                            onClick={()=>this.onReadirect(studentgroups._id)}> */}
+                           {/* <i className='fa fa-user-plus' onClick={()=>this.onReadirect(studentgroups._id)}></i>  
+                           </button> */}  &nbsp;
+                         
+                           {/* <button 
+                            className='btn btn-danger'
+                            type='delete' 
+                            style={{marginTop:'15px'}}>
+                           <i className='fa fa-trash'></i>  
+                           </button>   */}
+                           
+                           <a className='btn btn-success'>
+                           <i className='fa fa-user-plus'
+                             onClick={()=>this.onReadirect(studentgroups._id)}></i> </a>
+                             &nbsp;&nbsp;&nbsp;&nbsp;
+                            
+                            <a className='btn btn-danger'>
+                            <i className='fa fa-trash'></i></a>
                         </td>
                     </tr>
                 ))}
