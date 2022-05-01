@@ -1,5 +1,9 @@
 import React,{Component} from 'react' ;
 import axios from "axios";
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 export default class Display_studentgroups extends Component{
     constructor(props){
@@ -46,28 +50,19 @@ export default class Display_studentgroups extends Component{
                         <td>{studentgroups.panelMember}</td>
                         <td>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                           {/* <button 
-                            className='btn btn-success'
-                            type='add' 
-                            style={{marginTop:'15px'}}
-                            onClick={()=>this.onReadirect(studentgroups._id)}> */}
-                           {/* <i className='fa fa-user-plus' onClick={()=>this.onReadirect(studentgroups._id)}></i>  
-                           </button> */}  &nbsp;
-                         
-                           {/* <button 
-                            className='btn btn-danger'
-                            type='delete' 
-                            style={{marginTop:'15px'}}>
-                           <i className='fa fa-trash'></i>  
-                           </button>   */}
-                           
-                           <a className='btn btn-success'>
-                           <i className='fa fa-user-plus'
-                             onClick={()=>this.onReadirect(studentgroups._id)}></i> </a>
+                        
+                             <IconButton aria-label='btn btn-success' size="small"
+                             style={{background: "#E3E4FA"}} 
+                                onClick={()=>this.onReadirect(studentgroups._id)} >
+                             <AddCircleOutlineIcon  fontSize="small" />
+
+                             </IconButton> 
                              &nbsp;&nbsp;&nbsp;&nbsp;
                             
-                            <a className='btn btn-danger'>
-                            <i className='fa fa-trash'></i></a>
+                             <IconButton aria-label="delete" size="small"
+                              style={{background: "#C6DEFF"}} >
+                             <DeleteForeverIcon fontSize="small"/>
+                             </IconButton>
                         </td>
                     </tr>
                 ))}
