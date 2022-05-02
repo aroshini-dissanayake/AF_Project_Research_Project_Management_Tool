@@ -2,7 +2,7 @@ import React,{Component} from 'react' ;
 import axios from "axios";
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 export default class Display_studentgroups extends Component{
@@ -52,16 +52,21 @@ export default class Display_studentgroups extends Component{
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         
                              <IconButton aria-label='btn btn-success' size="small"
-                             style={{background: "#E3E4FA"}} 
+                             style={{background: "#FBB917"}}
                                 onClick={()=>this.onReadirect(studentgroups._id)} >
-                             <AddCircleOutlineIcon  fontSize="small" />
-
+                             <AddCircleOutlineIcon  fontSize="small" style={{color: "black"}}/>
                              </IconButton> 
                              &nbsp;&nbsp;&nbsp;&nbsp;
                             
+                             <IconButton aria-label="edit" size="small"
+                              style={{background: "#006400"}} href={`/edit_panelmembers/${studentgroups._id}`}>
+                             <EditIcon fontSize="small" style={{color: "white"}}/>
+                             </IconButton>
+                             &nbsp;&nbsp;&nbsp;&nbsp;
+
                              <IconButton aria-label="delete" size="small"
-                              style={{background: "#C6DEFF"}} >
-                             <DeleteForeverIcon fontSize="small"/>
+                              style={{background: "#800000"}} >
+                             <DeleteForeverIcon fontSize="small"  style={{color: "white"}}/>
                              </IconButton>
                         </td>
                     </tr>
