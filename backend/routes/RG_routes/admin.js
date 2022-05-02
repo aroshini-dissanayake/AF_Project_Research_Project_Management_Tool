@@ -4,7 +4,7 @@ const validator = require("validator");
 const auth = require('../../middleware/Admin_middleware/auth')
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-let admin= require("../../models/NT_models/admin");
+let admin= require("../../models/RG_models/admin");
 
 //Admin Register to Web application
 router.post('/add', async (req, res) => {
@@ -62,7 +62,5 @@ router.post('/login', async (req, res) => {
       console.log(error);
     }
   });
-
-
 
 module.exports = router;
