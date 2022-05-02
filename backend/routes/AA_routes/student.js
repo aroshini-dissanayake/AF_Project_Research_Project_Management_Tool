@@ -25,8 +25,8 @@ router.post("/signup", async (req, res) => {
     } = req.body;
 
   
-    let student1 = await student.findOne({ email });
-  if (student1) {
+    let student_a = await student.findOne({ email });
+  if (student_a) {
     throw new Error("User already exists");
   }
 
@@ -36,7 +36,7 @@ router.post("/signup", async (req, res) => {
   }
 
 
-    student1 = {
+    student_a = {
       name: name,
       nic: nic,
       faculty: faculty,
@@ -50,13 +50,13 @@ router.post("/signup", async (req, res) => {
       imageUrl: imageUrl
     };
 
-    const newstudent = new student(student1);
+    const newstudent = new student(student_a);
     await newstudent.save();
     const token = await newstudent.generateAuthToken();
     res
       .status(201)
       .send({ status: "student Created", student: newstudent, token: token });
-      console.log(student1);
+      console.log(student_a);
   } catch (error) {
     console.log(error.message);
     res.status(500).send({error: error.message});
