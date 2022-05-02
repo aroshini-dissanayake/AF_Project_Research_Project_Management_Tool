@@ -12,7 +12,7 @@ function App() {
      <Route path = "/" component ={DisplayStudentgroups} exact/>
      <div>
      <Route path = "/addpanelmember/:id" component={Add_panel_member}/>
-     <Route path = "/edit_panelmembers" component= {Edit_panel_member}/>
+     <Route path = "/edit_panelmembers/:id" component= {Edit_panel_member}/>
      </div>
    
    </Switch>

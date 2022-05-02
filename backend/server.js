@@ -7,15 +7,19 @@ require("dotenv").config();
 const cors = require('cors');
 
 //import routers
-const studentgroupRoutes = require('./routes/SS_routes/studentgroups')
+const studentgroupRoutes = require('./routes/SS_routes/studentgroups');
+const panelmembersRoutes = require('./routes/SS_routes/panelmembers')
+
+
+//routes use
+app.use(studentgroupRoutes);
+app.use(panelmembersRoutes);
 
 //app middleware
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
 
-//routes use
-app.use(studentgroupRoutes);
 
 const PORT = process.env.PORT || 8070;
 const URL = process.env.MONGODB_URL;

@@ -71,7 +71,7 @@ router.route('/displaystudentgroups/:id').get((req,res)=>{
 });
 
 //update panel member
-router.route('/update/:groupID').put((req,res)=>{
+router.route('/update/:id').put((req,res)=>{
   Studentgroups.findByIdAndUpdate(
       req.params.groupID,{
           $set:req.body
