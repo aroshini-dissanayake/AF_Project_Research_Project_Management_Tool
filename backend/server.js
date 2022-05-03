@@ -5,7 +5,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const app = express();
 require("dotenv").config();
-const cors = require('cors');
+
 
 //import routers
 const studentgroupRoutes = require('./routes/SS_routes/studentgroups');
