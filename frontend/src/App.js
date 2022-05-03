@@ -1,21 +1,31 @@
 import React from 'react';
-import {BrowserRouter,Route,Routes} from 'react-router-dom';
 import './App.css';
-// import DisplayStudentgroups from './components/SS_Components/Display_studentgroups';
-// import Add_panel_member from './components/SS_Components/Add_panel_member'
-// import Edit_panem_member from './components/SS_Components/Edit_panem_member';
-import Signup from './components/AA_Components/student-registration';
-import StudentLogin from './components/AA_Components/student-login';
+import {BrowserRouter,Route,Switch} from 'react-router-dom';
+//import DisplayStudentgroups from './components/SS_Components/Display_studentgroups';
+import Add_panel_member from './components/SS_Components/Add_panel_member'
+import Edit_panel_member from './components/SS_Components/Edit_panel_member';
+import StaffLogin from './components/SS_Components/staff-login';
+import StaffSignup from './components/SS_Components/staff-registration';
+// import Signup from './components/AA_Components/student-registration';
+// import StudentLogin from './components/AA_Components/student-login';
+
 
 function App() {
   return (
    <BrowserRouter>
-   <Routes>
-   <Route path = "/" element={<StudentLogin/>}/>
-     <Route path = "/signup" element={<Signup/>}/>
-     {/* <Route path = "/addpanelmember" element={<Add_panel_member/>}/>
-     <Route path = "/edit_panelmembers" element= {Edit_panem_member}/> */}
-   </Routes>
+   <Switch>
+     {/* <Route path = "/" component={<StudentLogin/>}exact/> */}
+     {/* <Route path = "/" component ={DisplayStudentgroups} exact /> */}
+     <Route path = "/" component={StaffLogin}exact/>
+     <div>
+     {/* <Route path = "/signup" component={Signup}/> */}
+     <Route path = "/signup" component={StaffSignup}/>
+     <Route path = "/studentgroups/:id" component={Add_panel_member}/>
+     <Route path = "/edit_panelmembers/:id" component= {Edit_panel_member}/>
+
+     </div>  
+ 
+    </Switch>   
    </BrowserRouter>
   );
 }
