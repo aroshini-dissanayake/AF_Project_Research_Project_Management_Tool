@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
     "frontend": "npm start --prefix ../frontend",
+    "start": "nodemon server.js",
     "dev": "concurrently \"npm run start\" \"npm run frontend\""
   },
   "author": "",
@@ -21,7 +21,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "express-jwt": "^6.1.1",
+    "express-jwt": "^7.6.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.10",
     "nodemon": "^2.0.15",

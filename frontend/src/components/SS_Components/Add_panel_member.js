@@ -14,8 +14,7 @@ export default class Add_panel_member extends Component{
 
    async componentDidMount(){
         const id = this.props.match.params.id; 
-
-      await axios.get(`http://localhost:8070/displaystudentgroups/${id}`).then((res)=>{
+        await axios.get(`http://localhost:8070/displaystudentgroups/${id}`).then((res)=>{
 
         if(res.data.success){
                 this.setState({
@@ -34,7 +33,7 @@ export default class Add_panel_member extends Component{
      }
 
     onSubmit = (e)=>{
-       e.preventDefault();
+        e.preventDefault();
         const id = this.props.match.params.id; 
         const{studentName,groupName,panelMember} = this.state;
         const data = {
@@ -42,24 +41,21 @@ export default class Add_panel_member extends Component{
             groupName:groupName,
             panelMember:panelMember,
         }
-        axios.post(`http://localhost:8070/studentgroups/${id}`,data).then((res)=>{
-        console.log(res.data)    
+
+        axios.post(`http://localhost:8070/studentgroups/${id}`,data).then((res)=>{  
         if(res.data.success){
             this.setState({
                 studentName:"",
                 groupName:"",
                 panelMember:"" ,
            })
-           console.log("success")
            alert("Panel member added");
            window.location.href="/"
-      }
-      
+      }    
     })
     .catch((e)=>{
-        console.log(e)
-    })
-    }
+    });
+}
   
 
   render(){
@@ -86,8 +82,7 @@ export default class Add_panel_member extends Component{
                  onClick={this.onSubmit}>
                 <i className='fa fa-plus-circle'></i> &nbsp; ADD
                  </button>
-            </form>
-           
+            </form>    
         </div>
         )
     }

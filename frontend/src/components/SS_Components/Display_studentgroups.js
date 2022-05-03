@@ -13,7 +13,7 @@ export default class Display_studentgroups extends Component{
         };
     }
     onReadirect(id){
-        window.location.href = `/addpanelmember/${id}`
+        window.location.href = `/studentgroups/${id}`
     }
     componentDidMount(){
        this.retrieveStudentGroups();

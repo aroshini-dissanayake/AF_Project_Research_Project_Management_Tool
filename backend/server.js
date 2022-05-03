@@ -7,14 +7,6 @@ const app = express();
 require("dotenv").config();
 app.use(express.json());
 
-//import routers
-const studentgroupRoutes = require('./routes/SS_routes/studentgroups');
-const panelmembersRoutes = require('./routes/SS_routes/panelmembers')
-
-
-//routes use
-app.use(studentgroupRoutes);
-app.use(panelmembersRoutes);
 const PORT = process.env.PORT || 8070;
 
 app.use(bodyParser.json({limit: '50mb'}) );
@@ -23,10 +15,7 @@ app.use(bodyParser.urlencoded({
   extended: true,
   parameterLimit:50000
 }));
-
 app.use(cors());
-app.use(express.json());
-
 
 const URL = process.env.MONGODB_URL;
 process.env.SUPPRESS_NO_CONFIG_WARNING = 'y';
@@ -46,14 +35,12 @@ console.log("Mongodb connection success!!!");
 })
 
 // @import routes
+const studentgroupRoutes = require("./routes/SS_routes/studentgroups");
 const studentRouter = require("./routes/AA_routes/student");
 
-
-
-
 // rotues
-app.use("/student",studentRouter);
-
+app.use(studentgroupRoutes);
+app.use("/student", studentRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
