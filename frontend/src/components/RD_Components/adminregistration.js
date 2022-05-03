@@ -62,7 +62,7 @@ export default class Adminregistration extends Component {
                     })
             
                     alert("admin register successful")
-                    window.location.href = '/admin';
+                    window.location.href = '/login';
                 }
         }).catch((err)=>{
             console.log('Admin Account Already Exsist Check Email or Username again');
