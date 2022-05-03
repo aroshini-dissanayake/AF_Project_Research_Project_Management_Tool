@@ -8,6 +8,8 @@ import './App.css';
 //import StudentLogin from './components/AA_Components/student-login';
 import Adminregistration from './components/RD_Components/adminregistration';
 import AdminLogin from './components/RD_Components/adminlogin';
+import Adminpage from './components/RD_Components/adminpage';
+import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
     <Route path = "/" element= {<DisplayStudentgroups/>}/> */}
     <Route path = "/add" element={<Adminregistration/>}/> 
     <Route path = "/login" element={<AdminLogin/>}/>  
+    <Route path = "/adminpage" element={<Adminpage/>}/>  
+    <Route path = "/createmarkingschemes" element={<Createmarkingschemes/>}/> 
    </Routes>
    </BrowserRouter>
   );
