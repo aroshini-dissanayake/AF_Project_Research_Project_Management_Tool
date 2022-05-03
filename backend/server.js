@@ -5,7 +5,20 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const app = express();
 require("dotenv").config();
+
+
+//import routers
+const studentgroupRoutes = require('./routes/SS_routes/studentgroups');
+const adminRouter = require('./routes/RG_routes/admin');
+
+//app middleware
+app.use(bodyParser.json());
+app.use(cors());
 app.use(express.json());
+
+//routes use
+app.use(studentgroupRoutes);
+app.use("/admin",adminRouter);
 
 const PORT = process.env.PORT || 8070;
 
