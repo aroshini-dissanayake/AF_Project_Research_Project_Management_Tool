@@ -48,22 +48,25 @@ export default class StaffLogin extends Component {
           <div ><br/><br/><br/><br/>
           <div class="row d-flex align-items-center justify-content-center">
           <div style={{width: 1100,background: "#CCCCFF",height:600}}>
-            <div class="card-body" >  <br/><br/>
+            <div class="card-body" > 
+             <br/><br/>      
               <div class="container py-5 h-90" > 
-               <div class="row d-flex align-items-center justify-content-center h-100">              
+               <div class="row d-flex align-items-center justify-content-center h-100">      
                  <div class="col-md-8 col-lg-7 col-xl-6"> 
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image"/> </div>
-              
-                      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                         <form onSubmit={this.userLoginSubmit} name="form"> 
-                           
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image"/> 
+                  <br/><br/>
+                  <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <u><b>&nbsp;&nbsp;STAFF&nbsp;&nbsp;REGISTERATION&nbsp;&nbsp;</b></u></h2> 
+                  </div>
+                     <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                        <form onSubmit={this.userLoginSubmit} name="form"> 
                           <div class="form-outline mb-4">  
                           <div className="col-md-9">
                            <i className="fa fa-lock"> &nbsp;&nbsp;</i>            
                              <label class="form-label"><b>STAFF ID </b></label>
                               <input type="text" name="username" class="form-control " placeholder="Enter your Staff ID" 
                                      onChange={e => this.setState({ staff_id: e.target.value })} required/>
-                            </div>
+                          </div>
                           </div>
 
                           <div class="form-outline mb-4" >
