@@ -12,7 +12,6 @@ router.post("/signup", async (req, res) => {
     try {
       const {
         name,
-        nic,
         phone,
         faculty,
         staff_id,
@@ -33,7 +32,6 @@ router.post("/signup", async (req, res) => {
 
       staff_a = {
         name: name,
-        nic: nic,
         phone: phone,
         faculty: faculty,
         staff_id: staff_id,
