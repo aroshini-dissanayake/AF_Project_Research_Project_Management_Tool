@@ -3,7 +3,6 @@ import axios from "axios";
 
 export default function StaffSignup(){
     const [name, setname] = useState("");
-    const [nic, setnic] = useState("");
     const [phone, setphone] = useState("");
     const [faculty, setfaculty] = useState("");
     const [staff_id, setstaff_id] = useState("");
@@ -17,7 +16,6 @@ export default function StaffSignup(){
         
         let new_staff = {
             name: name,
-            nic: nic,
             phone: phone,
             faculty: faculty,
             staff_id: staff_id,
@@ -37,9 +35,7 @@ export default function StaffSignup(){
         }else{
             alert("Password dismatch")
         }
-
         setname("");
-        setnic("");
         setphone("");
         setfaculty("");
         setstaff_id("");
@@ -49,100 +45,90 @@ export default function StaffSignup(){
         setPassowrd2("");  
       
     }
-    return(
-        
-            <form action="" method="post" name="form" onSubmit={sendData}> 
-              <div class="container py-5 h-100">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                  <div class="col">
-                    <div class="card card-registration my-4">
-                      <div class="row g-0">
-                        <div class="col-xl-6 d-none d-xl-block">
-                        </div>
+    return(<div><br/><br/>
+<div class="row d-flex align-items-center justify-content-center"><br/><br/>
+ <div style={{width: 1100,background: "#CCCCFF",height:740}}>
+  <div class="card-body" >       
+    <form action="" method="post" name="form" onSubmit={sendData}> 
+      <div class="row g-0">
+        <div class="col-xl-7 d-none d-xl-block"><br/>
+          <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <b><u>STAFF&nbsp;&nbsp;REGISTERATION&nbsp;&nbsp; FORM</u></b></h3><br/>
+          <img src="https://protolabzit.com/wp-content/uploads/2021/12/Pair-programming-amico.png" style={{width: 600}}/>
+               </div>
+              <div class="col-xl-5"> <br/>
+              <div class="form-outline mb-2">
+              <label class="form-label">
+                <b><i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;Full Name</b></label>
+                <div className="col-md-10"><input type="text"class="form-control" onChange={(e) => setname(e.target.value)} required/>
+              </div></div>
 
-                        <div class="col-xl-6">
-                          <div class="card-body p-md-5 text-black">
-                            <h3 class="mb-5 text-uppercase">Student registration form</h3>
+              <div class="form-outline mb-2">
+              <label class="form-label">
+                <b><i class="fa fa-phone"></i>&nbsp;&nbsp;&nbsp;Phone Number</b></label>
+                <div className="col-md-10"><input type="text" class="form-control" onChange={(e) => setphone(e.target.value)} pattern="[0-9]{10}" required />
+              </div></div>
 
-                            <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example8">Full name</label>
-                            <input type="text"  id="form3Example8" class="form-control form-control-lg" onChange={(e) => setname(e.target.value)} required/>
-                            </div>
+              <div class="form-outline mb-2">
+              <label class="form-label">
+                <b><i class="fa fa-university"></i>&nbsp;&nbsp;&nbsp;Faculty</b></label>
+                <div className="col-md-10"><input type="text"  class="form-control" onChange={(e) => setfaculty(e.target.value)} required/>
+              </div></div>
 
-                            <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example97">NIC number</label>
-                            <input type="text" id="form3Example97" class="form-control form-control-lg" onChange={(e) => setnic(e.target.value)} required/>
-                            </div>
+              <div class="form-outline mb-2">
+              <label class="form-label">
+                <b><i class="fa fa-id-badge"></i>&nbsp;&nbsp;&nbsp;Staff ID</b></label>
+                <div className="col-md-10"><input type="text"  class="form-control" onChange={(e) => setstaff_id(e.target.value)} required/>
+              </div></div>
+                
+              <div class="form-outline mb-2">
+              <label class="form-label">
+              <b><i class="fa fa-users"></i>&nbsp;&nbsp;&nbsp;Staff Member Role</b></label>
+              <div className="col-md-10">
+              <select className="form-control" name="role"  class="form-control" onChange={(e) => setrole(e.target.value)} required>
+                    <option value="Select Role">Select Role</option>
+                    <option value="Supervisor">Supervisor</option>
+                    <option value="Co-Supervisor">Co-Supervisor</option>
+                    <option value="Panel Mmeber">Panel Mmeber</option>
+              </select>
+              </div></div>
 
-                            <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example9">Phone Number</label>
-                              <input type="text" id="form3Example9" class="form-control form-control-lg" onChange={(e) => setphone(e.target.value)} pattern="[0-9]{10}" required />
-                            </div>
+              <div class="form-outline mb-2">
+              <label class="form-label">
+              <b><i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;Email Address</b></label>
+              <div className="col-md-10"><input type="email" class="form-control"
+                pattern="(?![.-])((?![.-][.-])[a-zA-Z\d.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}"
+                inputMode="email"
+                onChange={(e) => setEmail(e.target.value)} required/>
+              </div></div>
 
-                            <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example97">Faculty</label>
-                            <input type="text"  id="form3Example97" class="form-control form-control-lg" onChange={(e) => setfaculty(e.target.value)} required/>
-                            </div>
+              <div class="form-outline mb-2">
+              <label class="form-label">
+              <b><i class="fa fa-key" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Password</b></label>
+              <div className="col-md-10"><input type="password" class="form-control" data-toggle="tooltip" data-placement="center" title="Your password MUST contain at least 8 charactors, including UPPER-lowercase letters and at least one number and a charactor = 'Sample@523'"
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$" 
+              onChange={(e) => setPassowrd1(e.target.value)} required/>
+              </div></div>
 
-                            <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example97">Staff ID</label>
-                            <input type="text"  id="form3Example97" class="form-control form-control-lg" onChange={(e) => setstaff_id(e.target.value)} required/>
-                            </div>
-                              
-                            <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example97">Staff Member Role</label>
-                            <select className="form-control" name="role"  id="form3Example97" class="form-control form-control-lg" onChange={(e) => setrole(e.target.value)} required>
-                                  <option value="">Enter Staff Member Role</option>
-                                  <option value="Supervisor">Supervisor</option>
-                                  <option value="Co-Supervisor">Co-Supervisor</option>
-                                  <option value="Panel Mmeber">Panel Mmeber</option>
-                            </select>
-                            {/* <input type="text"  id="form3Example97" class="form-control form-control-lg" onChange={(e) => setstaff_id(e.target.value)} required/> */}
-                            </div>
-
-
-
-
-
-                              
-                            <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example8">Email Address</label>
-                            <input type="email" id="form3Example8" class="form-control form-control-lg"
-                              pattern="(?![.-])((?![.-][.-])[a-zA-Z\d.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}"
-                              inputMode="email"
-                              onChange={(e) => setEmail(e.target.value)} required/>
-                            </div>
-
-                            <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example97">Password</label>
-                            <input type="password"  id="form3Example97" class="form-control form-control-lg" data-toggle="tooltip" data-placement="center" title="Your password MUST contain at least 8 charactors, including UPPER-lowercase letters and at least one number and a charactor = 'Sample@523'"
-                            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$" 
-                            onChange={(e) => setPassowrd1(e.target.value)} required/>
-                            </div>
-
-                            <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example97">Repeat Password</label>
-                            <input type="password"  id="form3Example97" class="form-control form-control-lg"  title="Your password MUST contain at least 8 charactors, including UPPER-lowercase letters and at least one number and a charactor = 'Sample@523'"
-                            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$" 
-                            onChange={(e) => setPassowrd2(e.target.value)}/>
-                            </div>
-
-                            <div class="d-flex justify-content-end pt-3">
-                              <button type="submit" class="btn btn-warning btn-lg ms-2">Submit</button>
-                            </div>
-                            
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <center><label class="label">Already Registered?</label> </center>
-                            <center><li class="signin-active"><a href="/login" class="btn">Sign In</a></li></center>
-              </div>
-            </form>
-
-
+              <div class="form-outline mb-2">
+              <label class="form-label">
+              <b><i class="fa fa-unlock-alt"></i>&nbsp;&nbsp;&nbsp;Repeat Password</b></label>
+              <div className="col-md-10"><input type="password" class="form-control"  title="Your password MUST contain at least 8 charactors, including UPPER-lowercase letters and at least one number and a charactor = 'Sample@523'"
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$" 
+              onChange={(e) => setPassowrd2(e.target.value)}/>
+              </div></div>
+    
+              <div class="d-flex justify-left pt-1" >
+               <label >Already Registered? &nbsp;&nbsp;</label>
+               <a href="/" >Sign In</a> </div>
+               
+               <div class="d-flex justify-content-end">
+               <button type="submit" class="btn btn-primary"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Submit</button></div> 
+        </div></div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
     )
-
-}
+  }
