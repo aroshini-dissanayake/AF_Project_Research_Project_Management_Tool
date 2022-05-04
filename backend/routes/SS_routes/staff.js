@@ -16,6 +16,7 @@ router.post("/signup", async (req, res) => {
         phone,
         faculty,
         staff_id,
+        role,
         email,
         pwd
       } = req.body;
@@ -36,6 +37,7 @@ router.post("/signup", async (req, res) => {
         phone: phone,
         faculty: faculty,
         staff_id: staff_id,
+        role:role,
         email: email,
         pwd: pwd
       };

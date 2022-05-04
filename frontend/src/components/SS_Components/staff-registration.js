@@ -7,6 +7,7 @@ export default function StaffSignup(){
     const [phone, setphone] = useState("");
     const [faculty, setfaculty] = useState("");
     const [staff_id, setstaff_id] = useState("");
+    const [role,setrole] = useState("");
     const [email, setEmail] = useState("");
     const [pwd1, setPassowrd1] = useState("");
     const [pwd2, setPassowrd2] = useState("");
@@ -20,6 +21,7 @@ export default function StaffSignup(){
             phone: phone,
             faculty: faculty,
             staff_id: staff_id,
+            role:role,
             email: email,
             pwd: pwd1
         }
@@ -41,6 +43,7 @@ export default function StaffSignup(){
         setphone("");
         setfaculty("");
         setstaff_id("");
+        setrole("");
         setEmail("");
         setPassowrd1("");
         setPassowrd2("");  
@@ -85,6 +88,22 @@ export default function StaffSignup(){
                             <label class="form-label" for="form3Example97">Staff ID</label>
                             <input type="text"  id="form3Example97" class="form-control form-control-lg" onChange={(e) => setstaff_id(e.target.value)} required/>
                             </div>
+                              
+                            <div class="form-outline mb-4">
+                            <label class="form-label" for="form3Example97">Staff Member Role</label>
+                            <select className="form-control" name="role"  id="form3Example97" class="form-control form-control-lg" onChange={(e) => setrole(e.target.value)} required>
+                                  <option value="">Enter Staff Member Role</option>
+                                  <option value="Supervisor">Supervisor</option>
+                                  <option value="Co-Supervisor">Co-Supervisor</option>
+                                  <option value="Panel Mmeber">Panel Mmeber</option>
+                            </select>
+                            {/* <input type="text"  id="form3Example97" class="form-control form-control-lg" onChange={(e) => setstaff_id(e.target.value)} required/> */}
+                            </div>
+
+
+
+
+
                               
                             <div class="form-outline mb-4">
                             <label class="form-label" for="form3Example8">Email Address</label>
