@@ -55,8 +55,8 @@ export default class StaffLogin extends Component {
                  <div class="col-md-8 col-lg-7 col-xl-6"> 
                   <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image"/> 
                   <br/><br/>
-                  <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <u><b>&nbsp;&nbsp;STAFF&nbsp;&nbsp;LOGIN&nbsp;&nbsp;</b></u></h2> 
+                  <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <u><b>STAFF&nbsp;&nbsp;LOGIN</b></u></h2> 
                   </div>
                      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                         <form onSubmit={this.userLoginSubmit} name="form"> 
