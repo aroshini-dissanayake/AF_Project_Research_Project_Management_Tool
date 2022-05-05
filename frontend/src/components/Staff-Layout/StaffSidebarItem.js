@@ -1,9 +1,9 @@
 import React from "react";
 import * as AiIcons from 'react-icons/ai';
 import * as BsIcons from 'react-icons/bs';
-import * as MdIcons from 'react-icons/md';
-import * as RiIcons from 'react-icons/ri';
-import * as GiIcons from 'react-icons/gi';
+// import * as MdIcons from 'react-icons/md';
+// import * as RiIcons from 'react-icons/ri';
+// import * as GiIcons from 'react-icons/gi';
 
 export const StaffSidebarData =[
 
@@ -39,21 +39,21 @@ export const StaffSidebarData =[
 
     },
 
-    // {
-    //     title : 'Discount',
-    //     path : '/discount',
-    //     icon : <MdIcons.MdLocalOffer/>,
-    //     cName : 'nav-text'
+    {
+        title : 'Panel Members',
+        path : '/discount',
+        icon : <BsIcons.BsFillPersonFill/>,
+        cName : 'nav-text'
 
-    // },
+    },
 
-    // {
-    //     title : 'Delivery',
-    //     path : '/delivery',
-    //     icon : <MdIcons.MdLocalShipping/>,
-    //     cName : 'nav-text'
+    {
+        title : 'Chat With Group ',
+        path : '/chatapp',
+        icon : <BsIcons.BsFillChatTextFill/>,
+        cName : 'nav-text'
 
-    // },
+    },
 
     // {
     //     title : 'Advertisement',

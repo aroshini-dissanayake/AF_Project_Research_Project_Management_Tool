@@ -31,7 +31,7 @@ function StaffNavbar() {
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>
                     {item.icon}
-                    <nav-span>{item.title}</nav-span>
+                    <staffnav-span>{item.title}</staffnav-span>
                   </Link>
                 </li>
               );

@@ -1,6 +1,6 @@
 .navbar {
     background-color: #060b26;
-    height: 95px;
+    height: 70px;
     display: flex;
     align-items: center;
     
@@ -22,7 +22,7 @@
   
   .nav-menu {
     background-color: #060b26;
-    width: 250px;
+    width: 220px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -34,14 +34,14 @@
   
   .nav-menu.active {
     left: 0;
-    transition: 550ms;
+    transition: 450ms;
     
   }
   
   .nav-text {
     display: flex;
     align-items: center;
-    padding: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 1px;
     list-style: none;
     height: 67px;
     
@@ -50,34 +50,34 @@
   .nav-text a {
     text-decoration: none;
     color: #f5f5f5;
-    font-size: 20px;
-    width: 95%;
-    height: 100%;
+    font-size: 17px;
+    width: 85%;
+    height: 60%;
     display: flex;
     align-items: center;
-    padding: 0px 0px 0px 16px;
-    border-radius: 4px;
+    padding: 0px 0px 0px 8px;
+    border-radius: 50px;
   }
   
   .nav-text a:hover {
-    background-color: #4863A0;
+    background-color: #526a9f;
   }
   
   .nav-menu-items {
-    width: 100%;
+    width: 200%;
     
   }
   
   .navbar-toggle {
     background-color: #060b26;
-    width: 100px;
-    height: 110px;
+    width: 50px;
+    height: 100px;
     display: flex;
     align-items: center;
   }
   
-  nav-span {
-    margin-left: 16px;
+  staffnav-span {
+    margin-left: 5px;
     
   }
   
