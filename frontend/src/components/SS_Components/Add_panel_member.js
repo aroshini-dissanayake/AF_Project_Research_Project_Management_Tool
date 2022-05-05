@@ -50,7 +50,7 @@ export default class Add_panel_member extends Component{
                 panelMember:"" ,
            })
            alert("Panel member added");
-           window.location.href="/"
+           window.location.href="/displaystudentgroups"
       }    
     })
     .catch((e)=>{

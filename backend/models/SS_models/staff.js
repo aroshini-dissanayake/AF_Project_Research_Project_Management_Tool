@@ -9,13 +9,7 @@ const staffSchema = new mongoose.Schema({
         required: true,
         trim: true, 
     },
-
-    nic: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-   
+    
     phone: {
         type: String,
         required: true,
@@ -39,6 +33,12 @@ const staffSchema = new mongoose.Schema({
         required: true,
         trim: true,
       },
+      
+    role:{
+        type: String,
+        required: true,
+        trim: true,
+    },
 
     email: {
         type: String,

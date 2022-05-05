@@ -8,14 +8,14 @@ const staffauth = require("../../middleware/staff_middleware/staffauth")
 
 
 //staff signup
-router.post("/signup", async (req, res) => {
+router.post("/staffsignup", async (req, res) => {
     try {
       const {
         name,
-        nic,
         phone,
         faculty,
         staff_id,
+        role,
         email,
         pwd
       } = req.body;
@@ -32,10 +32,10 @@ router.post("/signup", async (req, res) => {
 
       staff_a = {
         name: name,
-        nic: nic,
         phone: phone,
         faculty: faculty,
         staff_id: staff_id,
+        role:role,
         email: email,
         pwd: pwd
       };
@@ -54,7 +54,7 @@ router.post("/signup", async (req, res) => {
   });
 
 //staff login 
-router.post('/login', async (req, res) => {
+router.post('/stafflogin', async (req, res) => {
   try {
     const {staff_id, pwd} = req.body
     const Staff = await staff.findByCredentials(staff_id, pwd)

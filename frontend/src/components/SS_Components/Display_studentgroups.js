@@ -4,6 +4,7 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import Navbar from '../Layout/Navbar';
 
 export default class Display_studentgroups extends Component{
     constructor(props){
@@ -30,7 +31,11 @@ export default class Display_studentgroups extends Component{
     }
     render(){
         return(
-        <div className='container'>
+        <div>
+            <Navbar/>
+            <br/><br/>
+        <div className='container'>  
+         
             <table class="table">
                 <thead>
                     <tr>
@@ -38,7 +43,7 @@ export default class Display_studentgroups extends Component{
                         <th scope='col'>Student Name</th>
                         <th scope='col'>Group Name</th>
                         <th scope='col'>Panel Member</th>
-                        <th scope='col'>Add Panel Member</th>
+                        <th scope='col'>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,7 +54,6 @@ export default class Display_studentgroups extends Component{
                         <td>{studentgroups.groupName}</td>
                         <td>{studentgroups.panelMember}</td>
                         <td>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         
                              <IconButton aria-label='btn btn-success' size="small"
                              style={{background: "#FBB917"}}
@@ -58,12 +62,6 @@ export default class Display_studentgroups extends Component{
                              </IconButton> 
                              &nbsp;&nbsp;&nbsp;&nbsp;
                             
-                             <IconButton aria-label="edit" size="small"
-                              style={{background: "#006400"}} href={`/edit_panelmembers/${studentgroups._id}`}>
-                             <EditIcon fontSize="small" style={{color: "white"}}/>
-                             </IconButton>
-                             &nbsp;&nbsp;&nbsp;&nbsp;
-
                              <IconButton aria-label="delete" size="small"
                               style={{background: "#800000"}} >
                              <DeleteForeverIcon fontSize="small"  style={{color: "white"}}/>
@@ -73,6 +71,7 @@ export default class Display_studentgroups extends Component{
                 ))}
                 </tbody>
             </table>
+        </div>
         </div>
         )}
 }
