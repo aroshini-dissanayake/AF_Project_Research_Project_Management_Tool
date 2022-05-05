@@ -25,10 +25,10 @@ export default function StaffSignup(){
         }
 
         if (pwd1 === pwd2) { 
-        axios.post("http://localhost:8070/staff/signup",new_staff)
+        axios.post("http://localhost:8070/staff/staffsignup",new_staff)
         .then(()=>{
             alert("Registration Success")
-            //window.location = "/login"
+            window.location = "/stafflogin"
         }).catch((err)=>{
             alert(err)
         })
@@ -46,22 +46,22 @@ export default function StaffSignup(){
       
     }
     return(<div><br/><br/>
-<div class="row d-flex align-items-center justify-content-center"><br/><br/>
- <div style={{width: 1100,background: "#CCCCFF",height:740}}>
-  <div class="card-body" >       
-    <form action="" method="post" name="form" onSubmit={sendData}> 
-      <div class="row g-0">
-        <div class="col-xl-7 d-none d-xl-block"><br/>
-          <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <b><u>STAFF&nbsp;&nbsp;REGISTERATION&nbsp;&nbsp; FORM</u></b></h3><br/>
-          <img src="https://protolabzit.com/wp-content/uploads/2021/12/Pair-programming-amico.png" style={{width: 600}}/>
-               </div>
-              <div class="col-xl-5"> <br/>
-              <div class="form-outline mb-2">
-              <label class="form-label">
-                <b><i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;Full Name</b></label>
-                <div className="col-md-10"><input type="text"class="form-control" onChange={(e) => setname(e.target.value)} required/>
-              </div></div>
+    <div class="row d-flex align-items-center justify-content-center"><br/><br/>
+    <div style={{width: 1100,background: "#CCCCFF",height:740}}>
+      <div class="card-body" >       
+        <form action="" method="post" name="form" onSubmit={sendData}> 
+          <div class="row g-0">
+            <div class="col-xl-7 d-none d-xl-block"><br/>
+              <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <b><u>STAFF&nbsp;&nbsp;REGISTERATION&nbsp;&nbsp; FORM</u></b></h3><br/>
+              <img src="https://protolabzit.com/wp-content/uploads/2021/12/Pair-programming-amico.png" style={{width: 600}}/>
+                  </div>
+                    <div class="col-xl-5"> <br/>
+                    <div class="form-outline mb-2">
+                    <label class="form-label">
+                      <b><i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;Full Name</b></label>
+                      <div className="col-md-10"><input type="text"class="form-control" onChange={(e) => setname(e.target.value)} required/>
+                    </div></div>
 
               <div class="form-outline mb-2">
               <label class="form-label">
@@ -120,7 +120,7 @@ export default function StaffSignup(){
     
               <div class="d-flex justify-left pt-1" >
                <label >Already Registered? &nbsp;&nbsp;</label>
-               <a href="/" >Sign In</a> </div>
+               <a href="/stafflogin" >Sign In</a> </div>
                
                <div class="d-flex justify-content-end">
                <button type="submit" class="btn btn-primary"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Submit</button></div> 
