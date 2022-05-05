@@ -10,6 +10,7 @@ require("dotenv").config();
 //import routers
 const studentgroupRoutes = require('./routes/SS_routes/studentgroups');
 const adminRouter = require('./routes/RG_routes/admin');
+const createmarkingRouter = require('./routes/RG_routes/createmarking');
 
 //app middleware
 app.use(bodyParser.json());
@@ -19,6 +20,7 @@ app.use(express.json());
 //routes use
 app.use(studentgroupRoutes);
 app.use("/admin",adminRouter);
+app.use("/createmarking",createmarkingRouter);
 
 const PORT = process.env.PORT || 8070;
 
