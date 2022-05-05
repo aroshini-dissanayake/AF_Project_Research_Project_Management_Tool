@@ -21,13 +21,13 @@ export default class StaffLogin extends Component {
           pwd: this.state.pwd
         }
     
-        await axios.post("http://localhost:8070/staff/login",userData)
+        await axios.post("http://localhost:8070/staff/stafflogin",userData)
         .then((res) => {
           this.setState({
             token: res.data.token
           })
           localStorage.setItem("Authorization", res.data.token)
-         // window.location = "/home1"
+          window.location = "/staffdashboard"
           alert('loging successfull');
         })
         .catch((err) => {
@@ -82,7 +82,7 @@ export default class StaffLogin extends Component {
                
                           <div class="divider d-flex align-items-center my-4">
                                 <center><label >Not Registered? &nbsp;&nbsp;</label>
-                                <a href="/signup" >Sign Up</a> </center>  
+                                <a href="/staffsignup" >Sign Up</a> </center>  
                           </div>
                     </form>   
                 </div> 
