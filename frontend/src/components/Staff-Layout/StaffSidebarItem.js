@@ -2,42 +2,42 @@ import React from "react";
 import * as AiIcons from 'react-icons/ai';
 import * as BsIcons from 'react-icons/bs';
 import * as MdIcons from 'react-icons/md';
-// import * as RiIcons from 'react-icons/ri';
-// import * as GiIcons from 'react-icons/gi';
+import * as RiIcons from 'react-icons/ri';
+import * as GiIcons from 'react-icons/gi';
 
-export const SidebarData =[
+export const StaffSidebarData =[
 
     {
-        title : 'DashBoard',
-        path : '/adminhome',
+        title : 'Dashboard',
+        path : '/staffdashboard',
         icon : <AiIcons.AiFillDashboard/>,
         cName : 'nav-text'
 
     },
 
     {
-        title : 'Admin',
+        title : 'Research Topic',
         path : '/adminhome',
+        icon : <AiIcons.AiFillFileAdd/>,
+        cName : 'nav-text'
+
+    },
+
+    {
+        title : 'Supervisors',
+        path : '/displaygroups',
         icon : <BsIcons.BsFillPersonFill/>,
         cName : 'nav-text'
 
     },
 
     {
-        title : 'Student Groups',
-        path : '/displaygroups',
-        icon : <MdIcons.MdComputer/>,
+        title : 'Co-Supervisors',
+        path : '/payment',
+        icon : <BsIcons.BsFillPersonFill/>,
         cName : 'nav-text'
 
     },
-
-    // {
-    //     title : 'Payment',
-    //     path : '/payment',
-    //     icon : <MdIcons.MdPayment/>,
-    //     cName : 'nav-text'
-
-    // },
 
     // {
     //     title : 'Discount',
@@ -77,6 +77,5 @@ export const SidebarData =[
     //     cName : 'nav-text'
 
     // },
-
 
 ]

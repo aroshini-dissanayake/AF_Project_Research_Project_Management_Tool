@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Navbar from "../Layout/Navbar";
+import StaffNavbar from "../Staff-Layout/StaffNavbar";
 
 export default class Staff_Dashboard extends Component {
     render(){
         return(
             <div>
-                <Navbar/>
+                <StaffNavbar/>
                 <p>STAFF DASHBOARD</p>
             </div>
         )
