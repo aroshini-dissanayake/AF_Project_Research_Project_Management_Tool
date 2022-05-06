@@ -2,9 +2,8 @@ import React,{Component} from 'react' ;
 import axios from "axios";
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
-import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import Navbar from '../Layout/Navbar';
+
 
 export default class Display_studentgroups extends Component{
     constructor(props){
@@ -30,12 +29,8 @@ export default class Display_studentgroups extends Component{
         })
     }
     render(){
-        return(
-        <div>
-            <Navbar/>
-            <br/><br/>
+        return(      
         <div className='container'>  
-         
             <table class="table">
                 <thead>
                     <tr>
@@ -71,7 +66,6 @@ export default class Display_studentgroups extends Component{
                 ))}
                 </tbody>
             </table>
-        </div>
-        </div>
+        </div>     
         )}
 }

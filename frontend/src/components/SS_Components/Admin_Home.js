@@ -5,7 +5,7 @@ export default class Admin_Home extends Component {
     render(){
         return(
             <div>
-                <Navbar/>
+              
                 <p>Hello</p>
             </div>
         )

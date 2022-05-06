@@ -18,6 +18,7 @@ router.post("/studentgroups/save", (req, res) => {
   });
 });
 
+
 //get student group details
 router.route("/displaystudentgroups").get((req, res) => {
   Studentgroups.find().exec((err, studentgroups) => {
