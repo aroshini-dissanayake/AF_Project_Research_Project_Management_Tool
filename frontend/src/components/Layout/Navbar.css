@@ -60,7 +60,7 @@
   }
   
   .nav-text a:hover {
-    background-color: #4863A0;
+    background-color:#526a9f;
   }
   
   .nav-menu-items {
@@ -70,7 +70,7 @@
   
   .navbar-toggle {
     background-color: #060b26;
-    width: 100px;
+    width: 110px;
     height: 110px;
     display: flex;
     align-items: center;

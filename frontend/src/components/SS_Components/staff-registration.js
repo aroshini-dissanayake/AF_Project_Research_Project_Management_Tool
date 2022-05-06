@@ -45,7 +45,8 @@ export default function StaffSignup(){
         setPassowrd2("");  
       
     }
-    return(<div><br/><br/>
+    return(
+    <div><br/><br/>
     <div class="row d-flex align-items-center justify-content-center"><br/><br/>
     <div style={{width: 1100,background: "#CCCCFF",height:740}}>
       <div class="card-body" >       
