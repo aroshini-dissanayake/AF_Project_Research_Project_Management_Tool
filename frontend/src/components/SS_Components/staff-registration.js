@@ -5,6 +5,7 @@ export default function StaffSignup(){
     const [name, setname] = useState("");
     const [phone, setphone] = useState("");
     const [faculty, setfaculty] = useState("");
+    const [feild, setfeild] = useState("");
     const [staff_id, setstaff_id] = useState("");
     const [role,setrole] = useState("");
     const [email, setEmail] = useState("");
@@ -18,6 +19,7 @@ export default function StaffSignup(){
             name: name,
             phone: phone,
             faculty: faculty,
+            feild:feild,
             staff_id: staff_id,
             role:role,
             email: email,
@@ -38,6 +40,7 @@ export default function StaffSignup(){
         setname("");
         setphone("");
         setfaculty("");
+        setfeild("");
         setstaff_id("");
         setrole("");
         setEmail("");
@@ -46,16 +49,16 @@ export default function StaffSignup(){
       
     }
     return(
-    <div><br/><br/>
-    <div class="row d-flex align-items-center justify-content-center"><br/><br/>
-    <div style={{width: 1100,background: "#CCCCFF",height:740}}>
+    <div><br/>
+    <div class="row d-flex align-items-center justify-content-center">
+    <div style={{width: 1100,background: "#CCCCFF",height:830}}>
       <div class="card-body" >       
         <form action="" method="post" name="form" onSubmit={sendData}> 
           <div class="row g-0">
             <div class="col-xl-7 d-none d-xl-block"><br/>
               <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <b><u>STAFF&nbsp;&nbsp;REGISTERATION&nbsp;&nbsp; FORM</u></b></h3><br/>
-              <img src="https://protolabzit.com/wp-content/uploads/2021/12/Pair-programming-amico.png" style={{width: 600}}/>
+                  <img src="https://protolabzit.com/wp-content/uploads/2021/12/Pair-programming-amico.png" style={{width: 550}}/>
                   </div>
                     <div class="col-xl-5"> <br/>
                     <div class="form-outline mb-2">
@@ -73,13 +76,33 @@ export default function StaffSignup(){
               <div class="form-outline mb-2">
               <label class="form-label">
                 <b><i class="fa fa-university"></i>&nbsp;&nbsp;&nbsp;Faculty</b></label>
-                <div className="col-md-10"><input type="text"  class="form-control" onChange={(e) => setfaculty(e.target.value)} required/>
+                <div className="col-md-10">
+                <select className="form-control" name="faculty"  class="form-control" onChange={(e) => setfaculty(e.target.value)} required>
+                    <option value="">Select Faculty</option>
+                    <option value="Faculty of Computing">Faculty of Computing</option>
+                    <option value="Faculty of Business"> Faculty of Business</option>
+                    <option value="Faculty of Engineering"> Faculty of Engineering</option>
+                    <option value="Faculty of Humanities & Sciences"> Faculty of Humanities & Sciences</option>
+                    <option value="School of Architechture"> School of Architechture</option>
+                    <option value="Faculty of Graduate Studies and Research">Faculty of Graduate Studies and Research</option>
+                    <option value="Faculty of Graduate Studies and Research"> Faculty of Graduate Studies and Research</option>
+                    <option value="SLIIT Academy"> SLIIT Academy</option>
+                    <option value="SLIIT International">SLIIT International</option>
+                </select>
+              </div></div>
+
+              <div class="form-outline mb-2">
+              <label class="form-label">
+                <b><i class="fa fa-book"></i>&nbsp;&nbsp;&nbsp;Feild</b></label>
+                <div className="col-md-10">
+                <input type="text"  class="form-control" onChange={(e) => setfeild(e.target.value)} required/>
               </div></div>
 
               <div class="form-outline mb-2">
               <label class="form-label">
                 <b><i class="fa fa-id-badge"></i>&nbsp;&nbsp;&nbsp;Staff ID</b></label>
-                <div className="col-md-10"><input type="text"  class="form-control" onChange={(e) => setstaff_id(e.target.value)} required/>
+                <div className="col-md-10">
+                  <input type="text"  class="form-control" onChange={(e) => setstaff_id(e.target.value)} required/>
               </div></div>
                 
               <div class="form-outline mb-2">
