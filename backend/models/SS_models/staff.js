@@ -27,6 +27,11 @@ const staffSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
+    feild: {
+      type: String,
+      required: true,
+      trim: true,
+  },
     
     staff_id: {
         type: String,

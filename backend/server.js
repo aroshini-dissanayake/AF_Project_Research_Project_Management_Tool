@@ -50,14 +50,16 @@ console.log("Mongodb connection success!!!");
 })
 
 // @import routes
-const studentgroupRoutes = require("./routes/SS_routes/studentgroups");
+const studentgroupRouter = require("./routes/SS_routes/studentgroups");
 const studentRouter = require("./routes/AA_routes/student");
-const staffRouter =require("./routes/SS_routes/staff")
+const staffRouter =require("./routes/SS_routes/staff");
+const researchTopicRouter = require("./routes/SS_routes/researchtopic");
 
 // rotues
-app.use(studentgroupRoutes);
+app.use(studentgroupRouter);
 app.use("/student", studentRouter);
 app.use("/staff",staffRouter);
+app.use("/researchtopic",researchTopicRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
