@@ -5,7 +5,7 @@ const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const staffauth = require("../../middleware/staff_middleware/staffauth")
-const auth = require('../../middleware/staff_middleware/staffauth');
+
 
 //staff signup
 router.post("/staffsignup", async (req, res) => {
@@ -70,7 +70,7 @@ router.post('/stafflogin', async (req, res) => {
 });
 
 //staff member logout
-router.get("/stafflogout",auth,async(req,res)=>{
+router.get("/stafflogout",staffauth,async(req,res)=>{
   try{
     req.Staff.tokens = req.Staff.tokens.filter((token)=>{
       return token.token !== req.token;
@@ -85,13 +85,63 @@ router.get("/stafflogout",auth,async(req,res)=>{
 });
 
 //staff profile
-router.get("/staffprofile", auth, async (req, res) => {
+router.get("/staffprofile", staffauth, async (req, res) => {
   try {
     res.status(201)
     res.send({ status: "Staff fetched", Staff: req.Staff});
   } catch (error) {
     res.status(500)
     res.send({ status: "Error with /staffprofile", error: error.message });
+  }
+});
+
+//staff member update profile
+router.put('/staffupdate', staffauth, async (req, res) => {
+  const {name, 
+         phone, 
+         faculty, 
+         feild, 
+         staff_id,
+         role,
+         email
+        } = req.body
+  try {
+    const updateValus={
+      name : name,
+      phone : phone,
+      faculty : faculty,
+      feild : feild,
+      staff_id : staff_id,
+      role : role,
+      email : email
+    };
+    let Staff = await staff.findOne({staff_id})
+ 
+    if (!Staff) {
+      throw new Error('There is no Staff Member account')
+    }
+    const staffUpdate = await staff.findByIdAndUpdate(req.Staff.id,updateValus) 
+    res.status(200).send({status: 'Staff Member Profile Updated', Staff: staffUpdate})
+  
+  } catch (error) {
+    res.status(500).send({error: error.message})
+    console.log(error)
+  }
+});
+
+//delete staff member account
+router.delete("/staffdelete", staffauth, async (req, res) => {
+  try {
+    const Staff = await staff.findById(req.Staff.id);
+    if (!Staff) {
+      throw new Error("There is no Staff Member to delete");
+    }
+    const deleteProfile = await staff.findByIdAndDelete(req.Staff.id);
+    res.status(200).send({ status: "Member deleted", Staff : deleteProfile });
+  } catch (error) {
+    res
+      .status(500)
+      .send({ status: "error with id", error: error.message });
   }
 });
 
