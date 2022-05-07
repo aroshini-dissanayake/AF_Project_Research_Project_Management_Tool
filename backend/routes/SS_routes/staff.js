@@ -5,7 +5,7 @@ const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const staffauth = require("../../middleware/staff_middleware/staffauth")
-
+const auth = require('../../middleware/staff_middleware/staffauth');
 
 //staff signup
 router.post("/staffsignup", async (req, res) => {
@@ -14,6 +14,7 @@ router.post("/staffsignup", async (req, res) => {
         name,
         phone,
         faculty,
+        feild,
         staff_id,
         role,
         email,
@@ -34,6 +35,7 @@ router.post("/staffsignup", async (req, res) => {
         name: name,
         phone: phone,
         faculty: faculty,
+        feild:feild,
         staff_id: staff_id,
         role:role,
         email: email,
@@ -65,6 +67,24 @@ router.post('/stafflogin', async (req, res) => {
     res.status(500).send({ error: error.message });
     console.log(error);
   }
-})
+});
+
+//staff member logout
+router.get("/stafflogout",auth,async(req,res)=>{
+  try{
+    req.Staff.tokens = req.Staff.tokens.filter((token)=>{
+      return token.token !== req.token;
+    });
+    await req.Staff.save();
+    res.status(200).save("Logout Successfully!!!!");
+
+  }catch (error) {
+    res.status(500).send({ error: error.message });
+    console.log(error);
+  }
+});
+
+//staff profile
+
 
 module.exports = router;
