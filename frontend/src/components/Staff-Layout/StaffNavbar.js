@@ -4,16 +4,16 @@ import React, { Component } from "react";
 export default class StaffNavbar extends Component {
     render(){
         return(
-    <div>   
-     <nav class="navbar navbar-expand-lg " style={{background: "#060b26",  height: "95px"}}>
+    <div> 
+     <nav class="navbar navbar-expand-lg " style={{background: "#060b26",  height: "90px"}}>
      <br/>  <br/>
-     <button class="navbar-brand" style={{background: "#FFA500",height: "90px",width:"220px"}}><b>SLIIT ResearchWeb</b></button>  
-      <div class="container">   
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <button class="navbar-brand" style={{background: "#FFA500",height: "90px",width:"220px"}}><b>SLIIT ResearchWeb</b></button>  
+       <div class="container">   
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
        
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#" style={{color: "#ffff"}}>Research Topics</a>
+          <a class="nav-link" aria-current="page" href="/displayresearchtopic" style={{color: "#ffff"}}>Research Topics</a>
         </li>  &nbsp; &nbsp;&nbsp;
 
         <li class="nav-item">

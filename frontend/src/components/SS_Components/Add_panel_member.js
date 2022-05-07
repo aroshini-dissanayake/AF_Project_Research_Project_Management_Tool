@@ -14,7 +14,7 @@ export default class Add_panel_member extends Component{
 
    async componentDidMount(){
         const id = this.props.match.params.id; 
-        await axios.get(`http://localhost:8070/displaystudentgroups/${id}`).then((res)=>{
+        await axios.get(`http://localhost:8070/group/displaystudentgroups/${id}`).then((res)=>{
 
         if(res.data.success){
                 this.setState({
@@ -42,7 +42,7 @@ export default class Add_panel_member extends Component{
             panelMember:panelMember,
         }
 
-        axios.post(`http://localhost:8070/studentgroups/${id}`,data).then((res)=>{  
+        axios.post(`http://localhost:8070/group/studentgroups/${id}`,data).then((res)=>{  
         if(res.data.success){
             this.setState({
                 studentName:"",
@@ -50,15 +50,14 @@ export default class Add_panel_member extends Component{
                 panelMember:"" ,
            })
            alert("Panel member added");
-           window.location.href="/displaystudentgroups"
+           window.location.href="/group/displaystudentgroups"
       }    
     })
     .catch((e)=>{
     });
 }
   
-
-  render(){
+render(){
         return( 
         <div className='col-md-8 mt-4 mx-auto'>
             <h1 className='h3 mb-3 font-weight-normal'>ADD PANEL MEMBER</h1>
