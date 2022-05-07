@@ -25,7 +25,7 @@ function App() {
      <Route path = "/staffdashboard" component={Staff_Dashboard}/>
      <Route path = "/group/displaystudentgroups" component ={DisplayStudentgroups} />  
      <Route path = "/studentgroups/:id" component={Add_panel_member}/>
-     <Route path = "/displayresearchtopic" component={ResearchTopic}/>
+     <Route path = "/topic/displayresearchtopic" component={ResearchTopic}/>
      </div>  
  
     </Switch>   
