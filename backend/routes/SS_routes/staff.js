@@ -85,6 +85,14 @@ router.get("/stafflogout",auth,async(req,res)=>{
 });
 
 //staff profile
-
+router.get("/staffprofile", auth, async (req, res) => {
+  try {
+    res.status(201)
+    res.send({ status: "Staff fetched", Staff: req.Staff});
+  } catch (error) {
+    res.status(500)
+    res.send({ status: "Error with /staffprofile", error: error.message });
+  }
+});
 
 module.exports = router;
