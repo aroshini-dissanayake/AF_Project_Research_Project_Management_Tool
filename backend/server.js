@@ -30,6 +30,7 @@ app.use(bodyParser.urlencoded({
   extended: true,
   parameterLimit:50000
 }));
+
 app.use(cors());
 
 const URL = process.env.MONGODB_URL;
@@ -56,10 +57,10 @@ const staffRouter =require("./routes/SS_routes/staff");
 const researchTopicRouter = require("./routes/SS_routes/researchtopic");
 
 // rotues
-app.use(studentgroupRouter);
+app.use("/group",studentgroupRouter);
 app.use("/student", studentRouter);
 app.use("/staff",staffRouter);
-app.use("/researchtopic",researchTopicRouter);
+app.use("/topic",researchTopicRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)

@@ -19,5 +19,6 @@ const researchtopicSchema = new mongoose.Schema({
         });
             
             
-const Researchtopic = mongoose.model("researchtopic",researchtopicSchema);module.exports = Researchtopic;
+const Researchtopic = mongoose.model("researchtopic",researchtopicSchema);
+module.exports = Researchtopic;
 
