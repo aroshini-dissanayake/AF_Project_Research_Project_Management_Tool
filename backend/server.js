@@ -17,7 +17,7 @@ app.use(express.json());
 
 //routes use
 // app.use(studentgroupRoutes);
-app.use(researchtopicRoutes);
+app.use("/researchtopic",researchtopicRoutes);
 
 const PORT = process.env.PORT || 8070;
 const URL = process.env.MONGODB_URL;

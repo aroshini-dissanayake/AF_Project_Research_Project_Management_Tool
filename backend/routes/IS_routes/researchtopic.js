@@ -18,6 +18,21 @@ router.post("/addresearchtopic/save",(req, res) => {
     });
   });
 
+  //get research topic
+router.route("/displayresearchtopic").get((req, res) => {
+  Researchtopics.find().exec((err, researchtopics) => {
+   if (err) {
+   return res.status(400).json({
+   error: err,
+    });
+  }
+   return res.status(200).json({
+     success: true,
+     existingResearchtopics: researchtopics,
+    });
+  });
+ });
+
   //update research topics 
   router.route('/update/:groupId').put((req,res) =>{
     Researchtopics.findByIdAndUpdate(
