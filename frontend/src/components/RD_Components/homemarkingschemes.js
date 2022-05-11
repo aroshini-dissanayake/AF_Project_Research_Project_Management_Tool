@@ -32,7 +32,17 @@ componentDidMount(){
 
   render() {
     return (
-      <div>homemarkingschemes</div>
+      <div>
+        {this.state.createmarking.map(createmarking=>(
+            <div>
+                <p>{createmarking.deliverables}</p>
+                <p>{createmarking.duedate}</p>
+                <p>{createmarking.contribution}</p>
+                <p>{createmarking.methodofsubmission}</p>
+                <p>{createmarking.marksallocation}</p>
+                </div>
+        ))}  
+      </div>
     )
   }
 }
