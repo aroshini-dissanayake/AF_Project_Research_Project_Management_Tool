@@ -33,6 +33,8 @@ router.route('/displaystudentgroups').get((req,res)=>{
   });
 });
 
+
+
 //update studentgroups
 router.route('/update/:groupID').put((req,res)=>{
   Studentgroups.findByIdAndUpdate(

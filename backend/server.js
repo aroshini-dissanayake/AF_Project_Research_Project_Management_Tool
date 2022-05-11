@@ -7,7 +7,13 @@ const app = express();
 require("dotenv").config();
 app.use(express.json());
 
+
 const PORT = process.env.PORT || 8070;
+
+//import routers
+// const studentgroupRoutes = require('./routes/SS_routes/studentgroups')
+const researchtopicRoutes= require ('./routes/IS_routes/researchtopic');
+
 
 app.use(bodyParser.json({limit: '50mb'}) );
 app.use(bodyParser.urlencoded({
@@ -16,6 +22,14 @@ app.use(bodyParser.urlencoded({
   parameterLimit:50000
 }));
 app.use(cors());
+
+
+app.use(express.json());
+
+//routes use
+// app.use(studentgroupRoutes);
+app.use("/researchtopic",researchtopicRoutes);
+
 
 const URL = process.env.MONGODB_URL;
 process.env.SUPPRESS_NO_CONFIG_WARNING = 'y';
