@@ -79,6 +79,78 @@ const studentSchema = new mongoose.Schema({
     type: String,
   },
 
+  // student_group: [{
+  //   student_id: {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     required: true,
+  //     ref: "students",
+  //   },
+  //   member1: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   member2: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   member3: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   member4: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   phone1: {
+  //       type: String,
+  //       required: true,
+  //   },
+  //   phone2: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   phone3: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   phone4: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   student_id1: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   student_id2: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   student_id3: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   student_id4: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   email1: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   email2: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   email3: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   email4: {
+  //     type: String,
+  //     required: true,
+  //   }
+  // }],
+
   tokens: [
     {
       token: {

@@ -36,13 +36,13 @@ console.log("Mongodb connection success!!!");
 
 // @import routes
 const studentRouter = require("./routes/AA_routes/student");
-
+const studentGroupRouter = require("./routes/AA_routes/student-group")
 
 
 
 // rotues
 app.use("/student",studentRouter);
-
+app.use("/studentgroup",studentGroupRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
