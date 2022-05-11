@@ -6,10 +6,11 @@ import './App.css';
  //import Edit_panem_member from './components/SS_Components/Edit_panem_member';
 //import Signup from './components/AA_Components/student-registration';
 //import StudentLogin from './components/AA_Components/student-login';
-import Adminregistration from './components/RD_Components/adminregistration';
-import AdminLogin from './components/RD_Components/adminlogin';
-import Adminpage from './components/RD_Components/adminpage';
-import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
+// import Adminregistration from './components/RD_Components/adminregistration';
+// import AdminLogin from './components/RD_Components/adminlogin';
+// import Adminpage from './components/RD_Components/adminpage';
+//import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
+import Homemarkingschemes from './components/RD_Components/homemarkingschemes';
 
 
 function App() {
@@ -21,10 +22,11 @@ function App() {
     <Route path = "/addpanelmember" element={<Add_panel_member/>}/>
     <Route path = "/edit_panelmembers" element= {Edit_panem_member}/>
     <Route path = "/" element= {<DisplayStudentgroups/>}/> */}
-    <Route path = "/add" element={<Adminregistration/>}/> 
+    {/* <Route path = "/add" element={<Adminregistration/>}/> 
     <Route path = "/login" element={<AdminLogin/>}/>  
-    <Route path = "/adminpage" element={<Adminpage/>}/>  
-    <Route path = "/createmarkingschemes" element={<Createmarkingschemes/>}/> 
+    <Route path = "/adminpage" element={<Adminpage/>}/>   */}
+    {/* <Route path = "/createmarkingschemes" element={<Createmarkingschemes/>}/>  */}
+    <Route path = "/homemarkingschemes" element={<Homemarkingschemes/>}/> 
    </Routes>
    </BrowserRouter>
   );
