@@ -13,10 +13,10 @@ const studentGroupSchema = new mongoose.Schema({
   },
 
   groupMembers: [{
-    _id: {
-      type: String,
+    sid: {
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: "students"
+      ref:"students"
     },
 
     student_id: {
