@@ -36,7 +36,7 @@ export default function Signup(){
         if (pwd1 === pwd2) { 
         axios.post("http://localhost:8070/student/signup",new_student)
         .then(()=>{
-            alert("Registration Success")
+            alert("Registration Success");
             //window.location = "/login"
         }).catch((err)=>{
             alert(err)
