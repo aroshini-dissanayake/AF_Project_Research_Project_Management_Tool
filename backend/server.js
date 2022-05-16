@@ -7,21 +7,6 @@ const app = express();
 require("dotenv").config();
 
 
-//import routers
-const studentgroupRoutes = require('./routes/SS_routes/studentgroups');
-const adminRouter = require('./routes/RG_routes/admin');
-const createmarkingRouter = require('./routes/RG_routes/createmarking');
-
-//app middleware
-app.use(bodyParser.json());
-app.use(cors());
-app.use(express.json());
-
-//routes use
-app.use(studentgroupRoutes);
-app.use("/admin",adminRouter);
-app.use("/createmarking",createmarkingRouter);
-
 const PORT = process.env.PORT || 8070;
 
 app.use(bodyParser.json({limit: '50mb'}) );
@@ -32,6 +17,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cors());
+
+//app middleware
+app.use(bodyParser.json());
+app.use(cors());
+app.use(express.json());
 
 const URL = process.env.MONGODB_URL;
 process.env.SUPPRESS_NO_CONFIG_WARNING = 'y';
@@ -56,6 +46,9 @@ const studentRouter = require("./routes/AA_routes/student");
 const staffRouter =require("./routes/SS_routes/staff");
 const researchTopicRouter = require("./routes/SS_routes/researchtopic");
 const accepttopicRouter = require("./routes/SS_routes/acceptTopic");
+const adminRouter = require('./routes/RG_routes/admin');
+const createmarkingRouter = require('./routes/RG_routes/createmarking');
+
 
 // rotues
 app.use("/group",studentgroupRouter);
@@ -63,6 +56,8 @@ app.use("/student", studentRouter);
 app.use("/staff",staffRouter);
 app.use("/topic",researchTopicRouter);
 app.use("/accept",accepttopicRouter);
+app.use("/admin",adminRouter);
+app.use("/createmarking",createmarkingRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)

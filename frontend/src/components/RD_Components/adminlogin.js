@@ -7,7 +7,7 @@ export default class AdminLogin extends Component {
         this.userLoginSubmit = this.userLoginSubmit.bind(this)
     
         this.state = {
-          username: "",
+          sliitid: "",
           password: "",
           token: "",
           open: false
@@ -18,26 +18,26 @@ export default class AdminLogin extends Component {
       async userLoginSubmit(e) {
         e.preventDefault()
         const userData = {
-          username: this.state.username,
+          sliitid: this.state.sliitid,
           password: this.state.password
         }
   
         
     
-        await axios.post("http://localhost:8070/admin/login",userData)
+        await axios.post("http://localhost:8070/admin/adminsignin",userData)
         .then((res) => {
           this.setState({
             token: res.data.token
           })
           localStorage.setItem("Authorization", res.data.token)
-          alert("loging complete");
+          alert("Login Successfull!!");
           window.location = "/adminpage";
           
         })
         .catch((err) => {
           console.log(err)
           this.setState({open: true})
-          alert("loging error");
+          alert("Loging error");
         })
       }
   render() {
@@ -45,7 +45,7 @@ export default class AdminLogin extends Component {
       <div>
           <h3>Admin Login</h3>
           <form onSubmit={this.userLoginSubmit}>
-            username : <input type="text" name='username' onChange={e => this.setState({ username: e.target.value })}/> <br/><br/>
+            username : <input type="text" name='username' onChange={e => this.setState({ sliitid: e.target.value })}/> <br/><br/>
             password : <input type="text" name='password' onChange={e => this.setState({ password: e.target.value })}/> <br/><br/>
             <input type="submit" value="Login"/>
           </form>

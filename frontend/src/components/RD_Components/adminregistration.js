@@ -6,16 +6,12 @@ export default class Adminregistration extends Component {
         super(props);
             this.state ={  
                 fname : "",
-                mname :"",
-                lname :"",
-                username :"",
-                pno :"",
+                phone :"",
                 sliitid:"",
                 nic :"",
                 email :"",
                 password :"",
                 cpassword :"",
-                imageUrl : ""
         }
     }
 
@@ -29,14 +25,11 @@ export default class Adminregistration extends Component {
 
      Adminregistration = (e) =>{
         e.preventDefault();
-        const{fname, mname, lname, username, pno, nic, email, password, imageUrl,cpassword,sliitid} = this.state
+        const{fname,phone, nic, email, password, imageUrl,cpassword,sliitid} = this.state
         const newadmin ={
             fname : fname,
-            mname : mname,
-            lname : lname,
-            username : username,
             sliitid : sliitid,
-            pno : pno,
+            phone : phone,
             nic : nic,
             email : email,
             password : password,
@@ -45,15 +38,12 @@ export default class Adminregistration extends Component {
         }
         console.log(newadmin)
         if(password === cpassword){
-            axios.post("http://localhost:8070/admin/add",newadmin).then((res)=>{
+            axios.post("http://localhost:8070/admin/adminsignup",newadmin).then((res)=>{
                 if(res.data){
                     this.setState({
                         fname : "",
-                        mname :"",
-                        lname :"",
-                        username :"",
                         sliitid:"",
-                        pno :"",
+                        phone :"",
                         nic :"",
                         email :"",
                         password :"",
@@ -81,17 +71,11 @@ export default class Adminregistration extends Component {
       <div>
           <h3>Admin Registration</h3>
             <form>
-                fname : <input type="text" name="fname" onChange={this.handleInputChange} value={this.setState.fname}/><br/><br/>
-
-                mname : <input type="text" name="mname" onChange={this.handleInputChange} value={this.setState.mname}/><br/><br/>
-
-                lname : <input type="text" name="lname" onChange={this.handleInputChange} value={this.setState.lname}/><br/><br/>
-
-                username : <input type="text" name="username" onChange={this.handleInputChange} value={this.setState.username}/><br/><br/>
+                full name : <input type="text" name="fname" onChange={this.handleInputChange} value={this.setState.fname}/><br/><br/>
 
                 SLIIT tid : <input type="text" name="sliitid" onChange={this.handleInputChange} value={this.setState.sliitid}/><br/><br/>
 
-                phone no : <input type="text" name="pno" onChange={this.handleInputChange} value={this.setState.pno}/><br/><br/>
+                phone no : <input type="text" name="phone" onChange={this.handleInputChange} value={this.setState.phone}/><br/><br/>
 
                 nic : <input type="text" name="nic" onChange={this.handleInputChange} value={this.setState.nic}/><br/><br/>
 

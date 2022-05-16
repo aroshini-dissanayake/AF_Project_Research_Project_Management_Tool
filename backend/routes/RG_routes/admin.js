@@ -7,9 +7,17 @@ const jwt = require("jsonwebtoken");
 let admin= require("../../models/RG_models/admin");
 
 //Admin Register to Web application
-router.post('/add', async (req, res) => {
+router.post('/adminsignup', async (req, res) => {
     try {
-      const {fname, mname, lname, username, pno, nic, sliitid, email, password, imageUrl} = req.body
+      const {
+        fname, 
+        phone,
+        nic,
+        sliitid,
+        email,
+        password,
+
+      } = req.body
 
       //Check application has already created account using given email or SLIIT staff id  
       let admin1 = await admin.findOne({email})
@@ -17,21 +25,17 @@ router.post('/add', async (req, res) => {
       if (admin1 || admin2) {
         throw new Error('Admin Account Already Exists')
       }
-      let admin3 = await admin.findOne({username})
+      let admin3 = await admin.findOne({sliitid})
       if(admin3){
         throw new Error('Username Already Exists')
       }
         admin1 = {
-        fname : fname,
-        mname : mname,
-        lname : lname,
-        username :username,
-        pno : pno,
+        fname: fname,
+        phone:phone,
         nic : nic,
         sliitid : sliitid,
         email : email,
         password : password,
-        imageUrl : imageUrl
       }
  
       //create new account and genarate token
@@ -46,10 +50,10 @@ router.post('/add', async (req, res) => {
   });
 
 //admin login function    
-router.post('/login', async (req, res) => {
+router.post('/adminsignin', async (req, res) => {
     try {
-      const {username,password} = req.body
-      const admin1 = await admin.findByCredentials(username, password)
+      const {sliitid,password} = req.body
+      const admin1 = await admin.findByCredentials(sliitid, password)
 
       if(admin1){
         const token = await admin1.generateAuthToken()

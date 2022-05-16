@@ -21,7 +21,7 @@ import Createmarkingschemes from './components/RD_Components/createmarkingscheme
 function App() {
   return (
    <BrowserRouter>
-   <Switch>
+     <Switch>
    
      <Route path = "/" component={BackendHomePage}exact/>
     
@@ -37,9 +37,9 @@ function App() {
      <Route path = "/topic/displayresearchtopic" component={ResearchTopic}/>
      <Route path = "/staff/staffprofile" component={StaffProfile}/>
  
-    <Route path = "/add" element={<Adminregistration/>}/> 
-    <Route path = "/login" element={<AdminLogin/>}/>  
-    <Route path = "/adminpage" element={<Adminpage/>}/>  
+    <Route path = "/adminsignup" component={Adminregistration}/> 
+    <Route path = "/adminsignin" component={AdminLogin}/>  
+    <Route path = "/adminpage" element={Adminpage}/>  
     <Route path = "/createmarkingschemes" element={<Createmarkingschemes/>}/> 
    
    </div>  

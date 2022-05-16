@@ -21,6 +21,7 @@ router.post("/staffsignup", async (req, res) => {
         pwd
       } = req.body;
 
+ //Check application has already created account using given email or SLIIT staff id  
   let staff_a = await staff.findOne({ email });
       if (staff_a) {
         throw new Error("User already exists");
