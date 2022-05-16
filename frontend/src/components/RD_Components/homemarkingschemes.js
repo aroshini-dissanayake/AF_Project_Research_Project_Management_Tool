@@ -33,15 +33,32 @@ componentDidMount(){
   render() {
     return (
       <div>
-        {this.state.createmarking.map(createmarking=>(
-            <div>
-                <p>{createmarking.deliverables}</p>
-                <p>{createmarking.duedate}</p>
-                <p>{createmarking.contribution}</p>
-                <p>{createmarking.methodofsubmission}</p>
-                <p>{createmarking.marksallocation}</p>
-                </div>
-        ))}  
+        <p>Marking Schemes</p>
+        <table class="table">
+        <thead>
+            <tr>
+               <th scope ="col"> Criteria </th>
+               <th scope ="col"> Good (10-8) </th>
+               <th scope ="col"> Avarage (4-7) </th>
+               <th scope ="col"> Poor (0-3) </th>
+               <th scope ="col"> Comment </th>
+            </tr>
+        </thead>
+        <tbody>
+          {this.state.createmarking.map((createmarking,index) => (
+             <tr>
+          <th scope="row">{index+1}</th>
+          <td>{createmarking.deliverables}</td>
+          <td>{createmarking.duedate}</td>
+          <td>{createmarking.contribution}</td>
+          <td>{createmarking.methodofsubmission}</td>
+          <td>{createmarking.marksallocation}</td>
+          
+               </tr>
+
+          ))}
+        </tbody>
+        </table>
       </div>
     )
   }
