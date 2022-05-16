@@ -173,11 +173,11 @@ const StaffProfile = () => {
                               <div class="col-sm-12"><br/>
                                   <center>
                 <button style={{background: "#151B54", color:"#ffff"}} onClick={staffLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
-        <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteStaff} class="btn btn " target="__blank">Delete Account</button></center>
-            </div>
-               </div>     
-                   </div>  
-                       </div>
+           <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteStaff} class="btn btn " target="__blank">Delete Account</button></center>
+              </div>
+                  </div>     
+                      </div>  
+                          </div>
                            </div>
                       </div>
                    </div>
