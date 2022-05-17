@@ -32,7 +32,7 @@ export default class StudentLogin extends Component {
           token: res.data.token
         })
         localStorage.setItem("Authorization", res.data.token)
-       // window.location = "/home1"
+       window.location = "/mainhome"
         alert('loging successfull');
       })
       .catch((err) => {
@@ -53,13 +53,8 @@ export default class StudentLogin extends Component {
  
     render() {
       return (
-        
-          
-          
-        
-               
+  
              <div>
-
                     <form onSubmit={this.userLoginSubmit} name="form"> 
 
                       <label  >Student ID</label>
@@ -68,7 +63,7 @@ export default class StudentLogin extends Component {
                       <input  type="password" name="password" placeholder="Enter your Password" onChange={e => this.setState({ pwd: e.target.value })} required/> 
                       <br/>   
                        
-                      <button type="submit" >Login</button> 
+                      <button type="submit">Login</button> 
                       
                         
                     </form>
