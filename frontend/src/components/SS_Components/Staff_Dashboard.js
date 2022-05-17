@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import StaffNavbar from "../Staff-Layout/StaffNavbar";
+import Footer from '../Layout/footer';
 
 export default class Staff_Dashboard extends Component {
     render(){
@@ -86,11 +87,11 @@ export default class Staff_Dashboard extends Component {
                             height="280px"
                             alt="..."/>
                         </div>
-                    </div>
-                   </div>
-                  
-                 </div>
-                </div>
+                       </div>
+                     </div>
+                  </div><br/>
+                <Footer/>
+             </div>
         )
     }
 }

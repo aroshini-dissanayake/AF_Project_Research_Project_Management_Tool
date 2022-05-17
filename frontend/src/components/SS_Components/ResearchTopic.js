@@ -17,6 +17,17 @@ export default class ResearchTopic extends Component{
         this.retrieveResearchtopic();
     }
 
+    // acceptTopic(id){
+    //    console.log(id);
+    //     axios.post(`http://localhost:8070/accept/accepttopic/${id}`).then(res=>{
+    //         console.log(res.data.status)
+    //   }).catch((e)=>{
+    //       console.log(e);
+    //   })
+
+    // }
+
+
 //Search 
 filterData(researchtopic,searchKey){
     const result = researchtopic.filter((researchtopic)=>
@@ -82,7 +93,8 @@ filterData(researchtopic,searchKey){
                         <td> 
                              &nbsp;&nbsp;
                              <IconButton aria-label='btn btn-success' size="small"
-                             style={{background: "#008000"}} >
+                             style={{background: "#008000"}}
+                              onClick={()=>{this.acceptTopic(researchtopic._id)}}>
                              <CheckIcon  fontSize="small" style={{color: "white"}}/>
                              </IconButton> 
                          </td>
