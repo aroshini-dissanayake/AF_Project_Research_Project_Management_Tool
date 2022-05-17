@@ -28,7 +28,7 @@ app.use(express.json());
 
 //routes use
 // app.use(studentgroupRoutes);
-app.use("/researchtopic",researchtopicRoutes);
+app.use("/addResearchTopic",researchtopicRoutes);
 
 
 const URL = process.env.MONGODB_URL;

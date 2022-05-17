@@ -12,6 +12,16 @@ const studentGroupSchema = new mongoose.Schema({
     trim: true,
   },
 
+  researchTopic :{
+    type: String,
+    required:true,
+  },
+
+  researchField :{
+  type: String,
+  required:true,
+  },
+
   groupMembers: [{
     _id: {
       type: String,
