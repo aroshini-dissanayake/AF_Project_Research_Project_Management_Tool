@@ -4,7 +4,7 @@ const validator = require("validator");
 const adminauth = require('../../middleware/Admin_middleware/adminauth')
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-let admin= require("../../models/RG_models/admin");
+const admin= require("../../models/RG_models/admin");
 
 //Admin Register to Web application
 router.post('/adminsignup', async (req, res) => {
