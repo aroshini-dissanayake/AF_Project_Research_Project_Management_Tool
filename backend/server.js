@@ -68,13 +68,9 @@ console.log("Mongodb connection success!!!");
 const studentgroupRouter = require("./routes/SS_routes/studentgroups");
 const studentRouter = require("./routes/AA_routes/student");
 
-const studentGroupRouter = require("./routes/AA_routes/student-group")
-
-
 
 // rotues
 app.use("/student",studentRouter);
-app.use("/studentgroup",studentGroupRouter);
 
 const staffRouter =require("./routes/SS_routes/staff");
 const researchTopicRouter = require("./routes/SS_routes/researchtopic");

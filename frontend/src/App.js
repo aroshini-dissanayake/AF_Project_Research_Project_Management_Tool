@@ -9,7 +9,7 @@ import Profile from './components/AA_Components/student-profile';
 import MainHome from './components/AA_Components/mainhome';
 import Faculties from './components/AA_Components/faculties';
 
-import {BrowserRouter,Route,Switch} from 'react-router-dom';
+import {BrowserRouter,Route,Routes,Switch} from 'react-router-dom';
 import DisplayStudentgroups from './components/SS_Components/Display_studentgroups';
 import Add_panel_member from './components/SS_Components/Add_panel_member'
 import StaffLogin from './components/SS_Components/staff-login';
@@ -32,12 +32,12 @@ function App() {
   return (
    <BrowserRouter>
 
-   <Switch>
-     {/* <Route path = "/" component={<StudentLogin/>}exact/> */}
+   {/* <Switch>
+     <Route path = "/" component={<StudentLogin/>}exact/>
      <Route path = "/stafflogin" component={StaffLogin}exact/>
-     {/* <Route path = "/displaystudentgroups" component ={DisplayStudentgroups}exact />   */}
+     <Route path = "/displaystudentgroups" component ={DisplayStudentgroups}exact />  
      <div>  
-     {/* <Route path = "/signup" component={Signup}/> */}
+     <Route path = "/signup" component={Signup}/>
      <Route path = "/staffsignup" component={StaffSignup}/>
      <Route path = "/staffdashboard" component={Staff_Dashboard}/>
      <Route path = "/group/displaystudentgroups" component ={DisplayStudentgroups} />  
@@ -45,7 +45,7 @@ function App() {
      <Route path = "/topic/displayresearchtopic" component={ResearchTopic}/>
      </div>  
  
-    </Switch>   
+    </Switch>    */}
 
    <Routes>
    <Route path = "/" element={<StudentLogin/>}/>

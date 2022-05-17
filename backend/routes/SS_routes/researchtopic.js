@@ -1,5 +1,5 @@
 const express = require ('express');
-const Researchtopic = require('../../models/IS_models/Researchtopic');
+const Researchtopic = require('../../models/IS_models/researchtopic');
 
 const router = express.Router();
 
