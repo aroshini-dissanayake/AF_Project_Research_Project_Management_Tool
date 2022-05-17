@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const researchtopicSchema = new mongoose.Schema({
 
     // researchTopic :{
@@ -20,6 +19,4 @@ const researchtopicSchema = new mongoose.Schema({
 
 const Researchtopic = mongoose.model("researchtopic",researchtopicSchema);
 module.exports = Researchtopic;
-
-
 

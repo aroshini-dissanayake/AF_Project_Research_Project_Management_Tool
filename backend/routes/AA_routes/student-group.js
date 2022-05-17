@@ -8,7 +8,14 @@ let group = require("../../models/AA_models/student-group");
 // @description   add research groups to the student profile
 router.post("/add/:id", auth, async (req, res) => {
     const student_id = req.params.id
+    const groupId = req.params.id
     try {
+      const group1 = await group.findById(groupId)
+
+      if (!group1) {
+        throw new Error('There is no group..!!!')
+      }
+      
       const student = await Student.findById(req.Std._id)
       if (!student) {
         throw new Error('There is no user')
@@ -17,22 +24,22 @@ router.post("/add/:id", auth, async (req, res) => {
 
       let student_groupItem = {
         // student_id: student_id,
-        member1: student.member1,
-        member2: student.member2,
-        member3: student.member3,
-        member4: student.member4,
-        phone1: student.phone1,
-        phone2: student.phone2,
-        phone3: student.phone3,
-        phone4: student.phone4,
-        student_id1: student.student_id1,
-        student_id2: student.student_id2,
-        student_id3: student.student_id3,
-        student_id4: student.student_id4,
-        email1: student.email1,
-        email2: student.email2,
-        email3: student.email3,
-        email4: student.email4
+        member1_name: student.member1_name,
+        member2_name: student.member2_name,
+        member3_name: student.member3_name,
+        member4_name: student.member4_name,
+        member1_student_id: student.member1_student_id,
+        member2_student_id: student.member2_student_id,
+        member3_student_id: student.member3_student_id,
+        member4_student_id: student.member4_student_id,
+        member1_phone: student.member1_phone,
+        member2_phone: student.member2_phone,
+        member3_phone: student.member3_phone,
+        member4_phone: student.member4_phone,
+        member1_email: student.member1_email,
+        member2_email: student.member2_email,
+        member3_email: student.member3_email,
+        member4_email: student.member4_email
       };
   
       await group.findOneAndUpdate(
