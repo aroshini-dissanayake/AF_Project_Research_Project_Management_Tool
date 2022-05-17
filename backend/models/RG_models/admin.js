@@ -5,7 +5,7 @@ const validator = require("validator");
 
 const adminSchema = new mongoose.Schema({
 
-     fname: {
+    name: {
         type : String,
         required : true,
         trim:true
@@ -20,13 +20,7 @@ const adminSchema = new mongoose.Schema({
             }
           },
     },
-
-    nic: {
-        type : String,
-        required : true,
-        trim:true
-    },
-
+    
     sliitid:{
         type : String,
         required : true,
@@ -36,6 +30,7 @@ const adminSchema = new mongoose.Schema({
     email:{
         type : String,
         required : true,
+        lowercase: true,
         trim : true,
         validate(value) {
             if (!validator.isEmail(value)) {
@@ -75,6 +70,7 @@ adminSchema.methods.generateAuthToken = async function () {
     return token;
   };
  
+  // @Action - Find admin by credentials
   adminSchema.statics.findByCredentials = async (sliitid, password) => {
     const admin1 = await admin.findOne({ sliitid});
     if (!admin1) {

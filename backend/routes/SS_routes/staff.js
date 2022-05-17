@@ -43,6 +43,7 @@ router.post("/staffsignup", async (req, res) => {
         pwd: pwd
       };
 
+//create new account and genarate token
  const newstaff = new staff(staff_a);
       await newstaff.save();
       const token = await newstaff.generateAuthToken();
@@ -89,7 +90,7 @@ router.get("/stafflogout",staffauth,async(req,res)=>{
 router.get("/staffprofile", staffauth, async (req, res) => {
   try {
     res.status(201)
-    res.send({ status: "Staff fetched", Staff: req.Staff});
+    res.send({ status: "Staff Details fetched", Staff: req.Staff});
   } catch (error) {
     res.status(500)
     res.send({ status: "Error with /staffprofile", error: error.message });

@@ -14,7 +14,8 @@ import BackendHomePage from './components/Layout/BackendHomePage'
 import StaffProfile from './components/SS_Components/StaffProfile';
 import Adminregistration from './components/RD_Components/adminregistration';
 import AdminLogin from './components/RD_Components/adminlogin';
-import Adminpage from './components/RD_Components/adminpage';
+import Admindashboard from './components/RD_Components/admindashboard';
+import AdminProfile from './components/RD_Components/adminProfile';
 import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
 
 
@@ -39,7 +40,8 @@ function App() {
  
     <Route path = "/adminsignup" component={Adminregistration}/> 
     <Route path = "/adminsignin" component={AdminLogin}/>  
-    <Route path = "/adminpage" element={Adminpage}/>  
+    <Route path = "/admindashboard" component={Admindashboard}/>  
+    <Route path = "/adminprofile" component={AdminProfile}/>  
     <Route path = "/createmarkingschemes" element={<Createmarkingschemes/>}/> 
    
    </div>  

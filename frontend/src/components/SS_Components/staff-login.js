@@ -30,12 +30,12 @@ export default class StaffLogin extends Component {
           })
           localStorage.setItem("Authorization", res.data.token)
           window.location = "/staffdashboard"
-          alert('loging successfull');
+          alert('Loging Successfull..!!');
         })
         .catch((err) => {
           console.log(err)
           this.setState({open: true})
-          alert('loging unsucces',err);
+          alert('Loging Unsucces',err);
         })
       }
     
