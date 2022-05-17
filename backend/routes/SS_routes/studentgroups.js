@@ -37,21 +37,22 @@ router.route("/displaystudentgroups").get((req, res) => {
 
 
 
-//update studentgroups
-router.route('/update/:groupID').put((req,res)=>{
-  Studentgroups.findByIdAndUpdate(
-      req.params.groupID,{
-          $set:req.body
-      },
-      (err,studentgroups)=>{
+// //update studentgroups
+// router.route('/update/:groupID').put((req,res)=>{
+//   Studentgroups.findByIdAndUpdate(
+//       req.params.groupID,{
+//           $set:req.body
+//       },
+//       (err,studentgroups)=>{
           
-          if(err){
-              return res.status(400).json({error:err});
-          }
+//           if(err){
+//               return res.status(400).json({error:err});
+//           }
           
-          return res.status(200).json({
-              success: "Update Successfully"
-          });
+//           return res.status(200).json({
+//               success: "Update Successfully"
+//           });
+        
 
 //get a specific student groups
 router.route("/displaystudentgroups/:id").get((req, res) => {

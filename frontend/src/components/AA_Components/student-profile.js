@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import UpdateProfile from './student-update'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import MainHome from './mainhome';
-
+//import Navbar from '../Layout/Navbar';
 
 toast.configure()
 
@@ -83,7 +83,8 @@ const Profile = () => {
 
    return (
       <div class="bod">
-          <MainHome/><br/><br/>
+        <MainHome/>
+          {/* <Navbar/><br/><br/> */}
       <div class="container">
       <div class="main-bod">
       
