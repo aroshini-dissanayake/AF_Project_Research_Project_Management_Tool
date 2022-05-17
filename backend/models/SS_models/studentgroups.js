@@ -14,7 +14,7 @@ const studentgroupsSchema = new mongoose.Schema({
 
     panelMember:{
         type: String,
-        required:true,
+        required:false,
     }
 });
 
