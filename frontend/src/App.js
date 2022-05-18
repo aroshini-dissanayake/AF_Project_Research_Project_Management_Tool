@@ -9,9 +9,10 @@ import './App.css';
 // import Adminregistration from './components/RD_Components/adminregistration';
 // import AdminLogin from './components/RD_Components/adminlogin';
 // import Adminpage from './components/RD_Components/adminpage';
-//import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
+import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
 import Homemarkingschemes from './components/RD_Components/homemarkingschemes';
-
+import Editmarkingschemes from './components/RD_Components/editmarkingschemes';
+import Markingschemesdetails from './components/RD_Components/markingschemesdetails';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
     <Route path = "/adminpage" element={<Adminpage/>}/>   */}
     {/* <Route path = "/createmarkingschemes" element={<Createmarkingschemes/>}/>  */}
     <Route path = "/homemarkingschemes" element={<Homemarkingschemes/>}/> 
+    <Route path = "/addmarking" element={<Createmarkingschemes/>}/>
+    <Route path = "/editmarking/:createmarkingID" element={<Editmarkingschemes/>}/>
+    <Route path = "/markingdetails/:createmarkingID" element={<Markingschemesdetails/>}/>
    </Routes>
    </BrowserRouter>
   );
