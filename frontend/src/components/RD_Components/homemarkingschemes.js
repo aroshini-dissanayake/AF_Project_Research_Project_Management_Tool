@@ -67,6 +67,7 @@ componentDidMount(){
           ))}
         </tbody>
         </table>
+        <button className="btn btn-success"><a href="/addmarking" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button>
       </div>
     )
   }
