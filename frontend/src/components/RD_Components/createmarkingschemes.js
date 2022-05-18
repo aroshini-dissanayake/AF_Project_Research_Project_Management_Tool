@@ -31,7 +31,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
             };
 
-            axios.post("http://localhost:8070/createmarking/addmarking",data)
+            axios.post("http://localhost:8070/createmarking/save",data)
             .then(()=>{
               toast.success('Marking Added Successfully',{position:toast.POSITION.TOP_CENTER})
               window.setTimeout(function() {
