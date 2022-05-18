@@ -31,7 +31,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
             };
 
-            axios.post("http://localhost:8070/createmarking/addmarking",data)
+            axios.post("http://localhost:8070/createmarking/save",data)
             .then(()=>{
               toast.success('Marking Added Successfully',{position:toast.POSITION.TOP_CENTER})
               window.setTimeout(function() {
@@ -58,7 +58,7 @@ import 'react-toastify/dist/ReactToastify.css';
              <div className="card shadow mb-8 w-50">
                <div className="card-header py-3">
             
-               <h1 className="m-0 font-weight-bold text-dark" id="randy">Create New Marking</h1><br/>
+               <h1 className="m-0 font-weight-bold text-dark" id="randy">Create New Marking Scheme</h1><br/>
                </div>
                <div className="card-body">
                <div className = "col-md-8 mt-4 mx-auto">
@@ -70,10 +70,10 @@ import 'react-toastify/dist/ReactToastify.css';
                     <input type="text"
                       className="form-control"
                       // pattern="[a-z,A-Z,][0,9]"
-                      title="Please Enter Valid Order ID"
-                      name="orderid"
-                       id="orderid"
-                       placeholder="Enter Order ID"
+                      title="Please Enter Valid Inputs"
+                      name="deliverables"
+                       id="deliverables"
+                       placeholder="Enter Deliverables"
                        onChange={(e) => {
                         setdeliverables(e.target.value)
                        }}
@@ -81,14 +81,14 @@ import 'react-toastify/dist/ReactToastify.css';
                   </div>
     
                   <div className="form-group" style={{marginBottom:'15px'}}>
-                     <label style={{marginBottom:'5px'}}> Number Of Items </label>
-                     <input type="number"
+                     <label style={{marginBottom:'5px'}}> Due Date </label>
+                     <input type="date"
                       className="form-control"
                       pattern="[0-9]"
-                      title="Please Enter Only Numbers"
-                       name="numberofitems"
-                       id="numberofitems"
-                        placeholder="Enter Number Of Items"
+                      title="Please Enter valid Date"
+                       name="duedate"
+                       id="duedate"
+                        placeholder="Enter Date"
                     onChange={(e)=>{
                         setduedate(e.target.value)}}
                      required/>
@@ -97,14 +97,14 @@ import 'react-toastify/dist/ReactToastify.css';
     
     
                   <div className ="form-group" style={{marginBottom:'15px'}}>
-                     <label style={{marginBottom:'5px'}}>Due Date</label>
+                     <label style={{marginBottom:'5px'}}>Contribution</label>
                      <input 
-                      type="date" 
+                      type="text" 
                       className="form-control"
-                      name="deliverdate" 
-                      id="deliverdate" 
-                      title="Please Enter Valid Date"
-                      placeholder="Enter Deliver Date"
+                      name="contribution" 
+                      id="contribution" 
+                      title="Please Enter Valid Inputs"
+                      placeholder="Enter Contribution"
                       onChange={(e)=>{
                         setcontribution(e.target.value)}}
                     />
@@ -112,14 +112,14 @@ import 'react-toastify/dist/ReactToastify.css';
     
                   
                   <div className ="form-group" style={{marginBottom:'15px'}}>
-                     <label style={{marginBottom:'5px'}}>Contribution</label>
+                     <label style={{marginBottom:'5px'}}>Method Of Submission</label>
                      <input 
                       type="text"
                       className="form-control" 
-                      name="delivercost"
-                      id="delivercost" 
-                      title="Please Enter Valid Cost"
-                      placeholder="Enter Deliver Cost" 
+                      name="methodofsubmission"
+                      id="methodofsubmission" 
+                      title="Please Enter Valid Inputs"
+                      placeholder="Enter Deliver Inputs" 
                       onChange={(e)=>{
                         setmethodofsubmission(e.target.value)}}
                     required/>
@@ -127,88 +127,20 @@ import 'react-toastify/dist/ReactToastify.css';
     
                  
                   <div className ="form-group" style={{marginBottom:'15px'}}>
-                     <label style={{marginBottom:'5px'}}>Method Of Submission</label>
+                     <label style={{marginBottom:'5px'}}>Marks Allocation</label>
                      <input 
                       type="text" 
                       className="form-control"
-                      name="phonenumber"
-                      id="phonenumber"
-                      maxLength="10"
-                      pattern ="\d{10}"
-                      title="Please Enter Valid Phone Number"
-                      placeholder="Enter Phone Number"
+                      name="marksallocation"
+                      id="marksallocation"
+                    //   maxLength="10"
+                    //   pattern ="\d{10}"
+                      title="Please Enter Valid Inputs"
+                      placeholder="Enter Marks"
                       onChange={(e)=>{
                       setmarksallocation(e.target.value)}}
                     required/>
                   </div>
-    
-                
-                  {/* <div className ="form-group" style={{marginBottom:'15px'}}>
-                     <label style={{marginBottom:'5px'}}>Marks Allocation</label>
-                     <input 
-                      type="email"
-                       className="form-control"
-                       name="useremail" 
-                       id="useremail" 
-                       placeholder="Enter User Email"
-                       pattern="(?![.-])((?![.-][.-])[a-zA-Z\d.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}"
-                       title="Please Enter Valid Email" 
-                       onChange={(e)=>{
-                       setuseremail(e.target.value)}}
-                    required/>
-                  </div> */}
-    
-                 
-                  {/* <div className ="form-group" style={{marginBottom:'15px'}}>
-                     <label style={{marginBottom:'5px'}}>Courier Service</label>
-                     <input 
-                      type="text"
-                      className="form-control"
-                      name="courierservice"
-                      id="courierservice"
-                      pattern="[A-Za-z]{3-20}"
-                      title="Please Enter Valid Courier Service"
-                      placeholder="Enter Courier Service" 
-                      onChange={(e)=>{
-                      setcourierservice(e.target.value)}}
-                    required/>
-                  </div>
-    
-                  
-                  <div className ="form-group" style={{marginBottom:'15px'}}>
-                     <label style={{marginBottom:'5px'}}>Receiver Details</label>
-                     <input 
-                     type="text" 
-                     className="form-control" 
-                     name="receiverdetails"
-                     id="receiverdetails"
-                     pattern="[A-Za-z]{3-20}"
-                       title="Please Enter Valid Receiver Details" 
-                     placeholder="Enter Receiver Details" 
-                    
-                    onChange={(e)=>{
-                      setreceiverdetails(e.target.value)}}
-                    required/>
-                  </div>
-    
-                  
-                  <div className ="form-group" style={{marginBottom:'15px'}}>
-                     <label style={{marginBottom:'5px'}}>Destination</label>
-                     <input 
-                     type="text"
-                      className="form-control" 
-                      name="destination" 
-                      id="destination" 
-                      pattern="[A-Za-z]{3-20}"
-                       title="Please Enter Valid Destination"
-                      placeholder="Enter Destination" 
-                   
-                    onChange={(e)=>{
-                      setdestination(e.target.value)}}
-                    required/>
-                  </div> */}
-             
-    
                   <div className="form-group">
                     <Button className="form-group" type="submit" style={{ marginTop: '5px', background: "#F75D59", width: 100 + "%" }} startIcon={<LocalShippingIcon />}>
     
@@ -216,11 +148,10 @@ import 'react-toastify/dist/ReactToastify.css';
                     </Button>
                   </div>
                 </form>
-              </div>
+              </div> 
             </div>
           </div>
         </div>
      </div>
       )
-    
-                    }
+}

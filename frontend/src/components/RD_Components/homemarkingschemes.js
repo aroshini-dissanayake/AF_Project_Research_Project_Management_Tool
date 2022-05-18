@@ -54,7 +54,7 @@ componentDidMount(){
           <td>{createmarking.methodofsubmission}</td>
           <td>{createmarking.marksallocation}</td>
           <td> 
-            <a className="btn btn-warning" href="#">
+            <a className="btn btn-warning" href={`/editmarking/${createmarking._id}`}>
               <i classname="fas fa-edit"></i>&nbsp;Edit
             </a>
             &nbsp;
