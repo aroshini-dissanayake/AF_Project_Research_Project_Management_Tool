@@ -46,7 +46,7 @@ router.route('/update/:createmarkingID').put((req,res)=>{
         req.params.createmarkingID,{
             $set:req.body
         },
-        (err,delivery)=>{
+        (err,createmarking)=>{
             
             if(err){
                 return res.status(400).json({error:err});
@@ -70,6 +70,23 @@ router.route('/delete/:createmarkingID').delete((req,res)=>{
             message: "Delete Successfull",deletecreatemarking
         });
     });
+ });
+
+ //get specific data
+
+ router.route('/specific/:createmarkingID').get((req,res)=>{
+      let createmarkingID = req.params.createmarkingID;
+      createmarking.findById(createmarkingID,(err,createmarking)=>{
+
+        if(err) {
+            return res.status(400).json({success:false, err})
+       
+       }
+       return res.status(200).json({
+       success:true,createmarking,
+        });
+
+     });
  });
  
 module.exports = router;
