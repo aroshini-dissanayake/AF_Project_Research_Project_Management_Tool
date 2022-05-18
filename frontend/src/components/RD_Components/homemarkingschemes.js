@@ -34,7 +34,7 @@ componentDidMount(){
     return (
       <div className="container">
         <p>Marking Schemes</p>
-        <table class="table">
+        <table className="table">
         <thead>
             <tr>
                <th scope ="col"> Criteria </th>
