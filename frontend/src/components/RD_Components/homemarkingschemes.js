@@ -32,7 +32,7 @@ componentDidMount(){
 
   render() {
     return (
-      <div>
+      <div className="container">
         <p>Marking Schemes</p>
         <table class="table">
         <thead>
@@ -53,8 +53,16 @@ componentDidMount(){
           <td>{createmarking.contribution}</td>
           <td>{createmarking.methodofsubmission}</td>
           <td>{createmarking.marksallocation}</td>
-          
-               </tr>
+          <td> 
+            <a className="btn btn-warning" href="#">
+              <i classname="fas fa-edit"></i>&nbsp;Edit
+            </a>
+            &nbsp;
+            <a className="btn btn-danger" href="#">
+              <i className="far fa-trash-alt"></i>&nbsp;Delete
+            </a>
+              </td>
+                 </tr>
 
           ))}
         </tbody>
