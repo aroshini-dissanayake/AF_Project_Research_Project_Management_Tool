@@ -48,13 +48,18 @@ componentDidMount(){
           {this.state.createmarking.map((createmarking,index) => (
              <tr>
           <th scope="row">{index+1}</th>
-          <td>{createmarking.deliverables}</td>
+          <td>
+            
+            <a href={`/markingdetails/${createmarking._id}`} style={{textDecoration:'none'}}>
+            {createmarking.deliverables}
+            </a>
+            </td>
           <td>{createmarking.duedate}</td>
           <td>{createmarking.contribution}</td>
           <td>{createmarking.methodofsubmission}</td>
           <td>{createmarking.marksallocation}</td>
           <td> 
-            <a className="btn btn-warning" href={`/editmarking/${createmarking._id}`}>
+            <a className="btn btn-warning" href={`/update/${createmarking._id}`}>
               <i classname="fas fa-edit"></i>&nbsp;Edit
             </a>
             &nbsp;

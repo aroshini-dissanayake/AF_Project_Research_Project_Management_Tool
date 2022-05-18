@@ -26,10 +26,9 @@ function App() {
     {/* <Route path = "/add" element={<Adminregistration/>}/> 
     <Route path = "/login" element={<AdminLogin/>}/>  
     <Route path = "/adminpage" element={<Adminpage/>}/>   */}
-    {/* <Route path = "/createmarkingschemes" element={<Createmarkingschemes/>}/>  */}
     <Route path = "/homemarkingschemes" element={<Homemarkingschemes/>}/> 
     <Route path = "/addmarking" element={<Createmarkingschemes/>}/>
-    <Route path = "/editmarking/:createmarkingID" element={<Editmarkingschemes/>}/>
+    <Route path = "/update/:createmarkingID" element={<Editmarkingschemes/>}/>
     <Route path = "/markingdetails/:createmarkingID" element={<Markingschemesdetails/>}/>
    </Routes>
    </BrowserRouter>
