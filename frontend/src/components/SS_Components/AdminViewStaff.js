@@ -49,7 +49,7 @@ handleSearchArea = (e)=>{
     return (   
     <div >
        <AdminNavBar/> <br/><br/>
-         <h3 align="center" style={{fontSize:'30px',fontFamily:"sans-serif"}}><b><u>All Staff Member Details </u></b></h3><br/>
+         <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}><b><u>All Staff Member Details </u></b></h3><br/>
            <div className='container'>
               <div className="col-md-3" >
                  <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search Staff Member" onChange={this.handleSearchArea}/>
@@ -62,8 +62,8 @@ handleSearchArea = (e)=>{
                 <option value="supervisor" >Supervisor</option>
              <option value="co-supervisor" >Co-Supervisor</option>
           <option value="panel member" >Panel Member</option>
-    </select> </div>                        
-       <table className = "table table-hover" style={{marginTop:'30px',background: "#FFFFFF"}} >
+    </select> </div><br></br>                        
+       <table className = "table table-hover">
           <thead>
              <tr bgcolor="#79BAEC">
                 <th scope='col'>No</th>

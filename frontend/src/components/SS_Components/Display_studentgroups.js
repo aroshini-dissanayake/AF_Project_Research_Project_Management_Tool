@@ -3,6 +3,7 @@ import axios from "axios";
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import AdminNavBar from '../Layout/AdminNavBar';
 
 
 export default class Display_studentgroups extends Component{
@@ -29,41 +30,43 @@ export default class Display_studentgroups extends Component{
         })
     }
     render(){
-        return(      
-        <div className='container'>  
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope='col'>#</th>
-                        <th scope='col'>Group Name</th>
-                        <th scope='col'>Panel Member</th>
-                        <th scope='col'>Actions</th>
-                    </tr>
-                </thead>
+        return(    
+            <div>
+               <AdminNavBar/>  <br/><br/> <br/>
+               <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Add Panel Members </u></b></h3><br/><br/>
+                 <div className='container'>  
+                    <table class="table">
+                       <thead>
+                     <tr bgcolor="#79BAEC">
+                 <th scope='col'>No</th>
+             <th scope='col'>Group Name</th>
+         <th scope='col'>Panel Member</th>
+     <th scope='col'>Actions</th>
+         </tr>
+            </thead>
                 <tbody>
-                {this.state.studentgroups.map((studentgroups,index) =>(
-                    <tr>
-                        <th scope='row'>{index + 1}</th>
-                        <td>{studentgroups.group_name}</td>
-                        <td>{studentgroups.panelMember}</td>
-                        <td>
-                        
+                   {this.state.studentgroups.map((studentgroups,index) =>(
+                       <tr>
+                          <th scope='row'>{index + 1}</th>
+                             <td>{studentgroups.group_name}</td>
+                           <td>{studentgroups.panelMember}</td>
+                        <td>                       
                              <IconButton aria-label='btn btn-success' size="small"
-                             style={{background: "#FBB917"}}
-                                onClick={()=>this.onReadirect(studentgroups._id)} >
-                             <AddCircleOutlineIcon  fontSize="small" style={{color: "black"}}/>
-                             </IconButton> 
-                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            
-                             <IconButton aria-label="delete" size="small"
-                              style={{background: "#800000"}} >
-                             <DeleteForeverIcon fontSize="small"  style={{color: "white"}}/>
+                                style={{background: "#FBB917"}}
+                                   onClick={()=>this.onReadirect(studentgroups._id)} >
+                                      <AddCircleOutlineIcon  fontSize="small" style={{color: "black"}}/>
+                                         </IconButton> 
+                                             &nbsp;&nbsp;&nbsp;&nbsp;                           
+                                         <IconButton aria-label="delete" size="small"
+                                      style={{background: "#800000"}} >
+                                  <DeleteForeverIcon fontSize="small"  style={{color: "white"}}/>
                              </IconButton>
                         </td>
                     </tr>
                 ))}
-                </tbody>
+        </tbody>
             </table>
-        </div>     
+               </div>     
+                  </div>  
         )}
 }
