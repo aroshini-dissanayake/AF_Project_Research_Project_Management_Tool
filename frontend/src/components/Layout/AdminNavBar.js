@@ -20,16 +20,16 @@ export default class StaffNavbar extends Component {
         </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
 
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#" style={{color: "#ffff"}}>Panel Members</a>
-        </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+          <a class="nav-link" aria-current="page" href="/displayStaffRole" style={{color: "#ffff"}}>Staff Members List</a>
+        </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 
 
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#" style={{color: "#ffff"}}>Marking Schemes</a>
-        </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+        </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
 
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="group/displaystudentgroups" style={{color: "#ffff"}}>Student Grops</a>
-        </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+        </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 
 
 
         <li class="nav-item dropdown">

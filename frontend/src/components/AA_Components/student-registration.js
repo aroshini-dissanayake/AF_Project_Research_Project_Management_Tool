@@ -171,7 +171,7 @@ export default function Signup(){
             </form>
           </div>
                       <center><label class="label">Already Registered?</label> </center>
-                            <center><li class="signin-active"><a href="/" class="btn">Sign In</a></li></center>
+                            <center><li class="signin-active"><a href="/signin" class="btn">Sign In</a></li></center>
         </div>
       </div>
       </div>  
