@@ -33,8 +33,8 @@ export default class Display_studentgroups extends Component{
         return(    
             <div>
                <AdminNavBar/>  <br/><br/> <br/>
-               <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Add Panel Members </u></b></h3><br/><br/>
-                 <div className='container'>  
+                <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Add Panel Members </u></b></h3><br/><br/>
+                  <div className='container'>  
                     <table class="table">
                        <thead>
                      <tr bgcolor="#79BAEC">
