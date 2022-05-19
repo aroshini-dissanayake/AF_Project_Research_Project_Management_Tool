@@ -19,10 +19,10 @@ export default class Display_studentgroups extends Component{
        this.retrieveStudentGroups();
    }
     retrieveStudentGroups(){
-        axios.get("http://localhost:8070/group/displaystudentgroups").then(res=>{
+        axios.get("http://localhost:8070/student/displaygroups").then(res=>{
             if(res.data.success){
                 this.setState({
-                    studentgroups:res.data.existingStudentgroups
+                    studentgroups:res.data.existingGroups
                 });
                 console.log(this.state.studentgroups)
             }
@@ -35,7 +35,6 @@ export default class Display_studentgroups extends Component{
                 <thead>
                     <tr>
                         <th scope='col'>#</th>
-                        <th scope='col'>Student Name</th>
                         <th scope='col'>Group Name</th>
                         <th scope='col'>Panel Member</th>
                         <th scope='col'>Actions</th>
@@ -45,8 +44,7 @@ export default class Display_studentgroups extends Component{
                 {this.state.studentgroups.map((studentgroups,index) =>(
                     <tr>
                         <th scope='row'>{index + 1}</th>
-                        <td>{studentgroups.studentName}</td>
-                        <td>{studentgroups.groupName}</td>
+                        <td>{studentgroups.group_name}</td>
                         <td>{studentgroups.panelMember}</td>
                         <td>
                         

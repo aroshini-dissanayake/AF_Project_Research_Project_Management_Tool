@@ -21,7 +21,7 @@ import AdminLogin from './components/RD_Components/adminlogin';
 import Admindashboard from './components/RD_Components/admindashboard';
 import AdminProfile from './components/RD_Components/adminProfile';
 import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
-
+import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
      <Route path = "/studentgroups/:id" component={Add_panel_member}/>
      <Route path = "/topic/displayresearchtopic" component={ResearchTopic}/>
      <Route path = "/staff/staffprofile" component={StaffProfile}/>
- 
+     <Route path = "/displayStaffRole" component={AdminViewStaff}/>
 
 
 
