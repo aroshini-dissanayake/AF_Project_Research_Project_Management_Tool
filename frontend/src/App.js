@@ -43,7 +43,6 @@ function App() {
      <Route path = "/panelmember" component={PanelMembers}/>
 
 
-
     <Route path = "/signin" component={StudentLogin}/>
     <Route path = "/signup" component={Signup}/>
     <Route path = "/profile" component={Profile}/>
