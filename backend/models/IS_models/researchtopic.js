@@ -6,7 +6,7 @@ const researchtopicSchema = new mongoose.Schema({
           
            },
          
-          group_name:{
+          groupName:{
               type: String,
               required:true,
              },
