@@ -49,22 +49,23 @@ handleSearchArea = (e)=>{
     return (   
     <div >
        <AdminNavBar/> <br/><br/>
-          <div className='container'>
-             <div className="col-md-3" >
-                <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search Staff Member" onChange={this.handleSearchArea}/>
-                   <br/> 
-                      </div>               
+         <h3 align="center" style={{fontSize:'30px',fontFamily:"sans-serif"}}><b><u>All Staff Member Details </u></b></h3><br/>
+           <div className='container'>
+              <div className="col-md-3" >
+                 <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search Staff Member" onChange={this.handleSearchArea}/>
+                    <br/> 
+                      </div>      
+                        <div align="right">       
                         <label style={{fontSize:'18px', color:'black', fontWeight:700}}>Staff Member Role : &nbsp;&nbsp;</label>
                      <select className="dropDown" onChange={this.handleSearchArea}>
                    <option value="" >..</option>
                 <option value="supervisor" >Supervisor</option>
              <option value="co-supervisor" >Co-Supervisor</option>
           <option value="panel member" >Panel Member</option>
-      </select> 
-   <br/><br/>                          
+    </select> </div>                        
        <table className = "table table-hover" style={{marginTop:'30px',background: "#FFFFFF"}} >
           <thead>
-             <tr bgcolor="#BCC6CC">
+             <tr bgcolor="#79BAEC">
                 <th scope='col'>No</th>
                    <th scope='col'>Staff Member Name</th>
                      <th scope='col'>Phone Number</th>
