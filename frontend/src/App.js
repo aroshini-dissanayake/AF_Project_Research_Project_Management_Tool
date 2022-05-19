@@ -27,9 +27,9 @@ function App() {
     <Route path = "/login" element={<AdminLogin/>}/>  
     <Route path = "/adminpage" element={<Adminpage/>}/>   */}
     <Route path = "/homemarkingschemes" element={<Homemarkingschemes/>}/> 
-    <Route path = "/addmarking" element={<Createmarkingschemes/>}/>
-    <Route path = "/update/:createmarkingID" element={<Editmarkingschemes/>}/>
-    <Route path = "/markingdetails/:createmarkingID" element={<Markingschemesdetails/>}/>
+    <Route path = "/createmarkingadd" element={<Createmarkingschemes/>}/>
+    <Route path = "/createmarkingedit/:createmarkingID" element={<Editmarkingschemes/>}/>
+    <Route path = "/createmarking/:createmarkingID" element={<Markingschemesdetails/>}/>
    </Routes>
    </BrowserRouter>
   );
