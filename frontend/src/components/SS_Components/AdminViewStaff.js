@@ -47,14 +47,14 @@ handleSearchArea = (e)=>{
 
     render() {
     return (   
-      <div >
+    <div >
        <AdminNavBar/> <br/><br/>
           <div className='container'>
-            <div className="col-md-3" >
-              <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search Staff Member" onChange={this.handleSearchArea}/>
-                 <br/> 
-                    </div>               
-                      <label style={{fontSize:'18px', color:'black', fontWeight:700}}>Staff Member Role : &nbsp;&nbsp;</label>
+             <div className="col-md-3" >
+                <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search Staff Member" onChange={this.handleSearchArea}/>
+                   <br/> 
+                      </div>               
+                        <label style={{fontSize:'18px', color:'black', fontWeight:700}}>Staff Member Role : &nbsp;&nbsp;</label>
                      <select className="dropDown" onChange={this.handleSearchArea}>
                    <option value="" >..</option>
                 <option value="supervisor" >Supervisor</option>
