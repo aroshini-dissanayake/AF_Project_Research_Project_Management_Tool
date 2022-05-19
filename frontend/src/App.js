@@ -22,6 +22,7 @@ import Admindashboard from './components/RD_Components/admindashboard';
 import AdminProfile from './components/RD_Components/adminProfile';
 import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
+import PanelMembers from './components/SS_Components/PanelMembers';
 
 function App() {
   return (
@@ -39,14 +40,15 @@ function App() {
      <Route path = "/topic/displayresearchtopic" component={ResearchTopic}/>
      <Route path = "/staff/staffprofile" component={StaffProfile}/>
      <Route path = "/displayStaffRole" component={AdminViewStaff}/>
+     <Route path = "/panelmember" component={PanelMembers}/>
 
 
 
-   <Route path = "/signin" component={StudentLogin}/>
-   <Route path = "/signup" component={Signup}/>
-   <Route path = "/profile" component={Profile}/>
-   <Route path = "/mainhome" component={MainHome}/>
-   <Route path = "/faculties" component={Faculties}/>
+    <Route path = "/signin" component={StudentLogin}/>
+    <Route path = "/signup" component={Signup}/>
+    <Route path = "/profile" component={Profile}/>
+    <Route path = "/mainhome" component={MainHome}/>
+    <Route path = "/faculties" component={Faculties}/>
 
 
 
