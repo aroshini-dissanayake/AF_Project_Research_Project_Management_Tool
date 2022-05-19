@@ -29,6 +29,17 @@ export default class Display_studentgroups extends Component{
             }
         })
     }
+
+//delete panel members assigned student groups
+onDelete = (id)=>{
+    if (window.confirm('Are you sure you wish to delete panel member?')) {
+        axios.delete(`http://localhost:8070/group/delete/${id}`).then((res)=>{
+        //   toast.warning('Panel Member Deleted Successfully',{position:toast.POSITION.TOP_CENTER});
+        alert("Panel Member Deleted Successfully");
+          this.retrieveStudentGroups();
+        })
+      }}
+
     render(){
         return(    
             <div>
@@ -58,7 +69,7 @@ export default class Display_studentgroups extends Component{
                                          </IconButton> 
                                              &nbsp;&nbsp;&nbsp;&nbsp;                           
                                          <IconButton aria-label="delete" size="small"
-                                      style={{background: "#800000"}} >
+                                      style={{background: "#800000"}} onClick={()=>this.onDelete(studentgroups._id)} >
                                   <DeleteForeverIcon fontSize="small"  style={{color: "white"}}/>
                              </IconButton>
                         </td>

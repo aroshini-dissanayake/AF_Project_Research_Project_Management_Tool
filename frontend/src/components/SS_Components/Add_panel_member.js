@@ -56,7 +56,7 @@ export default class Add_panel_member extends Component{
 }
   
 render(){
-        return( 
+return( 
 <div>
 <AdminNavBar/> 
    <br/><br/>    

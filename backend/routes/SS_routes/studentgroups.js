@@ -74,41 +74,25 @@ router.post("/studentgroups/:id", async (req, res) => {
   }
 });
 
-//update panel member
-router.route("/update/:groupID").put((req, res) => {
-  Studentgroups.findByIdAndUpdate(
-    req.params.groupID,
-    {
-      $set: req.body,
-    },
-    (err, studentgroups) => {
-      if (err) {
-        return res.status(400).json({ error: err });
-      }
-
-      return res.status(200).json({
-        success: "Update Successfully",
-      });
-    }
-  );
-});
-
 //Delete panel member
-router.route("/delete/:groupID").delete((req, res) => {
-  Studentgroups.findByIdAndRemove(req.params.groupID).exec(
-    (err, deleteStudentgroups) => {
-      if (err)
-        return res.status(400).json({
-          message: "Delete Unsuccessfully",
-          err,
-        });
-
-      return res.json({
-        message: "Delete Successfull",
-        deleteStudentgroups,
-      });
+router.delete("/delete/:id", async (req, res) => {
+  const groupId = req.params.id;
+  try {
+    const group1 = await Studentgroups.findById(groupId);
+    if (!group1) {
+      throw new Error("There is no group..!!!");
     }
-  );
+    const panel_Member = req.body.panelMember;
+    group1.panelMember = panel_Member;
+    await group1.save();
+
+    return res.status(200).json({
+      success: true,
+      studentgroups: group1,
+    });
+  } catch (error) {
+    res.status(500).send({ status: "error", error: error.message });
+  }
 });
 
 module.exports = router;
