@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import BackendHomeNavBar from '../Layout/BackendHomeNavBar';
+import AdminNavBar from '../Layout/AdminNavBar';
 import Footer from '../Layout/footer';
 
 
@@ -70,9 +70,10 @@ const AdminProfile = () => {
    }
 
           return (
-                      <div class="bod" style={{background:"#F8F8FF"}}>
-                   <BackendHomeNavBar/>
-               <br/><br/><br/><br/><br/>       
+                          <div class="bod" style={{background:"#FFFFF7"}}>
+                       <AdminNavBar/>
+                   <br/><br/><br/><br/>
+               <h3 align="center"><b><u>Admin Profile Details</u></b></h3>  <br/><br/>     
            <div class="container">
        <div class="main-body">
    <div class="row gutters-sm">
@@ -93,37 +94,37 @@ const AdminProfile = () => {
             <div class="card-body">
                 <div class="row">
                    <div class="col-sm-3">
-                <h6 class="mb-0 "><b>Full Name</b></h6>
+                <h6 class="mb-0 "><b>Full Name </b></h6>
             </div>
         <div class="col-sm-9 text-secondary" >
-     {name}
+    <b>{name}</b> 
  </div>
      </div>
          <hr/>
             <div class="row">
                <div class="col-sm-3">
-                  <h6 class="mb-0"><b>Phone Number</b></h6>
+                  <h6 class="mb-0"><b>Phone Number </b></h6>
               </div>
           <div class="col-sm-9 text-secondary">
-       {phone}
+       <b>{phone}</b>
     </div>
 </div>
      <hr/>
           <div class="row">
                <div class="col-sm-3">
-                    <h6 class="mb-0"><b>SLIIT ID</b></h6>
+                    <h6 class="mb-0"><b>SLIIT ID </b></h6>
                          </div>
                       <div class="col-sm-9 text-secondary">
-                 {sliitid}
+                   <b> {sliitid}</b>
               </div>
          </div>
       <hr/>
          <div class="row">
              <div class="col-sm-3">
-                  <h6 class="mb-0"><b>Email</b></h6>
+                  <h6 class="mb-0"><b>Email  </b></h6>
                       </div>
                           <div class="col-sm-9 text-secondary">
-                       {email}
+                       <b>{email}</b>
                   </div>
                </div>
             <hr/> 
