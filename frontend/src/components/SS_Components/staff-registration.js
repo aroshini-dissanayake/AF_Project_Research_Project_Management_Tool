@@ -55,14 +55,14 @@ export default function StaffSignup(){
   <BackendHomeNavBar/> 
      <br/>
        <div class="row d-flex align-items-center justify-content-center">
-          <div style={{width: 1000,background: "#CCCCFF",height:820}}>
+          <div style={{width: 1000,background: "#E6E6FA",height:818}}>
              <div class="card-body" >       
                 <form action="" method="post" name="form" onSubmit={sendData}> 
                     <div class="row g-0">
                 <div class="col-xl-7 d-none d-xl-block"><br/>
             <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <b><u>STAFF&nbsp;&nbsp;REGISTERATION&nbsp;&nbsp; FORM</u></b></h3><br/>
-   <img src="https://protolabzit.com/wp-content/uploads/2021/12/Pair-programming-amico.png" style={{width: 550}}/>
+   <img src="https://assets.website-files.com/5d440ec0b47bfbe0f4ca8018/615bd4604bbfd6bcc0b334d7_Vector%20Images.png" style={{width: 550}}/>
         </div>
              <div class="col-xl-5">
                 <br/>
@@ -129,8 +129,7 @@ export default function StaffSignup(){
                             pattern="(?![.-])((?![.-][.-])[a-zA-Z\d.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}"
                                inputMode="email" onChange={(e) => setEmail(e.target.value)} required/>
                                    </div>
-                                        </div>
-
+                                      </div>
                                     <div class="form-outline mb-2">
                               <label class="form-label">
                         <b><i class="fa fa-key" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Password</b></label>
@@ -139,8 +138,7 @@ export default function StaffSignup(){
                             onChange={(e) => setPassowrd1(e.target.value)} required/>
                                </div>
                                    </div>
- 
-                                        <div class="form-outline mb-2">
+                                     <div class="form-outline mb-2">
                                  <label class="form-label">
                            <b><i class="fa fa-unlock-alt">
                     </i>&nbsp;&nbsp;&nbsp;Repeat Password</b></label>
@@ -149,7 +147,6 @@ export default function StaffSignup(){
                          onChange={(e) => setPassowrd2(e.target.value)}/>
                             </div>
                                 </div>
-    
                                     <div class="d-flex justify-left pt-1" >
                               <label >Already Registered? &nbsp;&nbsp;</label>
                         <a href="/stafflogin" >Sign In</a>
