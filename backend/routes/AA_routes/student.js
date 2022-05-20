@@ -236,7 +236,7 @@ router.put('/update', auth, async (req, res) => {
         await student.save()
 
 
-    //add registering member details to student group db
+      //add registering member details to student group db
       // const id1 = await Student.find({  m_student_id},{"_id":1});
       // const mem1 = await Student.findById(id1); 
 
