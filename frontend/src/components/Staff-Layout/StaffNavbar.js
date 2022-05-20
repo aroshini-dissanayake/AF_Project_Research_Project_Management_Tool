@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import PersonIcon from '@material-ui/icons/Person';
+import IconButton from '@material-ui/core/IconButton';
 
 export default class StaffNavbar extends Component {
     render(){
@@ -16,24 +17,11 @@ export default class StaffNavbar extends Component {
 
        <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/staffdashboard" style={{color: "#ffff"}}>Dashboard</a>
-        </li>  &nbsp; &nbsp;&nbsp;
+        </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
 
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/topic/displayresearchtopic" style={{color: "#ffff"}}>Research Topics</a>
-        </li>  &nbsp; &nbsp;&nbsp;
-
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#" style={{color: "#ffff"}}>Supervisors</a>
-        </li> &nbsp; &nbsp; 
-
-        <li class="nav-item">
-          <a class="nav-link" href="#" style={{color: "#ffff"}}>Co-Supervisors</a>
-        </li> &nbsp; &nbsp; 
-       
-        <li class="nav-item">
-          <a class="nav-link" href="#" style={{color: "#ffff"}}>Panel Members</a>
-        </li>  &nbsp; &nbsp; &nbsp;
-       
+        </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: "#ffff"}}>
@@ -57,7 +45,12 @@ export default class StaffNavbar extends Component {
             <i class="fa fa-search fa-lg" aria-hidden="true" type="submit" style={{color: "#ffff"}} ></i> &nbsp;&nbsp;&nbsp;&nbsp;
             <i class="fa fa-bell fa-lg" aria-hidden="true" type="submit" style={{color: "#ffff"}} ></i> &nbsp;&nbsp; &nbsp;&nbsp;
             <i class="fa fa-envelope fa-lg" aria-hidden="true" href="#" style={{color: "#ffff"}} ></i> &nbsp;&nbsp; &nbsp;&nbsp; 
-            <i class="fa fa-user-circle fa-4x" aria-hidden="true" style={{color: "#ffff"}}></i>        
+            {/* <i class="fa fa-user-circle fa-4x" aria-hidden="true" style={{color: "#ffff"}}></i>         */}
+
+            <IconButton aria-label="profile" href="/staff/staffprofile" style={{color: "#FFFFFF"}} >
+            <PersonIcon fontSize="large" />
+            </IconButton> 
+
       </div>
     </div>
   </nav>
