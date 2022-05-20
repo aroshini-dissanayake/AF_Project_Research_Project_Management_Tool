@@ -25,6 +25,7 @@ import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 import PanelMembers from './components/SS_Components/PanelMembers';
 import GroupAssignment from './components/SS_Components/GroupAssignment';
 
+
 function App() {
   return (
    <BrowserRouter>
@@ -44,6 +45,8 @@ function App() {
      <Route path = "/panelmember" component={PanelMembers}/>
      <Route path = "/assignmentgroups/save" component={GroupAssignment}/>
 
+     
+     
 
     <Route path = "/signin" component={StudentLogin}/>
     <Route path = "/signup" component={Signup}/>
