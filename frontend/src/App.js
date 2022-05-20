@@ -23,6 +23,7 @@ import AdminProfile from './components/RD_Components/adminProfile';
 import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 import PanelMembers from './components/SS_Components/PanelMembers';
+import GroupAssignment from './components/SS_Components/GroupAssignment';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
      <Route path = "/staff/staffprofile" component={StaffProfile}/>
      <Route path = "/displayStaffRole" component={AdminViewStaff}/>
      <Route path = "/panelmember" component={PanelMembers}/>
+     <Route path = "/assignmentgroups/save" component={GroupAssignment}/>
 
 
     <Route path = "/signin" component={StudentLogin}/>

@@ -3,21 +3,6 @@ const Studentgroups = require("../../models/SS_models/studentgroups");
 
 const router = express.Router();
 
-// create student groups
-router.post("/studentgroups/save", (req, res) => {
-  let newStudentgroups = new Studentgroups(req.body);
-  newStudentgroups.save((err) => {
-    if (err) {
-      return res.status(400).json({
-        error: err,
-      });
-    }
-    return res.status(200).json({
-      success: "Student Group create successfully !!!",
-    });
-  });
-});
-
 
 //get student group details
 router.route("/displaystudentgroups").get((req, res) => {
