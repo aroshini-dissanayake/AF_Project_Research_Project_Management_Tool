@@ -27,7 +27,7 @@ const PORT = process.env.PORT || 8070;
 
 //import routers
 // const studentgroupRoutes = require('./routes/SS_routes/studentgroups')
-const researchtopicRoutes= require ('./routes/IS_routes/researchtopic');
+
 
 
 app.use(bodyParser.json({limit: '50mb'}) );
@@ -44,7 +44,7 @@ app.use(express.json());
 
 //routes use
 // app.use(studentgroupRoutes);
-app.use("/addResearchTopic",researchtopicRoutes);
+
 
 
 const URL = process.env.MONGODB_URL;
@@ -73,13 +73,17 @@ const studentRouter = require("./routes/AA_routes/student");
 app.use("/student",studentRouter);
 
 const staffRouter =require("./routes/SS_routes/staff");
-const researchTopicRouter = require("./routes/SS_routes/researchtopic");
+//const researchTopicRouter = require("./routes/SS_routes/researchtopic");
+
+const topicRouter = require("./routes/IS_routes/topic");
+app.use("/regtopic",topicRouter);
 
 // rotues
+
 app.use("/group",studentgroupRouter);
 app.use("/student", studentRouter);
 app.use("/staff",staffRouter);
-app.use("/topic",researchTopicRouter);
+//app.use("/topic",researchTopicRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)

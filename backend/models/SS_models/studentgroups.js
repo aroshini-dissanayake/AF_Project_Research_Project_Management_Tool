@@ -4,12 +4,12 @@ const studentgroupsSchema = new mongoose.Schema({
    
     studentName :{
         type: String,
-        required:true,
+        required:false,
     },
 
     groupName:{
         type: String,
-        required:true,
+        required:false,
     },
 
     panelMember:{
