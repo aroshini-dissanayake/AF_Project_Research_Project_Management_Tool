@@ -1,112 +1,122 @@
 import axios from 'axios';
-import React, { Component } from 'react'
+import React,{useState} from "react";
+import BackendHomeNavBar from '../Layout/BackendHomeNavBar';
+import Footer from '../Layout/footer';
 
-export default class Adminregistration extends Component {
-    constructor(props){
-        super(props);
-            this.state ={  
-                fname : "",
-                mname :"",
-                lname :"",
-                username :"",
-                pno :"",
-                sliitid:"",
-                nic :"",
-                email :"",
-                password :"",
-                cpassword :"",
-                imageUrl : ""
-        }
-    }
+export default function Adminregistration (){
+    const [name, setname] = useState("");
+    const [phone, setphone] = useState("");
+    const [sliitid, setsliitid] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setpassword] = useState("");
+    const [cpassword, setcpassword] = useState("");
 
-    handleInputChange = (e)=>{
-        const{name,value} = e.target;
-        this.setState({
-           ...this.state,
-           [name]:value
-        })
-     }
-
-     Adminregistration = (e) =>{
+  const sendData = async (e) => {
         e.preventDefault();
-        const{fname, mname, lname, username, pno, nic, email, password, imageUrl,cpassword,sliitid} = this.state
-        const newadmin ={
-            fname : fname,
-            mname : mname,
-            lname : lname,
-            username : username,
-            sliitid : sliitid,
-            pno : pno,
-            nic : nic,
-            email : email,
-            password : password,
-            cpassword : cpassword,
-            imageUrl : imageUrl
+         let new_admin = {
+            name: name,
+            phone: phone,
+            email: email,
+            sliitid:sliitid,
+            password:password,
         }
-        console.log(newadmin)
-        if(password === cpassword){
-            axios.post("http://localhost:8070/admin/add",newadmin).then((res)=>{
-                if(res.data){
-                    this.setState({
-                        fname : "",
-                        mname :"",
-                        lname :"",
-                        username :"",
-                        sliitid:"",
-                        pno :"",
-                        nic :"",
-                        email :"",
-                        password :"",
-                        cpassword :"",
-                        imageUrl : "" 
-                    })
-            
-                    alert("admin register successful")
-                    window.location.href = '/login';
-                }
-        }).catch((err)=>{
-            console.log('Admin Account Already Exsist Check Email or Username again');
-        })
-        }else{
-            console.log("Password not match")
-          }
+     if (password === cpassword) { 
+           axios.post("http://localhost:8070/admin/adminsignup",new_admin)
+           .then(()=>{
+               alert("Registration Success")
+               window.location = "/adminsignin"
+        
+      }).catch((err)=>{
+            alert(err)
+     })     
+      }else{
+         alert("Password dismatch")
+     }
+        setname("");
+        setphone("");
+        setEmail("");
+        setsliitid("");
+        setpassword("");
+        setcpassword("");
+  }
 
-    }
-    onBack(){
-        window.location.href="/adminaccount"
-    }
-
-  render() {
-    return (
-      <div>
-          <h3>Admin Registration</h3>
-            <form>
-                fname : <input type="text" name="fname" onChange={this.handleInputChange} value={this.setState.fname}/><br/><br/>
-
-                mname : <input type="text" name="mname" onChange={this.handleInputChange} value={this.setState.mname}/><br/><br/>
-
-                lname : <input type="text" name="lname" onChange={this.handleInputChange} value={this.setState.lname}/><br/><br/>
-
-                username : <input type="text" name="username" onChange={this.handleInputChange} value={this.setState.username}/><br/><br/>
-
-                SLIIT tid : <input type="text" name="sliitid" onChange={this.handleInputChange} value={this.setState.sliitid}/><br/><br/>
-
-                phone no : <input type="text" name="pno" onChange={this.handleInputChange} value={this.setState.pno}/><br/><br/>
-
-                nic : <input type="text" name="nic" onChange={this.handleInputChange} value={this.setState.nic}/><br/><br/>
-
-                email : <input type="text" name="email" onChange={this.handleInputChange} value={this.setState.password}/><br/><br/>
-
-                password : <input type="text" name="password" onChange={this.handleInputChange} value={this.setState.password}/><br/><br/>
-
-                confirm password : <input type="text" name="cpassword" onChange={this.handleInputChange} value={this.setState.cpassword}/><br/><br/>
-
-                imageUrl : <input type="text" name="imageUrl" onChange={this.handleInputChange} value={this.setState.imageUrl}/><br/><br/>
-                
-                <input type="button" onClick={this.onBack} value="Back"/> &nbsp;
-                <input type="submit" onClick={this.Adminregistration} value="submit"/>
-            </form>
-      </div>
+return (   
+    <div>
+ <BackendHomeNavBar/><br/><br/><br/>
+   <div class="row d-flex align-items-center justify-content-center">
+      <div style={{width: 1000,background: "#CFECEC",height:670}}>
+         <div class="card-body" >  
+           <div><br/>
+             <div class="row d-flex align-items-center justify-content-center h-100">
+         <div class="col-md-8 col-lg-7 col-xl-6">
+     <img src="https://anyconnect.com/wp-content/uploads/login.svg" class="img-fluid" alt="Phone image"/>
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <u><b>ADMIN&nbsp;&nbsp;SIGNUP</b></u></h2> 
+        </div>
+             <div class="col-md-7] col-lg-5 col-xl-5 offset-xl-1">
+                 <form action="" method="post" name="form" onSubmit={sendData}> 
+                      <div class="form-outline mb-4">  
+                      <div className="col-md-10">
+                   <i className="fa fa-lock"> &nbsp;&nbsp;</i>            
+               <label class="form-label"><b>Full Name</b></label>
+          <input type="text" name="name" class="form-control " placeholder="Enter your Full Name" 
+       onChange={(e) => setname(e.target.value)} required/>
+   </div>
+</div>
+   <div class="form-outline mb-4" >
+        <div className="col-md-10">
+             <i className="fa fa-key"> &nbsp;&nbsp;</i>    
+                 <label class="form-label"><b>SLIIT ID</b></label>
+                     <input type="text" name="sliitid" class="form-control " placeholder="Enter your SLIIT ID" 
+                         onChange={(e) => setsliitid(e.target.value)} required/> 
+                             </div>
+                                </div>
+                           <div class="form-outline mb-4" >
+                    <div className="col-md-10">
+             <i className="fa fa-key"> &nbsp;&nbsp;</i>    
+                 <label class="form-label"><b>Phone Number</b></label>
+                     <input type="text" name="phone" class="form-control " placeholder="Enter your Phone Number" 
+                            onChange={(e) => setphone(e.target.value)} required/> 
+                             </div>
+                                  </div>
+                            <div class="form-outline mb-4" >
+                     <div className="col-md-10">
+             <i className="fa fa-key"> &nbsp;&nbsp;</i>    
+                 <label class="form-label"><b>Email Address</b></label>
+                     <input type="text" name="email" class="form-control " placeholder="Enter your Email Address" 
+                           onChange={(e) => setEmail(e.target.value)} required/> 
+                             </div>
+                                  </div>
+                           <div class="form-outline mb-4" >
+                    <div className="col-md-10">
+             <i className="fa fa-key"> &nbsp;&nbsp;</i>    
+                 <label class="form-label"><b>Password</b></label>
+                     <input type="password" name="password" class="form-control " placeholder="Enter your Password" 
+                           onChange={(e) => setpassword(e.target.value)} required/> 
+                             </div>
+                                 </div>
+                          <div class="form-outline mb-4" >
+                     <div className="col-md-10">
+             <i className="fa fa-key"> &nbsp;&nbsp;</i>    
+                 <label class="form-label"><b>Confirm Password</b></label>
+                     <input type="password" name="cpassword" class="form-control " placeholder="Confirm Password" 
+                          onChange={(e) => setcpassword(e.target.value)} required/> 
+                             </div>
+                                  </div>
+                           <button type="submit" class="btn btn-primary">
+                      <i className="fa fa-check-circle"> &nbsp;&nbsp;  Sign Up &nbsp;&nbsp;</i></button> &nbsp;&nbsp; &nbsp;&nbsp;
+                <label >Already Registered? &nbsp;&nbsp;</label>
+          <a href="/adminsignin" >Sign In</a>
+              </form>
+                  </div> 
+                      </div>
+                         </div>
+                     </div>
+                 </div>
+              </div> 
+          <br/>
+      <br/>
+<Footer/>
+</div>
     )
   }
-}

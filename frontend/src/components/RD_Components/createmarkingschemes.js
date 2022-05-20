@@ -31,7 +31,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
             };
 
-            axios.post("http://localhost:8070/createmarking/save",data)
+            axios.post("http://localhost:8070/createmarking/createmarkingadd",data)
             .then(()=>{
               toast.success('Marking Added Successfully',{position:toast.POSITION.TOP_CENTER})
               window.setTimeout(function() {
@@ -144,7 +144,7 @@ import 'react-toastify/dist/ReactToastify.css';
                   <div className="form-group">
                     <Button className="form-group" type="submit" style={{ marginTop: '5px', background: "#F75D59", width: 100 + "%" }} startIcon={<LocalShippingIcon />}>
     
-                      &nbsp; Add Delivery
+                      &nbsp; Add New Point
                     </Button>
                   </div>
                 </form>

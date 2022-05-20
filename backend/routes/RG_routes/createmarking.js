@@ -1,29 +1,31 @@
 const express = require('express');
-const createmarking = require('../../models/RG_models/createmarking');
+const Createmarking = require('../../models/RG_models/createmarking');
 
 const router = express.Router();
 
 //create createmarking
 
-router.post('/save',(req,res)=>{
-      let newcreatemarking = new createmarking(req.body);
-      newcreatemarking.save((err) => {
-           if(err){
-               return res.status(400).json({
-                  error:err
-           });
-      }
-           return res.status(200).json({
-                 success:"Create marking scehmes saved successfully"
+router.route('/createmarkingadd').post((req,res)=>{
 
-           });
-      });
+    let newCreatemarking = new Createmarking(req.body);
+    newCreatemarking.save((err)=>{
+       
+        if(err){
+            return res.status(400).json({
+                error:err
+            });
+        }
+        
+        return res.status(200).json({
+            success:"Deliverys saved successfully!!"
+        });
+    });
 });
 
 //get createmarking
 
-router.route('/createmarking').get((req,res) =>{
-      createmarking.find().exec((err,createmarking) =>{
+router.route('/displaycreatemarking').get((req,res) =>{
+      Createmarking.find().exec((err,createmarking) =>{
           
           if(err){
               return res.status(400),json({
@@ -33,7 +35,7 @@ router.route('/createmarking').get((req,res) =>{
           
           return res.status(200).json({
               success:true,
-              existingcreatemarking:createmarking
+              existingCreatemarking:createmarking
           });
       
       });
@@ -42,7 +44,7 @@ router.route('/createmarking').get((req,res) =>{
   //update createmarking
 
 router.route('/update/:createmarkingID').put((req,res)=>{
-    createmarking.findByIdAndUpdate(
+    Createmarking.findByIdAndUpdate(
         req.params.createmarkingID,{
             $set:req.body
         },
@@ -60,7 +62,7 @@ router.route('/update/:createmarkingID').put((req,res)=>{
 
     //Delete createmarking
 router.route('/delete/:createmarkingID').delete((req,res)=>{
-    createmarking.findByIdAndRemove(req.params.createmarkingID).exec((err,deletecreatemarking)=>{
+    Createmarking.findByIdAndRemove(req.params.createmarkingID).exec((err,deletecreatemarking)=>{
         
         if(err) return res.status(400).json({
             message: "Delete Unsuccessfully",err
@@ -74,9 +76,9 @@ router.route('/delete/:createmarkingID').delete((req,res)=>{
 
  //get specific data
 
- router.route('/specific/:createmarkingID').get((req,res)=>{
+ router.route('/:createmarkingID').get((req,res)=>{
       let createmarkingID = req.params.createmarkingID;
-      createmarking.findById(createmarkingID,(err,createmarking)=>{
+      Createmarking.findById(createmarkingID,(err,createmarking)=>{
 
         if(err) {
             return res.status(400).json({success:false, err})
