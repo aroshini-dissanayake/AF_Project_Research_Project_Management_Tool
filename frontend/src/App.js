@@ -40,7 +40,7 @@ function App() {
      <Route path = "/studentgroups/:id" component={Add_panel_member}/>
      <Route path = "/topic/displayresearchtopic" component={ResearchTopic}/>
      <Route path = "/staff/staffprofile" component={StaffProfile}/>
-     <Route path = "/displayStaffRole" component={AdminViewStaff}/>
+ 
 
 
 
