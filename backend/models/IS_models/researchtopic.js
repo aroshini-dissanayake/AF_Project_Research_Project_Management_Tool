@@ -8,12 +8,12 @@ const researchtopicSchema = new mongoose.Schema({
          
           groupName:{
               type: String,
-              //required:true,
+              required:true,
              },
              
           groupId:{ 
                type: String,
-               //required:true,
+               required:true,
         
             }
         });
