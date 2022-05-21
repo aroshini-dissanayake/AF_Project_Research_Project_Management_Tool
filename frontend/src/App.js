@@ -30,9 +30,9 @@ function App() {
   return (
    <BrowserRouter>
      <Switch>
+
      <Route path = "/" component={StudentHomePage} exact/>
    
-    
      <div>  
      <Route path = "/staff" component={BackendHomePage}/>
      <Route path = "/stafflogin" component={StaffLogin}/>

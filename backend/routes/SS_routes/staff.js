@@ -93,7 +93,7 @@ router.get("/staffprofile", staffauth, async (req, res) => {
     res.send({ status: "Staff Details fetched", Staff: req.Staff});
   } catch (error) {
     res.status(500)
-    res.send({ status: "Error with /staffprofile", error: error.message });
+    res.send({ status: "Error with staffprofile", error: error.message });
   }
 });
 
