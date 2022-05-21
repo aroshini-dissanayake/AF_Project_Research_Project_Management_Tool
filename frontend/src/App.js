@@ -25,6 +25,7 @@ import Createmarkingschemes from './components/RD_Components/createmarkingscheme
 import Homemarkingschemes from './components/RD_Components/homemarkingschemes';
 import Editmarkingschemes from './components/RD_Components/editmarkingschemes';
 import Markingschemesdetails from './components/RD_Components/markingschemesdetails';
+import Usersremove from './components/RD_Components/usersremove'
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
     <Route path = "/createmarkingadd" component={Createmarkingschemes}/>
     <Route path = "/createmarkingedit/:createmarkingID" component={Editmarkingschemes}/>
     <Route path = "/createmarking/:createmarkingID" component={Markingschemesdetails}/>
+    <Route path = "/getpanelmember" component={Usersremove}/>
    
    </div>  
    </Switch> 

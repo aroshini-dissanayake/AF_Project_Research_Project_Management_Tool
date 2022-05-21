@@ -105,8 +105,6 @@ render() {
 
                 <form onSubmit={this.handleSearchArea}>
                 
-                <Button className="form-group" style={{ background: "#737CA1", width: 15 + "%", align: "left" }} startIcon={<KeyboardArrowDownRoundedIcon />} >
-                Destination</Button>&nbsp;&nbsp;&nbsp;
 </form>
         <table className="table table-hover" style={{ marginTop: '40px', background: "#FFFFFF" }} > 
         <thead>
@@ -148,6 +146,7 @@ render() {
         </tbody>
         </table>
         <button className="btn btn-success"><a href="/createmarkingadd" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button>
+        <button className="btn btn-success"><a href="/getpanelmember" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button>
       </div>
       </div>
       </div>

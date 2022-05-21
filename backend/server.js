@@ -59,6 +59,8 @@ const accepttopicRouter = require("./routes/SS_routes/acceptTopic");
 const adminRouter = require('./routes/RG_routes/admin');
 const createmarkingRouter = require('./routes/RG_routes/createmarking');
 const researchtopicRoutes = require ('./routes/IS_routes/researchtopic');
+//const usersremoveRoutes = require('./routes/RG_routes/usersremove');
+
 
 // rotues use
 app.use("/student",studentRouter);
@@ -70,6 +72,7 @@ app.use("/accept",accepttopicRouter);
 app.use("/admin",adminRouter);
 app.use("/createmarking",createmarkingRouter);
 app.use("/researchtopic",researchtopicRoutes);
+//app.use("/usersremove",usersremoveRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
