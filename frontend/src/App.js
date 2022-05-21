@@ -25,6 +25,7 @@ import PanelMembers from './components/SS_Components/PanelMembers';
 import UploadGroupAssignment from './components/SS_Components/UploadGroupAssignment';
 import StudentDashboard from './components/SS_Components/StudentDashboard';
 import StudentHomePage from './components/SS_Components/StudentHomePage';
+import Groups from './components/SS_Components/Groups';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
      <Route path = "/panelmember" component={PanelMembers}/>
      <Route path = "/assignmentgroups/save" component={UploadGroupAssignment}/>
      <Route path = "/studentdashboard" component={StudentDashboard}/>
+     <Route path = "/groups" component={Groups}/>
 
      
      <Route path = "/signin" component={StudentLogin}/>
