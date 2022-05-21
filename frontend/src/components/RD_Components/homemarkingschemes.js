@@ -16,10 +16,10 @@ componentDidMount(){
 
 
  retrievecreatemarking(){
-        axios.get("http://localhost:8070/createmarking/createmarking").then(res=>{
+        axios.get("http://localhost:8070/createmarking/displaycreatemarking").then(res=>{
             if(res.data.success){
                this.setState({
-                createmarking:res.data.existingcreatemarking
+                createmarking:res.data.existingCreatemarking
                });
 
                console.log(this.state.createmarking)
@@ -50,7 +50,7 @@ componentDidMount(){
           <th scope="row">{index+1}</th>
           <td>
             
-            <a href={`/markingdetails/${createmarking._id}`} style={{textDecoration:'none'}}>
+            <a href={`/createmarking/${createmarking._id}`} style={{textDecoration:'none'}}>
             {createmarking.deliverables}
             </a>
             </td>
@@ -59,7 +59,7 @@ componentDidMount(){
           <td>{createmarking.methodofsubmission}</td>
           <td>{createmarking.marksallocation}</td>
           <td> 
-            <a className="btn btn-warning" href={`/update/${createmarking._id}`}>
+            <a className="btn btn-warning" href={`/createmarkingedit/${createmarking._id}`}>
               <i classname="fas fa-edit"></i>&nbsp;Edit
             </a>
             &nbsp;
@@ -72,7 +72,7 @@ componentDidMount(){
           ))}
         </tbody>
         </table>
-        <button className="btn btn-success"><a href="/addmarking" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button>
+        <button className="btn btn-success"><a href="/createmarkingadd" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button>
       </div>
     )
   }

@@ -41,10 +41,10 @@ onSubmit = (e) =>{
   const {deliverables,duedate,contribution,methodofsubmission,marksallocation} = this.state;
   const data ={
          deliverables:deliverables,
-         duedate: duedate,
-         contribution: contribution,
-         methodofsubmission: methodofsubmission,
-         marksallocation: marksallocation
+         duedate:duedate,
+         contribution:contribution,
+         methodofsubmission:methodofsubmission,
+         marksallocation:marksallocation
  
   }
 
