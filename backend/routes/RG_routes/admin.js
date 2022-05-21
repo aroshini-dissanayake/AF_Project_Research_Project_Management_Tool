@@ -128,5 +128,24 @@ router.route("/displayStaffRole").get((req,res)=>{
 });
 
 
+//get only panel members details from the staff table
+router.get("/panelmember",async(req,res)=>{
+  try{
+    const panelmember = await staff.find({
+      role: "Panel Member"
+    })
+    res.status(201)
+    .send({
+      status : " Panel Member Retrive",
+      panelmember:panelmember
+     
+    });
+  }catch(error){
+    console.log(error.message);
+    res.status(500)
+    .send({error:error.message});
+  }
+});
+
 
 module.exports = router;

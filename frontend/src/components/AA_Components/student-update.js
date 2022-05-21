@@ -4,7 +4,6 @@ import { Modal } from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 import SendIcon from '@material-ui/icons/Send';
 import {toast} from 'react-toastify';
-// import FileBase64 from 'react-file-base64';
 
 const UpdateProfile = ({
     upname,
@@ -131,19 +130,6 @@ const UpdateProfile = ({
               <input type="email" required className="form-control" Value={email}
               onChange={(e) => setEmail(e.target.value)} />
             </div>
-
-            {/* <div>
-            <small className="text-muted">Update your profile picture</small> <br/>
-            <div class="upload-btn-wrapper">
-            <button class="btnppp">Select a profile image</button>
-            <FileBase64
-                                    type="file"
-                                    name="imageUrl"
-                                    multiple={ false }
-                                    onDone={({ base64 }) => setImageUrl(base64)}
-                                />
-            </div>
-            </div> */}
 
             <br/> <br/>
  
