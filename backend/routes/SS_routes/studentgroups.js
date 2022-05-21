@@ -80,4 +80,27 @@ router.delete("/delete/:id", async (req, res) => {
   }
 });
 
+//Accepet
+router.post("/accepttopic/:id/:msg", async (req, res) => {
+  const groupId = req.params.id
+  const msg = req.params.msg
+  try{await Studentgroups.findOneAndUpdate(
+      {_id:groupId},
+      {topicstatus:msg}
+      )
+        if(msg==="Accepted"){
+          res.status(200).send({status:"topic accept succesful"})
+        }
+        else if (msg==="Rejected"){
+          res.status(200).send({status:"topic rejected succesful"})
+        }
+         
+  }catch (error) {
+              res.status(500).send({error: error.message})
+              console.log(error)
+            }
+
+});
+
+
 module.exports = router;

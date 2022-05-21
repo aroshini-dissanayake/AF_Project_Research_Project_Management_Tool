@@ -23,7 +23,7 @@ import AdminProfile from './components/RD_Components/adminProfile';
 import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 import PanelMembers from './components/SS_Components/PanelMembers';
-import GroupAssignment from './components/SS_Components/GroupAssignment';
+import UploadGroupAssignment from './components/SS_Components/UploadGroupAssignment';
 
 
 function App() {
@@ -43,11 +43,9 @@ function App() {
      <Route path = "/staff/staffprofile" component={StaffProfile}/>
      <Route path = "/displayStaffRole" component={AdminViewStaff}/>
      <Route path = "/panelmember" component={PanelMembers}/>
-     <Route path = "/assignmentgroups/save" component={GroupAssignment}/>
-
+     <Route path = "/assignmentgroups/save" component={UploadGroupAssignment}/>
+    
      
-     
-
     <Route path = "/signin" component={StudentLogin}/>
     <Route path = "/signup" component={Signup}/>
     <Route path = "/profile" component={Profile}/>

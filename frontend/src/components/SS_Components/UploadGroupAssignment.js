@@ -4,7 +4,7 @@ import FileBase64 from 'react-file-base64';
 import AdminNavBar from '../Layout/AdminNavBar';
 import Footer from '../Layout/footer';
 
-export default class StudentGroupAssignment extends Component {
+export default class UploadGroupAssignment extends Component {
   constructor(props){
     super(props);
     this.state = {

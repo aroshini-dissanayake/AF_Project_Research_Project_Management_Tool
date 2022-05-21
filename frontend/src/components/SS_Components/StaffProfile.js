@@ -83,9 +83,10 @@ const StaffProfile = () => {
           }
 
       return (
-                          <div class="bod" style={{background:"#F8F8FF"}}  >
-                       <StaffNavbar/>
-                    <br/><br/>
+          <div class="bod" style={{background:"#F8F8FF"}}  >
+             <StaffNavbar/>
+                 <br/><br/><br/>
+                     <h3 align="center"><b><u>Staff Profile Details</u></b></h3>  <br/><br/>   
                  <div class="container">
               <div class="main-body">
             <div class="row gutters-sm">
