@@ -52,25 +52,25 @@ const StaffProfile = () => {
       }
 
       //delete the staff member account
-      const deleteStaff = async () => {
-        const config = {
-          headers: {
-            Authorization: localStorage.getItem("Authorization"),
-          },
-        };
+      // const deleteStaff = async () => {
+      //   const config = {
+      //     headers: {
+      //       Authorization: localStorage.getItem("Authorization"),
+      //     },
+      //   };
         
-        if (window.confirm('Are you sure you wish to delete this Account?')) {
-            await axios.delete('http://localhost:8070/staff/staffdelete', config)
-            .then((res) => {
-              toast.success('Your account deleted successfuly',{position:toast.POSITION.TOP_CENTER});
-              localStorage.removeItem('Authorization')
-              window.location="/staffsignup"
-            })
-            .catch((err) => {
-              console.log(err.message)
-            })
-          }
-         }
+      //   if (window.confirm('Are you sure you wish to delete this Account?')) {
+      //       await axios.delete('http://localhost:8070/staff/staffdelete', config)
+      //       .then((res) => {
+      //         toast.success('Your account deleted successfuly',{position:toast.POSITION.TOP_CENTER});
+      //         localStorage.removeItem('Authorization')
+      //         window.location="/staffsignup"
+      //       })
+      //       .catch((err) => {
+      //         console.log(err.message)
+      //       })
+      //     }
+      //    }
 
          //logout the staff menber account
          const staffLogout = () => {
@@ -171,8 +171,8 @@ const StaffProfile = () => {
                            <div class="row">
                               <div class="col-sm-12"><br/>
                                   <center>
-                <button style={{background: "#151B54", color:"#ffff"}} onClick={staffLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
-           <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteStaff} class="btn btn " target="__blank">Delete Account</button></center>
+                <button style={{background: "#151B54", color:"#ffff"}} onClick={staffLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;</center>
+           {/* <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteStaff} class="btn btn " target="__blank">Delete Account</button></center> */}
               </div>
                   </div>     
                       </div>  
