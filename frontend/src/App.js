@@ -20,16 +20,19 @@ import Adminregistration from './components/RD_Components/adminregistration';
 import AdminLogin from './components/RD_Components/adminlogin';
 import Admindashboard from './components/RD_Components/admindashboard';
 import AdminProfile from './components/RD_Components/adminProfile';
+import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
 import GroupRegistration from './components/AA_Components/student-group-name-registration';
 import Add_Group_Members from './components/AA_Components/group-members-reg';
 import Groups from './components/AA_Components/student.groups';
+import Homemarkingschemes from './components/RD_Components/homemarkingschemes';
+import Editmarkingschemes from './components/RD_Components/editmarkingschemes';
+import Markingschemesdetails from './components/RD_Components/markingschemesdetails';
 
 function App() {
   return (
    <BrowserRouter>
-     <Switch>
-   
+    <Switch>
      <Route path = "/" component={BackendHomePage}exact/>
     
      <div>  
@@ -60,10 +63,14 @@ function App() {
     <Route path = "/admindashboard" component={Admindashboard}/>  
     <Route path = "/adminprofile" component={AdminProfile}/>  
 
-    <Route path = "/createmarkingschemes" component={Createmarkingschemes}/> 
+    
+    <Route path = "/homemarkingschemes" component={Homemarkingschemes}/> 
+    <Route path = "/createmarkingadd" component={Createmarkingschemes}/>
+    <Route path = "/createmarkingedit/:createmarkingID" component={Editmarkingschemes}/>
+    <Route path = "/createmarking/:createmarkingID" component={Markingschemesdetails}/>
    
    </div>  
-   </Switch>   
+   </Switch> 
    </BrowserRouter>
   );
 }

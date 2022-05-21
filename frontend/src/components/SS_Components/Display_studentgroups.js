@@ -29,18 +29,21 @@ export default class Display_studentgroups extends Component{
         })
     }
     render(){
-        return(      
-        <div className='container'>  
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope='col'>#</th>
-                        <th scope='col'>Student Name</th>
-                        <th scope='col'>Group Name</th>
-                        <th scope='col'>Panel Member</th>
-                        <th scope='col'>Actions</th>
-                    </tr>
-                </thead>
+        return(    
+            <div>
+               <AdminNavBar/>  <br/><br/> <br/>
+                <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Add Panel Members </u></b></h3><br/><br/>
+                  <div className='container'>  
+                    <table class="table">
+                       <thead>
+                     <tr bgcolor="#79BAEC">
+                 <th scope='col'>No</th>
+             <th scope='col'>Group Name</th>
+         <th scope='col'>Panel Member</th>
+     <th scope='col'>Actions</th>
+         </tr>
+            </thead>
+
                 <tbody>
                 {this.state.studentgroups.map((studentgroups,index) =>(
                     <tr>
