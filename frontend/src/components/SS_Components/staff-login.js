@@ -50,7 +50,7 @@ render() {
       <div >
         <BackendHomeNavBar/><br/><br/><br/><br/>
            <div class="row d-flex align-items-center justify-content-center">
-              <div style={{width: 1000,background: "#CCCCFF",height:500}}>
+              <div style={{width: 1000,background: "#E6E6FA",height:500}}>
                  <div class="card-body" >  
                    <div class="container py-5 h-90" > 
                     <div class="row d-flex align-items-center justify-content-center h-100">      

@@ -60,9 +60,9 @@ export default function StaffSignup(){
                 <form action="" method="post" name="form" onSubmit={sendData}> 
                     <div class="row g-0">
                 <div class="col-xl-7 d-none d-xl-block"><br/>
-            <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <b><u>STAFF&nbsp;&nbsp;REGISTERATION&nbsp;&nbsp; FORM</u></b></h3><br/>
-   <img src="https://assets.website-files.com/5d440ec0b47bfbe0f4ca8018/615bd4604bbfd6bcc0b334d7_Vector%20Images.png" style={{width: 550}}/>
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+        <b><u>STAFF&nbsp;&nbsp;REGISTERATION&nbsp;&nbsp; FORM</u></b></h3><br/><br/><br/>
+   <img src="https://filerscorner.com/wp-content/uploads/2021/07/Copyright-Registration.svg" style={{width: 750}}/>
         </div>
              <div class="col-xl-5">
                 <br/>
