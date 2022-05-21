@@ -22,6 +22,9 @@ import Admindashboard from './components/RD_Components/admindashboard';
 import AdminProfile from './components/RD_Components/adminProfile';
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
+import GroupRegistration from './components/AA_Components/student-group-name-registration';
+import Add_Group_Members from './components/AA_Components/group-members-reg';
+import Groups from './components/AA_Components/student.groups';
 import Homemarkingschemes from './components/RD_Components/homemarkingschemes';
 import Editmarkingschemes from './components/RD_Components/editmarkingschemes';
 import Markingschemesdetails from './components/RD_Components/markingschemesdetails';
@@ -49,6 +52,9 @@ function App() {
    <Route path = "/profile" component={Profile}/>
    <Route path = "/mainhome" component={MainHome}/>
    <Route path = "/faculties" component={Faculties}/>
+   <Route path= "/groupReg" component={GroupRegistration}/>
+   <Route path= "/display" component={Add_Group_Members}/>
+   <Route path= "/groups" component={Groups}/>
 
 
 
