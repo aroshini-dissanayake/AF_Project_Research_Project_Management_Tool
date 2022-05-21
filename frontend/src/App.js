@@ -20,11 +20,9 @@ import Adminregistration from './components/RD_Components/adminregistration';
 import AdminLogin from './components/RD_Components/adminlogin';
 import Admindashboard from './components/RD_Components/admindashboard';
 import AdminProfile from './components/RD_Components/adminProfile';
-import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 import PanelMembers from './components/SS_Components/PanelMembers';
 import UploadGroupAssignment from './components/SS_Components/UploadGroupAssignment';
-
 
 function App() {
   return (
@@ -44,7 +42,7 @@ function App() {
      <Route path = "/displayStaffRole" component={AdminViewStaff}/>
      <Route path = "/panelmember" component={PanelMembers}/>
      <Route path = "/assignmentgroups/save" component={UploadGroupAssignment}/>
-    
+
      
     <Route path = "/signin" component={StudentLogin}/>
     <Route path = "/signup" component={Signup}/>
@@ -52,15 +50,11 @@ function App() {
     <Route path = "/mainhome" component={MainHome}/>
     <Route path = "/faculties" component={Faculties}/>
 
-
-
     <Route path = "/adminsignup" component={Adminregistration}/> 
     <Route path = "/adminsignin" component={AdminLogin}/>  
     <Route path = "/admindashboard" component={Admindashboard}/>  
     <Route path = "/adminprofile" component={AdminProfile}/>  
 
-    <Route path = "/createmarkingschemes" component={Createmarkingschemes}/> 
-   
    </div>  
    </Switch>   
    </BrowserRouter>
