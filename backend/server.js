@@ -46,6 +46,9 @@ const studentgroupRouter = require("./routes/SS_routes/studentgroups");
 const studentRouter = require("./routes/AA_routes/student");
 const staffRouter =require("./routes/SS_routes/staff");
 const adminRouter = require('./routes/RG_routes/admin');
+const createmarkingRouter = require('./routes/RG_routes/createmarking');
+const researchtopicRoutes = require ('./routes/IS_routes/researchtopic');
+//const usersremoveRoutes = require('./routes/RG_routes/usersremove');
 const uploadgroupassignmentRouter = require('./routes/SS_routes/uploadgroupAssignment');
 
 
@@ -55,6 +58,9 @@ app.use("/group",studentgroupRouter);
 app.use("/student", studentRouter);
 app.use("/staff",staffRouter);
 app.use("/admin",adminRouter);
+app.use("/createmarking",createmarkingRouter);
+app.use("/researchtopic",researchtopicRoutes);
+//app.use("/usersremove",usersremoveRoutes);
 app.use("/assignment",uploadgroupassignmentRouter);
 
 

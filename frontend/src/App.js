@@ -21,6 +21,11 @@ import AdminLogin from './components/RD_Components/adminlogin';
 import Admindashboard from './components/RD_Components/admindashboard';
 import AdminProfile from './components/RD_Components/adminProfile';
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
+import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
+import Homemarkingschemes from './components/RD_Components/homemarkingschemes';
+import Editmarkingschemes from './components/RD_Components/editmarkingschemes';
+import Markingschemesdetails from './components/RD_Components/markingschemesdetails';
+import Usersremove from './components/RD_Components/usersremove'
 import PanelMembers from './components/SS_Components/PanelMembers';
 import UploadGroupAssignment from './components/SS_Components/UploadGroupAssignment';
 import StudentDashboard from './components/SS_Components/StudentDashboard';
@@ -60,7 +65,7 @@ function App() {
      <Route path = "/adminprofile" component={AdminProfile}/>  
 
    </div>  
-   </Switch>   
+   </Switch> 
    </BrowserRouter>
   );
 }
