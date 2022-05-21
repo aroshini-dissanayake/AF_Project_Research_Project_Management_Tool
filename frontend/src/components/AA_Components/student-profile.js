@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import UpdateProfile from './student-update'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import MainHome from './mainhome';
-//import Navbar from '../Layout/Navbar';
+import Footer from '../Layout/footer';
 
 toast.configure()
 
@@ -20,10 +19,8 @@ const Profile = () => {
     const [DOB, setDOB] = useState("");
     const [email, setEmail] = useState("");
     const [pwd, setPassowrd] = useState("");
-
-   const [show, setShow] = useState(false)
-   const [loading, setLoading] = useState(true)
-
+    const [show, setShow] = useState(false)
+    const [loading, setLoading] = useState(true)
 
    useEffect(() => {
     setLoading(true)
@@ -57,11 +54,9 @@ const Profile = () => {
       getUserData()
    }, [])
 
-
    const updateUserProfile = () => {
       setShow(true)
     }
-
 
     const studentLogout = () => {
         if (window.confirm('Are you sure you wish to logout from this Account?')) {
@@ -78,28 +73,22 @@ const Profile = () => {
       </div>
    }
 
-
-
-
    return (
-      <div class="bod">
-        <MainHome/>
-          {/* <Navbar/><br/><br/> */}
-      <div class="container">
-      <div class="main-bod">
-      
+                          <div class="bod">
+                       <MainHome/><br/><br/><br/>
+                   <div class="container">
+               <div class="main-bod">    
             <div class="row gutters-sm">
               <div class="col-md-4 mb-3">
                 <div class="cardd">
                   <div class="cardd-body">
                     <div class="d-flex flex-column align-items-center text-center">
-                      {/* <img src={imageUrl} alt="Admin" id = "profileimg" class="rounded-circle" width="170" height="170"/> */}
-                      <div class="mt-3">
-                        <h4>{name}</h4>
-                      </div>
-                      
-                      <div class="col-sm-12">
-                        <center><button onClick={studentLogout} class="btn btn-warning btn-lg ms-2 " target="__blank">    Log Out    </button></center>
+                     <img src="https://uxwing.com/wp-content/themes/uxwing/download/12-peoples-avatars/avatar.png"  class="rounded-circle" width="180" height="180"/>
+                       <div class="mt-3">
+                         <h4>{name}</h4>
+                          </div> 
+                           <div class="col-sm-12">
+                        <button style={{background: "#151B54", color:"#ffff"}} onClick={studentLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
                       </div>
                     </div>
                   </div>
@@ -200,22 +189,9 @@ const Profile = () => {
             </div>
           </div>
           
-      <UpdateProfile
-          upname= {name}
-          upnic= {nic}
-          upfaculty= {faculty}
-          upstudent_id= {student_id}
-          upbatch= {batch}
-          upspecialization= {specialization}
-          upphone= {phone}
-          upDOB= {DOB}
-          upemail= {email}
-          uppwd= {pwd}
-          show={show}
-          onHide={() => setShow(false)}
-          />
-      </div>
-      
+     
+      </div><br/>
+      <Footer/>
     </div>
    )
 }

@@ -93,12 +93,13 @@ router.get("/staffprofile", staffauth, async (req, res) => {
     res.send({ status: "Staff Details fetched", Staff: req.Staff});
   } catch (error) {
     res.status(500)
-    res.send({ status: "Error with /staffprofile", error: error.message });
+    res.send({ status: "Error with staffprofile", error: error.message });
   }
 });
 
 //staff member update profile
-router.put('/staffupdate', staffauth, async (req, res) => {
+router.put('/update', staffauth, async (req, res) => {
+  try {
   const {name, 
          phone, 
          faculty, 
@@ -107,29 +108,30 @@ router.put('/staffupdate', staffauth, async (req, res) => {
          role,
          email
         } = req.body
-  try {
-    const updateValus={
-      name : name,
-      phone : phone,
-      faculty : faculty,
-      feild : feild,
-      staff_id : staff_id,
-      role : role,
-      email : email
-    };
+
     let Staff = await staff.findOne({staff_id})
  
     if (!Staff) {
       throw new Error('There is no Staff Member account')
     }
-    const staffUpdate = await staff.findByIdAndUpdate(req.Staff.id,updateValus) 
+    const staffUpdate = await staff.findByIdAndUpdate(req.Staff.id, 
+      {
+        name : name,
+        phone : phone,
+        faculty : faculty,
+        feild : feild,
+        staff_id : staff_id,
+        role : role,
+        email : email
+    })
     res.status(200).send({status: 'Staff Member Profile Updated', Staff: staffUpdate})
-  
+
   } catch (error) {
     res.status(500).send({error: error.message})
     console.log(error)
   }
 });
+
 
 //delete staff member account
 router.delete("/staffdelete", staffauth, async (req, res) => {

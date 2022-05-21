@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import StaffNavbar from "../Staff-Layout/StaffNavbar";
 import Footer from '../Layout/footer';
 
-
 const StaffProfile = () => {
     const [name, setname] = useState(null)
     const [phone, setphone] = useState(null)
