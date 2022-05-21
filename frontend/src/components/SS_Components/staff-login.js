@@ -8,7 +8,6 @@ export default class StaffLogin extends Component {
       super(props);
       this.userLoginSubmit = this.userLoginSubmit.bind(this)
       this.handleClose = this.handleClose.bind(this)
-
       this.state = {
         staff_id: "",
         pwd: "",
@@ -45,6 +44,7 @@ export default class StaffLogin extends Component {
         }
         this.setState({open: false})
      };
+
 render() {
    return (
       <div >
