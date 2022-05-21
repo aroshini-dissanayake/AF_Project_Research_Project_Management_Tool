@@ -3,8 +3,11 @@ import axios from 'axios';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import MainHome from './mainhome';
+import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
+import UpdateProfile from './student-update'
+
+
 
 toast.configure()
 
@@ -63,7 +66,7 @@ const Profile = () => {
       toast.success('Log out successfuly',{position:toast.POSITION.TOP_CENTER});
       localStorage.removeItem('role')
       localStorage.removeItem('Authorization')
-      window.location = "/"
+      window.location = "/signin"
         }
     }
   
@@ -75,7 +78,7 @@ const Profile = () => {
 
    return (
                           <div class="bod">
-                       <MainHome/><br/><br/><br/>
+                       <StudentNavBar/><br/><br/><br/>
                    <div class="container">
                <div class="main-bod">    
             <div class="row gutters-sm">
@@ -189,7 +192,22 @@ const Profile = () => {
             </div>
           </div>
           
-     
+<UpdateProfile
+     upname= {name}
+     upnic= {nic}
+     upfaculty= {faculty}
+     upstudent_id= {student_id}
+     upbatch= {batch}
+     upspecialization= {specialization}
+     upphone= {phone}
+     upDOB= {DOB}
+     upemail= {email}
+     uppwd= {pwd}
+     show={show}
+     onHide={() => setShow(false)}
+         />
+
+
       </div><br/>
       <Footer/>
     </div>

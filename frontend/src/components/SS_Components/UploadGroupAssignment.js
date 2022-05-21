@@ -31,7 +31,7 @@ export default class UploadGroupAssignment extends Component {
     axios.post("http://localhost:8070/assignment/assignmentgroups/save",data).then((res)=>{
       if(res.data.success){
         alert("Assignment Upload Successfully!!!")
-        window.location.href = '/movie/display';
+        // window.location.href = '';
       }
       this.setState({
         groupAssignment_name:"",

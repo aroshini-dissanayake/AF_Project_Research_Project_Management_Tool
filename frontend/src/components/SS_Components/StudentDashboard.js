@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import MainHome from '../AA_Components/mainhome';
+import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
 
 export default class StudentDashboard extends Component {
   render() {
     return (
       <div>
-      <MainHome/>    
+      <StudentNavBar/>    
        <div className="container" ><br/><br/><br/>
        <div class="row row-cols-1 row-cols-md-3 g-4" >
            <div class="col" style={{width: "25rem"}} > 
