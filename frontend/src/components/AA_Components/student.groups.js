@@ -1,29 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Button from "@material-ui/core/Button";
-import DeleteIcon from '@material-ui/icons/Delete';
 
-const Groups = () => {
+const Groups = ({ groupId, group_name, groupMembers}) => {
    const [groups, setGroups] = useState([])
-   const [page, setPage] = React.useState(0);
-   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
-const handleChangePage = (event, newPage) => {
-    setPage(newPage);
- };
-
- const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
- };
-
 
    useEffect(() => {
       const getGroupsItems = async () => {
          try {
-            await axios.get(`http://localhost:8070/student/display`)
+            await axios.get(`http://localhost:8070/student/displaygroups`)
                .then((res) => {
-                  setGroups(res.data.groups)
+                  setGroups(res.data.existingGroups)
                })
                .catch((error) => {
                   console.log(error.message)
@@ -38,21 +25,15 @@ const handleChangePage = (event, newPage) => {
 
    return (
       <div>
-         {groups.length !== 0 ?
-            <div>
+         {/* {groups.length !== 0 ? */}
+            <div className="container">
                <h3>Student Groups </h3>
                <hr />
-               <table className="table table-bordered">
-                  <tbody>
-                     {groups.map((row) => (
-                        <tr>
-                           <td>{row.group_name}</td>
-                        </tr>
+                     {groups.map((item) => (
+                        <Button><>{item.group_name}</></Button>
                      ))}
-                  </tbody>
-               </table>
             </div>
-            : <div></div>}
+            {/* : <div></div>} */}
       </div>
    )
 }

@@ -83,7 +83,7 @@ export default class MainHome extends Component {
             </Nav>
           </Navbar.Collapse>
        
-      </Navbar>
+      </Navbar>  
     );
   }
 }
