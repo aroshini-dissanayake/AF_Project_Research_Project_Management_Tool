@@ -62,7 +62,7 @@ import 'react-toastify/dist/ReactToastify.css';
                </div>
                <div className="card-body">
                <div className = "col-md-8 mt-4 mx-auto">
-    
+               
                <form className="needs-validation" onSubmit={sendData}>
     
                <div className="form-group" style={{ marginBottom: '15px' }}>
@@ -146,6 +146,8 @@ import 'react-toastify/dist/ReactToastify.css';
     
                       &nbsp; Add New Point
                     </Button>
+                   
+                   
                   </div>
                 </form>
               </div> 
