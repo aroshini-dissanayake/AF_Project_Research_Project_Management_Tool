@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 
 export default class Usersremove extends Component {
     constructor(props){
         super(props);
         this.state = {
-            staff:[]
+          usersremove:[]
         };
     }  
 //retrive all panel members 
@@ -15,14 +18,30 @@ componentDidMount(){
 } 
 
 retrievepanelmemberDetails(){
-    axios.get("http://localhost:8070/staff/getpanelmember").then(res=>{
+    axios.get("http://localhost:8070/usersremove/getpanelmember").then(res=>{
         if(res.data.status){
             this.setState({
-                staff:res.data.panelmember
+              usersremove:res.data.panelmember
      });
     }
   })
  }
+
+//delete panelmember
+onDelete = (panelmemberID) => {
+
+
+  if (window.confirm('Are you sure you wish to delete this details?')) {
+    axios.delete(`http://localhost:8070/usersremove/panelmemberdelete/${panelmemberID}`).then((res) => {
+      toast.warning('Details Deleted Successfully', { position: toast.POSITION.TOP_CENTER });
+
+      //alert("Delete Successfully")
+      this.retrievepanelmemberDetails();
+
+    })
+  }
+}
+
 
 render() {
     return ( 
@@ -44,15 +63,20 @@ render() {
                  </tr>
              </thead>
                <tbody>
-                   {this.state.staff.map((staff,index)=>(
+                   {this.state.usersremove.map((usersremove,index)=>(
                       <tr key={index}>    
                          <th scope='row'>{index + 1}</th>
-                            <td>{staff.name}</td>
-                               <td>{staff.faculty}</td>
-                                 <td>{staff.feild}</td>
-                            <td>{staff.staff_id}</td>
-                        <td>{staff.role}</td>
-                   <td>{staff.email}</td>              
+                            <td>{usersremove.name}</td>
+                               <td>{usersremove.faculty}</td>
+                                 <td>{usersremove.feild}</td>
+                            <td>{usersremove.staff_id}</td>
+                        <td>{usersremove.role}</td>
+                   <td>{usersremove.email}</td>
+                   <td>
+                     <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(usersremove._id)}>
+              <i className="far fa-trash-alt"></i>&nbsp;Delete
+            </a>   
+                     </td>              
                 </tr>
                   )
                     )}

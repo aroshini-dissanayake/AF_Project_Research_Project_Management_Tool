@@ -64,6 +64,13 @@ function App() {
      <Route path = "/admindashboard" component={Admindashboard}/>  
      <Route path = "/adminprofile" component={AdminProfile}/>  
 
+     <Route path = "/homemarkingschemes" component={Homemarkingschemes}/> 
+    <Route path = "/createmarkingadd" component={Createmarkingschemes}/>
+    <Route path = "/createmarkingedit/:createmarkingID" component={Editmarkingschemes}/>
+    <Route path = "/createmarking/:createmarkingID" component={Markingschemesdetails}/>
+    <Route path = "/getpanelmember" component={Usersremove}/>
+    
+
    </div>  
    </Switch> 
    </BrowserRouter>
