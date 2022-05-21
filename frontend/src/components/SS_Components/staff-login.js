@@ -93,8 +93,9 @@ render() {
                                         </div> 
                                            <br/>
                                               <br/>
-                                                 <Footer/>
-                                                   </div>
+                                                 <br/>
+                                                    <Footer/>
+                                                       </div>
         )
       }
     }

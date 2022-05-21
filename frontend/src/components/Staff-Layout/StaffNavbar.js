@@ -58,7 +58,7 @@ export default class StaffNavbar extends Component {
             <i class="fa fa-envelope fa-lg" aria-hidden="true" href="#" style={{color: "#ffff"}} ></i> &nbsp;&nbsp; &nbsp;&nbsp; 
             {/* <i class="fa fa-user-circle fa-4x" aria-hidden="true" style={{color: "#ffff"}}></i>         */}
 
-            <IconButton aria-label="profile" href="/staff/staffprofile" style={{color: "#FFFFFF"}} >
+            <IconButton aria-label="profile" href="/staffprofile" style={{color: "#FFFFFF"}} >
             <PersonIcon fontSize="large" />
             </IconButton> 
 

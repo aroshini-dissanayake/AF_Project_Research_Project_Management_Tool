@@ -6,9 +6,8 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 export default class StudentNavBar extends Component {
   render() {
     return (
-        <div> 
+        <div>   
         <nav class="navbar navbar-expand-lg " style={{background: "#0C090A	",  height: "89px"}}>
-        <br/>  <br/>   
         <button class="navbar-brand" style={{background: "#FFA500",height: "90px",width:"250px"}} ><b>SLIIT  ResearchWeb</b></button>  
  
         <div class="container">  
@@ -72,6 +71,15 @@ export default class StudentNavBar extends Component {
              <li><a class="dropdown-item" href="#">Student IT services</a></li>
            </ul>      
          </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: "#ffff"}}>
+            <b>Suport Services</b> </a>
+           <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style={{background: "#ffff	"}}>
+             <li><a class="dropdown-item" href="#">G Suites (Gmail)</a></li>
+             <li><a class="dropdown-item" href="#">0365 (Microsoft)</a></li>
+           </ul>      
+         </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
        </ul>
        
@@ -83,8 +91,8 @@ export default class StudentNavBar extends Component {
              <div class="modal-dialog">
              <div class="modal-content">
              <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">LOGIN AS </h5>         
-               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             <h5 class="modal-title" id="exampleModalLabel">LOGIN AS </h5>         
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
              </div>
            
              <div class="modal-body" align="right">

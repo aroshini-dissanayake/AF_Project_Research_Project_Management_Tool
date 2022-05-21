@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import axios from "axios";
-import image from "../AA_Components/reg.jpg";
 import Footer from '../Layout/footer';
 import StudentNavBar from '../Layout/StudentNavBar';
 
@@ -77,8 +76,8 @@ export default function Signup(){
   
              <div class="row g-0">
                 <div class="col-xl-7 d-none d-xl-block"><br/>
-            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-        <b><u>STAFF&nbsp;&nbsp;REGISTERATION&nbsp;&nbsp; FORM</u></b></h3><br/><br/><br/>
+            <h3><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+        <b><u>STAFF&nbsp;&nbsp;REGISTERATION&nbsp;&nbsp; FORM</u></b></h3><br/><br/><br/><br/><br/><br/><br/>
    <img src="https://askme.studio/assets/images/login-signup.svg" style={{width: 600}}/>
         </div>
         <div class="col-xl-5">

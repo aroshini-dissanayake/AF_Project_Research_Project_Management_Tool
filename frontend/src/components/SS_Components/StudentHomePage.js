@@ -13,7 +13,7 @@ export default class StudentHomePage extends Component {
    <div class="carousel-inner">
 
   <div class="carousel-item">
-    <img src="https://static.sliit.lk/wp-content/uploads/2020/10/29121536/pdp-sliit.jpg" class="d-block w-100" alt="..."></img>
+    <img src="https://static.sliit.lk/wp-content/uploads/2020/01/06050102/SLIIT-BSc-Engineering-Hons-in-Electrical-Electronic-Engineering.jpg" class="d-block w-100" alt="..."></img>
   </div>
 
   <div class="carousel-item">
@@ -36,6 +36,15 @@ export default class StudentHomePage extends Component {
     <img src="https://static.sliit.lk/wp-content/uploads/2022/03/31054515/SLIIT-law-intake-2022.jpg" class="d-block w-100" alt="..."></img>
   </div>
 
+
+  <div class="carousel-item">
+    <img src="https://static.sliit.lk/wp-content/uploads/2020/01/06050827/SLIIT-BSc-Engineering-Hons-in-Materials-Engineering.jpg" class="d-block w-100" alt="..."></img>
+  </div>
+
+  <div class="carousel-item">
+    <img src="https://static.sliit.lk/wp-content/uploads/2020/01/06040550/SLIIT-BSc-Hons-in-Information-Technology-Specializing-in-Cyber-Security.jpg" class="d-block w-100" alt="..."></img>
+  </div>
+
 </div>
    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -47,7 +56,8 @@ export default class StudentHomePage extends Component {
     <span class="visually-hidden">Next</span>
    </button>
 </div> 
-        </div><br/><br/><br/><br/>
+       
+        </div><br/><br/><br/>
                 <Footer/>
       </div>
     )

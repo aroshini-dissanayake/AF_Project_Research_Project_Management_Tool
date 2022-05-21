@@ -29,7 +29,7 @@ export default class StudentLogin extends Component {
         }) 
         localStorage.setItem("Authorization", res.data.token)
            window.location = "/mainhome"
-           alert('loging successfull');
+           alert('Loging Successfull');
       })
       .catch((err) => {
            console.log(err)
