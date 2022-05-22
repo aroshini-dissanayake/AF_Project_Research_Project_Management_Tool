@@ -16,7 +16,7 @@ export default class StaffNavbar extends Component {
        <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
 
        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#" style={{color: "#ffff"}}>Dashboard</a>
+          <a class="nav-link" aria-current="page" href="/admindashboard" style={{color: "#ffff"}}>Dashboard</a>
         </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
 
         <li class="nav-item">
@@ -29,8 +29,8 @@ export default class StaffNavbar extends Component {
         </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
 
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="group/displaystudentgroups" style={{color: "#ffff"}}>Student Grops</a>
-        </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+          <a class="nav-link" aria-current="page" href="/group/displaystudentgroups" style={{color: "#ffff"}}>Student Groups</a>
+        </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 
 
 
         <li class="nav-item dropdown">

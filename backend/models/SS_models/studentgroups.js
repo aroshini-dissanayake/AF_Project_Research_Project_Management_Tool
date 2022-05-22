@@ -9,7 +9,7 @@ const studentgroupsSchema = new mongoose.Schema({
 
     groupName:{
         type: String,
-        required:true,
+        required:false,
     },
 
     panelMember:{
@@ -17,6 +17,14 @@ const studentgroupsSchema = new mongoose.Schema({
         required:false,
     },
     topicstatus:{
+        type: String,
+        required:false,
+    },
+    supervisortopicstatus:{
+        type: String,
+        required:false,
+    },
+    cosupervisortopicstatus:{
         type: String,
         required:false,
     }
