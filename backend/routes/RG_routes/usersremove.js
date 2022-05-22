@@ -20,7 +20,7 @@ router.get("/getpanelmember",async(req,res)=>{
   res.status(500)
   .send({error:error.message});
   }
-  });
+  })
 
 
 //Delete pannel members details
