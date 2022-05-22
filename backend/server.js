@@ -54,9 +54,8 @@ console.log("Mongodb connection success!!!");
 // @import routes
 //sajani
 const studentgroupRouter = require("./routes/SS_routes/studentgroups");
-// const accepttopicRouter = require("./routes/SS_routes/acceptTopic");
-// const groupassignmentRouter = require('./routes/SS_routes/groupAssignment');
 const staffRouter =require("./routes/SS_routes/staff");
+const PDFUploadRouter = require('./routes/SS_routes/PDFUpload');
 
 //aro
 const studentRouter = require("./routes/AA_routes/student");
@@ -64,13 +63,14 @@ const studentRouter = require("./routes/AA_routes/student");
 
 //ima
 const topicRouter = require("./routes/IS_routes/topic");
+const DocUploadRouter = require("./routes/IS_routes/DocUpload");
 
 //randy
 const adminRouter = require('./routes/RG_routes/admin');
 const createmarkingRouter = require('./routes/RG_routes/createmarking');
 
 
-const PDFUploadRouter = require('./routes/SS_routes/PDFUpload');
+
 
 
 // rotues use
@@ -79,10 +79,7 @@ app.use("/group",studentgroupRouter);
 app.use("/student", studentRouter);
 app.use("/staff",staffRouter);
 app.use("/regtopic",topicRouter);
-// app.use("/accept",accepttopicRouter);
-app.use("/admin",adminRouter);
-app.use("/assignment",PDFUploadRouter);
-
+app.use("/document",DocUploadRouter);
 
 
 
