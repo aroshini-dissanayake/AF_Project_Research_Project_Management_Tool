@@ -1,46 +1,26 @@
 const mongoose = require('mongoose');
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const config = require("config");
+const validator = require("validator");
 
 const adminSchema = new mongoose.Schema({
 
-    fname: {
-        type : String,
-        require:true,
-        trim:true
-    },
-
-    mname: {
-        type : String,
-        require:true,
-        trim:true
-    },
-
-    lname: {
-        type : String,
-        require:true,
-        trim:true
-    },
-
-    username: {
-        type : String,
-        require:true,
-        trim:true
-    },
-
-    pno: {
-        type: String,
-        require : true,
-        trim:true
-    },
-
-    nic: {
+    name: {
         type : String,
         required : true,
         trim:true
     },
-
+    phone: {
+        type: String,
+        require : true,
+        trim:true,
+        validate(value) {
+            if (!validator.isMobilePhone(value)) {
+              throw new Error("Please enter valid mobile number");
+            }
+          },
+    },
+    
     sliitid:{
         type : String,
         required : true,
@@ -50,7 +30,13 @@ const adminSchema = new mongoose.Schema({
     email:{
         type : String,
         required : true,
-        trim : true
+        lowercase: true,
+        trim : true,
+        validate(value) {
+            if (!validator.isEmail(value)) {
+              throw new Error("Please enter valid email address");
+            }
+          },
     },
 
     password: {
@@ -58,10 +44,6 @@ const adminSchema = new mongoose.Schema({
         required : true,
         trim : true
     },
-
-    imageUrl: {
-        type: String,
-      },
 
     tokens: [{
         token: {
@@ -88,10 +70,11 @@ adminSchema.methods.generateAuthToken = async function () {
     return token;
   };
  
-  adminSchema.statics.findByCredentials = async (username, password) => {
-    const admin1 = await admin.findOne({ username});
+  // @Action - Find admin by credentials
+  adminSchema.statics.findByCredentials = async (sliitid, password) => {
+    const admin1 = await admin.findOne({ sliitid});
     if (!admin1) {
-      throw new Error("Please enter acorrect user name");
+      throw new Error("Please enter a correct SLIIT ID");
     }
     const isMatch = await bcrypt.compare(password, admin1.password);
     if (!isMatch) {
