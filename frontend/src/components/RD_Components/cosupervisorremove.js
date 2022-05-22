@@ -5,51 +5,49 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
-export default class Supervisorremove extends Component {
+export default class CoSupervisorremove extends Component {
     constructor(props){
         super(props);
         this.state = {
-            supervisorremove:[]
+            cosupervisorremove:[]
         };
     }  
 
-    //retrive supervisor members 
+    //retrive cosupervisor members 
 componentDidMount(){
-    this.retrievesupervisorDetails();
+    this.retrievecosupervisorDetails();
 } 
-
-retrievesupervisorDetails(){
-    axios.get("http://localhost:8070/usersremove/getsupervisor").then(res=>{
+retrievecosupervisorDetails(){
+    axios.get("http://localhost:8070/usersremove/getcosupervisor").then(res=>{
         if(res.data.status){
             this.setState({
-                supervisorremove:res.data.supervisor
+                cosupervisorremove:res.data.cosupervisor
      });
     }
   })
  }
 
-//delete supervisor
-onDelete = (supervisorID) => {
+//delete cosupervisor
+onDelete = (cosupervisorID) => {
 
 
     if (window.confirm('Are you sure you wish to delete this details?')) {
-      axios.delete(`http://localhost:8070/usersremove/supervisordelete/${supervisorID}`).then((res) => {
+      axios.delete(`http://localhost:8070/usersremove/cosupervisordelete/${cosupervisorID}`).then((res) => {
         toast.warning('Details Deleted Successfully', { position: toast.POSITION.TOP_CENTER });
   
         //alert("Delete Successfully")
-        this.retrievesupervisorDetails();
+        this.retrievecosupervisorDetails();
   
       })
     }
   }
-  
 
  render() {
     return ( 
                         <div>
                      <br/><br/>
                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
-              <b><u>All Supervisor Details </u></b></h3><br/>
+              <b><u>All Co-Supervisor Details </u></b></h3><br/>
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -64,17 +62,17 @@ onDelete = (supervisorID) => {
                  </tr>
              </thead>
                <tbody>
-                   {this.state.supervisorremove.map((supervisorremove,index)=>(
+                   {this.state.cosupervisorremove.map((cosupervisorremove,index)=>(
                       <tr key={index}>    
                          <th scope='row'>{index + 1}</th>
-                            <td>{supervisorremove.name}</td>
-                               <td>{supervisorremove.faculty}</td>
-                                 <td>{supervisorremove.feild}</td>
-                            <td>{supervisorremove.staff_id}</td>
-                        <td>{supervisorremove.role}</td>
-                   <td>{supervisorremove.email}</td>
+                            <td>{cosupervisorremove.name}</td>
+                               <td>{cosupervisorremove.faculty}</td>
+                                 <td>{cosupervisorremove.feild}</td>
+                            <td>{cosupervisorremove.staff_id}</td>
+                        <td>{cosupervisorremove.role}</td>
+                   <td>{cosupervisorremove.email}</td>
                    <td>
-                     <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(supervisorremove._id)}>
+                     <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(cosupervisorremove._id)}>
               <i className="far fa-trash-alt"></i>&nbsp;Delete
             </a>   
                      </td>              
