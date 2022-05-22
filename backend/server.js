@@ -15,6 +15,11 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 8070;
 
+//import routers
+
+
+
+
 app.use(bodyParser.json({limit: '50mb'}) );
 app.use(bodyParser.urlencoded({
   limit: '50mb',
@@ -24,6 +29,11 @@ app.use(bodyParser.urlencoded({
 
 app.use(cors());
 app.use(express.json());
+
+//routes use
+
+
+
 
 const URL = process.env.MONGODB_URL;
 process.env.SUPPRESS_NO_CONFIG_WARNING = 'y';
@@ -42,8 +52,9 @@ console.log("Mongodb connection success!!!");
 })
 
 // @import routes
+//sajani
 const studentgroupRouter = require("./routes/SS_routes/studentgroups");
-const studentRouter = require("./routes/AA_routes/student");
+
 const staffRouter =require("./routes/SS_routes/staff");
 const adminRouter = require('./routes/RG_routes/admin');
 const createmarkingRouter = require('./routes/RG_routes/createmarking');
@@ -51,17 +62,47 @@ const researchtopicRoutes = require ('./routes/IS_routes/researchtopic');
 const usersremoveRoutes = require('./routes/RG_routes/usersremove');
 const PDFUploadRouter = require('./routes/SS_routes/PDFUpload');
 
+//aro
+const studentRouter = require("./routes/AA_routes/student");
+
+
+//ima
+const topicRouter = require("./routes/IS_routes/topic");
+const DocUploadRouter = require("./routes/IS_routes/DocUpload");
+
+//randy
+const adminRouter = require('./routes/RG_routes/admin');
+const createmarkingRouter = require('./routes/RG_routes/createmarking');
+
+
+
+
 
 // rotues use
-app.use("/student",studentRouter);
+
 app.use("/group",studentgroupRouter);
 app.use("/student", studentRouter);
 app.use("/staff",staffRouter);
+app.use("/regtopic",topicRouter);
+app.use("/document",DocUploadRouter);
+
 app.use("/admin",adminRouter);
 app.use("/createmarking",createmarkingRouter);
 app.use("/researchtopic",researchtopicRoutes);
 app.use("/usersremove",usersremoveRoutes);
 app.use("/assignment",PDFUploadRouter);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
