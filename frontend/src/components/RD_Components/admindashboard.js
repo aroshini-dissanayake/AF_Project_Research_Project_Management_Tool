@@ -24,7 +24,7 @@ const studentgroups = () => {
   window.location = `/group/displaystudentgroups`
 }
 const uploadFile = () => {
-  window.location = `/assignmentgroups/save`
+  window.location = `/pdfupload`
 }
 const faculties = () => {
   window.location = `/faculties`
