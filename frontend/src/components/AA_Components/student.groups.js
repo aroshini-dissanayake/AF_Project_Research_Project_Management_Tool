@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import AdminNavBar from '../Layout/AdminNavBar';
 
-export default class Groups extends Component{
+export default class Groupss extends Component{
     constructor(props){
         super(props);
         this.state = {
