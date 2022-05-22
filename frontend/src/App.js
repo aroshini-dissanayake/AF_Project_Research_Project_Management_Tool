@@ -53,7 +53,7 @@ function App() {
    <Route path = "/mainhome" component={MainHome}/>
    <Route path = "/faculties" component={Faculties}/>
    <Route path= "/groupReg" component={GroupRegistration}/>
-   <Route path= "/display" component={Add_Group_Members}/>
+   <Route path= "/display/:id" component={Add_Group_Members}/>
    <Route path= "/groups" component={Groups}/>
    <Route path = "/homepage" component={HomePage}/>
 

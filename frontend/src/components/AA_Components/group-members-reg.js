@@ -1,140 +1,98 @@
-import React,{Component} from "react";
+import React,{Component} from 'react' ;
 import axios from "axios";
+import {toast} from 'react-toastify';
 
 export default class Add_Group_Members extends Component{
-
-    constructor(props){   
+ 
+    constructor(props){
         super(props);
-        this.state={
-            group_name:"",
-            groupMember: {
-            student_id:"",
-            name:"",
-            email:"",
-            phone:"",
-        }
-        }
-     } 
-
-   async componentDidMount(){
-        const id = this.props.match.params.id; 
-        await axios.get(`http://localhost:8070/student/groupReg/${id}`).then((res)=>{
-
-        if(res.data.success){
-                this.setState({
-                    group_name:res.data.studentgroups.group_name,
-                    student_id : res.data.studentgroups.student_id,
-                    name:res.data.studentgroups.name,
-                    email : res.data.studentgroups.email,
-                    phone : res.data.studentgroups.phone,
-               })
+        this.state = {
+            groupMembers: []
           }
-        })
-     }
-    handleInputChange = (e)=>{
-        const{name,value} = e.target;
-        this.setState({
-           ...this.state,
-           [name]:value
-        })
-     }
+        }
+      
 
+    componentDidMount(){
+        const id = this.props.match.params.id;
+        axios.get(`http://localhost:8070/student/display/${id}`)
+        .then((res) => {
+          this.setState({groupMembers: res.data.groupMembers})
+        })
+        .catch((err) => {
+          alert(err.message)
+        })
+      
+        console.log(this.state.groupMembers)
+      }
+
+      
     onSubmit = (e)=>{
         e.preventDefault();
         const id = this.props.match.params.id; 
-        const{group_name,student_id,name,email,phone} = this.state;
+        const{student_id,name,email,phone} = this.state;
         const data = {
-            group_name:group_name,
             student_id:student_id,
             name:name,
             email:email,
             phone:phone,
         }
 
-        axios.post(`http://localhost:8070/student/grpReg/${id}`,data).then((res)=>{  
+        const config = {
+            headers: {
+              Authorization: localStorage.getItem("Authorization"),
+            },
+          };
+
+        axios.post(`http://localhost:8070/student/groupReg/${id}`,data, config).then((res)=>{  
         if(res.data.success){
             this.setState({
-                group_name:group_name,
                 student_id:"",
                 name:"",
-                email:"",
-                phone:"" ,
-           })
-           alert("group member added");
-        //    window.location.href="/group/displaystudentgroups"
-      }    
+                email:"" ,
+                phone:"",
+           }).then(()=>{
+           toast.success('Added You To This Group Successfully',{position:toast.POSITION.TOP_CENTER})
+           }
+        )}    
     })
     .catch((e)=>{
     });
 }
   
+      render(){
 
-render(){
-    return(
-        <div className='col-md-8 mt-4 mx-auto'>
-        <h1 className='h3 mb-3 font-weight-normal'>ADD GROUP MEMBER</h1>
-         <form className='needs-validation' noValidate>
-         <div className='form-group' style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}></label>
-            </div>
-            <div className='form-group' style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Student ID</label>
-                <input
-                 type="text" 
-                 className='form-control'
-                 name='Studentid'
-                 placeholder='Enter Student ID'
-                 value={this.state.student_id}
-                 onChange={this.handleInputChange}>
+        return(
+            <table class="table">
+                       <thead>
+                     <tr bgcolor="#79BAEC">
+                 <th scope='col'>No</th>
+             <th scope='col'>Student ID</th>
+         <th scope='col'>name</th>
+     <th scope='col'>Phone Number</th>
+     <th scope='col'>Email</th>
+         </tr>
+            </thead>
+            <tbody>
+                {this.state.groupMembers.map((groupMembers,index) =>(
+                    <tr>
+                        <th scope='row'>{index + 1}</th>
+                        <td>{groupMembers.student_id}</td>
+                        <td>{groupMembers.name}</td>
+                        <td>{groupMembers.phone}</td>
+                        <td>{groupMembers.email}</td>
 
-                </input>
-            </div>
-            <div className='form-group' style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Student Name</label>
-                <input
-                 type="text" 
-                 className='form-control'
-                 name='studentname'
-                 placeholder='Enter Student Name'
-                 value={this.state.name}
-                 onChange={this.handleInputChange}>
-
-                </input>
-            </div>
-            <div className='form-group' style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Student Phone</label>
-                <input
-                 type="text" 
-                 className='form-control'
-                 name='studentphone'
-                 placeholder='Enter Student Phone Number'
-                 value={this.state.phone}
-                 onChange={this.handleInputChange}>
-
-                </input>
-            </div>
-            <div className='form-group' style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Student Email</label>
-                <input
-                 type="text" 
-                 className='form-control'
-                 name='studentemail'
-                 placeholder='Enter Student Email'
-                 value={this.state.email}
-                 onChange={this.handleInputChange}>
-
-                </input>
-            </div>
-            <button
-             className='btn btn-warning'
-             type='add' 
-             style={{marginTop:'15px'}}
-             onClick={this.onSubmit}>
-            <i className='fa fa-plus-circle'></i> &nbsp; ADD
-             </button>
-        </form>    
-    </div>
-    )
-
+                    </tr>
+                ))}
+                </tbody>
+                <button
+                 className='btn btn-warning'
+                 type='add' 
+                 style={{marginTop:'15px'}}
+                 onClick={this.onSubmit}>
+                <i className='fa fa-plus-circle'></i> &nbsp; ADD ME TO THIS GROUP
+                 </button>
+                </table>
+                
+        )
     }
 }
