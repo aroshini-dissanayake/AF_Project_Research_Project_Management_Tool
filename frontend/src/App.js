@@ -34,6 +34,20 @@ import StudentHomePage from './components/SS_Components/StudentHomePage';
 function App() {
   return (
    <BrowserRouter>
+   <Routes>
+    {/* <Route path = "/" element={<StudentLogin/>}/>
+    <Route path = "/signup" element={<Signup/>}/> 
+    <Route path = "/addpanelmember" element={<Add_panel_member/>}/>
+    <Route path = "/edit_panelmembers" element= {Edit_panem_member}/>
+    <Route path = "/" element= {<DisplayStudentgroups/>}/> */}
+    {/* <Route path = "/add" element={<Adminregistration/>}/> 
+    <Route path = "/login" element={<AdminLogin/>}/>  
+    <Route path = "/adminpage" element={<Adminpage/>}/>   */}
+    <Route path = "/homemarkingschemes" element={<Homemarkingschemes/>}/> 
+    <Route path = "/createmarkingadd" element={<Createmarkingschemes/>}/>
+    <Route path = "/createmarkingedit/:createmarkingID" element={<Editmarkingschemes/>}/>
+    <Route path = "/createmarking/:createmarkingID" element={<Markingschemesdetails/>}/>
+   </Routes>
      <Switch>
 
      <Route path = "/" component={StudentHomePage} exact/>

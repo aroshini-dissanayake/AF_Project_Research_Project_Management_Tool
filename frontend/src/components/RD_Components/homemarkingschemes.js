@@ -146,11 +146,14 @@ render() {
         </tbody>
         </table>
         <button className="btn btn-success"><a href="/createmarkingadd" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button>
+<<<<<<< HEAD
+=======
         <button className="btn btn-success"><a href="/getpanelmember" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button>
       </div>
       </div>
       </div>
       </div>
+>>>>>>> 24bf8fcf2afb7a44ece70d39c6b060bf13218bf1
       </div>
     )
     
