@@ -46,7 +46,7 @@ const studentgroupRouter = require("./routes/SS_routes/studentgroups");
 const studentRouter = require("./routes/AA_routes/student");
 const staffRouter =require("./routes/SS_routes/staff");
 const adminRouter = require('./routes/RG_routes/admin');
-const uploadgroupassignmentRouter = require('./routes/SS_routes/uploadgroupAssignment');
+const PDFUploadRouter = require('./routes/SS_routes/PDFUpload');
 
 
 // rotues use
@@ -55,7 +55,7 @@ app.use("/group",studentgroupRouter);
 app.use("/student", studentRouter);
 app.use("/staff",staffRouter);
 app.use("/admin",adminRouter);
-app.use("/assignment",uploadgroupassignmentRouter);
+app.use("/assignment",PDFUploadRouter);
 
 
 

@@ -14,6 +14,14 @@ const studentgroupsSchema = new mongoose.Schema({
     topicstatus:{
         type: String,
         required:false,
+    },
+    supervisortopicstatus:{
+        type: String,
+        required:false,
+    },
+    cosupervisortopicstatus:{
+        type: String,
+        required:false,
     }
 });
 

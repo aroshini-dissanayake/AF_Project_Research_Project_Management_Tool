@@ -28,7 +28,7 @@ export default class StudentLogin extends Component {
           token: res.data.token
         }) 
         localStorage.setItem("Authorization", res.data.token)
-           window.location = "/mainhome"
+           window.location = "/studentdashboard"
            alert('Loging Successfull');
       })
       .catch((err) => {

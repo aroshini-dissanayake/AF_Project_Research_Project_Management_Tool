@@ -24,7 +24,7 @@ const studentgroups = () => {
   window.location = `/group/displaystudentgroups`
 }
 const uploadFile = () => {
-  window.location = `/assignmentgroups/save`
+  window.location = `/pdfupload`
 }
 const faculties = () => {
   window.location = `/faculties`
@@ -111,7 +111,7 @@ export default class admindashboard extends Component {
                         <h5 class="card-title" id="dashh5" align="center"><b b style={{color: "#ffff"}}>Student Grops</b></h5>
                         </div>
                         <img
-                            src="https://www.kindpng.com/picc/m/150-1500375_transparent-interview-png-job-interview-images-cartoon-png.png"
+                            src="https://ldtschool.in/images/contacts.jpg"
                             class="card-img-top"
                             height="280px"
                             alt="..."  onClick={studentgroups}/>
