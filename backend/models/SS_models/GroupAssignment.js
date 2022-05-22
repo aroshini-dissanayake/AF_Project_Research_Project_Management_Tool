@@ -2,15 +2,11 @@ const mongoose = require('mongoose');
 
 const groupAssignmentSchema = new mongoose.Schema({
     
-    groupAssignment_name:{
-        type: String,
-        required:true,
-    },
-
-    uploadAssignment:{
+     pdfupload:{
         type: String,
         required:true,
     }
+
 
 });
 

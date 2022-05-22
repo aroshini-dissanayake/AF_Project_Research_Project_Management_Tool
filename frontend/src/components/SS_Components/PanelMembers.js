@@ -26,10 +26,10 @@ retrieveStaffRole(){
 
 render() {
     return ( 
-            <div>
-              <br/><br/>
-               <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
-            <b><u>All Panel Member Details </u></b></h3><br/>
+                        <div>
+                     <br/><br/>
+                  <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
+              <b><u>All Panel Member Details </u></b></h3><br/>
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -44,22 +44,22 @@ render() {
                  </tr>
              </thead>
                <tbody>
-                  {this.state.staff.map((staff,index)=>(
-                     <tr key={index}>    
-                        <th scope='row'>{index + 1}</th>
-                           <td>{staff.name}</td>
-                              <td>{staff.faculty}</td>
+                   {this.state.staff.map((staff,index)=>(
+                      <tr key={index}>    
+                         <th scope='row'>{index + 1}</th>
+                            <td>{staff.name}</td>
+                               <td>{staff.faculty}</td>
                                  <td>{staff.feild}</td>
-                               <td>{staff.staff_id}</td>
-                           <td>{staff.role}</td>
-                        <td>{staff.email}</td>              
-                    </tr>
+                            <td>{staff.staff_id}</td>
+                        <td>{staff.role}</td>
+                   <td>{staff.email}</td>              
+                </tr>
                   )
-               )}
-           </tbody>     
-        </table>
-     </div>
-      </div>
+                    )}
+                      </tbody>     
+                         </table>
+                            </div>
+                              </div>
     )
   }
 }

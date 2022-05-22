@@ -7,7 +7,7 @@ export default class Staff_Dashboard extends Component {
         return(
             <div>
                <StaffNavbar/>    
-                <div className="container" ><br/><br/>
+                <div className="container" ><br/><br/><br/>
                 <div class="row row-cols-1 row-cols-md-3 g-4" >
                     <div class="col" style={{width: "25rem"}} > 
                         <div class="shadow h-60" id="cardcol1">
@@ -89,7 +89,7 @@ export default class Staff_Dashboard extends Component {
                         </div>
                        </div>
                      </div>
-                  </div><br/>
+                  </div><br/><br/>
                 <Footer/>
              </div>
         )

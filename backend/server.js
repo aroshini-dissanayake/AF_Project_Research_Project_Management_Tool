@@ -70,6 +70,8 @@ const adminRouter = require('./routes/RG_routes/admin');
 const createmarkingRouter = require('./routes/RG_routes/createmarking');
 
 
+const PDFUploadRouter = require('./routes/SS_routes/PDFUpload');
+
 
 // rotues use
 
@@ -79,8 +81,9 @@ app.use("/staff",staffRouter);
 app.use("/regtopic",topicRouter);
 app.use("/accept",accepttopicRouter);
 app.use("/admin",adminRouter);
-app.use("/createmarking",createmarkingRouter);
-app.use("/assignment",groupassignmentRouter);
+app.use("/assignment",PDFUploadRouter);
+
+
 
 
 
