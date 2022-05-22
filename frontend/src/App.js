@@ -30,9 +30,13 @@ import Supervisorremove from './components/RD_Components/supervisorremove';
 import CoSupervisorremove from './components/RD_Components/cosupervisorremove';
 import Studentsremove from './components/RD_Components/studentsremove';
 import PanelMembers from './components/SS_Components/PanelMembers';
-import UploadGroupAssignment from './components/SS_Components/UploadGroupAssignment';
 import StudentDashboard from './components/SS_Components/StudentDashboard';
 import StudentHomePage from './components/SS_Components/StudentHomePage';
+import Groups from './components/SS_Components/Groups';
+import PDFUpload from './components/SS_Components/PDFUpload';
+import PDFDisplay from './components/SS_Components/PDFDisplay';
+import SupervisorAcceptTopic from './components/SS_Components/SupervisorAcceptTopic';
+import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcceptTopic';
 
 function App() {
   return (
@@ -66,9 +70,13 @@ function App() {
      <Route path = "/staffprofile" component={StaffProfile}/>
      <Route path = "/displayStaffRole" component={AdminViewStaff}/>
      <Route path = "/panelmember" component={PanelMembers}/>
-     <Route path = "/assignmentgroups/save" component={UploadGroupAssignment}/>
      <Route path = "/studentdashboard" component={StudentDashboard}/>
-
+     <Route path = "/groups" component={Groups}/>
+     <Route path = "/pdfupload" component={PDFUpload}/>
+     <Route path = "/pdfdisplay" component={PDFDisplay}/>
+     <Route path = "/pdfdisplay" component={PDFDisplay}/>
+     <Route path = "/requestsupervisor" component={SupervisorAcceptTopic}/>
+     <Route path = "/requestcosupervisor" component={CoSupervisorAcceptTopic}/>
      
      <Route path = "/signin" component={StudentLogin}/>
      <Route path = "/signup" component={Signup}/>
