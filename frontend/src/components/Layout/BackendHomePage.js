@@ -6,7 +6,7 @@ export default class BackendHomePage extends Component {
   render() {
     return (
     <div style={{ backgroundColor:"" }} >
-    <BackendHomeNavBar/><br/><br/>
+    <BackendHomeNavBar/><br/><br/><br/>
     <div style={{ backgroundColor:"black" ,height:"500px"}} >
 
    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -44,7 +44,7 @@ export default class BackendHomePage extends Component {
     <span class="visually-hidden">Next</span>
    </button>
 </div> 
-        </div><br/><br/><br/>
+        </div><br/><br/><br/><br/>
         <Footer/>
       </div>
     )

@@ -1,89 +1,98 @@
-import React, { Component } from "react";
-// import axios from 'axios'
-import { Navbar,  Nav } from "react-bootstrap";
-import PersonIcon from '@material-ui/icons/Person';
-import IconButton from '@material-ui/core/IconButton';
+import React, { Component } from 'react';
+import StudentNavBar from '../Home_Component/StudentNavBar';
+import Footer from '../Layout/footer';
 
 
-
-export default class MainHome extends Component {
-//   constructor(props){
-//     super(props);
-//      this.state ={
-//       products:[]
-    
-//     };
-// }
-
-// //Retrieve Product
-// componentDidMount(){
-//   this.retrieveProducts();
-// }
-//   retrieveProducts(){
-//     axios.get("http://localhost:8070/student/").then(res=>{
-//     if(res.data.success){
-//         this.setState({
-//           products:res.data.existingProducts
-//         });
-//         console.log(this.state.products);
-//     }
-//   });
-// }
-
-// //Search 
-// filterData(products,searchKey){
-//   const result = products.filter((products)=>
-//   products.productName.toLowerCase().includes(searchKey)||
-//   products.brandName.toLowerCase().includes(searchKey)
-//   )
-
-//    this.setState({products:result})
-// }
-
-// handleSearchArea = (e)=>{
-//   const searchKey = e.currentTarget.value;
-//     axios.get("http://localhost:8070/products/displayProducts").then(res=>{
-//       if(res.data.success){
-//       this.filterData(res.data.existingProducts,searchKey)
-//     }
-//   });
-//}
-    render() {
+export default class mainhome extends Component {
+  render() {
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{height:100}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          {/* <img
-            src={image}
-            width="80"
-            height="80"
-            className="d-inline-block align-top"
-            alt=""/> */}
- 
-          <Navbar.Brand href="/mainhome" style={{fontSize:25}}>&nbsp;Research Management Tool</Navbar.Brand> 
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         
-              <Nav className="me-auto" style={{fontSize:20}}>
-             
-              <Nav.Link href="/faculties">Faculties</Nav.Link>
-              <Nav.Link href="/group">Research Group</Nav.Link>
-              <Nav.Link href="/login">Login</Nav.Link>
-              <Nav.Link href="/signup">Sign Up</Nav.Link>
-              
-            </Nav>
-           
-            <form className="d-10" >
-            <input id="searchNav" className="form-control me-5" type="search" placeholder="Search" aria-label="Search" onChange={this.handleSearchArea}/>
-            </form>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-   
-            <Nav>
-                <IconButton aria-label="profile" href="/profile" style={{color: "#FFFFFF"}} >
-                <PersonIcon fontSize="large" />
-                </IconButton>  &nbsp;&nbsp;&nbsp;&nbsp;  
-             
-            </Nav>
-          </Navbar.Collapse>
-       
-      </Navbar>
-    );
+      <div>
+        <StudentNavBar/>
+        <div className="container" ><br/><br/>
+                <div class="row row-cols-1 row-cols-md-3 g-4" >
+                    <div class="col" style={{width: "25rem"}} > 
+                        <div class="shadow h-60" id="cardcol1">
+                        <div class="card-body" style={{background: "#F3E5AB"}} >
+                        <h5 class="card-title" id="dashh5" align="center" ><b> Faculty of Computing</b></h5>
+                        </div>
+                        <img
+                            src="https://www.sliit.lk/wp-content/uploads/2017/12/Business-Analytics.jpg"
+                            class="card-img-top"
+                            height="280px"
+                            alt="..."/>
+                        </div>
+                    </div>
+                 
+                    <div class="col" style={{width: "27rem"}} > 
+                        <div class="shadow h-60" id="cardcol1">
+                        <div class="card-body" style={{background: "#F3E5AB"}} >
+                        <h5 class="card-title" id="dashh5"  align="center"><b>Faculty of Business</b></h5>
+                        </div>
+                        <img
+                            src="https://static.sliit.lk/wp-content/uploads/2017/12/Marketing-Management.jpg"
+                            class="card-img-top"
+                            height="280px"
+                            alt="..."/>
+                        </div>
+                    </div>     
+                    
+                    <div class="col" style={{width: "30rem"}} > 
+                        <div class="shadow h-60" id="cardcol1">
+                        <div class="card-body" style={{background: "#F3E5AB"}}>
+                        <h5 class="card-title" id="dashh5"  align="center"><b> Faculty of Engineering</b></h5>
+                        </div>
+                        <img
+                            src="http://www.sundaytimes.lk/201011/uploads/State-of-the-Art-Laboratories.jpg"
+                            class="card-img-top"
+                            height="280px"
+                            alt="..."/>
+                        </div>
+                    </div>
+
+                    <div class="col" style={{width: "25rem"}} > 
+                        <div class="shadow h-60" id="cardcol1">
+                        <div class="card-body" style={{background: "#F3E5AB"}}>
+                        <h5 class="card-title" id="dashh5"  align="center"><b>Faculty of Humanities & Sciences</b></h5>
+                        </div>
+                        <img
+                            src="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.edu.dailymirror.lk/uploads/articles_14_2fe4654f38.jpg"
+                            class="card-img-top"
+                            height="280px"
+                            alt="..."/>
+                        </div>
+                    </div>
+
+
+                    <div class="col" style={{width: "27rem"}} > 
+                        <div class="shadow h-60" id="cardcol1">
+                        <div class="card-body"  style={{background: "#F3E5AB"}} >
+                        <h5 class="card-title" id="dashh5"  align="center"><b>School of Architechture</b></h5>
+                        </div>
+                        <img
+                            src="https://ancedu.com/wp-content/uploads/2021/05/Foundation.jpg"
+                            class="card-img-top"
+                            height="280px"
+                            alt="..."/>
+                        </div>
+                    </div>
+
+
+                    <div class="col" style={{width: "30rem"}} > 
+                        <div class="shadow h-60" id="cardcol1">
+                        <div class="card-body"  style={{background: "#F3E5AB"}} >
+                        <h5 class="card-title" id="dashh5" align="center"><b>SLIIT International</b></h5>
+                        </div>
+                        <img
+                            src="https://media.istockphoto.com/photos/in-the-library-pretty-female-student-with-books-picture-id528954725?k=20&m=528954725&s=612x612&w=0&h=Z9zdmw5E_KBrw5r-Wxy4r3PossWEyQp9x26f6R5w0Us="
+                            class="card-img-top"
+                            height="280px"
+                            alt="..."/>
+                        </div>
+                       </div>
+                     </div>
+                  </div><br/><br/>
+        <Footer/>
+        </div>
+    )
   }
 }

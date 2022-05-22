@@ -46,6 +46,7 @@ export default class Display_co_supervisors extends Component{
       <th scope='col'>Research Field</th>
      <th scope='col'>Supervisor</th>
     <th scope='col'>Co-Supervisor</th>
+    <th scope='col'>Status</th>
    <th scope='col'>Actions</th>
         </tr>
            </thead>
@@ -58,6 +59,7 @@ export default class Display_co_supervisors extends Component{
                           <td>{studentgroups.researchField}</td>
                           <td>{studentgroups.grpSupervisor}</td>
                           <td>{studentgroups.grpcoSupervisor}</td>
+                          <td>{studentgroups.cosupervisortopicstatus}</td>
                        <td>                      
                             <IconButton aria-label='btn btn-success' size="small"
                                style={{background: "#FBB917"}}
