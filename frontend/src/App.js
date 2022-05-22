@@ -5,7 +5,7 @@ import Profile from './components/AA_Components/student-profile';
 import MainHome from './components/AA_Components/mainhome';
 import Faculties from './components/AA_Components/faculties';
 
-import {BrowserRouter,Route,Switch} from 'react-router-dom';
+import {BrowserRouter,Route,Switch,Routes} from 'react-router-dom';
 import DisplayStudentgroups from './components/SS_Components/Display_studentgroups';
 import Add_panel_member from './components/SS_Components/Add_panel_member'
 import StaffLogin from './components/SS_Components/staff-login';
@@ -34,7 +34,21 @@ import StudentHomePage from './components/SS_Components/StudentHomePage';
 function App() {
   return (
    <BrowserRouter>
-     <Switch>
+   <Switch>
+    {/* <Route path = "/" element={<StudentLogin/>}/>
+    <Route path = "/signup" element={<Signup/>}/> 
+    <Route path = "/addpanelmember" element={<Add_panel_member/>}/>
+    <Route path = "/edit_panelmembers" element= {Edit_panem_member}/>
+    <Route path = "/" element= {<DisplayStudentgroups/>}/> */}
+    {/* <Route path = "/add" element={<Adminregistration/>}/> 
+    <Route path = "/login" element={<AdminLogin/>}/>  
+    <Route path = "/adminpage" element={<Adminpage/>}/>   */}
+    {/* <Route path = "/homemarkingschemes" element={<Homemarkingschemes/>}/> 
+    <Route path = "/createmarkingadd" element={<Createmarkingschemes/>}/>
+    <Route path = "/createmarkingedit/:createmarkingID" element={<Editmarkingschemes/>}/>
+    <Route path = "/createmarking/:createmarkingID" element={<Markingschemesdetails/>}/>
+    */}
+     
 
      <Route path = "/" component={StudentHomePage} exact/>
    
@@ -64,8 +78,15 @@ function App() {
      <Route path = "/admindashboard" component={Admindashboard}/>  
      <Route path = "/adminprofile" component={AdminProfile}/>  
 
+     <Route path = "/homemarkingschemes" component={Homemarkingschemes}/> 
+    <Route path = "/createmarkingadd" component={Createmarkingschemes}/>
+    <Route path = "/createmarkingedit/:createmarkingID" component={Editmarkingschemes}/>
+    <Route path = "/createmarking/:createmarkingID" component={Markingschemesdetails}/>
+    <Route path = "/getpanelmember" component={Usersremove}/>
+    
+
    </div>  
-   </Switch> 
+   </Switch>
    </BrowserRouter>
   );
 }
