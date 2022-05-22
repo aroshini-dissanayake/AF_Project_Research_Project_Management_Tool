@@ -4,8 +4,6 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import AdminNavBar from '../Layout/AdminNavBar';
-// import FileUploadIcon from '@mui/icons-material/FileUpload';
-// import Button from '@material-ui/core/Button';
 
 export default class Display_studentgroups extends Component{
     constructor(props){
@@ -44,10 +42,6 @@ onDelete = (id)=>{
         return(    
                      <div>
                   <AdminNavBar/>  <br/><br/> <br/>
-               {/* <div align="right">
-            <Button className="form-group" type="submit" style={{background: "#C6DEFF", width: "150px"}} 
-         startIcon={<FileUploadIcon />} href="/assignmentgroups/save"  >UPLOAD</Button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-             </div> */}
                 <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Add Panel Members </u></b></h3><br/><br/>
                   <div className='container'>  
                     <table class="table">
@@ -87,5 +81,6 @@ onDelete = (id)=>{
             </table>
                </div>     
                   </div>  
-        )}
+        )
+    }
 }

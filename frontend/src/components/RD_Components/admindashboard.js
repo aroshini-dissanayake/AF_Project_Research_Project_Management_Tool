@@ -24,7 +24,7 @@ const studentgroups = () => {
   window.location = `/group/displaystudentgroups`
 }
 const uploadFile = () => {
-  window.location = `/assignmentgroups/save`
+  window.location = `/pdfupload`
 }
 const faculties = () => {
   window.location = `/faculties`
@@ -36,7 +36,7 @@ export default class admindashboard extends Component {
     return (
       <div>
         <AdminNavBar/>
-        <div className="container" ><br/><br/>
+        <div className="container" ><br/><br/><br/><br/>
                 <div class="row row-cols-1 row-cols-md-3 g-4" >
                     <div class="col" style={{width: "20rem"}} > 
                         <div class="shadow h-60" id="cardcol1">
@@ -78,7 +78,7 @@ export default class admindashboard extends Component {
                         </div>
                     </div>
 
-                    <div class="col" style={{width: "19rem"}} > 
+                    <div class="col" style={{width: "20rem"}} > 
                         <div class="shadow h-60" id="cardcol1">
                         <div class="card-body" style={{background: "#151B54"}}>
                         <h5 class="card-title" id="dashh5"  align="center"><b style={{color: "#ffff"}} > Student List</b></h5>
@@ -90,14 +90,14 @@ export default class admindashboard extends Component {
                             alt="..." onClick={studentList} />
                         </div>
                     </div>
-
+                   
                     <div class="col" style={{width: "20rem"}}> 
                         <div class="shadow h-60" id="cardcol1">
                         <div class="card-body" style={{background: "#151B54"}} >
                         <h5 class="card-title" id="dashh5" align="center"><b b style={{color: "#ffff"}}>Marking Schemes</b></h5>
                         </div>
                         <img
-                            src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/69663/learn-icon.png"
+                            src="https://png.pngtree.com/png-vector/20190411/ourlarge/pngtree-pdf-file-document-icon-png-image_927685.jpg"
                             class="card-img-top"
                             height="280px"
                             alt="..." onClick={createmarkingschemes} />
@@ -111,7 +111,7 @@ export default class admindashboard extends Component {
                         <h5 class="card-title" id="dashh5" align="center"><b b style={{color: "#ffff"}}>Student Grops</b></h5>
                         </div>
                         <img
-                            src="https://www.kindpng.com/picc/m/150-1500375_transparent-interview-png-job-interview-images-cartoon-png.png"
+                            src="https://ldtschool.in/images/contacts.jpg"
                             class="card-img-top"
                             height="280px"
                             alt="..."  onClick={studentgroups}/>
@@ -125,7 +125,7 @@ export default class admindashboard extends Component {
                         <h5 class="card-title" id="dashh5"  align="center"><b style={{color: "#ffff"}} > Upload File</b></h5>
                         </div>
                         <img
-                            src="https://cdn3.iconfinder.com/data/icons/web-document-icons/512/Upload_Document-512.png"
+                            src="https://thumbs.dreamstime.com/b/file-upload-icon-219805756.jpg"
                             class="card-img-top"
                             height="280px"
                             alt="..." onClick={uploadFile}/>
@@ -146,7 +146,7 @@ export default class admindashboard extends Component {
                        </div>
 
                      </div>
-                  </div><br/>
+                  </div><br/><br/><br/>
                   <Footer/>
       </div>
     )
