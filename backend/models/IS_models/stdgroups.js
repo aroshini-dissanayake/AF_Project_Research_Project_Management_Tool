@@ -11,7 +11,16 @@ const studentGroupsSchema = new mongoose.Schema({
   researchField:{
        type: String,
        required:false,
-   }
+   },
+   grpSupervisor:{
+    type: String,
+    required:false,
+   },
+   grpcoSupervisor:{
+    type: String,
+    required:false,
+}
+
 });
 const StudentGroup = mongoose.model("Studentgroups",studentGroupsSchema);
 module.exports = StudentGroup;

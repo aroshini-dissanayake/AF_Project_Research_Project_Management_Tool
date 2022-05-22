@@ -16,7 +16,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 8070;
 
 //import routers
-// const studentgroupRoutes = require('./routes/SS_routes/studentgroups')
+
 
 
 
@@ -31,7 +31,7 @@ app.use(cors());
 app.use(express.json());
 
 //routes use
-// app.use(studentgroupRoutes);
+
 
 
 
@@ -52,36 +52,47 @@ console.log("Mongodb connection success!!!");
 })
 
 // @import routes
+//sajani
 const studentgroupRouter = require("./routes/SS_routes/studentgroups");
-const studentRouter = require("./routes/AA_routes/student");
+const accepttopicRouter = require("./routes/SS_routes/acceptTopic");
+const groupassignmentRouter = require('./routes/SS_routes/groupAssignment');
 const staffRouter =require("./routes/SS_routes/staff");
-//const researchTopicRouter = require("./routes/SS_routes/researchtopic");
 
+//aro
+const studentRouter = require("./routes/AA_routes/student");
+
+
+//ima
 const topicRouter = require("./routes/IS_routes/topic");
-app.use("/regtopic",topicRouter);
 
-// rotues
+//randy
+const adminRouter = require('./routes/RG_routes/admin');
+const createmarkingRouter = require('./routes/RG_routes/createmarking');
+
+
+
+// rotues use
 
 app.use("/group",studentgroupRouter);
 app.use("/student", studentRouter);
 app.use("/staff",staffRouter);
-//app.use("/topic",researchTopicRouter);
-const researchTopicRouter = require("./routes/SS_routes/researchtopic");
-const accepttopicRouter = require("./routes/SS_routes/acceptTopic");
-const adminRouter = require('./routes/RG_routes/admin');
-const createmarkingRouter = require('./routes/RG_routes/createmarking');
-const groupassignmentRouter = require('./routes/SS_routes/groupAssignment');
-
-// rotues use
-
-
-
-
-app.use("/topic",researchTopicRouter);
+app.use("/regtopic",topicRouter);
 app.use("/accept",accepttopicRouter);
 app.use("/admin",adminRouter);
 app.use("/createmarking",createmarkingRouter);
 app.use("/assignment",groupassignmentRouter);
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
