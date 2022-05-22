@@ -46,6 +46,7 @@ export default class Display_supervisors extends Component{
         <th scope='col'>Research Topic</th>
       <th scope='col'>Research Field</th>
       <th scope='col'>Supervisor</th>
+      <th scope='col'>Status</th>
     <th scope='col'>Actions</th>
         </tr>
            </thead>
@@ -57,6 +58,7 @@ export default class Display_supervisors extends Component{
                           <td>{studentgroups.researchTopic}</td>
                           <td>{studentgroups.researchField}</td>
                           <td>{studentgroups.grpSupervisor}</td>
+                          <td>{studentgroups.supervisortopicstatus}</td>
                        <td>                      
                             <IconButton aria-label='btn btn-success' size="small"
                                style={{background: "#FBB917"}}
