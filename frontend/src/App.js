@@ -22,10 +22,12 @@ import Admindashboard from './components/RD_Components/admindashboard';
 import AdminProfile from './components/RD_Components/adminProfile';
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 import PanelMembers from './components/SS_Components/PanelMembers';
-import UploadGroupAssignment from './components/SS_Components/UploadGroupAssignment';
 import StudentDashboard from './components/SS_Components/StudentDashboard';
 import StudentHomePage from './components/SS_Components/StudentHomePage';
 import Groups from './components/SS_Components/Groups';
+import PDFUpload from './components/SS_Components/PDFUpload';
+import PDFDisplay from './components/SS_Components/PDFDisplay';
+
 
 function App() {
   return (
@@ -45,10 +47,10 @@ function App() {
      <Route path = "/staffprofile" component={StaffProfile}/>
      <Route path = "/displayStaffRole" component={AdminViewStaff}/>
      <Route path = "/panelmember" component={PanelMembers}/>
-     <Route path = "/assignmentgroups/save" component={UploadGroupAssignment}/>
      <Route path = "/studentdashboard" component={StudentDashboard}/>
      <Route path = "/groups" component={Groups}/>
-
+     <Route path = "/pdfupload" component={PDFUpload}/>
+     <Route path = "/pdfdisplay" component={PDFDisplay}/>
      
      <Route path = "/signin" component={StudentLogin}/>
      <Route path = "/signup" component={Signup}/>
