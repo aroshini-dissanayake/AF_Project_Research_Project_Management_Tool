@@ -5,7 +5,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import IconButton from '@material-ui/core/IconButton';
 import ClearIcon from '@mui/icons-material/Clear';
 
-export default class ResearchTopic extends Component{
+export default class CoSupervisorAcceptTopic extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -28,24 +28,24 @@ componentDidMount(){
          })
      }
 
-//Accept research topics 
+//Accept co supervisor request topics 
     acceptTopic(id){
        console.log(id);
-        axios.post(`http://localhost:8070/group/accepttopic/${id}/Accepted`).then(res=>{
+        axios.post(`http://localhost:8070/group/requestcosupervisor/${id}/Accepted`).then(res=>{
             alert("Topic Accepted");
-            window.location.href="/topic/displayresearchtopic"
+            window.location.href="/requestcosupervisor"
       }).catch((e)=>{
           console.log(e);
       })
 
     }
     
-//Reject research topics
+//Reject co supervisor request topics
     rejectTopic(id){
         console.log(id);
-     axios.post(`http://localhost:8070/group/accepttopic/${id}/Rejected`).then(res=>{
+     axios.post(`http://localhost:8070/group/requestcosupervisor/${id}/Rejected`).then(res=>{
         alert("Topic Rejected");
-        window.location.href="/topic/displayresearchtopic"    
+        window.location.href="/requestcosupervisor"    
      }).catch((e)=>{
            console.log(e);
   })
@@ -55,17 +55,17 @@ render(){
       return( 
          <div>
             <StaffNavbar/>  <br/><br/> <br/>
-               <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Reserch Topics</u></b></h3><br/><br/>
+               <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Accept Co-Supervisor Request</u></b></h3><br/><br/>
                   <div className='container'>  
                     <table class="table">
                        <thead>
-                       <tr bgcolor="#79BAEC">
-                   <th scope='col'>No</th>
-               <th scope='col'>Group Name</th>
-           <th scope='col'>Research Feild</th>
-         <th scope='col'>Research Topic</th>
-      <th scope='col'>Supervisor</th>
-    <th scope='col'>Status</th>
+                          <tr bgcolor="#79BAEC">
+                        <th scope='col'>No</th>
+                     <th scope='col'>Group Name</th>
+                  <th scope='col'>Research Feild</th>
+               <th scope='col'>Research Topic</th>
+            <th scope='col'>Co-Supervisor Name</th>
+         <th scope='col'>Status</th>
       <th scope='col'>Accept</th>
           <th scope='col'>Reject</th>
               </tr>
@@ -74,11 +74,11 @@ render(){
                           {this.state.studentgroups.map((studentgroups,index) =>(
                               <tr>
                                 <th scope='row'>{index + 1}</th>
-                             <td>{studentgroups.group_name}</td>
-                         <td>{studentgroups.researchField}</td>
-                     <td>{studentgroups.researchTopic}</td>
-                      <td>{studentgroups.grpSupervisor}</td>
-                 <td>{studentgroups.topicstatus}</td>
+                                  <td>{studentgroups.group_name}</td>
+                              <td>{studentgroups.researchField}</td>
+                          <td>{studentgroups.researchTopic}</td>
+                      <td>{studentgroups.grpcoSupervisor}</td>
+                   <td>{studentgroups.cosupervisortopicstatus}</td>
                      <td>                       
                         <IconButton aria-label='btn btn-success' size="small"
                             style={{background: "#008000"}}

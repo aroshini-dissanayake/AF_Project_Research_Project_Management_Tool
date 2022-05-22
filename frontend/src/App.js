@@ -27,7 +27,8 @@ import StudentHomePage from './components/SS_Components/StudentHomePage';
 import Groups from './components/SS_Components/Groups';
 import PDFUpload from './components/SS_Components/PDFUpload';
 import PDFDisplay from './components/SS_Components/PDFDisplay';
-
+import SupervisorAcceptTopic from './components/SS_Components/SupervisorAcceptTopic';
+import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcceptTopic';
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
      <Route path = "/groups" component={Groups}/>
      <Route path = "/pdfupload" component={PDFUpload}/>
      <Route path = "/pdfdisplay" component={PDFDisplay}/>
+     <Route path = "/pdfdisplay" component={PDFDisplay}/>
+     <Route path = "/requestsupervisor" component={SupervisorAcceptTopic}/>
+     <Route path = "/requestcosupervisor" component={CoSupervisorAcceptTopic}/>
      
      <Route path = "/signin" component={StudentLogin}/>
      <Route path = "/signup" component={Signup}/>
