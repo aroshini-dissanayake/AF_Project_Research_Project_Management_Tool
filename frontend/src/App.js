@@ -28,6 +28,7 @@ import Markingschemesdetails from './components/RD_Components/markingschemesdeta
 import Usersremove from './components/RD_Components/usersremove';
 import Supervisorremove from './components/RD_Components/supervisorremove';
 import CoSupervisorremove from './components/RD_Components/cosupervisorremove';
+import Studentsremove from './components/RD_Components/studentsremove';
 import PanelMembers from './components/SS_Components/PanelMembers';
 import UploadGroupAssignment from './components/SS_Components/UploadGroupAssignment';
 import StudentDashboard from './components/SS_Components/StudentDashboard';
@@ -87,6 +88,7 @@ function App() {
     <Route path = "/getpanelmember" component={Usersremove}/>
     <Route path = "/getsupervisor" component={Supervisorremove}/>
     <Route path = "/getcosupervisor" component={CoSupervisorremove}/>
+    <Route path = "/getstudent" component={Studentsremove}/>
     
 
    </div>  
