@@ -147,6 +147,8 @@ render() {
         </table>
         <button className="btn btn-success"><a href="/createmarkingadd" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button>
         <button className="btn btn-success"><a href="/getpanelmember" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button>
+        <button className="btn btn-success"><a href="/getsupervisor" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button>
+        <button className="btn btn-success"><a href="/getsupervisor" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button>
       </div>
       </div>
       </div>

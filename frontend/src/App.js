@@ -25,7 +25,8 @@ import Createmarkingschemes from './components/RD_Components/createmarkingscheme
 import Homemarkingschemes from './components/RD_Components/homemarkingschemes';
 import Editmarkingschemes from './components/RD_Components/editmarkingschemes';
 import Markingschemesdetails from './components/RD_Components/markingschemesdetails';
-import Usersremove from './components/RD_Components/usersremove'
+import Usersremove from './components/RD_Components/usersremove';
+import Supervisorremove from './components/RD_Components/supervisorremove';
 import PanelMembers from './components/SS_Components/PanelMembers';
 import UploadGroupAssignment from './components/SS_Components/UploadGroupAssignment';
 import StudentDashboard from './components/SS_Components/StudentDashboard';
@@ -83,6 +84,7 @@ function App() {
     <Route path = "/createmarkingedit/:createmarkingID" component={Editmarkingschemes}/>
     <Route path = "/createmarking/:createmarkingID" component={Markingschemesdetails}/>
     <Route path = "/getpanelmember" component={Usersremove}/>
+    <Route path = "/getsupervisor" component={Supervisorremove}/>
     
 
    </div>  
