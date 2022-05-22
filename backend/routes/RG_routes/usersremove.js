@@ -79,7 +79,7 @@ router.route('/supervisordelete/:supervisorID').delete((req,res)=>{
 router.get("/getcosupervisor",async(req,res)=>{
     try{
     const cosupervisor = await staff.find({
-    role: "Cosupervisor" 
+    role: "Co-Supervisor" 
     })
     res.status(201)
     .send({
@@ -93,6 +93,19 @@ router.get("/getcosupervisor",async(req,res)=>{
     }
     })
 
+//Delete Supervisor details
+router.route('/cosupervisordelete/:cosupervisorID').delete((req,res)=>{
+    staff.findByIdAndRemove(req.params.cosupervisorID).exec((err,deletecosupervisor)=>{
+        
+        if(err) return res.status(400).json({
+            message: "Delete Unsuccessfully",err
+        });
+       
+        return res.json({
+            message: "Delete Successfull",deletecosupervisor
+        });
+    });
+ });
 
  
   module.exports = router;
