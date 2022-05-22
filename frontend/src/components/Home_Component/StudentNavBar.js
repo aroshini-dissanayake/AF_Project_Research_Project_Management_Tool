@@ -19,11 +19,15 @@ export default class StudentNavBar extends Component {
           <a class="nav-link" aria-current="page" href="/mainhome" style={{color: "#ffff"}}>Dashboard</a>
         </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 
 
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/groups" style={{color: "#ffff"}}>Group</a>
+        </li>  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: "#ffff"}}>
             <b>Faculties</b></a>
 
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style={{background: "#FBF6D9	"}}>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style={{background: "#ffff	"}}>
             <li><a class="dropdown-item" href="#">Faculty of Computing</a></li>
             <li><a class="dropdown-item" href="#">Faculty of Business</a></li>
             <li><a class="dropdown-item" href="#">Faculty of Engineering</a></li>
