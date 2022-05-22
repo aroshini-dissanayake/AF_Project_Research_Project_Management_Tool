@@ -15,6 +15,9 @@ export default class Groups extends Component{
     onReadirect(id){
         window.location.href = `/display/${id}`
     }
+    GroupCreate(){
+        window.location.href = `/groupReg`
+    }
     componentDidMount(){
        this.retrieveStudentGroups();
    }
@@ -62,6 +65,13 @@ export default class Groups extends Component{
                     </tr>
                 ))}
                 </tbody>
+                <button
+                 className='btn btn-warning'
+                 type='add' 
+                 style={{marginTop:'15px'}}
+                 onClick={()=>this.GroupCreate()}>
+                <i className='fa fa-plus-circle'></i> &nbsp; Add New Group
+                 </button>
             </table>
         </div>     
         </div> 
