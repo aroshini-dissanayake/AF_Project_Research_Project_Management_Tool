@@ -57,7 +57,7 @@ export default function DocUpload(){
             axios.post("http://localhost:8070/document/submitdoc",new_docUpload,config)
             .then(()=>{
                 alert("Upload Success")
-                window.location = "/"
+                window.location = "/studentdashboard"
             }).catch((err)=>{
                 alert(err)
             })
