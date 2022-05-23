@@ -37,6 +37,8 @@ import PDFUpload from './components/SS_Components/PDFUpload';
 import PDFDisplay from './components/SS_Components/PDFDisplay';
 import SupervisorAcceptTopic from './components/SS_Components/SupervisorAcceptTopic';
 import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcceptTopic';
+import AdminViewStaff from './components/SS_Components/AdminViewStaff';
+
 
 function App() {
   return (
@@ -61,6 +63,8 @@ function App() {
      <Route path = "/pdfdisplay" component={PDFDisplay}/> 
      <Route path = "/requestsupervisor" component={SupervisorAcceptTopic}/>
      <Route path = "/requestcosupervisor" component={CoSupervisorAcceptTopic}/>
+     <Route path = "/displayStaffRole" component={AdminViewStaff}/>
+     
      
      <Route path = "/signin" component={StudentLogin}/>
      <Route path = "/signup" component={Signup}/>
