@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
 
 const studentgroupsSchema = new mongoose.Schema({
+   
+    studentName :{
+        type: String,
+        required:true,
+    },
 
-    group_name:{
+    groupName:{
         type: String,
         required:false,
     },

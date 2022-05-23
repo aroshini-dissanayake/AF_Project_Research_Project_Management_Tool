@@ -5,15 +5,12 @@ const bcrypt = require("bcryptjs");
 
 
 const studentGroupSchema = new mongoose.Schema({
-group_name
-  : {
+
+  group_name: {
     type: String,
-    required: false,
+    required: true,
     trim: true,
   },
-
-  
-
 
   groupMembers: [{
     sid: {

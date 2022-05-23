@@ -8,18 +8,20 @@ export default class Add_panel_member extends Component{
     constructor(props){   
         super(props);
         this.state={
-            group_name:"",
+            studentName:"",
+            groupName:"",
             panelMember:"",
         }
      } 
 
    async componentDidMount(){
         const id = this.props.match.params.id; 
-        await axios.get(`http://localhost:8070/student/display/${id}`).then((res)=>{
+        await axios.get(`http://localhost:8070/group/displaystudentgroups/${id}`).then((res)=>{
 
         if(res.data.success){
                 this.setState({
-                    groupName:res.data.studentgroups.group_name
+                    studentName:res.data.studentgroups.studentName,
+                    groupName:res.data.studentgroups.groupName
                })
           }
         })
@@ -35,16 +37,18 @@ export default class Add_panel_member extends Component{
     onSubmit = (e)=>{
         e.preventDefault();
         const id = this.props.match.params.id; 
-        const{group_name,panelMember} = this.state;
+        const{studentName,groupName,panelMember} = this.state;
         const data = {
-            group_name:group_name,
+            studentName:studentName,
+            groupName:groupName,
             panelMember:panelMember,
         }
 
         axios.post(`http://localhost:8070/group/studentgroups/${id}`,data).then((res)=>{  
         if(res.data.success){
             this.setState({
-                group_name:"",
+                studentName:"",
+                groupName:"",
                 panelMember:"" ,
            })
            alert("Panel member added");
