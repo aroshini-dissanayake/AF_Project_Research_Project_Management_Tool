@@ -159,7 +159,14 @@ render() {
           ))}
         </tbody>
         </table>
-        <button className="btn btn-success"><a href="/createmarkingadd" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button>
+        {/* <button className="btn btn-success"><a href="/createmarkingadd" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button> */}
+
+        <div className="form-group">
+                <a href="/createmarkingadd">
+                  <Button variant="contained" className="w-10" align="left" style={{ background: "#D5D6EA", width: +"%" }} startIcon={< AddCircleOutlinedIcon />}  >
+                  Create New Point</Button>
+                </a>
+              </div>
       </div>
       </div>
       </div>
