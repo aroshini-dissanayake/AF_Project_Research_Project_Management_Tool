@@ -59,13 +59,14 @@ onDelete = (createmarkingID) => {
 filterData(createmarking,searchKey) {
 
   const result = createmarking.filter((createmarkin) =>
-    createmarkin.deliverables.toLowerCase().includes(searchKey) ||
-    createmarkin.duedate.toLowerCase().includes(searchKey) ||
-    createmarkin.contribution.toLowerCase().includes(searchKey) ||
-    createmarkin.methodofsubmission.toLowerCase().includes(searchKey) ||
-    createmarkin.marksallocation.toLowerCase().includes(searchKey)
+    createmarkin.criteria.toLowerCase().includes(searchKey) ||
+    createmarkin.good.toLowerCase().includes(searchKey) ||
+    createmarkin.poor.toLowerCase().includes(searchKey) ||
+    createmarkin.avarage.toLowerCase().includes(searchKey) ||
+    createmarkin.comment.toLowerCase().includes(searchKey) ||
+    createmarkin.marks.toLowerCase().includes(searchKey)
   )
-  this.setState({createmarking: result })
+  this.setState({createmarking: result})
 }
 
 handleSearchArea = (e) => {
@@ -109,7 +110,7 @@ render() {
         <table className="table table-hover" style={{ marginTop: '40px', background: "#FFFFFF" }} > 
         <thead>
             <tr>
-               <th scope ="col"> NO </th>
+               {/* <th scope ="col"> No </th> */}
                <th scope ="col"> Criteria </th>
                <th scope ="col"> Good (10-8) </th>
                <th scope ="col"> Avarage (4-7) </th>
@@ -119,20 +120,21 @@ render() {
             </tr>
         </thead>
         <tbody>
-          {this.state.createmarking.map((createmarking,index) => (
+          {this.state.createmarking.map((createmarking) => (
              <tr>
-          <th scope="row">{index+1}</th>
+          {/* <th scope="row">{index+1}</th> */}
           <td>
             
             <a href={`/createmarking/${createmarking._id}`} style={{textDecoration:'none'}}>
-            {createmarking.deliverables}
+            {createmarking.criteria}
             </a>
             </td>
            
-          <td>{createmarking.duedate}</td>
-          <td>{createmarking.contribution}</td>
-          <td>{createmarking.methodofsubmission}</td>
-          <td>{createmarking.marksallocation}</td>
+          <td>{createmarking.good}</td>
+          <td>{createmarking.avarage}</td>
+          <td>{createmarking.poor}</td>
+          <td>{createmarking.comment}</td>
+          <td>{createmarking.marks}</td>
           <td> 
             {/* <a className="btn btn-warning" href={`/createmarkingedit/${createmarking._id}`}>
               <i classname="fas fa-edit"></i>&nbsp;Edit

@@ -5,28 +5,30 @@ import Button from "@material-ui/core/Button";
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
 // export default class Createmarkingschemes extends Component {
 
     toast.configure() 
 
     export default function Createmarkingschemes() {
 
-        const [deliverables, setdeliverables] = useState("");;
-        const [duedate, setduedate] = useState("");
-        const [contribution, setcontribution] = useState("");
-        const [methodofsubmission, setmethodofsubmission] = useState("");
-        const [marksallocation, setmarksallocation] = useState("");
+        const [criteria, setcriteria] = useState("");;
+        const [good, setgood] = useState("");
+        const [avarage, setavarage] = useState("");
+        const [poor, setpoor] = useState("");
+        const [comment, setcomment] = useState("");
+        const [marks, setmarks] = useState("");
         
         const sendData = async (e)=>{
             e.preventDefault();
 
             let data = {
-                deliverables:deliverables,
-                duedate: duedate,
-                contribution: contribution,
-                methodofsubmission: methodofsubmission,
-                marksallocation: marksallocation,
+                criteria:criteria,
+                good:good,
+                avarage:avarage,
+                poor:poor,
+                comment:comment,
+                marks:marks,
 
 
             };
@@ -42,11 +44,12 @@ import 'react-toastify/dist/ReactToastify.css';
               toast.warning('Create Marking Error Recheck All Data',{position:toast.POSITION.TOP_CENTER});
             })
 
-            setdeliverables("");
-            setduedate("");
-            setcontribution("");
-            setmethodofsubmission("");
-            setmarksallocation("");
+            setcriteria("");
+            setgood("");
+            setavarage("");
+            setpoor("");
+            setcomment("");
+            setmarks("");
 
         }
 
@@ -58,7 +61,7 @@ import 'react-toastify/dist/ReactToastify.css';
              <div className="card shadow mb-8 w-50">
                <div className="card-header py-3">
             
-               <h1 className="m-0 font-weight-bold text-dark" id="randy">Create New Marking Scheme</h1><br/>
+               <h1 className="m-0 font-weight-bold text-dark" id="randy">Create New Marking Point</h1><br/>
                </div>
                <div className="card-body">
                <div className = "col-md-8 mt-4 mx-auto">
@@ -66,83 +69,96 @@ import 'react-toastify/dist/ReactToastify.css';
                <form className="needs-validation" onSubmit={sendData}>
     
                <div className="form-group" style={{ marginBottom: '15px' }}>
-                    <label style={{ marginBottom: '5px' }}> Deliverables </label>
+                    <label style={{ marginBottom: '5px' }}> Criteria </label>
                     <input type="text"
                       className="form-control"
                       // pattern="[a-z,A-Z,][0,9]"
                       title="Please Enter Valid Inputs"
-                      name="deliverables"
-                       id="deliverables"
-                       placeholder="Enter Deliverables"
+                      name="criteria"
+                       id="criteria"
+                       placeholder="Enter Criteria"
                        onChange={(e) => {
-                        setdeliverables(e.target.value)
+                        setcriteria(e.target.value)
                        }}
                       required />
                   </div>
     
                   <div className="form-group" style={{marginBottom:'15px'}}>
-                     <label style={{marginBottom:'5px'}}> Due Date </label>
-                     <input type="date"
+                     <label style={{marginBottom:'5px'}}> Good (10-8)</label>
+                     <input type="text"
                       className="form-control"
-                      pattern="[0-9]"
-                      title="Please Enter valid Date"
-                       name="duedate"
-                       id="duedate"
-                        placeholder="Enter Date"
+                      //pattern="[0-9]"
+                      title="Please Enter valid Details"
+                       name="good"
+                       id="good"
+                        placeholder="Enter Inputs"
                     onChange={(e)=>{
-                        setduedate(e.target.value)}}
+                      setgood(e.target.value)}}
                      required/>
                   </div>
     
     
     
                   <div className ="form-group" style={{marginBottom:'15px'}}>
-                     <label style={{marginBottom:'5px'}}>Contribution</label>
+                     <label style={{marginBottom:'5px'}}> Avarage (4-7) </label>
                      <input 
                       type="text" 
                       className="form-control"
-                      name="contribution" 
-                      id="contribution" 
+                      name="avarage" 
+                      id="avarage" 
                       title="Please Enter Valid Inputs"
-                      placeholder="Enter Contribution"
+                      placeholder="Enter Inputs"
                       onChange={(e)=>{
-                        setcontribution(e.target.value)}}
+                        setavarage(e.target.value)}}
                     />
+                  </div>
+
+
+                  <div className ="form-group" style={{marginBottom:'15px'}}>
+                     <label style={{marginBottom:'5px'}}> Poor (0-3) </label>
+                     <input 
+                      type="text" 
+                      className="form-control"
+                      name="poor" 
+                      id="poor" 
+                      title="Please Enter Valid Inputs"
+                      placeholder="Enter Inputs"
+                      onChange={(e)=>{
+                        setpoor(e.target.value)}}/>
                   </div>
     
                   
                   <div className ="form-group" style={{marginBottom:'15px'}}>
-                     <label style={{marginBottom:'5px'}}>Method Of Submission</label>
+                     <label style={{marginBottom:'5px'}}>Comment</label>
                      <input 
                       type="text"
                       className="form-control" 
-                      name="methodofsubmission"
-                      id="methodofsubmission" 
+                      name="comment"
+                      id="comment" 
                       title="Please Enter Valid Inputs"
-                      placeholder="Enter Deliver Inputs" 
+                      placeholder="Enter Inputs" 
                       onChange={(e)=>{
-                        setmethodofsubmission(e.target.value)}}
-                    required/>
+                        setcomment(e.target.value)}} />
                   </div>
     
                  
                   <div className ="form-group" style={{marginBottom:'15px'}}>
-                     <label style={{marginBottom:'5px'}}>Marks Allocation</label>
+                     <label style={{marginBottom:'5px'}}>Marks</label>
                      <input 
                       type="text" 
                       className="form-control"
-                      name="marksallocation"
-                      id="marksallocation"
-                    //   maxLength="10"
-                    //   pattern ="\d{10}"
+                      name="marks"
+                      id="marks"
+                      // maxLength="10"
+                      // pattern ="\d{10}"
                       title="Please Enter Valid Inputs"
                       placeholder="Enter Marks"
                       onChange={(e)=>{
-                      setmarksallocation(e.target.value)}}
-                    required/>
+                        setmarks(e.target.value)}}
+                    />
                   </div>
                   <div className="form-group">
-                    <Button className="form-group" type="submit" style={{ marginTop: '5px', background: "#F75D59", width: 100 + "%" }} startIcon={<LocalShippingIcon />}>
+                    <Button className="form-group" type="submit" style={{ marginTop: '5px', background: "#F75D59", width: 100 + "%" }} startIcon={<AddCommentRoundedIcon/>}>
     
                       &nbsp; Add New Point
                     </Button>
