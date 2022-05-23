@@ -8,7 +8,7 @@ export default class Add_panel_member extends Component{
     constructor(props){   
         super(props);
         this.state={
-            studentName:"",
+            // studentName:"",
             groupName:"",
             panelMember:"",
         }
@@ -20,7 +20,7 @@ export default class Add_panel_member extends Component{
 
         if(res.data.success){
                 this.setState({
-                    studentName:res.data.studentgroups.studentName,
+                    // studentName:res.data.studentgroups.studentName,
                     groupName:res.data.studentgroups.groupName
                })
           }
@@ -39,7 +39,7 @@ export default class Add_panel_member extends Component{
         const id = this.props.match.params.id; 
         const{studentName,groupName,panelMember} = this.state;
         const data = {
-            studentName:studentName,
+            // studentName:studentName,
             groupName:groupName,
             panelMember:panelMember,
         }
@@ -47,7 +47,7 @@ export default class Add_panel_member extends Component{
         axios.post(`http://localhost:8070/group/studentgroups/${id}`,data).then((res)=>{  
         if(res.data.success){
             this.setState({
-                studentName:"",
+                // studentName:"",
                 groupName:"",
                 panelMember:"" ,
            })

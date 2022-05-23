@@ -5,6 +5,7 @@ const adminauth = require('../../middleware/Admin_middleware/adminauth')
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const admin= require("../../models/RG_models/admin");
+const staff = require('../../models/SS_models/staff');
 
 //Admin Register to Web application
 router.post('/adminsignup', async (req, res) => {
@@ -109,7 +110,6 @@ router.delete("/admindelete",adminauth, async (req, res) => {
       .send({ status: "error with id", error: error.message });
   }
 })
-
 
 //get only panel members details from the staff table
 router.get("/panelmember",async(req,res)=>{
