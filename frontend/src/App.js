@@ -53,27 +53,28 @@ function App() {
      <Route path = "/group/displaystudentgroups" component ={DisplayStudentgroups} />  
      <Route path = "/studentgroups/:id" component={Add_panel_member}/>
      <Route path = "/topic/displayresearchtopic" component={ResearchTopic}/>
-     <Route path = "/staff/staffprofile" component={StaffProfile}/>
+     <Route path = "/staffprofile" component={StaffProfile}/>
+     <Route path = "/panelmember" component={PanelMembers}/>
+     <Route path = "/studentdashboard" component={StudentDashboard}/>
+     <Route path = "/groups" component={Groups}/>
+     <Route path = "/pdfupload" component={PDFUpload}/>
+     <Route path = "/pdfdisplay" component={PDFDisplay}/> 
+     <Route path = "/requestsupervisor" component={SupervisorAcceptTopic}/>
+     <Route path = "/requestcosupervisor" component={CoSupervisorAcceptTopic}/>
+     
      <Route path = "/signin" component={StudentLogin}/>
      <Route path = "/signup" component={Signup}/>
      <Route path = "/profile" component={Profile}/>
      <Route path = "/faculties" component={Faculties}/>
      <Route path= "/groupReg" component={GroupRegistration}/>
      <Route path= "/display/:id" component={Add_Group_Members}/>
-     <Route path= "/groups" component={Groupss}/>
+     <Route path= "/groupss" component={Groupss}/>
      <Route path = "/homepage" component={HomePage}/>
-     <Route path = "/staffprofile" component={StaffProfile}/>
-     <Route path = "/panelmember" component={PanelMembers}/>
-     <Route path = "/studentdashboard" component={StudentDashboard}/>
-     <Route path = "/groupss" component={Groups}/>
-     <Route path = "/pdfupload" component={PDFUpload}/>
-     <Route path = "/pdfdisplay" component={PDFDisplay}/> 
-     <Route path = "/requestsupervisor" component={SupervisorAcceptTopic}/>
-     <Route path = "/requestcosupervisor" component={CoSupervisorAcceptTopic}/>
      <Route path = "/adminsignup" component={Adminregistration}/> 
      <Route path = "/adminsignin" component={AdminLogin}/>  
      <Route path = "/admindashboard" component={Admindashboard}/>  
      <Route path = "/adminprofile" component={AdminProfile}/>  
+     
      <Route path = "/regtopic/research/:id" component={AddResearchTopic}/> 
      <Route path = "/regtopic/displayresearchtopic" component={Display_researchtopics}/> 
      <Route path = "/regtopic/addSupervisor/:id/:feild" component={AddSupervisors}/> 

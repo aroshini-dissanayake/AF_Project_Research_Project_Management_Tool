@@ -109,7 +109,23 @@ router.delete("/admindelete",adminauth, async (req, res) => {
       .status(500)
       .send({ status: "error with id", error: error.message });
   }
-})
+});
+
+//admin view roles of staff (get staff details)
+router.route("/displayStaffRole").get((req,res)=>{
+  staff.find().exec((err, staff) => {
+    if(err){
+      return res.status(400).json({
+        error: err,
+  });
+}
+  return res.status(200).json({
+    success: true,
+    existingDisplayStaffRole : staff
+  });
+});
+});
+
 
 //get only panel members details from the staff table
 router.get("/panelmember",async(req,res)=>{

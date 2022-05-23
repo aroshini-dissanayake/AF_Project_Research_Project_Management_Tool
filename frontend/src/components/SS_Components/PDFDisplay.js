@@ -1,8 +1,5 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import StudentNavBar from '../Home_Component/StudentNavBar';
-import Footer from '../Layout/footer';
-
 
 const PDFDisplay = () => {
     const [pdfupload, setpdfupload] = useState([{
@@ -11,7 +8,7 @@ const PDFDisplay = () => {
 
     useEffect(() => {
         function getpdf(){
-          axios.get("http://localhost:8070/document/pdfdisplay")   
+          axios.get("http://localhost:8070/assignment/pdfdisplay")   
             .then((res) => {
             setpdfupload(res.data)
             }).catch((error) => {
@@ -22,19 +19,14 @@ const PDFDisplay = () => {
     },[])
     
   return (
-        <div>
-          <StudentNavBar/>
-           <br/><br/>
-             {pdfupload.map(( pdf) => (
-               <a href={pdf.pdfupload} download>
-                 <button>
-                  Download
-                   </button>
+    <div>
+        {pdfupload.map(( pdf) => (
+          <a href={pdf.pdfupload} download>
+            <button>
+               Download
+                  </button>
                      </a>
         ) )}
-               <br/><br/><br/><br/> <br/><br/> <br/><br/><br/><br/> <br/><br/>
-            <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>
-        <Footer/>
     </div>
   )
 }
