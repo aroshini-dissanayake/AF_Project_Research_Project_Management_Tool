@@ -4,32 +4,34 @@ import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
 
 const regresearchtopic = () => {
+    window.location = `/regtopic/displayresearchtopic`   
+}
 
-    window.location = `/regtopic/displayresearchtopic`
-    
-    }
+const reqsupervisor = () => {
+    window.location = `/regtopic/displaysupervisors`   
+ }
 
- const reqsupervisor = () => {
-
-        window.location = `/regtopic/displaysupervisors`
-        
+const reqcosupervisor = () => {
+    window.location = `/regtopic/displaycosupervisors`     
         }
- const reqcosupervisor = () => {
 
-        window.location = `/regtopic/displaycosupervisors`
-            
-        }
- const submitdoc = () => {
-
-         window.location = `/document/submitdoc`
-                
+const submitdoc = () => {
+    window.location = `/document/submitdoc`           
         }  
-        
-        const group = () => {
 
-            window.location = `/groups`
-                   
-           }   
+const group = () => {
+    window.location = `/groups`            
+    }   
+ 
+const groupreg = () => {
+        window.location = `/groupReg`            
+        }       
+
+const downloadtemplate = () => {
+        window.location = `/pdfdisplay`            
+    }       
+    
+        
 
 export default class StudentDashboard extends Component {
   render() {
@@ -41,7 +43,7 @@ export default class StudentDashboard extends Component {
        <div class="col" style={{width: "19rem",color:"white"}} > 
                <div class="shadow h-60" id="cardcol1">
                <div class="card-body" style={{background: "#151B54"}} >
-               <h5 class="card-title" id="dashh5" align="center" ><b>Research Grops</b></h5>
+               <h5 class="card-title" id="dashh5" align="center" ><b>Research Groups</b></h5>
                </div>
                <img
                    src="https://media.istockphoto.com/vectors/target-audience-customer-client-targeting-consumer-centricity-aim-vector-id1017466322?k=20&m=1017466322&s=612x612&w=0&h=GgeoE45goA51nXLJghi7Ccd3KW-0KpRH99NZG_zx9e8="
@@ -114,7 +116,7 @@ export default class StudentDashboard extends Component {
                    src="https://www.seekpng.com/png/detail/128-1280557_png-file-svg-registered-icon.png"
                    class="card-img-top"
                    height="280px"
-                   alt="..."/>
+                   alt="..." onClick={groupreg}/>
                </div>
               </div>
 
@@ -140,7 +142,7 @@ export default class StudentDashboard extends Component {
                    src="https://icons-for-free.com/download-icon-download+file+page+paper+icon-1320165844661536600_512.png"
                    class="card-img-top"
                    height="280px"
-                   alt="..."/>
+                   alt="..." onClick={downloadtemplate}/>
                </div>
               </div>
 
