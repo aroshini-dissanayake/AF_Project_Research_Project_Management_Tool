@@ -1,6 +1,8 @@
 import React,{Component} from 'react' ;
 import axios from "axios";
 import {toast} from 'react-toastify';
+import StudentNavBar from '../Home_Component/StudentNavBar';
+import Footer from '../Layout/footer';
 
 export default class Add_Group_Members extends Component{
  
@@ -20,8 +22,7 @@ export default class Add_Group_Members extends Component{
         })
         .catch((err) => {
           alert(err.message)
-        })
-      
+        })  
         console.log(this.state.groupMembers)
       }
 
@@ -60,16 +61,30 @@ export default class Add_Group_Members extends Component{
 }
   
       render(){
-
         return(
-            <table class="table">
+          <div>
+            <StudentNavBar/><br/>
+              <div align="right" style={{marginRight:"75px"}}>
+                <button
+                   className='btn btn-warning'
+                     type='add' 
+                      style={{marginTop:'15px'}}
+                    onClick={this.onSubmit}>
+                <i className='fa fa-plus-circle'></i> &nbsp; ADD ME TO THIS GROUP
+             </button> 
+          </div>  
+        <br/>
+           <h2 align="center"><b><u> Group Member Details</u></b></h2>
+             <div align="center">
+                <div style={{width:"1000px"}}><br/><br/>
+                   <table class="table">
                        <thead>
                      <tr bgcolor="#79BAEC">
                  <th scope='col'>No</th>
              <th scope='col'>Student ID</th>
          <th scope='col'>name</th>
      <th scope='col'>Phone Number</th>
-     <th scope='col'>Email</th>
+       <th scope='col'>Email</th>
          </tr>
             </thead>
             <tbody>
@@ -83,16 +98,9 @@ export default class Add_Group_Members extends Component{
 
                     </tr>
                 ))}
-                </tbody>
-                <button
-                 className='btn btn-warning'
-                 type='add' 
-                 style={{marginTop:'15px'}}
-                 onClick={this.onSubmit}>
-                <i className='fa fa-plus-circle'></i> &nbsp; ADD ME TO THIS GROUP
-                 </button>
-                </table>
-                
+                 </tbody>              
+              </table><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>  
+            </div> </div><Footer/></div>
         )
     }
 }

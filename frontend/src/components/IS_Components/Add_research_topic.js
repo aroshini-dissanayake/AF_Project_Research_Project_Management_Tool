@@ -1,6 +1,7 @@
 import React,{Component} from 'react' ;
 import axios from "axios";
-import AdminNavBar from '../Layout/AdminNavBar';
+import StudentNavBar from '../Home_Component/StudentNavBar';
+import Footer from '../Layout/footer';
  
 export default class Add_research_topic extends Component{
    constructor(props){  
@@ -58,7 +59,7 @@ export default class Add_research_topic extends Component{
  render(){
 return(
 <div>
-<AdminNavBar/>
+<StudentNavBar/>
   <br/><br/>   
        <div className='col-md-8 mt-4 mx-auto'>
            <h1 className='h3 mb-3 font-weight-normal'>ADD RESEARCH TOPIC AND FIELD TO STUDENT GROUP</h1>
@@ -67,7 +68,7 @@ return(
                     <label style={{marginBottom:'5px'}}>Research Topic</label>
                       <input
                          type="text"
-                           className='form-control'
+                         className='form-control'
                               name='researchTopic'
                                 placeholder='Enter Research Topic'
                                     value={this.state.researchTopic}
@@ -92,6 +93,7 @@ return(
                 </button>
                    </form>   
                        </div>
+                         <Footer/>
                           </div>
        )
    }
