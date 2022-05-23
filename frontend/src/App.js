@@ -20,9 +20,16 @@ import Adminregistration from './components/RD_Components/adminregistration';
 import AdminLogin from './components/RD_Components/adminlogin';
 import Admindashboard from './components/RD_Components/admindashboard';
 import AdminProfile from './components/RD_Components/adminProfile';
-import AdminViewStaff from './components/SS_Components/AdminViewStaff';
+// import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
+import GroupRegistration from './components/AA_Components/student-group-name-registration';
+import Add_Group_Members from './components/AA_Components/group-members-reg';
+import Groupss from './components/AA_Components/student.groups';
+// import Homemarkingschemes from './components/RD_Components/homemarkingschemes';
+// import Editmarkingschemes from './components/RD_Components/editmarkingschemes';
+// import Markingschemesdetails from './components/RD_Components/markingschemesdetails';
+import HomePage from './components/AA_Components/homepage';
+// import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 import PanelMembers from './components/SS_Components/PanelMembers';
-
 
 import AddResearchTopic from './components/IS_Components/Add_research_topic';
 import Display_researchtopics from './components/IS_Components/Display_researchtopics';
@@ -45,6 +52,9 @@ function App() {
   return (
    <BrowserRouter>
      <Switch>
+    {/* <Route path = "/" component={BackendHomePage}exact/>
+    
+     <Switch> */}
 
      <Route path = "/" component={StudentHomePage} exact/>
    
@@ -56,22 +66,30 @@ function App() {
      <Route path = "/group/displaystudentgroups" component ={DisplayStudentgroups} />  
      <Route path = "/studentgroups/:id" component={Add_panel_member}/>
      <Route path = "/topic/displayresearchtopic" component={ResearchTopic}/>
+     <Route path = "/staff/staffprofile" component={StaffProfile}/>
+ 
+
+
+
+   <Route path = "/signin" component={StudentLogin}/>
+   <Route path = "/signup" component={Signup}/>
+   <Route path = "/profile" component={Profile}/>
+   <Route path = "/mainhome" component={MainHome}/>
+   <Route path = "/faculties" component={Faculties}/>
+   <Route path= "/groupReg" component={GroupRegistration}/>
+   <Route path= "/display/:id" component={Add_Group_Members}/>
+   <Route path= "/groups" component={Groupss}/>
+   <Route path = "/homepage" component={HomePage}/>
      <Route path = "/staffprofile" component={StaffProfile}/>
-     <Route path = "/displayStaffRole" component={AdminViewStaff}/>
+     {/* <Route path = "/displayStaffRole" component={AdminViewStaff}/> */}
      <Route path = "/panelmember" component={PanelMembers}/>
      <Route path = "/studentdashboard" component={StudentDashboard}/>
-     <Route path = "/groups" component={Groups}/>
+     <Route path = "/groupss" component={Groups}/>
      <Route path = "/pdfupload" component={PDFUpload}/>
      <Route path = "/pdfdisplay" component={PDFDisplay}/>
      
      <Route path = "/requestsupervisor" component={SupervisorAcceptTopic}/>
      <Route path = "/requestcosupervisor" component={CoSupervisorAcceptTopic}/>
-     
-     <Route path = "/signin" component={StudentLogin}/>
-     <Route path = "/signup" component={Signup}/>
-     <Route path = "/profile" component={Profile}/>
-     <Route path = "/mainhome" component={MainHome}/>
-     <Route path = "/faculties" component={Faculties}/>
 
      <Route path = "/adminsignup" component={Adminregistration}/> 
      <Route path = "/adminsignin" component={AdminLogin}/>  
@@ -95,7 +113,7 @@ function App() {
     <Route path = "/document/submitdoc" component={DocUpload}/> 
    
    </div>  
-   </Switch>   
+   </Switch> 
    </BrowserRouter>
   );
 }

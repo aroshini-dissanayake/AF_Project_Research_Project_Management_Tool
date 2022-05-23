@@ -54,7 +54,6 @@ console.log("Mongodb connection success!!!");
 // @import routes
 //sajani
 const studentgroupRouter = require("./routes/SS_routes/studentgroups");
-
 const staffRouter =require("./routes/SS_routes/staff");
 const PDFUploadRouter = require('./routes/SS_routes/PDFUpload');
 
@@ -81,10 +80,6 @@ app.use("/student", studentRouter);
 app.use("/staff",staffRouter);
 app.use("/regtopic",topicRouter);
 app.use("/document",DocUploadRouter);
-
-app.use("/admin",adminRouter);
-app.use("/assignment",PDFUploadRouter);
-
 
 
 
