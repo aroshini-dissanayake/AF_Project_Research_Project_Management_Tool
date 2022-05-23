@@ -2,6 +2,33 @@ import React, { Component } from 'react'
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
 
+const studentgroups = () => {
+
+    window.location = `/groups`
+    
+    }
+const regresearchtopic = () => {
+
+    window.location = `/regtopic/displayresearchtopic`
+    
+    }
+
+ const reqsupervisor = () => {
+
+        window.location = `/regtopic/displaysupervisors`
+        
+        }
+ const reqcosupervisor = () => {
+
+        window.location = `/regtopic/displaycosupervisors`
+            
+        }
+ const submitdoc = () => {
+
+         window.location = `/document/submitdoc`
+                
+        }      
+
 export default class StudentDashboard extends Component {
   render() {
     return (
@@ -12,52 +39,52 @@ export default class StudentDashboard extends Component {
            <div class="col" style={{width: "25rem"}} > 
                <div class="shadow h-60" id="cardcol1">
                <div class="card-body" style={{background: "#F3E5AB"}} >
-               <h5 class="card-title" id="dashh5" align="center" ><b> Faculty of Computing</b></h5>
+               <h5 class="card-title" id="dashh5" align="center" ><b> Register Student Groups</b></h5>
                </div>
                <img
                    src="https://www.sliit.lk/wp-content/uploads/2017/12/Business-Analytics.jpg"
                    class="card-img-top"
                    height="280px"
-                   alt="..."/>
+                   alt="..." onClick={studentgroups}/>
                </div>
            </div>
         
            <div class="col" style={{width: "27rem"}} > 
                <div class="shadow h-60" id="cardcol1">
                <div class="card-body" style={{background: "#F3E5AB"}} >
-               <h5 class="card-title" id="dashh5"  align="center"><b>Faculty of Business</b></h5>
+               <h5 class="card-title" id="dashh5"  align="center"><b>Register Research Topic</b></h5>
                </div>
                <img
                    src="https://static.sliit.lk/wp-content/uploads/2017/12/Marketing-Management.jpg"
                    class="card-img-top"
                    height="280px"
-                   alt="..."/>
+                   alt="..." onClick={regresearchtopic}/>
                </div>
            </div>     
            
            <div class="col" style={{width: "30rem"}} > 
                <div class="shadow h-60" id="cardcol1">
                <div class="card-body" style={{background: "#F3E5AB"}}>
-               <h5 class="card-title" id="dashh5"  align="center"><b> Faculty of Engineering</b></h5>
+               <h5 class="card-title" id="dashh5"  align="center"><b> Request Supervisor</b></h5>
                </div>
                <img
                    src="http://www.sundaytimes.lk/201011/uploads/State-of-the-Art-Laboratories.jpg"
                    class="card-img-top"
                    height="280px"
-                   alt="..."/>
+                   alt="..." onClick={reqsupervisor}/>
                </div>
            </div>
 
            <div class="col" style={{width: "25rem"}} > 
                <div class="shadow h-60" id="cardcol1">
                <div class="card-body" style={{background: "#F3E5AB"}}>
-               <h5 class="card-title" id="dashh5"  align="center"><b>Faculty of Humanities & Sciences</b></h5>
+               <h5 class="card-title" id="dashh5"  align="center"><b>Request Co-Supervisor</b></h5>
                </div>
                <img
                    src="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.edu.dailymirror.lk/uploads/articles_14_2fe4654f38.jpg"
                    class="card-img-top"
                    height="280px"
-                   alt="..."/>
+                   alt="..."onClick={reqcosupervisor}/>
                </div>
            </div>
 
@@ -65,13 +92,13 @@ export default class StudentDashboard extends Component {
            <div class="col" style={{width: "27rem"}} > 
                <div class="shadow h-60" id="cardcol1">
                <div class="card-body"  style={{background: "#F3E5AB"}} >
-               <h5 class="card-title" id="dashh5"  align="center"><b>School of Architechture</b></h5>
+               <h5 class="card-title" id="dashh5"  align="center"><b>Submit Documents</b></h5>
                </div>
                <img
                    src="https://ancedu.com/wp-content/uploads/2021/05/Foundation.jpg"
                    class="card-img-top"
                    height="280px"
-                   alt="..."/>
+                   alt="..."onClick={submitdoc}/>
                </div>
            </div>
 

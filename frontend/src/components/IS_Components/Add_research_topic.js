@@ -49,7 +49,7 @@ export default class Add_research_topic extends Component{
                researchField:"" ,
           })
           alert("Research Topic and Field added");
-          window.location.href="/regtopic/displayresearchtopics"
+          window.location.href="/regtopic/displayresearchtopic"
      }   
    })
    .catch((e)=>{
