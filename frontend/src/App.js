@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 
 import Profile from './components/AA_Components/student-profile';
-import MainHome from './components/AA_Components/mainhome';
 import Faculties from './components/AA_Components/faculties';
 
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
@@ -74,7 +73,6 @@ function App() {
    <Route path = "/signin" component={StudentLogin}/>
    <Route path = "/signup" component={Signup}/>
    <Route path = "/profile" component={Profile}/>
-   <Route path = "/mainhome" component={MainHome}/>
    <Route path = "/faculties" component={Faculties}/>
    <Route path= "/groupReg" component={GroupRegistration}/>
    <Route path= "/display/:id" component={Add_Group_Members}/>

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import MainHome from "./mainhome";
+import StudentNavBar from '../Home_Component/StudentNavBar';
 
 export default class HomePage extends Component {
     render() {
         return (
             <div>
-                <MainHome/>
+                <StudentNavBar/>
                 <a href="/groups">
                     Group registration
                 </a>
