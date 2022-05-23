@@ -109,11 +109,13 @@ render() {
         <table className="table table-hover" style={{ marginTop: '40px', background: "#FFFFFF" }} > 
         <thead>
             <tr>
+               <th scope ="col"> NO </th>
                <th scope ="col"> Criteria </th>
                <th scope ="col"> Good (10-8) </th>
                <th scope ="col"> Avarage (4-7) </th>
                <th scope ="col"> Poor (0-3) </th>
                <th scope ="col"> Comment </th>
+               <th scope ="col"> Marks </th>
             </tr>
         </thead>
         <tbody>
@@ -132,13 +134,23 @@ render() {
           <td>{createmarking.methodofsubmission}</td>
           <td>{createmarking.marksallocation}</td>
           <td> 
-            <a className="btn btn-warning" href={`/createmarkingedit/${createmarking._id}`}>
+            {/* <a className="btn btn-warning" href={`/createmarkingedit/${createmarking._id}`}>
               <i classname="fas fa-edit"></i>&nbsp;Edit
             </a>
             &nbsp;
             <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(createmarking._id)}>
-              <i className="far fa-trash-alt"></i>&nbsp;Delete
-            </a>
+              <i className="far fa-trash-alt"></i>&nbsp;Delete */}
+
+              <Button className="form-group" type="submit" style={{ background: "#C3FDB8", width: 10 + "%", align: "center" }} startIcon={<EditSharpIcon />} href={`/createmarkingedit/${createmarking._id}`}>
+                        </Button>
+
+                        &nbsp;
+                        <Button className="form-group" type="submit" style={{ background: "#F75D59", width: 10 + "%", align: "center" }} startIcon={<DeleteForeverSharpIcon />} onClick={() => this.onDelete(createmarking._id)}>
+                        </Button>
+
+
+
+            {/* </a> */}
               </td>
                  </tr>
 
