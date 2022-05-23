@@ -4,22 +4,7 @@ const Admin = require('../../models/RG_models/admin');
 const auth = require ('../../middleware/admin_middleware/adminauth');
 const router = express.Router();
 
-
-//create student groups
-// router.post("/assignmentgroups", (req, res) => {
-//   let newgroupAssignment= new GroupAssignment(req.body);
-//   newgroupAssignment.save((err) => {
-//     if (err) {
-//       return res.status(400).json({
-//         error: err,
-//       });
-//     }
-//     return res.status(200).json({
-//       success: "Group Assignment Upload Successfully !!!",
-//     });
-//   });
-// });
-
+//upload document
 router.post("/assignmentgroups", auth, async (req, res) => {
   try{
     let sliit_id = req.Admin._id
