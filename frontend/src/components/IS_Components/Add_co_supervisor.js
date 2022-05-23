@@ -1,6 +1,7 @@
 import React,{Component} from 'react' ;
 import axios from "axios";
 import AdminNavBar from '../Layout/AdminNavBar';
+import Footer from '../Layout/footer';
  
 export default class Add_co_supervisor extends Component{
    constructor(props){  
@@ -124,7 +125,8 @@ return(
                            </tbody>     
                        </table>
                     </div>
-                 </div>
+                 </div><br/><br/><br/>
+                 <Footer/>
                           </div>
        )
    }
