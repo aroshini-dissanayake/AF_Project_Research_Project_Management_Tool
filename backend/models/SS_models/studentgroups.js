@@ -4,7 +4,7 @@ const studentgroupsSchema = new mongoose.Schema({
 
     group_name:{
         type: String,
-        required:true,
+        required:false,
     },
 
     panelMember:{

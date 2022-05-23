@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+import {toast} from 'react-toastify';
+
 
 import Profile from './components/AA_Components/student-profile';
 import MainHome from './components/AA_Components/mainhome';
 import Faculties from './components/AA_Components/faculties';
 
-import {BrowserRouter,Route,Switch,Routes} from 'react-router-dom';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import DisplayStudentgroups from './components/SS_Components/Display_studentgroups';
 import Add_panel_member from './components/SS_Components/Add_panel_member'
 import StaffLogin from './components/SS_Components/staff-login';
@@ -29,7 +32,19 @@ import Usersremove from './components/RD_Components/usersremove';
 import Supervisorremove from './components/RD_Components/supervisorremove';
 import CoSupervisorremove from './components/RD_Components/cosupervisorremove';
 import Studentsremove from './components/RD_Components/studentsremove';
+import presantationpdfupload from './components/RD_Components/presantationpdfupload';
 import PanelMembers from './components/SS_Components/PanelMembers';
+
+
+import AddResearchTopic from './components/IS_Components/Add_research_topic';
+import Display_researchtopics from './components/IS_Components/Display_researchtopics';
+import AddSupervisors from './components/IS_Components/Add_supervisor';
+import Display_supervisors from './components/IS_Components/Display_supervisors';
+import AddCoSupervisors from './components/IS_Components/Add_co_supervisor';
+import Display_co_supervisors from './components/IS_Components/Display_co_supervisors';
+//import Supervisors from './components/IS_Components/Supervisors';
+import DocUpload from './components/IS_Components/DocUpload';
+
 import StudentDashboard from './components/SS_Components/StudentDashboard';
 import StudentHomePage from './components/SS_Components/StudentHomePage';
 import Groups from './components/SS_Components/Groups';
@@ -40,7 +55,7 @@ import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcce
 
 function App() {
   return (
-   <BrowserRouter>
+   <Router>
    <Switch>
     {/* <Route path = "/" element={<StudentLogin/>}/>
     <Route path = "/signup" element={<Signup/>}/> 
@@ -57,7 +72,7 @@ function App() {
     */}
      
 
-     <Route path = "/" component={StudentHomePage} exact/>
+     <Route path = "/aa" component={StudentHomePage} exact/>
    
      <div>  
      <Route path = "/staff" component={BackendHomePage}/>
@@ -74,7 +89,7 @@ function App() {
      <Route path = "/groups" component={Groups}/>
      <Route path = "/pdfupload" component={PDFUpload}/>
      <Route path = "/pdfdisplay" component={PDFDisplay}/>
-     <Route path = "/pdfdisplay" component={PDFDisplay}/>
+     
      <Route path = "/requestsupervisor" component={SupervisorAcceptTopic}/>
      <Route path = "/requestcosupervisor" component={CoSupervisorAcceptTopic}/>
      
@@ -97,11 +112,28 @@ function App() {
     <Route path = "/getsupervisor" component={Supervisorremove}/>
     <Route path = "/getcosupervisor" component={CoSupervisorremove}/>
     <Route path = "/getstudent" component={Studentsremove}/>
+    <Route path = "/presantation" component={presantationpdfupload}/>
     
 
+
+
+
+
+    {/* <Route path = "/createmarkingschemes" component={Createmarkingschemes}/>  */}
+
+    <Route path = "/regtopic/research/:id" component={AddResearchTopic}/> 
+    <Route path = "/regtopic/displayresearchtopic" component={Display_researchtopics}/> 
+    <Route path = "/regtopic/addSupervisor/:id/:feild" component={AddSupervisors}/> 
+    <Route path = "/regtopic/displaysupervisors" component={Display_supervisors}/>
+    <Route path = "/regtopic/addcoSupervisor/:id/:feild" component={AddCoSupervisors}/> 
+    <Route path = "/regtopic/displaycosupervisors" component={Display_co_supervisors}/> 
+    <Route path = "/regtopic/getsupervisor/:feild" component={AddSupervisors}/> 
+    <Route path = "/regtopic/getcosupervisor/:feild" component={AddCoSupervisors}/>
+    <Route path = "/document/submitdoc" component={DocUpload}/> 
+   
    </div>  
    </Switch>
-   </BrowserRouter>
+   </Router>
   );
 }
 

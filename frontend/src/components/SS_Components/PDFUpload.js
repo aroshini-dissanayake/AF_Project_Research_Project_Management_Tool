@@ -2,8 +2,7 @@ import React,{useState} from "react";
 import axios from "axios";
 import AdminNavBar from '../Layout/AdminNavBar';
 import Footer from '../Layout/footer';
-import { getDownloadURL,getStorage, ref,uploadBytesResumable, } from "firebase/storage";
-import app from "../../FireBase";
+import { getDownloadURL,getStorage, ref,uploadBytesResumable, } from "firebase/storage";import app from "../../FireBase";
 // import PDFDisplay from "./PDFDisplay";
 
 export default function PDFUpload(){

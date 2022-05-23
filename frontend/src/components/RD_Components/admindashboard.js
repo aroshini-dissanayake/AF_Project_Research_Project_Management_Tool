@@ -18,7 +18,7 @@ const studentList = () => {
   window.location = `/getstudent`
 }
 const createmarkingschemes = () => {
-  window.location = `/homemarkingschemes`
+  window.location = `/presantation`
 }
 const studentgroups = () => {
   window.location = `/group/displaystudentgroups`
