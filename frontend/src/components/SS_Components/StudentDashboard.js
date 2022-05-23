@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
 
+const studentgroups = () => {
+
+    window.location = `/groups`
+    
+    }
 const regresearchtopic = () => {
 
     window.location = `/regtopic/displayresearchtopic`
@@ -34,13 +39,13 @@ export default class StudentDashboard extends Component {
            <div class="col" style={{width: "25rem"}} > 
                <div class="shadow h-60" id="cardcol1">
                <div class="card-body" style={{background: "#F3E5AB"}} >
-               <h5 class="card-title" id="dashh5" align="center" ><b> Faculty of Computing</b></h5>
+               <h5 class="card-title" id="dashh5" align="center" ><b> Register Student Groups</b></h5>
                </div>
                <img
                    src="https://www.sliit.lk/wp-content/uploads/2017/12/Business-Analytics.jpg"
                    class="card-img-top"
                    height="280px"
-                   alt="..."/>
+                   alt="..." onClick={studentgroups}/>
                </div>
            </div>
         

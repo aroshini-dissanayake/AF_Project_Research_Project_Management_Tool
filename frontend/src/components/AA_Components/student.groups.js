@@ -56,11 +56,6 @@ export default class Groupss extends Component{
                              <AddCircleOutlineIcon  fontSize="small" style={{color: "black"}}/>
                              </IconButton> 
                              &nbsp;&nbsp;&nbsp;&nbsp;
-                            
-                             <IconButton aria-label="delete" size="small"
-                              style={{background: "#800000"}} >
-                             <DeleteForeverIcon fontSize="small"  style={{color: "white"}}/>
-                             </IconButton>
                         </td>
                     </tr>
                 ))}
