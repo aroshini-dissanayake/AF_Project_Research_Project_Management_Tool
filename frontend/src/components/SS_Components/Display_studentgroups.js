@@ -19,10 +19,10 @@ export default class Display_studentgroups extends Component{
        this.retrieveStudentGroups();
    }
     retrieveStudentGroups(){
-        axios.get("http://localhost:8070/group/displaystudentgroups").then(res=>{
+        axios.get("http://localhost:8070/student/displaygroups").then(res=>{
             if(res.data.success){
                 this.setState({
-                    studentgroups:res.data.existingStudentgroups
+                    studentgroups:res.data.existingGroups
                 });
                 console.log(this.state.studentgroups)
             }
@@ -77,7 +77,7 @@ onDelete = (id)=>{
                         </td>
                     </tr>
                 ))}
-                </tbody>
+        </tbody>
             </table>
                </div>     
                   </div>  
