@@ -22,6 +22,17 @@ import Admindashboard from './components/RD_Components/admindashboard';
 import AdminProfile from './components/RD_Components/adminProfile';
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 import PanelMembers from './components/SS_Components/PanelMembers';
+
+
+import AddResearchTopic from './components/IS_Components/Add_research_topic';
+import Display_researchtopics from './components/IS_Components/Display_researchtopics';
+import AddSupervisors from './components/IS_Components/Add_supervisor';
+import Display_supervisors from './components/IS_Components/Display_supervisors';
+import AddCoSupervisors from './components/IS_Components/Add_co_supervisor';
+import Display_co_supervisors from './components/IS_Components/Display_co_supervisors';
+//import Supervisors from './components/IS_Components/Supervisors';
+import DocUpload from './components/IS_Components/DocUpload';
+
 import StudentDashboard from './components/SS_Components/StudentDashboard';
 import StudentHomePage from './components/SS_Components/StudentHomePage';
 import Groups from './components/SS_Components/Groups';
@@ -52,6 +63,7 @@ function App() {
      <Route path = "/groups" component={Groups}/>
      <Route path = "/pdfupload" component={PDFUpload}/>
      <Route path = "/pdfdisplay" component={PDFDisplay}/>
+     
      <Route path = "/requestsupervisor" component={SupervisorAcceptTopic}/>
      <Route path = "/requestcosupervisor" component={CoSupervisorAcceptTopic}/>
      
@@ -66,6 +78,22 @@ function App() {
      <Route path = "/admindashboard" component={Admindashboard}/>  
      <Route path = "/adminprofile" component={AdminProfile}/>  
 
+
+
+
+
+    {/* <Route path = "/createmarkingschemes" component={Createmarkingschemes}/>  */}
+
+    <Route path = "/regtopic/research/:id" component={AddResearchTopic}/> 
+    <Route path = "/regtopic/displayresearchtopic" component={Display_researchtopics}/> 
+    <Route path = "/regtopic/addSupervisor/:id/:feild" component={AddSupervisors}/> 
+    <Route path = "/regtopic/displaysupervisors" component={Display_supervisors}/>
+    <Route path = "/regtopic/addcoSupervisor/:id/:feild" component={AddCoSupervisors}/> 
+    <Route path = "/regtopic/displaycosupervisors" component={Display_co_supervisors}/> 
+    <Route path = "/regtopic/getsupervisor/:feild" component={AddSupervisors}/> 
+    <Route path = "/regtopic/getcosupervisor/:feild" component={AddCoSupervisors}/>
+    <Route path = "/document/submitdoc" component={DocUpload}/> 
+   
    </div>  
    </Switch>   
    </BrowserRouter>
