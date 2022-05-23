@@ -1,7 +1,7 @@
 import React,{Component} from 'react' ;
 import axios from "axios";
 import StudentNavBar from '../Home_Component/StudentNavBar';
-import Footer from '../Layout/footer';
+import Button from '@material-ui/core/Button';
  
 export default class Add_co_supervisor extends Component{
    constructor(props){  
@@ -51,8 +51,10 @@ export default class Add_co_supervisor extends Component{
            grpSupervisor:grpSupervisor,
            grpcoSupervisor:grpcoSupervisor,
        }
- 
-       axios.post(`http://localhost:8070/regtopic/addcoSupervisor/${id}`,data).then((res)=>{ 
+  
+      
+    
+         axios.post(`http://localhost:8070/regtopic/addcoSupervisor/${id}`,data).then((res)=>{ 
        if(res.data.success){
            this.setState({
                group_name:"",
@@ -73,33 +75,39 @@ return(
 <div>
 <StudentNavBar/>
   <br/><br/>   
-       <div className='col-md-8 mt-4 mx-auto'>
-           <h1 className='h3 mb-3 font-weight-normal'>ADD CO-SUPERVISOR TO STUDENT GROUP</h1>
-             <form className='needs-validation' noValidate>
-                 <div className='form-group' style={{marginBottom:'10px'}}>
-                    <label style={{marginBottom:'5px'}}>Co-Supervisor</label>
-                      <input
-                         type="text"
-                           className='form-control'
-                              name='grpcoSupervisor'
-                                placeholder='Enter Co-Supervisor Name'
-                                    value={this.state.grpcoSupervisor}
-                              onChange={this.handleInputChange}>
-                          </input>
-                      </div>
-                 <button
-             className='btn btn-warning'
-         type='add'
-      tyle={{marginTop:'15px'}}
-          onClick={this.onSubmit}>
-             <i className='fa fa-plus-circle'></i> &nbsp; ADD
-                </button>
-                   </form>   
-                       </div>
-                       <div>
-              <br/><br/>
-               <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
-            <b><u> Co-Supervisors </u></b></h3><br/>
+    <div align="center">
+      <div className="card-header" style={{width:"820px",background:"#B7CEEC"}}><br/><br/>
+        <h3 align="center">
+          <b><u>ADD CO-SUPERVISOR TO STUDENT GROUP</u></b></h3>
+            <form className='needs-validation'>
+         <div className="col-lg-10 mt-2">    
+     <div align="left"><br/>
+ <label style={{marginBottom:'5px'}}>Co-Supervisor</label>
+     <input
+          type="text"
+              className='form-control'
+                 name='grpcoSupervisor'
+                     placeholder='Enter Co-Supervisor Name'
+                         value={this.state.grpcoSupervisor}
+                            onChange={this.handleInputChange} required>
+                       </input>
+                    </div>
+                 </div><br/><br/>
+             <Button
+         style={{background:"#151B54",color:"white"}}
+            type='add'
+               tyle={{marginTop:'25px'}}
+                  onClick={this.onSubmit}>
+                     <i className='fa fa-plus-circle'></i> &nbsp; ADD CO-SUPERVISOR
+                        </Button><br/>
+                           </form><br/>
+                               </div>
+                                  </div>
+                               <div>
+                           <br/>
+                        <br/>
+                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
+               <b><u> Co-Supervisors </u></b></h3><br/>
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
