@@ -67,7 +67,7 @@ return(
                     <label style={{marginBottom:'5px'}}>Research Topic</label>
                       <input
                          type="text"
-                           className='form-control'
+                         className='form-control'
                               name='researchTopic'
                                 placeholder='Enter Research Topic'
                                     value={this.state.researchTopic}
