@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import axios from "axios";
-import AdminNavBar from '../Layout/AdminNavBar';
+import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
 import { getDownloadURL,getStorage, ref,uploadBytesResumable, } from "firebase/storage";
 import app from "../../FireBase";
@@ -68,7 +68,7 @@ export default function DocUpload(){
 
 return (
     <div>
-       <AdminNavBar/> 
+       <StudentNavBar/> 
           <br/><br/> <br/><br/>
             <div align="center">
                <div className="card-header" style={{width:"550px",background:"#E6E6FA"}}><br/><br/>

@@ -1,6 +1,6 @@
 import React,{Component} from 'react' ;
 import axios from "axios";
-import AdminNavBar from '../Layout/AdminNavBar';
+import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
  
 export default class Add_co_supervisor extends Component{
@@ -71,7 +71,7 @@ export default class Add_co_supervisor extends Component{
  render(){
 return(
 <div>
-<AdminNavBar/>
+<StudentNavBar/>
   <br/><br/>   
        <div className='col-md-8 mt-4 mx-auto'>
            <h1 className='h3 mb-3 font-weight-normal'>ADD CO-SUPERVISOR TO STUDENT GROUP</h1>
@@ -125,7 +125,7 @@ return(
                            </tbody>     
                        </table>
                     </div>
-                 </div><br/><br/><br/>
+                 </div><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                  <Footer/>
                           </div>
        )
