@@ -7,7 +7,6 @@ const jwt = require("jsonwebtoken");
 const admin= require("../../models/RG_models/admin");
 const staff = require('../../models/SS_models/staff');
 
-
 //Admin Register to Web application
 router.post('/adminsignup', async (req, res) => {
     try {

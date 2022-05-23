@@ -2,9 +2,8 @@ import axios from "axios";
 import React,{Component} from 'react' ;
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import AdminNavBar from '../Layout/AdminNavBar';
- 
+import StudentNavBar from '../Home_Component/StudentNavBar';
+import Footer from '../Layout/footer';
  
 export default class Display_co_supervisors extends Component{
    constructor(props){
@@ -34,19 +33,19 @@ export default class Display_co_supervisors extends Component{
    render(){
        return(   
            <div>
-              <AdminNavBar/>  <br/><br/> <br/>
+              <StudentNavBar/>  <br/><br/> <br/>
                <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Add Co-Supervisor </u></b></h3><br/><br/>
                  <div className='container'> 
                    <table class="table">
                       <thead>
-                    <tr bgcolor="#79BAEC">
-                <th scope='col'>No</th>
-            <th scope='col'>Group Name</th>
-        <th scope='col'>Research Topic</th>
-      <th scope='col'>Research Field</th>
-     <th scope='col'>Supervisor</th>
-    <th scope='col'>Co-Supervisor</th>
-    <th scope='col'>Status</th>
+                         <tr bgcolor="#79BAEC">
+                       <th scope='col'>No</th>
+                    <th scope='col'>Group Name</th>
+                 <th scope='col'>Research Topic</th>
+              <th scope='col'>Research Field</th>
+           <th scope='col'>Supervisor</th>
+        <th scope='col'>Co-Supervisor</th>
+     <th scope='col'>Status</th>
    <th scope='col'>Actions</th>
         </tr>
            </thead>
@@ -71,7 +70,8 @@ export default class Display_co_supervisors extends Component{
                               ))}
                         </tbody>
                      </table>
-                   </div>    
+                   </div> <br/><br/><br/><br/><br/><br/><br/>
+                   <Footer/>  
                  </div> 
                 )}
                }

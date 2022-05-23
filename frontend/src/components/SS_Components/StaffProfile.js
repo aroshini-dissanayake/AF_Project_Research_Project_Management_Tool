@@ -51,28 +51,7 @@ const StaffProfile = () => {
         setShow(true)
       }
 
-      //delete the staff member account
-      // const deleteStaff = async () => {
-      //   const config = {
-      //     headers: {
-      //       Authorization: localStorage.getItem("Authorization"),
-      //     },
-      //   };
-        
-      //   if (window.confirm('Are you sure you wish to delete this Account?')) {
-      //       await axios.delete('http://localhost:8070/staff/staffdelete', config)
-      //       .then((res) => {
-      //         toast.success('Your account deleted successfuly',{position:toast.POSITION.TOP_CENTER});
-      //         localStorage.removeItem('Authorization')
-      //         window.location="/staffsignup"
-      //       })
-      //       .catch((err) => {
-      //         console.log(err.message)
-      //       })
-      //     }
-      //    }
-
-         //logout the staff menber account
+    //logout the staff menber account
          const staffLogout = () => {
             if (window.confirm('Are you sure you wish to logout from this Account?')) {
             localStorage.removeItem('Authorization')
