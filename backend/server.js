@@ -56,10 +56,6 @@ console.log("Mongodb connection success!!!");
 const studentgroupRouter = require("./routes/SS_routes/studentgroups");
 
 const staffRouter =require("./routes/SS_routes/staff");
-const adminRouter = require('./routes/RG_routes/admin');
-const createmarkingRouter = require('./routes/RG_routes/createmarking');
-const researchtopicRoutes = require ('./routes/IS_routes/researchtopic');
-const usersremoveRoutes = require('./routes/RG_routes/usersremove');
 const PDFUploadRouter = require('./routes/SS_routes/PDFUpload');
 
 //aro
@@ -73,7 +69,8 @@ const DocUploadRouter = require("./routes/IS_routes/DocUpload");
 //randy
 const adminRouter = require('./routes/RG_routes/admin');
 const createmarkingRouter = require('./routes/RG_routes/createmarking');
-
+const usersremoveRoutes = require('./routes/RG_routes/usersremove');
+const presantationpdfuploadRoutes = require('./routes/RG_routes/presantationpdf');
 
 
 
@@ -88,8 +85,8 @@ app.use("/document",DocUploadRouter);
 
 app.use("/admin",adminRouter);
 app.use("/createmarking",createmarkingRouter);
-app.use("/researchtopic",researchtopicRoutes);
 app.use("/usersremove",usersremoveRoutes);
+app.use("/presantationpdf",presantationpdfuploadRoutes);
 app.use("/assignment",PDFUploadRouter);
 
 

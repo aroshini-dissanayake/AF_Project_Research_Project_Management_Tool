@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+import {toast} from 'react-toastify';
+
 
 import Profile from './components/AA_Components/student-profile';
 import MainHome from './components/AA_Components/mainhome';
 import Faculties from './components/AA_Components/faculties';
 
-import {BrowserRouter,Route,Switch,Routes} from 'react-router-dom';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import DisplayStudentgroups from './components/SS_Components/Display_studentgroups';
 import Add_panel_member from './components/SS_Components/Add_panel_member'
 import StaffLogin from './components/SS_Components/staff-login';
@@ -29,6 +32,7 @@ import Usersremove from './components/RD_Components/usersremove';
 import Supervisorremove from './components/RD_Components/supervisorremove';
 import CoSupervisorremove from './components/RD_Components/cosupervisorremove';
 import Studentsremove from './components/RD_Components/studentsremove';
+import presantationpdfupload from './components/RD_Components/presantationpdfupload';
 import PanelMembers from './components/SS_Components/PanelMembers';
 
 
@@ -51,7 +55,7 @@ import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcce
 
 function App() {
   return (
-   <BrowserRouter>
+   <Router>
    <Switch>
     {/* <Route path = "/" element={<StudentLogin/>}/>
     <Route path = "/signup" element={<Signup/>}/> 
@@ -68,7 +72,7 @@ function App() {
     */}
      
 
-     <Route path = "/" component={StudentHomePage} exact/>
+     <Route path = "/aa" component={StudentHomePage} exact/>
    
      <div>  
      <Route path = "/staff" component={BackendHomePage}/>
@@ -108,6 +112,7 @@ function App() {
     <Route path = "/getsupervisor" component={Supervisorremove}/>
     <Route path = "/getcosupervisor" component={CoSupervisorremove}/>
     <Route path = "/getstudent" component={Studentsremove}/>
+    <Route path = "/presantation" component={presantationpdfupload}/>
     
 
 
@@ -128,7 +133,7 @@ function App() {
    
    </div>  
    </Switch>
-   </BrowserRouter>
+   </Router>
   );
 }
 
