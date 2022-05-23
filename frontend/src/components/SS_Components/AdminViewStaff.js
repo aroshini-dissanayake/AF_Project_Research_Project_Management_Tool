@@ -52,7 +52,7 @@ handleSearchArea = (e)=>{
          <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}><b><u>All Staff Member Details </u></b></h3><br/>
            <div className='container'>
               <div className="col-md-3" >
-                 <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search Staff Member" onChange={this.handleSearchArea}/>
+                 <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search Staff Member ID or Feild" onChange={this.handleSearchArea}/>
                     <br/> 
                       </div>      
                         <div align="right">       
@@ -62,7 +62,7 @@ handleSearchArea = (e)=>{
                 <option value="supervisor" >Supervisor</option>
              <option value="co-supervisor" >Co-Supervisor</option>
           <option value="panel member" >Panel Member</option>
-    </select> </div><br></br>                        
+    </select> </div><br></br> <br/>                       
        <table className = "table table-hover">
           <thead>
              <tr bgcolor="#79BAEC">
@@ -73,9 +73,9 @@ handleSearchArea = (e)=>{
                          <th scope='col'>Feild</th>
                            <th scope='col'>Staff ID</th>
                          <th scope='col'>Role</th>
-                     <th scope='col'>Email</th>
-                 </tr>
-        </thead>
+                      <th scope='col'>Email</th>
+                   </tr>
+               </thead>
             <tbody>
                {this.state.staff.map((staff,index)=>(
                   <tr key={index}>    
