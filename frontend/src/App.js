@@ -52,7 +52,6 @@ function App() {
      <Route path = "/groups" component={Groups}/>
      <Route path = "/pdfupload" component={PDFUpload}/>
      <Route path = "/pdfdisplay" component={PDFDisplay}/>
-     <Route path = "/pdfdisplay" component={PDFDisplay}/>
      <Route path = "/requestsupervisor" component={SupervisorAcceptTopic}/>
      <Route path = "/requestcosupervisor" component={CoSupervisorAcceptTopic}/>
      
