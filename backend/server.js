@@ -80,6 +80,7 @@ app.use("/student", studentRouter);
 app.use("/staff",staffRouter);
 app.use("/regtopic",topicRouter);
 app.use("/document",DocUploadRouter);
+app.use("/admin",adminRouter);
 
 
 

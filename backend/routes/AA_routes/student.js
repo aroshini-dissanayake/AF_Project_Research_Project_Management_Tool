@@ -202,6 +202,7 @@ router.put('/update', auth, async (req, res) => {
   router.post("/groupReg/:id",auth, async (req, res) => {
     
     const groupId = req.params.id
+    const student_id = req.body.groupMembers
     
     try {
       
@@ -221,20 +222,23 @@ router.put('/update', auth, async (req, res) => {
       // const stdt = await group.findOne(student_id);
 
       if(arrLength >= 4){
-        throw new Error('This group already have 4 members..!!!')
+        throw new Error('This group already have 4 members!!!')
       }
-
+      
+    
       //check wether the student is regstered to a group or not.
       if (student.status == "Registered") {
-        throw new Error("Student already registered in a group...!!!");
+        throw new Error("Student already registered in a group!!!");
       }
+
       else{
         const grp_status = "Registered";
-
+        const gID = groupId;
+        
         student.status = grp_status;
+        student.grp_id = gID;
 
         await student.save()
-
 
       //add registering member details to student group db
       // const id1 = await Student.find({  m_student_id},{"_id":1});
@@ -253,7 +257,7 @@ router.put('/update', auth, async (req, res) => {
         { $push: { groupMembers: student_groupItem}},
         { new: true, upsert: true }
       )
-      res.status(200).send({ status: "Student Group Added", student_group: student_groupItem });
+      res.status(200).send({ status: "Student Added to the Group ", student_group: student_groupItem });
       }
     } catch (error) {
       console.log(error.message);
@@ -294,137 +298,6 @@ router.put('/update', auth, async (req, res) => {
       res.status(500).send({ status: "Error with retrieve", error: error.message });
     }
   });
-
-
-  
-
-
-  // router.post("/addResearchTopic",  async (req, res) => {
-  //   const groupId = req.params.id
-  //   try {
-  //     const {
-        
-  //       group_name,
-  
-  //     } = req.body;
-  
-      
-  //     groups = {
-    
-  //       group_name: group_name,
-  
-  //     };
-  
-  //     let groupname = await group.findOne({ group_name });
-  //     const gid = await groupname.groupId;
-  //     const GroupId = await group.findById(gid);     
-  //     //const Group = await studentGroup.findById(currentGroupId);
-  //     if (!groupname) {
-  //       throw new Error("There is np group");
-  //     }
-  //     const {researchTopic, researchField, } = req.body;
-  
-  //         const dbResearchtopic = {
-  //           researchTopic: researchTopic,
-  //           researchField: researchField,
-  //         };
-      
-  //         const newResearchtopic = new group(dbResearchtopic);
-  //         await newResearchtopic.save();
-  //         res.status(200).send({ status: "New Research Topic created", dbResearchtopic:newResearchtopic });
-  //         // return res.status(200).json({
-  //         //   success:true,
-  //         //   id: newResearchtopic._id
-  //         // }) ; 
-  //       } catch (error) {
-  //         console.log(error.message);
-  //         res.status(500).send({ error: error.message });
-  //       }
-  //     });
-
-  //reg research topic
-//   router.post("/addResearchTopic", auth, async (req, res) => {
-
-   
-//     try {
-//         let sid = Student._id;
-//         const currentStudent = await Student.findById(sid)
-//         const currentGroupId = await currentStudent.groupId;
-//         const Group = await group.findById(currentGroupId);
-  
-//        if (!currentStudent) {
-//         throw new Error('There is no Student')
-//       }
-  
-//       if (!Group) {
-//         throw new Error('You are not registered in a group...!')
-//       }
-      
-//       const {researchTopic, researchField, } = req.body;
-  
-//       let dbResearchtopic = {
-//         researchTopic: researchTopic,
-//         researchField: researchField,
-//       };
-
-//       const newResearchtopic = new studentGroup(dbResearchtopic);
-//       await newResearchtopic.save();
-//       res.status(200).send({ status: "New Research Topic created", dbResearchtopic:newResearchtopic });
-//       // return res.status(200).json({
-//       //   success:true,
-//       //   id: newResearchtopic._id
-//       // }) ; 
-//    } catch (error) {
-//       console.log(error.message);
-//       res.status(500).send({ error: error.message });
-//     }
-//  });
-
-  // //remove group member
-  // router.delete("/deletemember/:id", async (req, res)=>{
-    
-  //   try{
-  
-  //     const stdID = req.params.id;
-  //     const member1 = await  Student.findById(stdID);
-  //     const membergroupID = member1.grp_id;
-  //     const membergroup = await  group.findById(membergroupID);
-  //     const groupMems = await  membergroup.groupMembers;
-      
-      
-  //      for(var i = 0; i< groupMems.length; i++){
-        
-  //       var arr1 = groupMems[i];
-  
-  //       if(arr1._id == stdID){
-  
-  //         group.findOneAndUpdate(
-  //           { _id: membergroupID },
-  //           { $pull: { groupMembers: arr1 } },
-  //           { new: true }
-  //         )
-  //           .then(arr1 => console.log(arr1))
-  //           .catch(err => console.log(err));
-    
-  //       }
-  //      }
-  
-  //                //update group status
-  //                const status = "Not registered..";
-  
-  //                member1.status = status;
-        
-  //                await member1.save();
-  
-  //     res.status(200).send({ status: "Group member removed...!", member1: arr1 });
-  
-  //     } catch (error) {
-        
-  //       res.status(500).send({ status: "Error with delete", error: error.message });
-  //     }
-  
-    
-  //   })
 
   
 

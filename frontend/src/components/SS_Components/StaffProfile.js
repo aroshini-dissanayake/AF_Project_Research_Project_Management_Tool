@@ -1,23 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import UpdateProfile from '../SS_Components/UpdateStaff';
+import UpdateStaffProfile from './StaffUpdate';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import StaffNavbar from "../Staff-Layout/StaffNavbar";
 import Footer from '../Layout/footer';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+toast.configure()
 
 const StaffProfile = () => {
-    const [name, setname] = useState(null)
-    const [phone, setphone] = useState(null)
-    const [faculty, setfaculty] = useState(null)
-    const [feild, setfeild] = useState(null)
-    const [staff_id, setstaff_id] = useState(null)
-    const [role, setrole] = useState(null)
-    const [email , setemail] = useState(null)
-    const [pwd , setpwd] = useState(null)
+    const [name, setname] = useState("")
+    const [phone, setphone] = useState("")
+    const [faculty, setfaculty] = useState("")
+    const [feild, setfeild] = useState("")
+    const [staff_id, setstaff_id] = useState("")
+    const [role, setrole] = useState("")
+    const [email , setemail] = useState("")
+    const [pwd , setpwd] = useState("")
     const [show, setShow] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+      setLoading(true)
         const getUserData = async () => {
             try {
                const config = {
@@ -35,6 +40,7 @@ const StaffProfile = () => {
                     setrole(res.data.Staff.role)
                     setemail(res.data.Staff.email)
                     setpwd(res.data.Staff.pwd)
+                    setLoading(false)
     
             }).catch((error) => {
                 console.log(error.message)
@@ -80,6 +86,12 @@ const StaffProfile = () => {
             window.location = "/"
             }
           }
+
+          if (loading) {
+            return <div className="d-flex justify-content-center" style={{ paddingTop: 400 }}>
+               <CircularProgress hidden={false} />
+            </div>
+         }
 
       return (
                           <div class="bod" style={{background:"#F8F8FF"}}  >
@@ -172,7 +184,7 @@ const StaffProfile = () => {
                               <div class="col-sm-12"><br/>
                                   <center>
                 <button style={{background: "#151B54", color:"#ffff"}} onClick={staffLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;</center>
-           {/* <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteStaff} class="btn btn " target="__blank">Delete Account</button></center> */}
+          <center> <button style={{background: "#9F000F", color:"#ffff"}} onClick={updateStaffProfile} class="btn btn " target="__blank">Update Details</button></center>
               </div>
                   </div>     
                       </div>  
@@ -181,23 +193,24 @@ const StaffProfile = () => {
                       </div>
                    </div>
                 </div>
-           </div>
                
-         {/* <UpdateProfile
-          show={show}
-          onHide={() => setShow(false)}
+         <UpdateStaffProfile
           upname ={name}
           upphone ={phone}
           upfaculty ={faculty}
           upfeild ={feild}
           upstaff_id ={staff_id}
           uprole ={role}
-          upemail ={email} /> */}
-           <br/><br/>       
-          <Footer/>
+          upemail ={email} 
+          uppwd= {pwd}
+          show={show}
+          onHide={() => setShow(false)}/>      
+
+      </div>
+      <Footer/>
       </div>
    )
 }
  
-export default StaffProfile;
+export default StaffProfile
 
