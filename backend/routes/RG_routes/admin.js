@@ -130,5 +130,39 @@ router.get("/panelmember",async(req,res)=>{
   }
 });
 
+//update
+
+router.put('/update', adminauth, async (req, res) => {
+
+  try {
+    const {
+      name,
+      phone,
+      sliitid,
+      email
+
+    } = req.body;
+
+    let Admin = await admin.findOne({sliitid})
+
+    if (!Admin) {
+      throw new Error('There is no admin account')
+    }
+
+    const adminUpdate = await admin.findByIdAndUpdate(req.Admin.id, 
+      {
+      name: name,
+      phone: phone,
+      sliitid: sliitid,
+      email: email
+      })
+
+    res.status(200).send({status: 'Admin Profile Updated', Admin: adminUpdate})
+
+  } catch (error) {
+    res.status(500).send({error: error.message})
+    console.log(error)
+  }
+});
 
 module.exports = router;
