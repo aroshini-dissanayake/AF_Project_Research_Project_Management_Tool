@@ -1,9 +1,8 @@
-import React from 'react';
+import React,{Component} from 'react';
 import './App.css';
-
+import {BrowserRouter ,Switch,Route} from 'react-router-dom';
 import Profile from './components/AA_Components/student-profile';
 import Faculties from './components/AA_Components/faculties';
-import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import DisplayStudentgroups from './components/SS_Components/Display_studentgroups';
 import Add_panel_member from './components/SS_Components/Add_panel_member'
 import StaffLogin from './components/SS_Components/staff-login';
@@ -39,15 +38,16 @@ import SupervisorAcceptTopic from './components/SS_Components/SupervisorAcceptTo
 import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcceptTopic';
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 
-
-function App() {
+export default class App extends Component{
+  render(){
   return (
+
    <BrowserRouter>
+
      <Switch>
-       
      <Route path = "/" component={StudentHomePage} exact/>
    
-     <div>  
+    <div>  
      <Route path = "/staff" component={BackendHomePage}/>
      <Route path = "/stafflogin" component={StaffLogin}/>
      <Route path = "/staffsignup" component={StaffSignup}/>
@@ -64,9 +64,9 @@ function App() {
      <Route path = "/requestsupervisor" component={SupervisorAcceptTopic}/>
      <Route path = "/requestcosupervisor" component={CoSupervisorAcceptTopic}/>
      <Route path = "/displayStaffRole" component={AdminViewStaff}/>
-     
-     
-     <Route path = "/signin" component={StudentLogin}/>
+  
+
+    <Route path = "/signin" component={StudentLogin}/>
      <Route path = "/signup" component={Signup}/>
      <Route path = "/profile" component={Profile}/>
      <Route path = "/faculties" component={Faculties}/>
@@ -89,10 +89,10 @@ function App() {
      <Route path = "/regtopic/getcosupervisor/:feild" component={AddCoSupervisors}/>
      <Route path = "/document/submitdoc" component={DocUpload}/> 
    
-   </div>  
-   </Switch> 
+             </div>  
+          </Switch> 
    </BrowserRouter>
+
   );
 }
-
-export default App;
+}
