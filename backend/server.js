@@ -22,6 +22,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cors());
+
+//To accept the JSON Data
 app.use(express.json());
 
 const URL = process.env.MONGODB_URL;
@@ -59,7 +61,6 @@ app.use("/regtopic",topicRouter);
 app.use("/document",DocUploadRouter);
 app.use("/admin",adminRouter);
 app.use("/assignment",PDFUploadRouter);
-
 
 
 app.listen(PORT, () => {

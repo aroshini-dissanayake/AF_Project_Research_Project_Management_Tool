@@ -1,4 +1,3 @@
-import { Group } from '@material-ui/icons';
 import React, { Component } from 'react'
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
@@ -30,9 +29,12 @@ const groupreg = () => {
 const downloadtemplate = () => {
         window.location = `/pdfdisplay`            
     }       
-    
+const chatgroups = () => {
+        window.location = `/`            
+    }       
         
-
+        
+    
 export default class StudentDashboard extends Component {
   render() {
     return (
@@ -129,7 +131,7 @@ export default class StudentDashboard extends Component {
                    src="https://thumbs.dreamstime.com/b/print-148080743.jpg"
                    class="card-img-top"
                    height="280px"
-                   alt="..."/>
+                   alt="..." onClick={chatgroups}/>
                </div>
               </div>
 
