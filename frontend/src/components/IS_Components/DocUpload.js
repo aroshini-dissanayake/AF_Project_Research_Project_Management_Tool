@@ -48,7 +48,13 @@ export default function DocUpload(){
             let new_docUpload = {
                 docUpload:docUpload
             }
-            axios.post("http://localhost:8070/document/submitdoc",new_docUpload)
+
+            const config = {
+                headers: {
+                  Authorization: localStorage.getItem("Authorization"),
+                },
+              };
+            axios.post("http://localhost:8070/document/submitdoc",new_docUpload,config)
             .then(()=>{
                 alert("Upload Success")
                 window.location = "/"
