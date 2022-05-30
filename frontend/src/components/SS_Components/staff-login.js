@@ -8,7 +8,6 @@ export default class StaffLogin extends Component {
       super(props);
       this.userLoginSubmit = this.userLoginSubmit.bind(this)
       this.handleClose = this.handleClose.bind(this)
-
       this.state = {
         staff_id: "",
         pwd: "",
@@ -45,12 +44,13 @@ export default class StaffLogin extends Component {
         }
         this.setState({open: false})
      };
+
 render() {
    return (
       <div >
         <BackendHomeNavBar/><br/><br/><br/><br/>
            <div class="row d-flex align-items-center justify-content-center">
-              <div style={{width: 1000,background: "#CCCCFF",height:500}}>
+              <div style={{width: 1000,background: "#E6E6FA",height:500}}>
                  <div class="card-body" >  
                    <div class="container py-5 h-90" > 
                     <div class="row d-flex align-items-center justify-content-center h-100">      
@@ -93,8 +93,9 @@ render() {
                                         </div> 
                                            <br/>
                                               <br/>
-                                                 <Footer/>
-                                                   </div>
+                                                 <br/>
+                                                    <Footer/>
+                                                       </div>
         )
       }
     }

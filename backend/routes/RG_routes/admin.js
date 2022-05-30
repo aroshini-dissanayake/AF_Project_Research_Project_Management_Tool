@@ -5,6 +5,7 @@ const adminauth = require('../../middleware/Admin_middleware/adminauth')
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const admin= require("../../models/RG_models/admin");
+const staff = require('../../models/SS_models/staff');
 
 //Admin Register to Web application
 router.post('/adminsignup', async (req, res) => {
@@ -108,8 +109,72 @@ router.delete("/admindelete",adminauth, async (req, res) => {
       .status(500)
       .send({ status: "error with id", error: error.message });
   }
-})
+});
 
+//admin view roles of staff (get staff details)
+router.route("/displayStaffRole").get((req,res)=>{
+  staff.find().exec((err, staff) => {
+    if(err){
+      return res.status(400).json({
+        error: err,
+  });
+}
+  return res.status(200).json({
+    success: true,
+    existingDisplayStaffRole : staff
+  });
+});
+});
+
+
+//get only panel members details from the staff table
+router.get("/panelmember",async(req,res)=>{
+  try{
+    const panelmember = await staff.find({
+      role: "Panel Member"
+    })
+    res.status(201)
+    .send({
+      status : " Panel Member Retrive",
+      panelmember:panelmember
+     
+    });
+  }catch(error){
+    console.log(error.message);
+    res.status(500)
+    .send({error:error.message});
+  }
+});
+
+//update
+
+router.put('/update', adminauth, async (req, res) => {
+  try {
+    const {
+      name,
+      phone,
+      sliitid,
+      email  } = req.body;
+
+    let Admin = await admin.findOne({sliitid})
+    if (!Admin) {
+      throw new Error('There is no admin account')
+    }
+
+    const adminUpdate = await admin.findByIdAndUpdate(req.Admin.id, {
+      name: name,
+      phone: phone,
+      sliitid: sliitid,
+      email: email
+      })
+
+    res.status(200).send({status: 'Admin Profile Updated', Admin: adminUpdate})
+
+  } catch (error) {
+    res.status(500).send({error: error.message})
+    console.log(error)
+  }
+});
 
 
 module.exports = router;

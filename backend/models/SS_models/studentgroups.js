@@ -1,13 +1,8 @@
 const mongoose = require('mongoose');
 
 const studentgroupsSchema = new mongoose.Schema({
-   
-    studentName :{
-        type: String,
-        required:true,
-    },
 
-    groupName:{
+    group_name:{
         type: String,
         required:true,
     },
@@ -17,6 +12,14 @@ const studentgroupsSchema = new mongoose.Schema({
         required:false,
     },
     topicstatus:{
+        type: String,
+        required:false,
+    },
+    supervisortopicstatus:{
+        type: String,
+        required:false,
+    },
+    cosupervisortopicstatus:{
         type: String,
         required:false,
     }
