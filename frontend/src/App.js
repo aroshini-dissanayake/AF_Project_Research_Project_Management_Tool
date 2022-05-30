@@ -1,6 +1,6 @@
-import React,{Component} from 'react';
-import './App.css';
-import {BrowserRouter ,Switch,Route} from 'react-router-dom';
+import React, { Component } from 'react'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 import Profile from './components/AA_Components/student-profile';
 import Faculties from './components/AA_Components/faculties';
 import DisplayStudentgroups from './components/SS_Components/Display_studentgroups';
@@ -38,16 +38,14 @@ import SupervisorAcceptTopic from './components/SS_Components/SupervisorAcceptTo
 import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcceptTopic';
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 
-export default class App extends Component{
-  render(){
-  return (
-
-   <BrowserRouter>
-
-     <Switch>
+export default class App extends Component {
+ 
+  render() {
+    return (
+      
+  <Router>
+    <Switch>
      <Route path = "/" component={StudentHomePage} exact/>
-   
-    <div>  
      <Route path = "/staff" component={BackendHomePage}/>
      <Route path = "/stafflogin" component={StaffLogin}/>
      <Route path = "/staffsignup" component={StaffSignup}/>
@@ -89,10 +87,8 @@ export default class App extends Component{
      <Route path = "/regtopic/getcosupervisor/:feild" component={AddCoSupervisors}/>
      <Route path = "/document/submitdoc" component={DocUpload}/> 
    
-             </div>  
-          </Switch> 
-   </BrowserRouter>
-
-  );
-}
+            </Switch>
+        </Router>
+    )
+  }
 }
