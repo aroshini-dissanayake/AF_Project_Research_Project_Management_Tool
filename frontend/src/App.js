@@ -1,21 +1,12 @@
-<<<<<<< HEAD
 import React from 'react';
-import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-import {toast} from 'react-toastify';
 
-=======
+
 import React, { Component } from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
->>>>>>> 3fa40f2c6207433ee942ad812d5449d120e99986
 
 import Profile from './components/AA_Components/student-profile';
 import Faculties from './components/AA_Components/faculties';
-<<<<<<< HEAD
-
-import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
-=======
->>>>>>> 3fa40f2c6207433ee942ad812d5449d120e99986
 import DisplayStudentgroups from './components/SS_Components/Display_studentgroups';
 import Add_panel_member from './components/SS_Components/Add_panel_member'
 import StaffLogin from './components/SS_Components/staff-login';
@@ -30,7 +21,6 @@ import Adminregistration from './components/RD_Components/adminregistration';
 import AdminLogin from './components/RD_Components/adminlogin';
 import Admindashboard from './components/RD_Components/admindashboard';
 import AdminProfile from './components/RD_Components/adminProfile';
-<<<<<<< HEAD
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
 import Homemarkingschemes from './components/RD_Components/homemarkingschemes';
@@ -41,12 +31,10 @@ import Supervisorremove from './components/RD_Components/supervisorremove';
 import CoSupervisorremove from './components/RD_Components/cosupervisorremove';
 import Studentsremove from './components/RD_Components/studentsremove';
 import presantationpdfupload from './components/RD_Components/presantationpdfupload';
-=======
 import GroupRegistration from './components/AA_Components/student-group-name-registration';
 import Add_Group_Members from './components/AA_Components/group-members-reg';
 import Groupss from './components/AA_Components/student.groups';
 import HomePage from './components/AA_Components/homepage';
->>>>>>> 3fa40f2c6207433ee942ad812d5449d120e99986
 import PanelMembers from './components/SS_Components/PanelMembers';
 import AddResearchTopic from './components/IS_Components/Add_research_topic';
 import Display_researchtopics from './components/IS_Components/Display_researchtopics';
@@ -62,31 +50,6 @@ import PDFUpload from './components/SS_Components/PDFUpload';
 import PDFDisplay from './components/SS_Components/PDFDisplay';
 import SupervisorAcceptTopic from './components/SS_Components/SupervisorAcceptTopic';
 import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcceptTopic';
-<<<<<<< HEAD
-
-function App() {
-  return (
-   <Router>
-   <Switch>
-    {/* <Route path = "/" element={<StudentLogin/>}/>
-    <Route path = "/signup" element={<Signup/>}/> 
-    <Route path = "/addpanelmember" element={<Add_panel_member/>}/>
-    <Route path = "/edit_panelmembers" element= {Edit_panem_member}/>
-    <Route path = "/" element= {<DisplayStudentgroups/>}/> */}
-    {/* <Route path = "/add" element={<Adminregistration/>}/> 
-    <Route path = "/login" element={<AdminLogin/>}/>  
-    <Route path = "/adminpage" element={<Adminpage/>}/>   */}
-    {/* <Route path = "/homemarkingschemes" element={<Homemarkingschemes/>}/> 
-    <Route path = "/createmarkingadd" element={<Createmarkingschemes/>}/>
-    <Route path = "/createmarkingedit/:createmarkingID" element={<Editmarkingschemes/>}/>
-    <Route path = "/createmarking/:createmarkingID" element={<Markingschemesdetails/>}/>
-    */}
-     
-
-     <Route path = "/aa" component={StudentHomePage} exact/>
-   
-     <div>  
-=======
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
 
 export default class App extends Component {
@@ -97,7 +60,6 @@ export default class App extends Component {
   <Router>
     <Switch>
      <Route path = "/" component={StudentHomePage} exact/>
->>>>>>> 3fa40f2c6207433ee942ad812d5449d120e99986
      <Route path = "/staff" component={BackendHomePage}/>
      <Route path = "/stafflogin" component={StaffLogin}/>
      <Route path = "/staffsignup" component={StaffSignup}/>
@@ -128,7 +90,6 @@ export default class App extends Component {
      <Route path = "/adminsignin" component={AdminLogin}/>  
      <Route path = "/admindashboard" component={Admindashboard}/>  
      <Route path = "/adminprofile" component={AdminProfile}/>  
-<<<<<<< HEAD
 
      <Route path = "/homemarkingschemes" component={Homemarkingschemes}/> 
     <Route path = "/createmarkingadd" component={Createmarkingschemes}/>
@@ -157,28 +118,12 @@ export default class App extends Component {
     <Route path = "/regtopic/getcosupervisor/:feild" component={AddCoSupervisors}/>
     <Route path = "/document/submitdoc" component={DocUpload}/> 
    
-   </div>  
-   </Switch>
-   </Router>
-  );
-}
 
-export default App;
-=======
      
-     <Route path = "/regtopic/research/:id" component={AddResearchTopic}/> 
-     <Route path = "/regtopic/displayresearchtopic" component={Display_researchtopics}/> 
-     <Route path = "/regtopic/addSupervisor/:id/:feild" component={AddSupervisors}/> 
-     <Route path = "/regtopic/displaysupervisors" component={Display_supervisors}/>
-     <Route path = "/regtopic/addcoSupervisor/:id/:feild" component={AddCoSupervisors}/> 
-     <Route path = "/regtopic/displaycosupervisors" component={Display_co_supervisors}/> 
-     <Route path = "/regtopic/getsupervisor/:feild" component={AddSupervisors}/> 
-     <Route path = "/regtopic/getcosupervisor/:feild" component={AddCoSupervisors}/>
-     <Route path = "/document/submitdoc" component={DocUpload}/> 
+    
    
             </Switch>
         </Router>
     )
   }
 }
->>>>>>> 3fa40f2c6207433ee942ad812d5449d120e99986
