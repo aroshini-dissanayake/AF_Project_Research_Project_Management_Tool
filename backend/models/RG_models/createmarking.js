@@ -29,5 +29,5 @@ marksallocation:{
 
 });
 
-module.exports = mongoose.model('createmarking', createmarkingSchema)
+module.exports = mongoose.model('Createmarking', createmarkingSchema)
 
