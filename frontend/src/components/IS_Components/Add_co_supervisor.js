@@ -6,6 +6,10 @@ import Button from '@material-ui/core/Button';
 export default class Add_co_supervisor extends Component{
    constructor(props){  
        super(props);
+
+     this.onChangeGrpcoSupervisor = this.onChangeGrpcoSupervisor .bind(this);
+     this.onSubmit = this.onSubmit.bind(this);
+
        this.state={
            group_name:"",
            researchTopic:"",
@@ -32,40 +36,25 @@ export default class Add_co_supervisor extends Component{
          })
        }
     
-   handleInputChange = (e)=>{
-       const{name,value} = e.target;
-       this.setState({
-          ...this.state,
-          [name]:value
-       })
-    }
+       onChangeGrpcoSupervisor(e) {
+        this.setState({
+            grpcoSupervisor: e.target.value
+        })
+      }
  
    onSubmit = (e)=>{
        e.preventDefault();
        const id = this.props.match.params.id;
-       const{group_name,researchTopic,researchField,grpSupervisor,grpcoSupervisor} = this.state;
        const data = {
-           group_name:group_name,
-           researchTopic:researchTopic,
-           researchField:researchField,
-           grpSupervisor:grpSupervisor,
-           grpcoSupervisor:grpcoSupervisor,
+           
+           grpcoSupervisor:this.state.grpcoSupervisor,
        }
-  
+           
+            axios.post(`http://localhost:8070/regtopic/addcoSupervisor/${id}`,data).then((res)=>{ 
+            console.log(res.data)
+            alert("Co-Supervisor added");
+            window.location.href="/regtopic/displaycosupervisors"
       
-    
-         axios.post(`http://localhost:8070/regtopic/addcoSupervisor/${id}`,data).then((res)=>{ 
-       if(res.data.success){
-           this.setState({
-               group_name:"",
-               researchTopic:"" ,
-               researchField:"" ,
-               grpSupervisor:"",
-               grpcoSupervisor:"",
-          })
-          alert("Co-Supervisor added");
-          window.location.href="/regtopic/displaycosupervisors"
-     }   
    })
    .catch((e)=>{
    });
@@ -79,27 +68,15 @@ return(
       <div className="card-header" style={{width:"820px",background:"#B7CEEC"}}><br/><br/>
         <h3 align="center">
           <b><u>ADD CO-SUPERVISOR TO STUDENT GROUP</u></b></h3>
-            <form className='needs-validation'>
-         <div className="col-lg-10 mt-2">    
-     <div align="left"><br/>
- <label style={{marginBottom:'5px'}}>Co-Supervisor</label>
-     <input
-          type="text"
-              className='form-control'
-                 name='grpcoSupervisor'
-                     placeholder='Enter Co-Supervisor Name'
-                         value={this.state.grpcoSupervisor}
-                            onChange={this.handleInputChange} required>
-                       </input>
-                    </div>
-                 </div><br/><br/>
-             <Button
-         style={{background:"#151B54",color:"white"}}
-            type='add'
-               tyle={{marginTop:'25px'}}
-                  onClick={this.onSubmit}>
-                     <i className='fa fa-plus-circle'></i> &nbsp; ADD CO-SUPERVISOR
-                        </Button><br/>
+          <form onSubmit={this.onSubmit} className="text-color">
+                <div className="form-group">
+                <div align="left"><br/> 
+                        <label style={{marginBottom:'5px'}}>Co-Supervisor</label>
+                        <input type="userInput" required className="form-control" placeholder="Enter Co-Supervisor Name" value={this.state.grpcoSupervisor}
+                        onChange={this.onChangeGrpcoSupervisor}/>
+                      </div></div><br/>
+                 <button variant="contained" className="w-10" style={{background: "#151B54", width: 20+"%",color:"white"}}
+                       disableElevation type="submit">Add Co-Supervisor</button>
                            </form><br/>
                                </div>
                                   </div>
