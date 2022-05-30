@@ -2,8 +2,13 @@ import React,{useState} from "react";
 import axios from "axios";
 import AdminNavBar from '../Layout/AdminNavBar';
 import Footer from '../Layout/footer';
+<<<<<<< HEAD
 import { getDownloadURL,getStorage, ref,uploadBytesResumable, } from "firebase/storage";
 import app from "../../FireBase";
+=======
+import { getDownloadURL,getStorage, ref,uploadBytesResumable, } from "firebase/storage";import app from "../../FireBase";
+// import PDFDisplay from "./PDFDisplay";
+>>>>>>> 5d6daa0675b741ea7251a15a0503f3c9284ac0b1
 
 export default function PDFUpload(){
     const [pdfupload, setpdfupload] = useState("");
