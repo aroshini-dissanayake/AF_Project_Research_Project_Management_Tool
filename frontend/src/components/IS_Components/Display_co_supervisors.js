@@ -52,7 +52,8 @@ export default class Display_co_supervisors extends Component{
                <tbody>
                   {this.state.studentgroups.map((studentgroups,index) =>(
                       <tr>
-                         <th scope='row'>{index + 1}</th>
+                      
+                      <th scope='row'>{index + 1}</th>
                             <td>{studentgroups.group_name}</td>
                           <td>{studentgroups.researchTopic}</td>
                           <td>{studentgroups.researchField}</td>
@@ -68,10 +69,10 @@ export default class Display_co_supervisors extends Component{
                                    </td>
                                 </tr>
                               ))}
-                        </tbody>
-                     </table>
-                   </div> <br/><br/><br/><br/><br/><br/><br/>
+                             </tbody>
+                          </table>
+                       </div> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                    <Footer/>  
-                 </div> 
+               </div> 
                 )}
                }

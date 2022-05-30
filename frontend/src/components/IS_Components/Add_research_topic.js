@@ -6,11 +6,11 @@ import Footer from '../Layout/footer';
 export default class Add_research_topic extends Component{
    constructor(props){  
        super(props);
-       //implementing binding
-    
+       
+   //implementing binding
     this.onChangeResearchtopic = this.onChangeResearchtopic.bind(this);
     this.onChangeResearchfield = this.onChangeResearchfield .bind(this);
-     this.onSubmit = this.onSubmit.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
  this.state = {
       group_name:"",
@@ -44,17 +44,13 @@ export default class Add_research_topic extends Component{
   
   onSubmit(e) {
       e.preventDefault();
-       
       const id = this.props.match.params.id;
       const topicinfo = {
-      
         researchTopic: this.state.researchTopic,
         researchField: this.state.researchField,
         
       }
 
-      
- 
        axios.post(`http://localhost:8070/regtopic/research/${id}`,topicinfo).then((res)=>{ 
           console.log(res.data)
           alert("Research Topic and Field added");
@@ -64,6 +60,7 @@ export default class Add_research_topic extends Component{
    .catch((e)=>{
    });
 }
+
  render(){
 return(
 <div>
@@ -93,10 +90,8 @@ return(
                        </div>
                    </div><br/><br/><br/><br/><br/><br/>
                  <Footer/>
-               </div>
-               
+               </div>          
        )
    }
-
   }
 
