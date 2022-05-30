@@ -110,7 +110,7 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
                       placeholder="Enter Inputs"
                       onChange={(e)=>{
                         setavarage(e.target.value)}}
-                    />
+                        required/>
                   </div>
 
 
@@ -124,7 +124,8 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
                       title="Please Enter Valid Inputs"
                       placeholder="Enter Inputs"
                       onChange={(e)=>{
-                        setpoor(e.target.value)}}/>
+                        setpoor(e.target.value)}}
+                        required/>
                   </div>
     
                   
@@ -138,7 +139,8 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
                       title="Please Enter Valid Inputs"
                       placeholder="Enter Inputs" 
                       onChange={(e)=>{
-                        setcomment(e.target.value)}} />
+                        setcomment(e.target.value)}} 
+                        required/>
                   </div>
     
                  
@@ -155,7 +157,7 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
                       placeholder="Enter Marks"
                       onChange={(e)=>{
                         setmarks(e.target.value)}}
-                    />
+                        required/>
                   </div>
                   <div className="form-group">
                     <Button className="form-group" type="submit" style={{ marginTop: '5px', background: "#F75D59", width: 100 + "%" }} startIcon={<AddCommentRoundedIcon/>}>
