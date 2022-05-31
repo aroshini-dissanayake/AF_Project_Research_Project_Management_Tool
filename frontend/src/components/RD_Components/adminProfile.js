@@ -149,7 +149,7 @@ const AdminProfile = () => {
                       <div class="col-sm-12"><br/>
                           <center>
                  <button style={{background: "#151B54", color:"#ffff"}} onClick={adminLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
-           <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteAdmin} class="btn btn " target="__blank">Delete Account</button></center>
+                 <button style={{background: "#9F000F", color:"#ffff"}} onClick={updateUserProfile} class="btn btn " target="__blank">Update Details</button></center>
        </div>
            </div>     
                </div>  

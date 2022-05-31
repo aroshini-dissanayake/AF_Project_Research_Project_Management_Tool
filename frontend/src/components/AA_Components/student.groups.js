@@ -2,8 +2,8 @@ import React,{Component} from 'react' ;
 import axios from "axios";
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import AdminNavBar from '../Layout/AdminNavBar';
+import StudentNavBar from '../Home_Component/StudentNavBar';
+import Footer from '../Layout/footer';
 
 export default class Groupss extends Component{
     constructor(props){
@@ -15,9 +15,7 @@ export default class Groupss extends Component{
     onReadirect(id){
         window.location.href = `/display/${id}`
     }
-    GroupCreate(){
-        window.location.href = `/groupReg`
-    }
+
     componentDidMount(){
        this.retrieveStudentGroups();
    }
@@ -34,15 +32,23 @@ export default class Groupss extends Component{
     render(){
         return(    
             <div>
-                  <div className='container'>  
-                    <table class="table">
-                       <thead>
+             <StudentNavBar/><br/><br/><br/><br/>
+               <div align="center">
+                 <div className="card-header" style={{width:"820px",background:"#B7CEEC"}}><br/><br/>
+                  <h3 align="center">
+                   <b><u>Student Research Group</u></b></h3><br/>
+               <form className='needs-validation'>
+           <div className="col-lg-10 mt-2">    
+        <div align="left">
+            <div className='container'>  
+                <table class="table" style={{background:"#ffff"}}>
+                    <thead>
                      <tr bgcolor="#79BAEC">
                  <th scope='col'>No</th>
              <th scope='col'>Group Name</th>
-         </tr>
-            </thead>
-
+         <th scope='col'>Add Group Member</th>
+           </tr>
+             </thead>
                 <tbody>
                 {this.state.studentgroups.map((studentgroups,index) =>(
                     <tr>
@@ -59,16 +65,15 @@ export default class Groupss extends Component{
                         </td>
                     </tr>
                 ))}
-                </tbody>
-                <button
-                 className='btn btn-warning'
-                 type='add' 
-                 style={{marginTop:'15px'}}
-                 onClick={()=>this.GroupCreate()}>
-                <i className='fa fa-plus-circle'></i> &nbsp; Add New Group
-                 </button>
+                </tbody>    
             </table>
-        </div>     
-        </div> 
+               </div>
+                 </div>
+                   </div>
+                      </form>     
+                        </div></div>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <Footer/>  
+            </div> 
         )}
 }
