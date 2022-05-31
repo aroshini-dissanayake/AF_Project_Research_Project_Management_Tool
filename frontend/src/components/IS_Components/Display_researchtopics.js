@@ -16,6 +16,23 @@ export default class Display_researchtopics extends Component{
    onReadirect(id){
        window.location.href = `/regtopic/research/${id}`
    }
+
+    //search 
+    filterData(studentgroups,searchKey){
+        const result = studentgroups.filter((studentgroups)=>
+        studentgroups.group_name.toLowerCase().includes(searchKey)
+        )
+        this.setState({studentgroups:result})
+    }
+    handleSearchArea = (e)=>{
+        const searchKey = e.currentTarget.value;
+        axios.get("http://localhost:8070/regtopic/displaysupervisors").then(res=>{
+        if(res.data.success){
+            this.filterData(res.data.existingstdgroups,searchKey)
+            }
+        });
+        }
+
    componentDidMount(){
       this.retrieveResearchTopics();
   }
@@ -46,6 +63,10 @@ onDelete = (id)=>{
               <StudentNavBar/>  <br/><br/> <br/>
                <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Add Research Topic and Field </u></b></h3><br/><br/>
                  <div className='container'> 
+                 <div className="col-md-3" >
+                       <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search by Group Name " onChange={this.handleSearchArea}/>
+                          <br/> 
+                            </div> 
                    <table class="table">
                       <thead>
                     <tr bgcolor="#79BAEC">
@@ -53,7 +74,6 @@ onDelete = (id)=>{
             <th scope='col'>Group Name</th>
         <th scope='col'>Research Topic</th>
       <th scope='col'>Research Field</th>
-      <th scope='col'>Research Status</th>
     <th scope='col'>Actions</th>
         </tr>
            </thead>
@@ -64,7 +84,6 @@ onDelete = (id)=>{
                             <td>{studentgroups.group_name}</td>
                           <td>{studentgroups.researchTopic}</td>
                           <td>{studentgroups.researchField}</td>
-                          <td>{studentgroups.topicstatus}</td>
                        <td>                      
                             <IconButton aria-label='btn btn-success' size="small"
                                style={{background: "#FBB917"}}
