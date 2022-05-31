@@ -92,6 +92,7 @@ router.post("/addSupervisor/:id", async (req, res) => {
     if (!group2) {
       throw new Error("There is no group..!!!");
     }
+
      const grp_Supervisor = req.body.grpSupervisor;
      group2.grpSupervisor = grp_Supervisor;
      await group2.save();
