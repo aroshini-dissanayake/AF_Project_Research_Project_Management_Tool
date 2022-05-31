@@ -5,8 +5,6 @@ const auth = require("../../middleware/auth");
 
 const router = express.Router();
 
-//new
-
   router.post("/submitdoc", auth, async (req, res) => {
      try{
       let studentId = req.Std._id
