@@ -7,8 +7,6 @@ import StaffNavbar from "../Staff-Layout/StaffNavbar";
 import Footer from '../Layout/footer';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-toast.configure()
-
 const StaffProfile = () => {
     const [name, setname] = useState("")
     const [phone, setphone] = useState("")
@@ -54,31 +52,10 @@ const StaffProfile = () => {
    
     //update staff member account details
     const updateStaffProfile = () => {
-        setShow(true)
-      }
+      setShow(true)
+    }
 
-      //delete the staff member account
-      // const deleteStaff = async () => {
-      //   const config = {
-      //     headers: {
-      //       Authorization: localStorage.getItem("Authorization"),
-      //     },
-      //   };
-        
-      //   if (window.confirm('Are you sure you wish to delete this Account?')) {
-      //       await axios.delete('http://localhost:8070/staff/staffdelete', config)
-      //       .then((res) => {
-      //         toast.success('Your account deleted successfuly',{position:toast.POSITION.TOP_CENTER});
-      //         localStorage.removeItem('Authorization')
-      //         window.location="/staffsignup"
-      //       })
-      //       .catch((err) => {
-      //         console.log(err.message)
-      //       })
-      //     }
-      //    }
-
-         //logout the staff menber account
+    //logout the staff menber account
          const staffLogout = () => {
             if (window.confirm('Are you sure you wish to logout from this Account?')) {
             localStorage.removeItem('Authorization')
@@ -183,8 +160,8 @@ const StaffProfile = () => {
                            <div class="row">
                               <div class="col-sm-12"><br/>
                                   <center>
-                <button style={{background: "#151B54", color:"#ffff"}} onClick={staffLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;</center>
-          <center> <button style={{background: "#9F000F", color:"#ffff"}} onClick={updateStaffProfile} class="btn btn " target="__blank">Update Details</button></center>
+                <button style={{background: "#151B54", color:"#ffff"}} onClick={staffLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
+            <button style={{background: "#9F000F", color:"#ffff"}} onClick={updateStaffProfile} class="btn btn " target="__blank">Update Details</button></center>
               </div>
                   </div>     
                       </div>  
@@ -192,9 +169,7 @@ const StaffProfile = () => {
                            </div>
                       </div>
                    </div>
-                </div>
-               
-         <UpdateStaffProfile
+                   <UpdateStaffProfile
           upname ={name}
           upphone ={phone}
           upfaculty ={faculty}
@@ -204,10 +179,13 @@ const StaffProfile = () => {
           upemail ={email} 
           uppwd= {pwd}
           show={show}
-          onHide={() => setShow(false)}/>      
+          onHide={() => setShow(false)}/>    
+                </div>
+           </div>
+    
 
-      </div>
-      <Footer/>
+           <br/><br/>       
+          <Footer/>
       </div>
    )
 }

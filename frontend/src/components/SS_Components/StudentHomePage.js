@@ -6,7 +6,7 @@ export default class StudentHomePage extends Component {
   render() {
     return (
    <div>
-   <StudentNavBar/><br/><br/><br/>
+   <StudentNavBar/><br/>
    <div style={{ backgroundColor:"black" ,height:"500px"}} >
 
    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -57,7 +57,7 @@ export default class StudentHomePage extends Component {
    </button>
 </div> 
        
-        </div><br/><br/><br/>
+        </div><br/><br/><br/><br/><br/><br/><br/>
                 <Footer/>
       </div>
     )
