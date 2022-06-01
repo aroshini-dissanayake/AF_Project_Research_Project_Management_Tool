@@ -51,7 +51,7 @@ export default class Staff_Dashboard extends Component {
                  </button>
                  <div class="col" style={{width: "100rem",color:"white"}} > 
                <div class="shadow h-60" id="cardcol1">
-            <div class="card-body" style={{background: "#C11B17"}} onClick={regresearchtopic}>
+            <div class="card-body" style={{background: "#C11B17"}} >
          <h5 class="card-title" id="dashh5"  align="center"><b> Final Exam Links</b></h5>
            </div>
                </div>

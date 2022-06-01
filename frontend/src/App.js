@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import Profile from './components/AA_Components/student-profile';
-import Faculties from './components/AA_Components/faculties';
 import DisplayStudentgroups from './components/SS_Components/Display_studentgroups';
 import Add_panel_member from './components/SS_Components/Add_panel_member'
 import StaffLogin from './components/SS_Components/staff-login';
@@ -78,7 +77,6 @@ export default class App extends Component {
     <Route path = "/signin" component={StudentLogin}/>
      <Route path = "/signup" component={Signup}/>
      <Route path = "/profile" component={Profile}/>
-     <Route path = "/faculties" component={Faculties}/>
      <Route path= "/groupReg" component={GroupRegistration}/>
      <Route path= "/display/:id" component={Add_Group_Members}/>
      <Route path= "/groupss" component={Groupss}/>

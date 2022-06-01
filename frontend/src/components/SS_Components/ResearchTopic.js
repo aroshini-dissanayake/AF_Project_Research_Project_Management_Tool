@@ -77,10 +77,10 @@ render(){
       return( 
          <div>
             <StaffNavbar/>  <br/><br/> <br/>
-               <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Reserch Topics</u></b></h3><br/><br/>
+               <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Research Topic Details</u></b></h3><br/><br/>
                   <div className='container'> 
                     <div className="col-md-3" >
-                      <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search " onChange={this.handleSearchArea}/>
+                      <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search Group Name " onChange={this.handleSearchArea}/>
                        <br/> 
                          </div>    
                             <table class="table">
