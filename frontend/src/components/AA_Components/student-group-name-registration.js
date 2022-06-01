@@ -26,7 +26,7 @@ export default function GroupRegistration(){
         .then(()=>{
 
             alert("Registration Success")
-            window.location = "/groups"
+            window.location = "/studentdashboard"
 
         }).catch((err)=>{
             alert(err)

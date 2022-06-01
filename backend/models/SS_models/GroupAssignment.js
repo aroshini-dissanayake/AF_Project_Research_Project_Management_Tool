@@ -18,9 +18,6 @@ const groupAssignmentSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-
-
-
 });
 
 const GroupAssignment = mongoose.model("groupassignment",groupAssignmentSchema);

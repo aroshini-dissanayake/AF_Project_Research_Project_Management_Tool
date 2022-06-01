@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import UpdateStaffProfile from './StaffUpdate';
-import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import StaffNavbar from "../Staff-Layout/StaffNavbar";
 import Footer from '../Layout/footer';
@@ -57,9 +56,9 @@ const StaffProfile = () => {
     //logout the staff menber account
          const staffLogout = () => {
             if (window.confirm('Are you sure you wish to logout from this Account?')) {
-            localStorage.removeItem('Authorization')
-            toast.success('Log out successfuly',{position:toast.POSITION.TOP_CENTER});
-            window.location = "/"
+             localStorage.removeItem('Authorization')
+             alert('Log out successfuly');
+             window.location = "/"
             }
           }
 
@@ -73,7 +72,7 @@ const StaffProfile = () => {
       return (
                           <div class="bod" style={{background:"#F8F8FF"}}  >
                        <StaffNavbar/>
-                    <br/><br/>
+                    <br/><br/><br/><br/>     
                  <div class="container">
               <div class="main-body">
             <div class="row gutters-sm">
@@ -169,7 +168,7 @@ const StaffProfile = () => {
                            </div>
                       </div>
                    </div>
-                   <UpdateStaffProfile
+      <UpdateStaffProfile
           upname ={name}
           upphone ={phone}
           upfaculty ={faculty}
@@ -184,7 +183,7 @@ const StaffProfile = () => {
            </div>
     
 
-           <br/><br/>       
+           <br/><br/><br/><br/>           
           <Footer/>
       </div>
    )

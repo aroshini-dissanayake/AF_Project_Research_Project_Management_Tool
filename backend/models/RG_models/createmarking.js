@@ -2,27 +2,31 @@ const mongoose = require('mongoose');
 
 const createmarkingSchema = new mongoose.Schema({
 
-deliverables:{
+criteria:{
     type : String,
     required:true,
 },
 
-duedate:{
+good:{
     type : String,
     required:true,
 },
 
-contribution:{
+avarage:{
+    type : String,
+    required:true,
+},
+poor:{
     type : String,
     required:true,
 },
 
-methodofsubmission:{
+comment:{
     type : String,
     required:true,
 },
 
-marksallocation:{
+marks:{
     type : String,
     required:true,
 },
