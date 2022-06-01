@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import axios from 'axios';
-import StudentNavBar from '../Layout/StudentNavBar';
+import StudentNavBar from '../Layout/StudentHomeNavBar';
 import Footer from '../Layout/footer';
 
 export default class StudentLogin extends Component {
