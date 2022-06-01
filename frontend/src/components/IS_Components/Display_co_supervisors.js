@@ -15,6 +15,23 @@ export default class Display_co_supervisors extends Component{
    onReadirect(id,feild){
        window.location.href = `/regtopic/addcoSupervisor/${id}/${feild}`
    }
+
+   //search 
+   filterData(studentgroups,searchKey){
+      const result = studentgroups.filter((studentgroups)=>
+      studentgroups.group_name.toLowerCase().includes(searchKey)
+      )
+      this.setState({studentgroups:result})
+   }
+   handleSearchArea = (e)=>{
+      const searchKey = e.currentTarget.value;
+      axios.get("http://localhost:8070/regtopic/displaycosupervisors").then(res=>{
+         if(res.data.success){
+            this.filterData(res.data.existingstdgroups,searchKey)
+         }
+      });
+      }   
+
    componentDidMount(){
       this.retrieveResearchTopics();
   }
@@ -36,6 +53,10 @@ export default class Display_co_supervisors extends Component{
               <StudentNavBar/>  <br/><br/> <br/>
                <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Add Co-Supervisor </u></b></h3><br/><br/>
                  <div className='container'> 
+                 <div className="col-md-3" >
+                       <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search by Group Name " onChange={this.handleSearchArea}/>
+                          <br/> 
+                            </div> 
                    <table class="table">
                       <thead>
                          <tr bgcolor="#79BAEC">
