@@ -24,7 +24,7 @@ const submitdoc = () => {
         }  
 
 const group = () => {
-    window.location = `/groups`            
+    window.location = `/groupss`            
     }   
  
 const groupreg = () => {

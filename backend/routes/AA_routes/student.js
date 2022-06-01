@@ -232,10 +232,10 @@ router.put('/update', auth, async (req, res) => {
       }
 
       else{
-        const grp_status = "Registered";
+        // const grp_status = "Registered";
         const gID = groupId;
         
-        student.status = grp_status;
+        student.status = "Registered";
         student.grp_id = gID;
 
         await student.save()
