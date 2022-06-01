@@ -142,11 +142,7 @@ export default class StudentDashboard extends Component {
                <h5 class="card-title" id="dashh5" align="center"><b>Download Template</b></h5>
                </div>
                <img
-<<<<<<< HEAD
                    src="https://i.dlpng.com/static/png/6325147_preview.png"
-=======
-                   src="https://thumbs.dreamstime.com/b/download-vector-icon-install-symbol-modern-simple-flat-vector-illustration-download-vector-icon-install-symbol-modern-simple-flat-120287077.jpg"
->>>>>>> 725fdc7faf5ed506f543fd0c9b480387b6eb5ecc
                    class="card-img-top"
                    height="240px"
                    alt="..." onClick={downloadtemplate}/>
