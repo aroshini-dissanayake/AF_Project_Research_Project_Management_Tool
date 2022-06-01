@@ -19,7 +19,7 @@ export default class StudentNavBar extends Component {
           <a class="nav-link" aria-current="page" href="/studentdashboard" style={{color: "#ffff"}}><b>Dashboard</b></a>
         </li>  &nbsp; &nbsp;&nbsp; 
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/groups" style={{color: "#ffff"}}><b>Research Groups</b></a>
+          <a class="nav-link" aria-current="page" href="/groups" style={{color: "#ffff"}}><b>FeedBack</b></a>
         </li> &nbsp;&nbsp;&nbsp;&nbsp;
      
 

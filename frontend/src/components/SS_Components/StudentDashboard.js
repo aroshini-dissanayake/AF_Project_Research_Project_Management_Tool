@@ -34,7 +34,6 @@ const chatgroups = () => {
     }       
         
         
-    
 export default class StudentDashboard extends Component {
   render() {
     return (
@@ -143,7 +142,7 @@ export default class StudentDashboard extends Component {
                <h5 class="card-title" id="dashh5" align="center"><b>Download Template</b></h5>
                </div>
                <img
-                   src="https://i.dlpng.com/static/png/6325147_preview.png"
+                   src="https://thumbs.dreamstime.com/b/download-vector-icon-install-symbol-modern-simple-flat-vector-illustration-download-vector-icon-install-symbol-modern-simple-flat-120287077.jpg"
                    class="card-img-top"
                    height="240px"
                    alt="..." onClick={downloadtemplate}/>

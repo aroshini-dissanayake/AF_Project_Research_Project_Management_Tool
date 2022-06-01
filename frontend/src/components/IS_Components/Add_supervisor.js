@@ -49,7 +49,7 @@ export default class Add_supervisor extends Component{
  
        axios.post(`http://localhost:8070/regtopic/addSupervisor/${id}`,data).then((res)=>{ 
        console.log(res.data)
-       alert("Supervisor added");
+       alert("Supervisor Requested");
        window.location.href="/regtopic/displaysupervisors"
        
    })
@@ -70,12 +70,12 @@ render(){
        <form onSubmit={this.onSubmit} className="text-color">
    <div className="form-group">
 <div align="left"><br/> 
-   <label style={{marginBottom:'5px'}}>Supervisor</label>
-      <input type="userInput" required className="form-control" placeholder="Enter Supervisor Name" value={this.state.grpSupervisor}
+   <label style={{marginBottom:'2px'}}><b>Supervisor</b></label>
+      <input type="userInput" required className="form-control mt-2" placeholder="Enter Supervisor Name" value={this.state.grpSupervisor}
          onChange={this.onChangeGrpSupervisor}/>
            </div></div><br/>
-               <Button variant="contained" className="w-10" style={{background: "#151B54", width: 30+"%",color:"white"}}
-                   disableElevation type="submit">Add Supervisor</Button>
+               <Button variant="contained" className="w-6" style={{background: "#151B54", width: 30+"%",color:"white"}}
+                   disableElevation type="submit">Request Supervisor</Button>
                      </form>
                   <br/>
               </div>   
@@ -90,9 +90,9 @@ render(){
                  <thead>
              <tr bgcolor="#79BAEC">
                 <th scope='col'>No</th>
-                    <th scope='col'>Staff ID</th>
                        <th scope='col'>Role</th>
                           <th scope='col'>Name</th>
+                          <th scope='col'>E-mail</th>
                              <th scope='col'>Research Feild</th>
                            </tr>
                         </thead>
@@ -100,9 +100,9 @@ render(){
                  {this.state.supervisors.map((supervisors,index)=>(
               <tr key={index}>    
                 <th scope='row'>{index + 1}</th>
-                  <td>{supervisors.staff_id}</td>
                     <td>{supervisors.role}</td>
                       <td>{supervisors.name}</td>
+                      <td>{cosupervisors.email}</td>
                          <td>{supervisors.feild}</td>
                             </tr>
                                     )

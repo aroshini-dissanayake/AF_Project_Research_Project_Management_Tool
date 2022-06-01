@@ -2,7 +2,6 @@ import axios from "axios";
 import React,{Component} from 'react' ;
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import StudentNavBar from '../Home_Component/StudentNavBar';
  
  
@@ -16,6 +15,23 @@ export default class Display_researchtopics extends Component{
    onReadirect(id){
        window.location.href = `/regtopic/research/${id}`
    }
+
+    //search 
+    filterData(studentgroups,searchKey){
+        const result = studentgroups.filter((studentgroups)=>
+        studentgroups.group_name.toLowerCase().includes(searchKey)
+        )
+        this.setState({studentgroups:result})
+    }
+    handleSearchArea = (e)=>{
+        const searchKey = e.currentTarget.value;
+        axios.get("http://localhost:8070/regtopic/displaysupervisors").then(res=>{
+        if(res.data.success){
+            this.filterData(res.data.existingstdgroups,searchKey)
+            }
+        });
+        }
+
    componentDidMount(){
       this.retrieveResearchTopics();
   }
@@ -31,14 +47,7 @@ export default class Display_researchtopics extends Component{
        })
    }
  
-//delete research topics assigned student groups
-onDelete = (id)=>{
-   if (window.confirm('Are you sure you wish to delete research topic ?')) {
-       axios.delete(`http://localhost:8070/regtopic/delete/${id}`).then((res)=>{
-       alert("Research topic  Deleted Successfully");
-         this.retrieveResearchTopics();
-       })
-     }}
+
  
    render(){
        return(   
@@ -46,6 +55,10 @@ onDelete = (id)=>{
               <StudentNavBar/>  <br/><br/> <br/>
                <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Add Research Topic and Field </u></b></h3><br/><br/>
                  <div className='container'> 
+                 <div className="col-md-3" >
+                       <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search by Group Name " onChange={this.handleSearchArea}/>
+                          <br/> 
+                            </div> 
                    <table class="table">
                       <thead>
                     <tr bgcolor="#79BAEC">
@@ -53,7 +66,7 @@ onDelete = (id)=>{
             <th scope='col'>Group Name</th>
         <th scope='col'>Research Topic</th>
       <th scope='col'>Research Field</th>
-      <th scope='col'>Research Status</th>
+      <th scope='col'>Status</th>
     <th scope='col'>Actions</th>
         </tr>
            </thead>
@@ -71,17 +84,13 @@ onDelete = (id)=>{
                                   onClick={()=>this.onReadirect(studentgroups._id)} >
                                      <AddCircleOutlineIcon  fontSize="small" style={{color: "black"}}/>
                                         </IconButton>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;                          
-                                        <IconButton aria-label="delete" size="small"
-                                     style={{background: "#800000"}} onClick={()=>this.onDelete(studentgroups._id)} >
-                                 <DeleteForeverIcon fontSize="small"  style={{color: "white"}}/>
-                            </IconButton>
-                       </td>
-                   </tr>
-               ))}
-       </tbody>
-           </table>
-              </div>    
-                 </div> 
-       )}
+                                         
+                                        </td>
+                                    </tr>
+                                ))}
+                        </tbody>
+                            </table>
+                                </div>    
+                                    </div> 
+                        )}
 }
