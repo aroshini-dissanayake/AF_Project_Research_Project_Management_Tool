@@ -33,10 +33,21 @@ import StudentDashboard from './components/SS_Components/StudentDashboard';
 import StudentHomePage from './components/SS_Components/StudentHomePage';
 import Groups from './components/SS_Components/Groups';
 import PDFUpload from './components/SS_Components/PDFUpload';
-import PDFDisplay from './components/SS_Components/PDFDisplay';
+import PDFDisplay from './components/AA_Components/PDFDisplay';
 import SupervisorAcceptTopic from './components/SS_Components/SupervisorAcceptTopic';
 import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcceptTopic';
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
+import Add_Feedback from './components/SS_Components/Add_Feedback'
+import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
+import Homemarkingschemes from './components/RD_Components/homemarkingschemes';
+import Editmarkingschemes from './components/RD_Components/editmarkingschemes';
+import Markingschemesdetails from './components/RD_Components/markingschemesdetails';
+import Usersremove from './components/RD_Components/usersremove';
+import Supervisorremove from './components/RD_Components/supervisorremove';
+import CoSupervisorremove from './components/RD_Components/cosupervisorremove';
+import Studentsremove from './components/RD_Components/studentsremove';
+import presantationpdfupload from './components/RD_Components/presantationpdfupload';
+
 
 export default class App extends Component {
  
@@ -62,7 +73,7 @@ export default class App extends Component {
      <Route path = "/requestsupervisor" component={SupervisorAcceptTopic}/>
      <Route path = "/requestcosupervisor" component={CoSupervisorAcceptTopic}/>
      <Route path = "/displayStaffRole" component={AdminViewStaff}/>
-  
+     <Route path = "/addfeedback/:id" component={Add_Feedback}/>
 
     <Route path = "/signin" component={StudentLogin}/>
      <Route path = "/signup" component={Signup}/>
@@ -87,6 +98,17 @@ export default class App extends Component {
      <Route path = "/regtopic/getcosupervisor/:feild" component={AddCoSupervisors}/>
      <Route path = "/document/submitdoc" component={DocUpload}/> 
    
+    <Route path = "/homemarkingschemes" component={Homemarkingschemes}/>
+    <Route path = "/createmarkingadd" component={Createmarkingschemes}/>
+    <Route path = "/createmarkingedit/:createmarkingID" component={Editmarkingschemes}/>
+    <Route path = "/createmarking/:createmarkingID" component={Markingschemesdetails}/>
+    <Route path = "/getpanelmember" component={Usersremove}/>
+    <Route path = "/getsupervisor" component={Supervisorremove}/>
+    <Route path = "/getcosupervisor" component={CoSupervisorremove}/>
+    <Route path = "/getstudent" component={Studentsremove}/>
+    <Route path = "/presantation" component={presantationpdfupload}/>
+
+
             </Switch>
         </Router>
     )

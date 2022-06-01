@@ -33,16 +33,4 @@ router.post("/assignmentgroups", auth, async (req, res) => {
  });
 
 
-
-// //get pdf 
-// router.get("/pdfdisplay",async (req, res) => {
-//   const pdf = await GroupAssignment.find();
-//   try {
-//     res.json(pdf)
-//   } catch (error) {
-//     res.status(500)
-//     res.send({ status: "Error with PDF Fetched", error: error.message });
-//   }
-// });
-
 module.exports = router;

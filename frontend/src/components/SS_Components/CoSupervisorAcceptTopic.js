@@ -75,11 +75,11 @@ render(){
                <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Accept Co-Supervisor Request</u></b></h3><br/><br/>
                   <div className='container'>  
                   <div className="col-md-3" >
-                       <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search Group Name" onChange={this.handleSearchArea}/>
+                       <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search " onChange={this.handleSearchArea}/>
                           <br/> 
                             </div>  
-                    <table class="table">
-                       <thead>
+                              <table class="table">
+                              <thead>
                           <tr bgcolor="#79BAEC">
                         <th scope='col'>No</th>
                      <th scope='col'>Group Name</th>

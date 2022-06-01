@@ -16,7 +16,7 @@ export default class SupervisorAcceptTopic extends Component{
 //search 
 filterData(studentgroups,searchKey){
    const result = studentgroups.filter((studentgroups)=>
-   studentgroups.grpSupervisor.toLowerCase().includes(searchKey)
+   studentgroups.group_name.toLowerCase().includes(searchKey)
    )
    this.setState({studentgroups:result})
  }
@@ -28,6 +28,7 @@ filterData(studentgroups,searchKey){
        }
      });
    }
+  
    
 //retrieve student group details    
 componentDidMount(){
@@ -74,7 +75,7 @@ render(){
                <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Accept Supervisor Request</u></b></h3><br/><br/>
                   <div className='container'>  
                     <div className="col-md-3" >
-                       <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search Supervisor Name" onChange={this.handleSearchArea}/>
+                       <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search " onChange={this.handleSearchArea}/>
                           <br/> 
                             </div>                        
                               <table class="table">
@@ -98,7 +99,7 @@ render(){
                          <td>{studentgroups.researchField}</td>
                      <td>{studentgroups.researchTopic}</td>
                  <td>{studentgroups.grpSupervisor}</td>
-                   <td>{studentgroups.supervisortopicstatus}</td>
+                   <td >{studentgroups.supervisortopicstatus}</td>
                       <td>                       
                          <IconButton aria-label='btn btn-success' size="small"
                             style={{background: "#008000"}}

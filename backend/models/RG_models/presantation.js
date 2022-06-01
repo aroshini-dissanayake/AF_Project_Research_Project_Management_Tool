@@ -5,8 +5,11 @@ const presantationpdfSchema = new mongoose.Schema({
     presantationpdfupload:{
         type: String,
         required:true,
-    }
-
+    },
+    docName:{
+        type: String,
+          required: true
+      }
 
 });
 

@@ -3,10 +3,10 @@ import axios from "axios";
 import AdminNavBar from '../Layout/AdminNavBar';
 import Footer from '../Layout/footer';
 import { getDownloadURL,getStorage, ref,uploadBytesResumable, } from "firebase/storage";import app from "../../FireBase";
-// import PDFDisplay from "./PDFDisplay";
 
 export default function presantationpdfupload(){
     const [presantationpdfupload, setpresantationpdfupload] = useState("");
+    const [docName, setdocName] = useState("");
 
     const sendData = async (e) => {
         e.preventDefault();
@@ -46,7 +46,8 @@ export default function presantationpdfupload(){
             console.log('File available at', presantationpdfupload);
            
             let new_presantationpdfupload = {
-                presantationpdfupload:presantationpdfupload
+                presantationpdfupload:presantationpdfupload,
+                docName:docName
             }
             axios.post("http://localhost:8070/presantationpdf/presantation",new_presantationpdfupload)
             .then(()=>{
@@ -56,7 +57,7 @@ export default function presantationpdfupload(){
                 alert(err)
             })
         });
-    }
+       }
     );
 }
  
@@ -75,14 +76,19 @@ export default function presantationpdfupload(){
                 <input type="file"  class="form-control" onChange={(e) => setpresantationpdfupload(e.target.files[0])} required/>  
                  </div>   
               <br/> 
+          <div align="left"><br/>
+     <label class="form-text" style={{marginBottom:'2px'}}>File Name</label>
+<input type="text"  class="form-control" onChange={(e) => setdocName(e.target.value)} placeholder="Please Enter the File Name" required/>  
+     </div><br/> 
           <button type="submit" class="btn btn-primary"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Submit</button>
-      </div>  <img src="https://cdni.iconscout.com/illustration/premium/thumb/girl-working-from-home-3406151-2840747.png" class="img-fluid" alt="Phone image" />
-         </form>
-             </div>
+              </div> 
+          <img src="https://cdni.iconscout.com/illustration/premium/thumb/girl-working-from-home-3406151-2840747.png" class="img-fluid" alt="Phone image" />
+           </form>
+              </div>
                  </div>
-              <br/><br/>
-          <Footer/>
-     </div>
+                   <br/><br/>
+                      <Footer/>
+                         </div>
     
     )
 

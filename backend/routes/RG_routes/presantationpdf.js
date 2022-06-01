@@ -18,15 +18,15 @@ router.post("/presantation", (req, res) => {
     });
   });
 
-//   //get pdf 
-// router.get("/presantationpdfdisplay",async (req, res) => {
-//     const pdf = await Presantation.find();
-//     try {
-//       res.json(pdf)
-//     } catch (error) {
-//       res.status(500)
-//       res.send({ status: "Error with PDF Fetched", error: error.message });
-//     }
-//   });
+//get pdf 
+router.get("/presantationpdfdisplay",async (req, res) => {
+    const pdf = await Presantation.find();
+    try {
+      res.json(pdf)
+    } catch (error) {
+      res.status(500)
+      res.send({ status: "Error with PDF Fetched", error: error.message });
+    }
+  });
   
   module.exports = router;

@@ -13,7 +13,6 @@ router.post('/adminsignup', async (req, res) => {
       const {
         name, 
         phone,
-        nic,
         sliitid,
         email,
         password,
@@ -33,7 +32,6 @@ router.post('/adminsignup', async (req, res) => {
       admin_a = {
         name: name,
         phone:phone,
-        nic : nic,
         sliitid : sliitid,
         email : email,
         password : password,

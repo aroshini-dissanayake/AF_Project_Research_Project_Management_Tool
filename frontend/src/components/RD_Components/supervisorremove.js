@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import AdminNavBar from '../Layout/AdminNavBar';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 toast.configure()
 
 export default class Supervisorremove extends Component {
@@ -13,7 +14,7 @@ export default class Supervisorremove extends Component {
         };
     }  
 
-    //retrive supervisor members 
+//retrive supervisor members 
 componentDidMount(){
     this.retrievesupervisorDetails();
 } 
@@ -42,12 +43,11 @@ onDelete = (supervisorID) => {
       })
     }
   }
-  
-
  render() {
     return ( 
-                        <div>
-                     <br/><br/>
+                            <div>
+                         <AdminNavBar/>
+                     <br/><br/><br/>
                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
               <b><u>All Supervisor Details </u></b></h3><br/>
            <div className='container'>  
@@ -59,8 +59,9 @@ onDelete = (supervisorID) => {
                        <th scope='col'>Faculty</th>
                          <th scope='col'>Feild</th>
                            <th scope='col'>Staff ID</th>
-                         <th scope='col'>Role</th>
-                     <th scope='col'>Email</th>
+                           <th scope='col'>Role</th>
+                        <th scope='col'>Email</th>
+                     <th scope='col'>Action</th>
                  </tr>
              </thead>
                <tbody>
@@ -72,13 +73,13 @@ onDelete = (supervisorID) => {
                                  <td>{supervisorremove.feild}</td>
                             <td>{supervisorremove.staff_id}</td>
                         <td>{supervisorremove.role}</td>
-                   <td>{supervisorremove.email}</td>
-                   <td>
-                     <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(supervisorremove._id)}>
-              <i className="far fa-trash-alt"></i>&nbsp;Delete
-            </a>   
-                     </td>              
-                </tr>
+                     <td>{supervisorremove.email}</td>
+                  <td>
+               <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(supervisorremove._id)}>
+           <i className="far fa-trash-alt"></i>&nbsp;Delete
+        </a>   
+          </td>              
+              </tr>
                   )
                     )}
                       </tbody>     
