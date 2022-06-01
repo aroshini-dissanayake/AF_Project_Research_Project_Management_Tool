@@ -20,6 +20,22 @@ router.post('/adminsignup', async (req, res) => {
 
       } = req.body
 
+      if(!name || !phone  || !sliitid ||  !email || !password  )
+
+      return res
+     .status(400)
+     .json({errorMessage : "required"});
+
+      if(name.length<4)
+      return res.status(400).json({
+      errorMessage: "Please enter a first name of at least 3 characters.",
+      });
+
+      if(phone.length<5)
+      return res.status(400).json({
+      errorMessage: "Please enter a first name of at least 3 characters.",
+      });
+
       //Check application has already created account using given email or SLIIT  id  
       let admin_a = await admin.findOne({ email });
       if (admin_a) {
