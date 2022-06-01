@@ -3,6 +3,9 @@ import axios from "axios";
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Button from '@material-ui/core/Button';
 
+import AdminNavBar from '../Layout/AdminNavBar';
+import Footer from '../Layout/footer';
+ 
 export default class Add_co_supervisor extends Component{
    constructor(props){  
        super(props);
@@ -109,6 +112,11 @@ return(
                     </div>
                  </div>
            </div>
+
+                 </div><br/><br/><br/>
+                 <Footer/>
+                          </div>
+
        )
    }
 }
