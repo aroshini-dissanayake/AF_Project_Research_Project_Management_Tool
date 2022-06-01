@@ -6,6 +6,8 @@ import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
+import AdminNavBar from '../Layout/AdminNavBar';
+import Footer from '../Layout/footer';
 // export default class Createmarkingschemes extends Component {
 
     toast.configure() 
@@ -56,7 +58,8 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
     // render() {
         return (
             <div>
-          
+          <AdminNavBar/> 
+          <br/><br/>
              <div className="pt-3" align="center" >
              <div className="card shadow mb-8 w-50">
                <div className="card-header py-3">
@@ -172,6 +175,8 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
             </div>
           </div>
         </div>
+        <br/><br/>
+        <Footer/>
      </div>
       )
 }

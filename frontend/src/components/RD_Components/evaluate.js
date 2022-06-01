@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import EditSharpIcon from '@material-ui/icons/EditSharp';
+import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import { saveAs } from 'file-saver';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import StaffNavbar from "../Staff-Layout/StaffNavbar";
+import autoTable from 'jspdf-autotable'
+import { jsPDF } from "jspdf";
 toast.configure()
 
 export default class evaluate extends Component {
@@ -15,6 +18,7 @@ export default class evaluate extends Component {
       this.state={
         createmarking:[]
       };
+      this.pdfGenerat = this.pdfGenerat.bind(this);
    }
   
   componentDidMount(){
@@ -35,6 +39,22 @@ export default class evaluate extends Component {
       });
   }
 
+ //pdf generator
+
+ pdfGenerat(e){
+  var doc = new jsPDF('landscape', 'px', 'a4', 'false');
+  
+  doc.autoTable({
+         
+          body: [
+              [{ content:'Marking Schemes'  , colSpan: 2, rowSpan: 2, styles: { halign: 'center'  } }],
+            ],
+          })
+      autoTable(doc, { html: '#cusdet' })
+     doc.save('TopicRegister.pdf')
+
+        } 
+
 render() {
     return (
 <div><StaffNavbar/>
@@ -45,10 +65,13 @@ render() {
 
             <div className="card-body" >
               <div className="col-md-8 mt-4 mx-auto"></div>
-
+              <div>
+              <Button className="form-group" type="submit" style={{ background: "#E77471", width: 13 + "%", align: "right" }} startIcon={<InsertDriveFileIcon />} onClick={this.pdfGenerat}>
+                 Download</Button>
+              {/* <button className="btn btn-danger btn-sm"   onClick={this.pdfGenerat}>Download PDF</button> */}
+              </div>
               
-              
-              <table className="table table-hover" style={{ marginTop: '40px', background: "#FFFFFF" }} >
+              <table className="table table-hover" id="cusdet" style={{ marginTop: '40px', background: "#FFFFFF" }} >
                 <thead>
                   <tr>
                     <th scope="col">Criteria</th>

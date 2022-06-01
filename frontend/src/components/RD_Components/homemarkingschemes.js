@@ -8,9 +8,11 @@ import EditSharpIcon from '@material-ui/icons/EditSharp';
 import DeleteForeverSharpIcon from '@material-ui/icons/DeleteForeverSharp';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import KeyboardArrowDownRoundedIcon from '@material-ui/icons/KeyboardArrowDownRounded';
-import { saveAs } from 'file-saver';
-import jspdf from 'jspdf';
-import "jspdf-autotable";
+import { saveAs } from "file-saver";
+import autoTable from 'jspdf-autotable'
+import { jsPDF } from "jspdf";
+import Footer from '../Layout/footer';
+import AdminNavBar from '../Layout/AdminNavBar';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,6 +26,7 @@ export default class Homemarkingschemes extends Component {
     this.state={
       createmarking:[]
     };
+    this.pdfGenerat = this.pdfGenerat.bind(this);
  }
 
 componentDidMount(){
@@ -85,15 +88,30 @@ handleSearchArea = (e) => {
   });
 }
 
+//pdf generator
+
+ pdfGenerat(e){
+  var doc = new jsPDF('landscape', 'px', 'a4', 'false');
+  
+  doc.autoTable({
+         
+          body: [
+              [{ content:'Marking Schemes'  , colSpan: 2, rowSpan: 2, styles: { halign: 'center'  } }],
+            ],
+          })
+      autoTable(doc, { html: '#cusdet' })
+     doc.save('TopicRegister.pdf')
+
+        }
 
 render() {
   
     return (
-      
+      <div><AdminNavBar/> 
       <div className="pt-3" align="center" background color="red" >
         <div className=" shadow mb-8 w-100" id="cardcol">
           <div className="card-header py-3" >
-            <h1 align="center"><b>&nbsp;&nbsp;&nbsp;Creat Marking Schemes</b></h1><br />
+            <h1 align="center"><b>&nbsp;&nbsp;&nbsp;Marking Schemes</b></h1><br />
 
             <div className="card-body" >
               <div className="col-md-8 mt-4 mx-auto"></div>
@@ -105,12 +123,17 @@ render() {
 
 
               </div>
+              <div>
+              <Button className="form-group" type="submit" style={{ background: "#E77471", width: 13 + "%", align: "right" }} startIcon={<InsertDriveFileIcon />} onClick={this.pdfGenerat}>
+                 Download</Button>
+              {/* <button className="btn btn-danger btn-sm"   onClick={this.pdfGenerat}>Download PDF</button> */}
+              </div>
               <div align="right">
 
                 <form onSubmit={this.handleSearchArea}>
                 
 </form>
-        <table className="table table-hover" style={{ marginTop: '40px', background: "#FFFFFF" }} > 
+        <table className="table table-hover" id="cusdet"   style={{ marginTop: '40px', background: "#FFFFFF" }} > 
         <thead>
             <tr>
                {/* <th scope ="col"> No </th> */}
@@ -166,15 +189,19 @@ render() {
 
         <div className="form-group">
                 <a href="/createmarkingadd">
-                  <Button variant="contained" className="w-10" align="left" style={{ background: "#D5D6EA", width: +"%" }} startIcon={< AddCircleOutlinedIcon />}  >
+                  <Button variant="contained" className="w-10" align="left" style={{ background: "#CCCCFF", width: +"%" }} startIcon={< AddCircleOutlinedIcon />}  >
                   Create New Point</Button>
                 </a>
               </div>
+             
             
       </div>
       </div>
       </div>
       </div>
+      </div>
+      <br/><br/><br/><br/>
+      <Footer/>
       </div>
     )
     

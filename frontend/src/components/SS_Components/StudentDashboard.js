@@ -30,7 +30,7 @@ const downloadtemplate = () => {
         window.location = `/pdfdisplay`            
     }       
 const chatgroups = () => {
-        window.location = `/`            
+        window.location = `/chatdialog`            
     }       
         
         

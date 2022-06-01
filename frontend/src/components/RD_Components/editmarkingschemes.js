@@ -4,6 +4,8 @@ import Button from "@material-ui/core/Button";
 import CheckCircleSharpIcon from '@material-ui/icons/CheckCircleSharp';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from '../Layout/footer';
+import AdminNavBar from '../Layout/AdminNavBar';
 
 toast.configure()
 
@@ -99,6 +101,8 @@ componentDidMount(){
   render() {
     return (
       <div>
+        <AdminNavBar/> 
+        <br/><br/>
       <div className="pt-3" align="center" >
        <div className="card shadow mb-8 w-50">
          <div className="card-header py-3">
@@ -158,6 +162,8 @@ componentDidMount(){
      </div>
      </div>
      </div>
+     <br/><br/><br/><br/>
+     <Footer/>
      </div>
      
 

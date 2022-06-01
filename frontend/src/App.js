@@ -53,6 +53,7 @@ import PDFDisplay from './components/SS_Components/PDFDisplay';
 import SupervisorAcceptTopic from './components/SS_Components/SupervisorAcceptTopic';
 import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcceptTopic';
 import AdminViewStaff from './components/SS_Components/AdminViewStaff';
+import Chatdialog from './components/chat/Chatdialog';
 
 export default class App extends Component {
  
@@ -108,6 +109,7 @@ export default class App extends Component {
     <Route path = "/presantation" component={presantationpdfupload}/>
     <Route path = "/evaluate" component={Evaluate}/>
     <Route path = "/evaluateedit/:createmarkingID" component={Evaluateedit}/>
+    <Route path = "/chatdialog" component={Chatdialog}/>
 
 
 
