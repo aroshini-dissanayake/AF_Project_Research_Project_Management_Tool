@@ -57,55 +57,8 @@ export default class StudentDashboard extends Component {
                    class="card-img-top"
                    height="240px"
                    alt="..." onClick={group}/>
-<<<<<<< HEAD
-                   height="280px"
-               </div>
-           </div>     
-           
-           <div class="col" style={{width: "23rem",color:"white"}} > 
-               <div class="shadow h-60" id="cardcol1">
-               <div class="card-body" style={{background: "#151B54"}} >
-               <h5 class="card-title" id="dashh5"  align="center"><b> Request Supervisor</b></h5>
-               </div>
-               <img
-                   src="https://cdn3.f-cdn.com/contestentries/1440473/29529061/5bdcc38e60db7_thumb900.jpg"
-                   class="card-img-top"
-                   height="280px"
-                   alt="..." onClick={reqsupervisor}/>
                </div>
            </div>
-
-           <div class="col" style={{width: "20rem",color:"white"}} > 
-               <div class="shadow h-60" id="cardcol1">
-               <div class="card-body" style={{background: "#151B54"}} >
-               <h5 class="card-title" id="dashh5"  align="center"><b>Request Co-Supervisor</b></h5>
-               </div>
-               <img
-                   src="https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/person-man.png"
-                   class="card-img-top"
-                   height="280px"
-                   alt="..."onClick={reqcosupervisor}/>
-               </div>
-           </div>
-
-
-           <div class="col" style={{width: "19rem",color:"white"}} > 
-               <div class="shadow h-60" id="cardcol1">
-               <div class="card-body" style={{background: "#151B54"}} >
-               <h5 class="card-title" id="dashh5"  align="center"><b>Submit Documents</b></h5>
-               </div>
-               <img
-                   src="https://t3.ftcdn.net/jpg/04/27/12/82/360_F_427128203_pMzi4Wg7PQ5Bwl52lrhZb8vxXwCYX8eC.jpg"
-                   class="card-img-top"
-                   height="280px"
-                   alt="..."onClick={submitdoc}/>
-               </div>
-           </div>
-
-=======
-               </div>
-           </div>
->>>>>>> 870e8639bb605c26dbafd3efcc6ae6721e6abc8c
 
            <div class="col" style={{width: "20rem",color:"white"}} > 
                <div class="shadow h-60" id="cardcol1">
