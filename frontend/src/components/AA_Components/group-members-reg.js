@@ -52,7 +52,7 @@ export default class Add_Group_Members extends Component{
                 email:"" ,
                 phone:"",
            }).then(()=>{
-           toast.success('Added You To This Group Successfully',{position:toast.POSITION.TOP_CENTER})
+           alert('Added You To This Group Successfully',{position:toast.POSITION.TOP_CENTER})
            }
         )}    
     })
