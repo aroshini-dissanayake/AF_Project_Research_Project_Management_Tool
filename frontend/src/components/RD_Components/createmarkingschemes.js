@@ -137,10 +137,10 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
                       name="comment"
                       id="comment" 
                       title="Please Enter Valid Inputs"
-                      placeholder="Enter Inputs" 
+                      // placeholder="Enter Inputs" 
                       onChange={(e)=>{
                         setcomment(e.target.value)}} 
-                        required/>
+                       readOnly/>
                   </div>
     
                  
@@ -154,10 +154,10 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
                       // maxLength="10"
                       // pattern ="\d{10}"
                       title="Please Enter Valid Inputs"
-                      placeholder="Enter Marks"
+                      // placeholder="Enter Marks"
                       onChange={(e)=>{
                         setmarks(e.target.value)}}
-                        required/>
+                        readOnly/>
                   </div>
                   <div className="form-group">
                     <Button className="form-group" type="submit" style={{ marginTop: '5px', background: "#F75D59", width: 100 + "%" }} startIcon={<AddCommentRoundedIcon/>}>

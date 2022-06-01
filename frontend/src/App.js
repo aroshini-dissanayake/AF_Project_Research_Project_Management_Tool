@@ -1,5 +1,5 @@
 import React from 'react';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 
 import React, { Component } from 'react'
@@ -31,6 +31,8 @@ import Supervisorremove from './components/RD_Components/supervisorremove';
 import CoSupervisorremove from './components/RD_Components/cosupervisorremove';
 import Studentsremove from './components/RD_Components/studentsremove';
 import presantationpdfupload from './components/RD_Components/presantationpdfupload';
+import Evaluate from './components/RD_Components/evaluate';
+import Evaluateedit from './components/RD_Components/evaluateedit';
 import GroupRegistration from './components/AA_Components/student-group-name-registration';
 import Add_Group_Members from './components/AA_Components/group-members-reg';
 import Groupss from './components/AA_Components/student.groups';
@@ -59,6 +61,10 @@ export default class App extends Component {
       
   <Router>
     <Switch>
+{/* // function App() {
+//   return (
+//    <Router>
+//    <Switch> */}
      <Route path = "/" component={StudentHomePage} exact/>
      <Route path = "/staff" component={BackendHomePage}/>
      <Route path = "/stafflogin" component={StaffLogin}/>
@@ -100,7 +106,8 @@ export default class App extends Component {
     <Route path = "/getcosupervisor" component={CoSupervisorremove}/>
     <Route path = "/getstudent" component={Studentsremove}/>
     <Route path = "/presantation" component={presantationpdfupload}/>
-    
+    <Route path = "/evaluate" component={Evaluate}/>
+    <Route path = "/evaluateedit/:createmarkingID" component={Evaluateedit}/>
 
 
 

@@ -8,8 +8,9 @@ import EditSharpIcon from '@material-ui/icons/EditSharp';
 import DeleteForeverSharpIcon from '@material-ui/icons/DeleteForeverSharp';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import KeyboardArrowDownRoundedIcon from '@material-ui/icons/KeyboardArrowDownRounded';
-
-
+import { saveAs } from 'file-saver';
+import jspdf from 'jspdf';
+import "jspdf-autotable";
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -18,7 +19,8 @@ toast.configure()
 export default class Homemarkingschemes extends Component {
     constructor(props){
     super(props);
-
+   
+ 
     this.state={
       createmarking:[]
     };
@@ -85,6 +87,7 @@ handleSearchArea = (e) => {
 
 
 render() {
+  
     return (
       
       <div className="pt-3" align="center" background color="red" >
@@ -133,8 +136,8 @@ render() {
           <td>{createmarking.good}</td>
           <td>{createmarking.avarage}</td>
           <td>{createmarking.poor}</td>
-          <td>{createmarking.comment}</td>
-          <td>{createmarking.marks}</td>
+          <td></td>
+          <td></td>
           <td> 
             {/* <a className="btn btn-warning" href={`/createmarkingedit/${createmarking._id}`}>
               <i classname="fas fa-edit"></i>&nbsp;Edit
@@ -167,6 +170,7 @@ render() {
                   Create New Point</Button>
                 </a>
               </div>
+            
       </div>
       </div>
       </div>
