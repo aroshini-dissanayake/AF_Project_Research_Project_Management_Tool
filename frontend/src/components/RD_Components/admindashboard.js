@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Faculties from '../AA_Components/faculties';
 import AdminNavBar from '../Layout/AdminNavBar';
 import Footer from '../Layout/footer';
 
