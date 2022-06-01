@@ -11,6 +11,7 @@ const router = express.Router();
      try{
       let studentId = req.Std._id
       const student = await Student.findById(studentId)
+      
       if (!student) {
         throw new Error('There is no student')
      }
@@ -22,6 +23,7 @@ const router = express.Router();
       studentID: studentId,
       studentName: req.Std.name,
       stdId: req.Std.student_id
+      
      };
 
     let newstdDocument= new StdDocument(dbDoc);
