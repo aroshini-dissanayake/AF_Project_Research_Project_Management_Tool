@@ -4,6 +4,7 @@ import StaffNavbar from "../Staff-Layout/StaffNavbar";
 import CheckIcon from '@mui/icons-material/Check';
 import IconButton from '@material-ui/core/IconButton';
 import ClearIcon from '@mui/icons-material/Clear';
+import Button from '@material-ui/core/Button';
 
 export default class CoSupervisorAcceptTopic extends Component{
     constructor(props){
@@ -29,7 +30,6 @@ filterData(studentgroups,searchKey){
       });
     }
    
-
 //retrieve student group details    
 componentDidMount(){
         this.retrieveStudentGroups();
@@ -99,7 +99,18 @@ render(){
                               <td>{studentgroups.researchField}</td>
                           <td>{studentgroups.researchTopic}</td>
                       <td>{studentgroups.grpcoSupervisor}</td>
-                   <td>{studentgroups.cosupervisortopicstatus}</td>
+                   <td>
+                   {
+                     studentgroups.cosupervisortopicstatus === "Accepted" &&
+                     <div><Button style={{color:"green",fontFamily:"sans-serif"}}><b> { studentgroups.cosupervisortopicstatus}</b></Button></div>
+
+                     }
+                     {
+                         studentgroups.cosupervisortopicstatus === "Rejected" &&
+                         <div><Button style={{color:"#9F000F",fontFamily:"sans-serif"}}><b>{studentgroups.cosupervisortopicstatus}</b></Button></div>
+
+                     }
+                   </td>
                      <td>                       
                         <IconButton aria-label='btn btn-success' size="small"
                             style={{background: "#008000"}}

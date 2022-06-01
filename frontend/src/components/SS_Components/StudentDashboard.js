@@ -142,7 +142,7 @@ export default class StudentDashboard extends Component {
                <h5 class="card-title" id="dashh5" align="center"><b>Download Template</b></h5>
                </div>
                <img
-                   src="https://i.dlpng.com/static/png/6325147_preview.png"
+                   src="https://img.redro.pl/obrazy/download-icon-upload-icon-download-sign-upload-sign-download-black-icon-upload-black-sign-400-173568218.jpg"
                    class="card-img-top"
                    height="240px"
                    alt="..." onClick={downloadtemplate}/>

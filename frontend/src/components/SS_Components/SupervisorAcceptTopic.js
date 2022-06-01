@@ -3,7 +3,8 @@ import axios from "axios";
 import StaffNavbar from "../Staff-Layout/StaffNavbar";
 import CheckIcon from '@mui/icons-material/Check';
 import IconButton from '@material-ui/core/IconButton';
-import ClearIcon from '@mui/icons-material/Clear';
+import ClearIcon from '@mui/icons-material/Clear'
+import Button from '@material-ui/core/Button';
 
 export default class SupervisorAcceptTopic extends Component{
     constructor(props){
@@ -99,7 +100,18 @@ render(){
                          <td>{studentgroups.researchField}</td>
                      <td>{studentgroups.researchTopic}</td>
                  <td>{studentgroups.grpSupervisor}</td>
-                   <td >{studentgroups.supervisortopicstatus}</td>
+                   <td >
+                   {
+                     studentgroups.supervisortopicstatus === "Accepted" &&
+                     <div><Button style={{color:"green",fontFamily:"sans-serif"}}><b> { studentgroups.supervisortopicstatus}</b></Button></div>
+
+                     }
+                     {
+                         studentgroups.supervisortopicstatus === "Rejected" &&
+                         <div><Button style={{color:"#9F000F",fontFamily:"sans-serif"}}><b>{studentgroups.supervisortopicstatus}</b></Button></div>
+
+                     }
+                     </td>
                       <td>                       
                          <IconButton aria-label='btn btn-success' size="small"
                             style={{background: "#008000"}}

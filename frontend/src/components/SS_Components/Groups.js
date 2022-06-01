@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import StudentNavBar from '../Home_Component/StudentNavBar';
-
+import Button from '@material-ui/core/Button';
 
 export default class Groups extends Component {
     constructor(props){
@@ -38,7 +38,7 @@ componentDidMount(){
                   <th scope='col'>Group Name</th>
               <th scope='col'>Research Feild</th>
            <th scope='col'>Research Topic</th>
-             <th scope='col'>Status</th>
+             <th scope='col'> Status</th>
                 <th scope='col'>FeedBack</th>
                   </tr>
                     </thead>
@@ -49,7 +49,18 @@ componentDidMount(){
                              <td>{studentgroups.group_name}</td>
                          <td>{studentgroups.researchField}</td>
                      <td>{studentgroups.researchTopic}</td>
-                 <td>{studentgroups.topicstatus}</td>
+                     <td> 
+                    {
+                     studentgroups.topicstatus === "Accepted" &&
+                     <div><Button style={{color:"green",fontFamily:"sans-serif"}}><b> { studentgroups.topicstatus}</b></Button></div>
+
+                     }
+                     {
+                         studentgroups.topicstatus === "Rejected" &&
+                         <div><Button style={{color:"#9F000F",fontFamily:"sans-serif"}}><b>{studentgroups.topicstatus}</b></Button></div>
+
+                     }
+                     </td>
                    <td>{studentgroups.feedback}</td>
                      </tr>
                         ))}

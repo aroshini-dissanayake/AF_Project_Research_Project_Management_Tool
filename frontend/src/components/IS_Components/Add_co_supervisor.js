@@ -2,7 +2,6 @@ import React,{Component} from 'react' ;
 import axios from "axios";
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Button from '@material-ui/core/Button';
-import Footer from '../Layout/footer';
 
 export default class Add_co_supervisor extends Component{
    constructor(props){  
@@ -110,7 +109,6 @@ return(
                        </table>
                     </div>
                  </div>
-                 <Footer/>
            </div>
        )
    }

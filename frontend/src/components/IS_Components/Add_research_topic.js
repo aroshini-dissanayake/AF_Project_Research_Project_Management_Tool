@@ -2,6 +2,7 @@ import React,{Component} from 'react' ;
 import axios from "axios";
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
+import Button from '@material-ui/core/Button';
  
 export default class Add_research_topic extends Component{
    constructor(props){  
@@ -67,31 +68,30 @@ return(
 <StudentNavBar/>
   <br/><br/><br/>   
      <div align="center">
-      <div className="card-header" style={{width:"820px",background:"#B7CEEC"}}><br/><br/>
-        <h3 align="center">
-          <b><u>ADD RESEARCH TOPIC AND FIELD TO STUDENT GROUP</u></b></h3>
-            <form onSubmit={this.onSubmit} className="text-color">
+       <div className="card-header" style={{width:"820px",background:"#B7CEEC"}}><br/><br/>
+         <h3 align="center">
+           <b><u>ADD RESEARCH TOPIC AND FIELD TO STUDENT GROUP</u></b></h3>
+              <form onSubmit={this.onSubmit} className="text-color">
                 <div className="form-group">
-                <div align="left"><br/> 
-                        <label style={{marginBottom:'2px'}}><b>Research Topic</b></label>
-                        <input type="userInput" required className="form-control" placeholder="Enter the Research Topic" value={this.state.researchTopic}
-                        onChange={this.onChangeResearchtopic}/>
-                      </div></div><br/>
-                      <div className="form-group">
-                      <div align="left"><br/>  
-                        <label style={{marginBottom:'2px'}}><b>Research Field</b></label>
-                        <input  type="text" required className="form-control" placeholder="Enter the Research Field" value={this.state.researchField}
-                        onChange={this.onChangeResearchfield} />
-                         </div></div><br/><br/>
-                   
-                         <button variant="contained" className="w-10" style={{background: "#151B54", width: 20+"%",color:"white"}}
-                       disableElevation type="submit">Register</button>
-                          </form>  
-                          <br/><br/>
-                       </div>
-                   </div><br/><br/><br/><br/><br/><br/>
-                 <Footer/>
-               </div>          
+                  <div align="left"><br/> 
+                 <label style={{marginBottom:'2px'}}><b>Research Topic</b></label>
+              <input type="userInput" required className="form-control" placeholder="Enter the Research Topic" value={this.state.researchTopic}
+           onChange={this.onChangeResearchtopic}/>
+       </div></div><br/>
+   <div className="form-group">
+      <div align="left"><br/>  
+          <label style={{marginBottom:'2px'}}><b>Research Field</b></label>
+              <input  type="text" required className="form-control" placeholder="Enter the Research Field" value={this.state.researchField}
+                   onChange={this.onChangeResearchfield} />
+                       </div></div><br/><br/>
+                     <Button variant="contained" className="w-10" style={{background: "#151B54", width: 20+"%",color:"white"}}
+                  disableElevation type="submit">Register</Button>
+                </form>  
+             <br/><br/>
+          </div>
+       </div><br/><br/><br/><br/><br/><br/>
+    <Footer/>
+  </div>          
        )
    }
   }

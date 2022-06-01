@@ -90,8 +90,8 @@ render(){
                  <thead>
              <tr bgcolor="#79BAEC">
                 <th scope='col'>No</th>
-                       <th scope='col'>Role</th>
-                          <th scope='col'>Name</th>
+                    <th scope='col'>Role</th>
+                       <th scope='col'>Name</th>
                           <th scope='col'>E-mail</th>
                              <th scope='col'>Research Feild</th>
                            </tr>
@@ -100,11 +100,11 @@ render(){
                  {this.state.supervisors.map((supervisors,index)=>(
               <tr key={index}>    
                 <th scope='row'>{index + 1}</th>
-                    <td>{supervisors.role}</td>
+                   <td>{supervisors.role}</td>
                       <td>{supervisors.name}</td>
-                      <td>{cosupervisors.email}</td>
-                         <td>{supervisors.feild}</td>
-                            </tr>
+                        <td>{cosupervisors.email}</td>
+                           <td>{supervisors.feild}</td>
+                              </tr>
                                     )
                                   )}
                            </tbody>     
