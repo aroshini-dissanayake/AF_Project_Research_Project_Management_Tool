@@ -3,7 +3,7 @@ import React,{Component} from 'react' ;
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
 import StudentNavBar from '../Home_Component/StudentNavBar';
- 
+import Button from '@material-ui/core/Button';
  
 export default class Display_researchtopics extends Component{
    constructor(props){
@@ -77,7 +77,19 @@ export default class Display_researchtopics extends Component{
                             <td>{studentgroups.group_name}</td>
                           <td>{studentgroups.researchTopic}</td>
                           <td>{studentgroups.researchField}</td>
-                          <td>{studentgroups.topicstatus}</td>
+                          <td>      
+                     {
+                     studentgroups.topicstatus === "Accepted" &&
+                     <div><Button style={{color:"green",fontFamily:"sans-serif"}}><b> { studentgroups.topicstatus}</b></Button></div>
+
+                     }
+                     {
+                         studentgroups.topicstatus === "Rejected" &&
+                         <div><Button style={{color:"#9F000F",fontFamily:"sans-serif"}}><b>{studentgroups.topicstatus}</b></Button></div>
+
+                     }
+                              
+                       </td>
                        <td>                      
                             <IconButton aria-label='btn btn-success' size="small"
                                style={{background: "#FBB917"}}

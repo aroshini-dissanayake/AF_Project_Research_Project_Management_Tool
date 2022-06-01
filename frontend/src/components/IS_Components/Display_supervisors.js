@@ -4,7 +4,7 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
- 
+import Button from '@material-ui/core/Button';
  
 export default class Display_supervisors extends Component{
    constructor(props){
@@ -63,11 +63,11 @@ filterData(studentgroups,searchKey){
                       <thead>
                     <tr bgcolor="#79BAEC">
                 <th scope='col'>No</th>
-            <th scope='col'>Group Name</th>
-        <th scope='col'>Research Topic</th>
-      <th scope='col'>Research Field</th>
-      <th scope='col'>Supervisor</th>
-      <th scope='col'>Status</th>
+             <th scope='col'>Group Name</th>
+          <th scope='col'>Research Topic</th>
+       <th scope='col'>Research Field</th>
+    <th scope='col'>Supervisor</th>
+  <th scope='col'>Status</th>
     <th scope='col'>Actions</th>
         </tr>
            </thead>
@@ -75,12 +75,24 @@ filterData(studentgroups,searchKey){
                   {this.state.studentgroups.map((studentgroups,index) =>(
                       <tr>
                          <th scope='row'>{index + 1}</th>
-                            <td>{studentgroups.group_name}</td>
+                          <td>{studentgroups.group_name}</td>
                           <td>{studentgroups.researchTopic}</td>
                           <td>{studentgroups.researchField}</td>
                           <td>{studentgroups.grpSupervisor}</td>
-                          <td>{studentgroups.supervisortopicstatus}</td>
-                       <td>                      
+                          <td>
+                          {
+                             studentgroups.supervisortopicstatus === "Accepted" &&
+                             <div><Button style={{color:"green",fontFamily:"sans-serif"}}>
+                             <b> { studentgroups.supervisortopicstatus}</b></Button></div>
+                          }
+                        {
+                         studentgroups.supervisortopicstatus === "Rejected" &&
+                         <div><Button style={{color:"#9F000F",fontFamily:"sans-serif"}}>
+                         <b>{studentgroups.supervisortopicstatus}</b></Button></div>
+
+                        }
+                       </td>
+                          <td>                      
                             <IconButton aria-label='btn btn-success' size="small"
                                style={{background: "#FBB917"}}
                                   onClick={()=>this.onReadirect(studentgroups._id,studentgroups.researchField)} >

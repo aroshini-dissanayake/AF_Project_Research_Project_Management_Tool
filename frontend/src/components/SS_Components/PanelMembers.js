@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import AdminNavBar from '../Layout/AdminNavBar';
 
 export default class PanelMembers extends Component {
     constructor(props){
@@ -26,7 +26,8 @@ retrieveStaffRole(){
 
 render() {
     return ( 
-                        <div>
+                            <div>
+                        <AdminNavBar/>
                      <br/><br/>
                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
               <b><u>All Panel Member Details </u></b></h3><br/>

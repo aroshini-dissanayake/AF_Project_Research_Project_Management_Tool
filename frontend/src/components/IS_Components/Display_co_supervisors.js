@@ -4,6 +4,7 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
+import Button from '@material-ui/core/Button';
  
 export default class Display_co_supervisors extends Component{
    constructor(props){
@@ -80,7 +81,18 @@ export default class Display_co_supervisors extends Component{
                           <td>{studentgroups.researchField}</td>
                           <td>{studentgroups.grpSupervisor}</td>
                           <td>{studentgroups.grpcoSupervisor}</td>
-                          <td>{studentgroups.cosupervisortopicstatus}</td>
+                          <td>
+                          {
+                     studentgroups.cosupervisortopicstatus === "Accepted" &&
+                     <div><Button style={{color:"green",fontFamily:"sans-serif"}}><b> { studentgroups.cosupervisortopicstatus}</b></Button></div>
+
+                     }
+                     {
+                         studentgroups.cosupervisortopicstatus === "Rejected" &&
+                         <div><Button style={{color:"#9F000F",fontFamily:"sans-serif"}}><b>{studentgroups.cosupervisortopicstatus}</b></Button></div>
+
+                     }
+                      </td>
                        <td>                      
                             <IconButton aria-label='btn btn-success' size="small"
                                style={{background: "#FBB917"}}
