@@ -94,7 +94,7 @@ export default class admindashboard extends Component {
                     <div class="col" style={{width: "20rem"}}> 
                         <div class="shadow h-60" id="cardcol1">
                         <div class="card-body" style={{background: "#151B54"}} >
-                        <h5 class="card-title" id="dashh5" align="center"><b b style={{color: "#ffff"}}>Marking Schemes</b></h5>
+                        <h5 class="card-title" id="dashh5" align="center"><b b style={{color: "#ffff"}}>Upload Marking Schemes</b></h5>
                         </div>
                         <img
                             src="https://png.pngtree.com/png-vector/20190411/ourlarge/pngtree-pdf-file-document-icon-png-image_927685.jpg"
@@ -141,7 +141,9 @@ export default class admindashboard extends Component {
                               src="https://mycourse.lk/UploadedFiles/SLIIT.png"
                               class="card-img-top"
                               height="280px"
-                              alt="..." onClick={faculties}/>
+                              alt="..." 
+                              // onClick={faculties}
+                              />
                         </div>
                        </div>
 

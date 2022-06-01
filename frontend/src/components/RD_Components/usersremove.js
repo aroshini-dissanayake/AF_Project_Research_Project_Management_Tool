@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import axios from 'axios';
+import AdminNavBar from '../Layout/AdminNavBar';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -45,10 +47,11 @@ onDelete = (panelmemberID) => {
 
 render() {
     return ( 
-                        <div>
-                     <br/><br/>
+                           <div>
+                        <AdminNavBar/>
+                     <br/><br/><br/>
                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
-              <b><u>All Panel Member Details </u></b></h3><br/>
+              <b><u>All Panel Member Details </u></b></h3><br/><br/>
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -76,11 +79,11 @@ render() {
                      <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(usersremove._id)}>
               <i className="far fa-trash-alt"></i>&nbsp;Delete
             </a>   
-                     </td>              
-                </tr>
-                  )
-                    )}
-                      </tbody>     
+              </td>              
+                 </tr>
+                    )
+                     )}
+                       </tbody>     
                          </table>
                             </div>
                               </div>

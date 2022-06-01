@@ -12,7 +12,6 @@ export default class Add_panel_member extends Component{
             panelMember:"",
         }
      } 
-
    async componentDidMount(){
         const id = this.props.match.params.id; 
         await axios.get(`http://localhost:8070/student/display/${id}`).then((res)=>{

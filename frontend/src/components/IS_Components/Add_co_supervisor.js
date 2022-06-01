@@ -20,6 +20,7 @@ export default class Add_co_supervisor extends Component{
            cosupervisors:[]
        }
     }
+    
   async componentDidMount(){
        const feild = this.props.match.params.feild
        const id = this.props.match.params.id;
@@ -49,7 +50,7 @@ export default class Add_co_supervisor extends Component{
            
             axios.post(`http://localhost:8070/regtopic/addcoSupervisor/${id}`,data).then((res)=>{ 
             console.log(res.data)
-            alert("Co-Supervisor added");
+            alert("Co-Supervisor Requested");
             window.location.href="/regtopic/displaycosupervisors"
       
    })
@@ -74,7 +75,7 @@ return(
                  onChange={this.onChangeGrpcoSupervisor}/>
                     </div></div><br/><br/>
                  <Button variant="contained" className="w-6" style={{background: "#151B54", width: 30+"%",color:"white"}}
-            disableElevation type="submit">Add Co-Supervisor</Button>
+            disableElevation type="submit">Request Co-Supervisor</Button>
         </form><br/>
           </div>
               </div>
@@ -88,9 +89,9 @@ return(
           <thead>
              <tr bgcolor="#79BAEC">
                 <th scope='col'>No</th>
-                   <th scope='col'>Staff ID</th>
-                       <th scope='col'>Role</th>
+                  <th scope='col'>Role</th>
                          <th scope='col'>Name</th>
+                         <th scope='col'>E-mail</th>
                            <th scope='col'>Research Feild</th>
                             </tr>
                         </thead>
@@ -98,9 +99,9 @@ return(
                 {this.state.cosupervisors.map((cosupervisors,index)=>(
              <tr key={index}>    
                 <th scope='row'>{index + 1}</th>
-                   <td>{cosupervisors.staff_id}</td>
-                       <td>{cosupervisors.role}</td>
+                     <td>{cosupervisors.role}</td>
                            <td>{cosupervisors.name}</td>
+                           <td>{cosupervisors.email}</td>
                                <td>{cosupervisors.feild}</td>
                                     </tr>
                                     )

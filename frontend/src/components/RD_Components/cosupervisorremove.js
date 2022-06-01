@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import AdminNavBar from '../Layout/AdminNavBar';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -44,10 +45,11 @@ onDelete = (cosupervisorID) => {
 
  render() {
     return ( 
-                        <div>
-                     <br/><br/>
+                           <div>
+                        <AdminNavBar/>
+                     <br/><br/><br/>
                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
-              <b><u>All Co-Supervisor Details </u></b></h3><br/>
+              <b><u>All Co-Supervisor Details </u></b></h3><br/><br/>
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -58,7 +60,8 @@ onDelete = (cosupervisorID) => {
                          <th scope='col'>Feild</th>
                            <th scope='col'>Staff ID</th>
                          <th scope='col'>Role</th>
-                     <th scope='col'>Email</th>
+                       <th scope='col'>Email</th>
+                    <th scope='col'>Action</th>
                  </tr>
              </thead>
                <tbody>

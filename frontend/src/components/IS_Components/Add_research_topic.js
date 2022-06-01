@@ -53,7 +53,7 @@ export default class Add_research_topic extends Component{
 
        axios.post(`http://localhost:8070/regtopic/research/${id}`,topicinfo).then((res)=>{ 
           console.log(res.data)
-          alert("Research Topic and Field added");
+          alert("Research Topic and Field registered");
           window.location.href="/regtopic/displayresearchtopic"
         
    })
@@ -73,20 +73,21 @@ return(
             <form onSubmit={this.onSubmit} className="text-color">
                 <div className="form-group">
                 <div align="left"><br/> 
-                        <label style={{marginBottom:'5px'}}>Research Topic</label>
+                        <label style={{marginBottom:'2px'}}><b>Research Topic</b></label>
                         <input type="userInput" required className="form-control" placeholder="Enter the Research Topic" value={this.state.researchTopic}
                         onChange={this.onChangeResearchtopic}/>
                       </div></div><br/>
                       <div className="form-group">
                       <div align="left"><br/>  
-                        <label style={{marginBottom:'5px'}}>Research Field</label>
+                        <label style={{marginBottom:'2px'}}><b>Research Field</b></label>
                         <input  type="text" required className="form-control" placeholder="Enter the Research Field" value={this.state.researchField}
                         onChange={this.onChangeResearchfield} />
-                         </div></div><br/>
+                         </div></div><br/><br/>
                    
                          <button variant="contained" className="w-10" style={{background: "#151B54", width: 20+"%",color:"white"}}
                        disableElevation type="submit">Register</button>
-                          </form>   
+                          </form>  
+                          <br/><br/>
                        </div>
                    </div><br/><br/><br/><br/><br/><br/>
                  <Footer/>
@@ -94,4 +95,3 @@ return(
        )
    }
   }
-
