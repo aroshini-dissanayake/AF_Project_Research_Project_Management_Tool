@@ -19,6 +19,11 @@ const stdDocumentsSchema = new mongoose.Schema({
        required: true
     },
   
+    stdDocName:{
+      type: String,
+      required: true
+    }
+
 });
 
 const StdDocuments = mongoose.model("stddocuments",stdDocumentsSchema);

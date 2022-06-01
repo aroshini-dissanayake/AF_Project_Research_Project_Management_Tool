@@ -1,7 +1,7 @@
 import React,{Component} from 'react' ;
 import axios from "axios";
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
 
@@ -34,7 +34,7 @@ export default class Groupss extends Component{
             <div>
              <StudentNavBar/><br/><br/><br/><br/>
                <div align="center">
-                 <div className="card-header" style={{width:"820px",background:"#B7CEEC"}}><br/><br/>
+              
                   <h3 align="center">
                    <b><u>Student Research Group</u></b></h3><br/>
                <form className='needs-validation'>
@@ -52,16 +52,15 @@ export default class Groupss extends Component{
                 <tbody>
                 {this.state.studentgroups.map((studentgroups,index) =>(
                     <tr>
-                        <th scope='row'>{index + 1}</th>
+                      <th scope='row'>{index + 1}</th>
                         <td>{studentgroups.group_name}</td>
-                        <td>
-                        
-                             <IconButton aria-label='btn btn-success' size="small"
-                             style={{background: "#FBB917"}}
-                                onClick={()=>this.onReadirect(studentgroups._id)} >
-                             <AddCircleOutlineIcon  fontSize="small" style={{color: "black"}}/>
-                             </IconButton> 
-                             &nbsp;&nbsp;&nbsp;&nbsp;
+                           <td >
+                    <Button aria-label='btn btn-success' size="small"
+                style={{background: "#FBB917", width: 15+"%",}}
+             onClick={()=>this.onReadirect(studentgroups._id)} >
+                   <AddCircleOutlineIcon  fontSize="small" style={{color: "black"}}/>
+                      </Button>
+                         &nbsp;&nbsp;&nbsp;&nbsp;                           
                         </td>
                     </tr>
                 ))}
@@ -71,7 +70,7 @@ export default class Groupss extends Component{
                  </div>
                    </div>
                       </form>     
-                        </div></div>
+                        </div>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 <Footer/>  
             </div> 

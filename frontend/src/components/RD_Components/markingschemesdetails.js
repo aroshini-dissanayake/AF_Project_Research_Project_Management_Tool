@@ -30,14 +30,14 @@ componentDidMount(){
 
 render() {
 
-  const {deliverables,duedate,contribution,methodofsubmission,marksallocation} = this.state.createmarking;
+  const {criteria,good,avarage,poor,comment,marks} = this.state.createmarking;
 
   return (
    
 
       <div align="center" style= {{marginTop:'20px'}}>
-          <h4>{deliverables}</h4>
-          <h4>{duedate}</h4>
+          <h4>{criteria}</h4>
+          <h4>{good}</h4>
           <hr/>
        
 
@@ -53,14 +53,17 @@ render() {
            <dt className="col-sm-3">Due Date</dt>
             <dd className="col-sm-9">{duedate}</dd> */}
 
-            <dt className="col-sm-3">Contribution</dt>
-            <dd className="col-sm-9">{contribution}</dd>
+            <dt className="col-sm-3">Avarage</dt>
+            <dd className="col-sm-9">{avarage}</dd>
 
-            <dt className="col-sm-3">Method Of Submission</dt>
-           <dd className="col-sm-9">{methodofsubmission}</dd>
+            <dt className="col-sm-3">Poor</dt>
+           <dd className="col-sm-9">{poor}</dd>
 
-           <dt className="col-sm-3">Marks Allocation</dt>
-            <dd className="col-sm-9">{marksallocation}</dd>
+           <dt className="col-sm-3">Comment</dt>
+           <dd className="col-sm-9">{comment}</dd>
+
+           <dt className="col-sm-3">Marks</dt>
+            <dd className="col-sm-9">{marks}</dd>
 
            
             </div>  
