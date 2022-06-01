@@ -2,6 +2,7 @@ import React,{Component} from 'react' ;
 import axios from "axios";
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Button from '@material-ui/core/Button';
+import Footer from '../Layout/footer';
 
 import AdminNavBar from '../Layout/AdminNavBar';
 import Footer from '../Layout/footer';
@@ -111,12 +112,8 @@ return(
                        </table>
                     </div>
                  </div>
-           </div>
-
-                 </div><br/><br/><br/>
                  <Footer/>
-                          </div>
-
+           </div>
        )
    }
 }

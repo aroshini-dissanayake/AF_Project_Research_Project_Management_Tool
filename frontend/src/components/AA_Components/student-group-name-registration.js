@@ -26,10 +26,10 @@ export default function GroupRegistration(){
         .then(()=>{
 
             alert("Registration Success")
-            window.location = "/groups"
+            window.location = "/studentdashboard"
 
         }).catch((err)=>{
-            alert(err)
+            alert('This group already exists...!',err)
         })
 
         setgroupname("");
@@ -49,7 +49,7 @@ export default function GroupRegistration(){
                <div align="left">
             <label class="form-label" for="form3Example8">Group Name</label></div>   
           <input type="text"  id="form3Example8" class="form-control form-control-lg" 
-             style={{fontSize:"1rem"}} onChange={(e) => setgroupname(e.target.value)}/>
+             style={{fontSize:"1rem"}} onChange={(e) => setgroupname(e.target.value)} required/>
                </div>
                  <div class="d-flex justify-content pt-3">
                    <button type="submit" class="btn btn-primary btn-2 ">Submit</button>

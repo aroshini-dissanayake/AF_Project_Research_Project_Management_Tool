@@ -51,7 +51,8 @@ const topicRouter = require("./routes/IS_routes/topic");
 const DocUploadRouter = require("./routes/IS_routes/DocUpload");
 const adminRouter = require('./routes/RG_routes/admin');
 const createmarkingRouter = require('./routes/RG_routes/createmarking');
-
+const usersremoveRoutes = require('./routes/RG_routes/usersremove');
+const presantationpdfuploadRoutes = require('./routes/RG_routes/presantationpdf');
 
 // rotues use
 app.use("/group",studentgroupRouter);
@@ -60,6 +61,9 @@ app.use("/staff",staffRouter);
 app.use("/regtopic",topicRouter);
 app.use("/document",DocUploadRouter);
 app.use("/admin",adminRouter);
+app.use("/createmarking",createmarkingRouter);
+app.use("/usersremove",usersremoveRoutes);
+app.use("/presantationpdf",presantationpdfuploadRoutes);
 app.use("/assignment",PDFUploadRouter);
 
 

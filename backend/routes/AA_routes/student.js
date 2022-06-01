@@ -8,7 +8,6 @@ const auth = require('../../middleware/auth');
 const Student = require("../../models/AA_models/student");
 
 //sign up
-
 router.post("/signup", async (req, res) => {
   try {
     const {
@@ -25,8 +24,30 @@ router.post("/signup", async (req, res) => {
       imageUrl
     } = req.body;
 
+//unit testing
+  if(!name || !nic || !faculty || !student_id || !batch || !specialization || !phone || !DOB || !email || !pwd || !imageUrl) 
+  return res
+  .status(400)
+  .json({errorMessage : "Required"});
   
-    let student_a = await Student.findOne({ email });
+  if(name.lenght <3)
+  return res.status(400).json({
+    errorMessage: "Please Enter a First name of atleaset 3 characters..!!"
+  });
+
+  if(nic.lenght >10)
+  return res.status(400).json({
+    errorMessage: "Please Enter a Valid NIC Number..!!"
+  });
+
+  if(student_id.lenght <3)
+  return res.status(400).json({
+    errorMessage: "Please Enter a Valid Student ID..!!"
+  });
+
+
+  
+ let student_a = await Student.findOne({ email });
   if (student_a) {
     throw new Error("User already exists");
   }
@@ -232,10 +253,10 @@ router.put('/update', auth, async (req, res) => {
       }
 
       else{
-        const grp_status = "Registered";
+        // const grp_status = "Registered";
         const gID = groupId;
         
-        student.status = grp_status;
+        student.status = "Registered";
         student.grp_id = gID;
 
         await student.save()
