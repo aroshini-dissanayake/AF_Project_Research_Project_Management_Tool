@@ -36,6 +36,8 @@ import Markingschemesdetails from './components/RD_Components/markingschemesdeta
 import Evaluate from './components/RD_Components/evaluate';
 import Evaluateedit from './components/RD_Components/evaluateedit';
 import uploadmarkingschemes from './components/RD_Components/uploadmarkingschemes';
+import Chatdialog from './components/chat/Chatdialog';
+
 
 import Signup from './components/AA_Components/student-registration';
 import StudentLogin from './components/AA_Components/student-login';
@@ -95,7 +97,7 @@ export default class App extends Component {
           <Route path = "/evaluateedit/:createmarkingID" component={Evaluateedit}/>
           <Route path = "/evaluate" component={Evaluate}/>
           <Route path = "/uploadevaluate" component={uploadmarkingschemes}/>
-
+          <Route path = "/chatdialog" component={Chatdialog}/>
 
     {/* Aroshini */}
           <Route path = "/signin" component={StudentLogin}/>
