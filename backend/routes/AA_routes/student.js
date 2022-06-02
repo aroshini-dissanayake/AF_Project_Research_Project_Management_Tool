@@ -38,7 +38,7 @@ return res.status(400).json({
 
 if(phone.length<5)
 return res.status(400).json({
-    errorMessage: "Please enter a first name of at least 3 characters.",
+    errorMessage: "Please enter a phone number of at least 3 characters.",
 });
 
 if(student_id.lenght <3)
