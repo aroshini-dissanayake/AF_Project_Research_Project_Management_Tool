@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StudentNavBar from '../Layout/StudentNavBar';
+import StudentNavBar from '../Layout/StudentHomeNavBar';
 import Footer from '../Layout/footer';
 
 export default class StudentHomePage extends Component {

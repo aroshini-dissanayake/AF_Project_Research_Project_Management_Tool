@@ -51,11 +51,8 @@ const UpdateProfile = ({
 
       await axios.put('http://localhost:8070/student/update', updateObject, config)
       .then((res) => {
-        toast.success('Your details updated successfully',{position:toast.POSITION.TOP_CENTER});
-        window.setTimeout(function() {
-          window.location = "/profile"
-      }, 2000);
-        
+        alert('Your details updated successfully');
+          window.location = "/profile"        
       })
       .catch((err) => {
         console.log(err)
@@ -66,11 +63,11 @@ const UpdateProfile = ({
     return (
       <div >
       <Modal  show={show} onHide={onHide} animation={true} size="lg"
-      aria-labelledby="contained-modal-title-vcenter" centered>
-          <div style={{background: "#272E48"}}>
-        <Modal.Header closeButton> 
-          <Modal.Title style={{color: "white"}} id="contained-modal-title-vcenter" className="text-color" >Update My Details</Modal.Title>
-        </Modal.Header>
+        aria-labelledby="contained-modal-title-vcenter" centered>
+          <div style={{background: "#E6E6FA"}}>
+             <Modal.Header closeButton> 
+           <Modal.Title style={{color: "black"}} id="contained-modal-title-vcenter" className="text-color" >Update My Details</Modal.Title>
+         </Modal.Header>
         <Modal.Body >
           <form onSubmit={updateUserProfile} className="text-color" >  
             <div className="form-group row mb-3">
@@ -129,11 +126,9 @@ const UpdateProfile = ({
               <small className="text-muted">Change Your Email</small>
               <input type="email" required className="form-control" Value={email}
               onChange={(e) => setEmail(e.target.value)} />
-            </div>
+            </div> <br/><br/>
 
-            <br/> <br/>
- 
-            <center><Button variant="contained" style={{background: "#749ee3",color:"white", width: 50+"%"}} className="w-10" 
+            <center><Button variant="contained" style={{background: "#151B54",color:"white", width: 50+"%"}} className="w-10" 
             startIcon={<SendIcon />} disableElevation type="submit">Update my details</Button></center>
           </form>
         </Modal.Body>

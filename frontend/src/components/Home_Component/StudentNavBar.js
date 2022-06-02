@@ -17,10 +17,10 @@ export default class StudentNavBar extends Component {
 
        <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/studentdashboard" style={{color: "#ffff"}}><b>Dashboard</b></a>
-        </li>  &nbsp; &nbsp;&nbsp; 
+        </li>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/groups" style={{color: "#ffff"}}><b>Research Groups</b></a>
-        </li> &nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="nav-link" aria-current="page" href="/groups" style={{color: "#ffff"}}><b>FeedBack</b></a>
+        </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      
 
         <li class="nav-item dropdown">
@@ -38,7 +38,7 @@ export default class StudentNavBar extends Component {
             <li><a class="dropdown-item" href="#">SLIIT International</a></li>
 
           </ul>      
-        </li> &nbsp;&nbsp;&nbsp;
+        </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: "#ffff"}}>
@@ -52,7 +52,7 @@ export default class StudentNavBar extends Component {
              <li><a class="dropdown-item" href="#">Faculty of Graduate Studies and Research</a></li>
              <li><a class="dropdown-item" href="#">AWS Educate</a></li>
            </ul>      
-         </li> &nbsp;&nbsp;&nbsp;&nbsp;
+         </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  
 
          <li class="nav-item dropdown">

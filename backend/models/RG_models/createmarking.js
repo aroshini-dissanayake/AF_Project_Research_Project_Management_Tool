@@ -2,31 +2,34 @@ const mongoose = require('mongoose');
 
 const createmarkingSchema = new mongoose.Schema({
 
-deliverables:{
-    type : String,
-    required:true,
-},
-
-duedate:{
-    type : String,
-    required:true,
-},
-
-contribution:{
-    type : String,
-    required:true,
-},
-
-methodofsubmission:{
-    type : String,
-    required:true,
-},
-
-marksallocation:{
-    type : String,
-    required:true,
-},
-
+    criteria:{
+        type : String,
+        required:true,
+    },
+    
+    good:{
+        type : String,
+        required:true,
+    },
+    
+    avarage:{
+        type : String,
+        required:true,
+    },
+    poor:{
+        type : String,
+        required:true,
+    },
+    
+    comment:{
+        type : String,
+        required:false,
+    },
+    
+    marks:{
+        type : String,
+        required:false,
+    },
 });
 
 module.exports = mongoose.model('Createmarking', createmarkingSchema)

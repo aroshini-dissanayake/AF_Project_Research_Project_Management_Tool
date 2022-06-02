@@ -1,24 +1,23 @@
 import React, { Component } from 'react'
-import Faculties from '../AA_Components/faculties';
 import AdminNavBar from '../Layout/AdminNavBar';
 import Footer from '../Layout/footer';
 
 
 const supervisorList = () => {
-  window.location = `/supervisorList`
+  window.location = `/getsupervisor`
 }
 
 const cosupervisorList = () => {
-  window.location = `/cosupervisorList`
+  window.location = `/getcosupervisor`
 }
 const panelMemberList = () => {
-  window.location = `/panelMemberList`
+  window.location = `/getpanelmember`
 }
 const studentList = () => {
-  window.location = `/studentList`
+  window.location = `/getstudent`
 }
 const createmarkingschemes = () => {
-  window.location = `/createmarkingschemes`
+  window.location = `/presantation`
 }
 const studentgroups = () => {
   window.location = `/group/displaystudentgroups`
@@ -27,7 +26,7 @@ const uploadFile = () => {
   window.location = `/pdfupload`
 }
 const faculties = () => {
-  window.location = `/faculties`
+  window.location = `/#`
 }
 
 
