@@ -14,7 +14,7 @@ const supervisor = () => {
         }
         
 const chatgroups = () => {
-    window.location = `#`            
+    window.location = `/chatdialog`            
         }
 const marking = () => {
          window.location = `/evaluate`            
