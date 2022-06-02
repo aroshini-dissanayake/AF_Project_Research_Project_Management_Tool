@@ -135,6 +135,10 @@ render() {
         <tbody>
           {this.state.createmarking.map((createmarking) => (
              <tr>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
           <td>
             
             <a href={`/createmarking/${createmarking._id}`} style={{textDecoration:'none'}}>
@@ -145,22 +149,38 @@ render() {
           <td>{createmarking.good}</td>
           <td>{createmarking.avarage}</td>
           <td>{createmarking.poor}</td>
+<<<<<<< HEAD
           <td></td>
           <td></td>
           <td> 
+=======
+
+          <td></td>
+          <td></td>
+          <td> 
+
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
               <Button className="form-group" type="submit" style={{ background: "#C3FDB8", width: 10 + "%", align: "center" }} startIcon={<EditSharpIcon />} href={`/createmarkingedit/${createmarking._id}`}>
                         </Button>
 
                         &nbsp;
                         <Button className="form-group" type="submit" style={{ background: "#F75D59", width: 10 + "%", align: "center" }} startIcon={<DeleteForeverSharpIcon />} onClick={() => this.onDelete(createmarking._id)}>
                         </Button>
+<<<<<<< HEAD
 
+=======
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
               </td>
                  </tr>
 
           ))}
         </tbody>
         </table>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
         <div className="form-group">
                
                   <Button  href="/createmarkingadd" variant="contained" className="w-10" align="left" style={{ background: "#CCCCFF", width: +"%" }} startIcon={< AddCircleOutlinedIcon />}  >

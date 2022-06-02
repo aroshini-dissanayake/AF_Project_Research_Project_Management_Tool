@@ -40,7 +40,13 @@ export default class StudentDashboard extends Component {
     return (
       <div>
       <StudentNavBar/>    
+<<<<<<< HEAD
       <div className="container" ><br/><br/><br/>
+=======
+
+       <div className="container" ><br/><br/><br/>
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
        <div class="row row-cols-1 row-cols-md-3 g-5" >
        <div class="col" style={{width: "19rem",color:"white"}} > 
                <div class="shadow h-60" id="cardcol1">

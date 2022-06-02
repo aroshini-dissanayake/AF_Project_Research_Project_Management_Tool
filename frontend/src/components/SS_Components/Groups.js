@@ -25,24 +25,6 @@ componentDidMount(){
      })
  }
 
-//search group using group name
-filterData(studentgroups,searchKey){
-    const result = studentgroups.filter((studentgroups)=>
-    studentgroups.group_name.toLowerCase().includes(searchKey) 
-
-    )
-    this.setState({studentgroups:result})
-  }
-  handleSearchArea = (e)=>{
-    const searchKey = e.currentTarget.value;
-    axios.get("http://localhost:8070/student/displaygroups").then(res=>{
-        if(res.data.success){
-        this.filterData(res.data.existingGroups,searchKey)
-      }
-    });
-  }
-  
-
   render() {
     return (
       <div>
@@ -86,7 +68,11 @@ filterData(studentgroups,searchKey){
                          </table>
                             </div>     
     
+<<<<<<< HEAD
   </div>
+=======
+</div>
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
     )
   }
 }

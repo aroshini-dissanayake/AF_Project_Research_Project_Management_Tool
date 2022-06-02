@@ -21,7 +21,11 @@ const stdDocumentsSchema = new mongoose.Schema({
        type: String,
        required: true
     },
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
     stdDocName:{
       type: String,
       required: true

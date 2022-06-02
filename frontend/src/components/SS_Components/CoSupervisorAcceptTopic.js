@@ -30,7 +30,6 @@ filterData(studentgroups,searchKey){
       });
     }
    
-
 //retrieve student group details    
 componentDidMount(){
         this.retrieveStudentGroups();

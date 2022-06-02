@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
 import Footer from '../Layout/footer';
 import AdminNavBar from '../Layout/AdminNavBar';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 
+<<<<<<< HEAD
+=======
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
 
 export default class CoSupervisorremove extends Component {
     constructor(props){
@@ -33,8 +44,16 @@ onDelete = (cosupervisorID) => {
 
     if (window.confirm('Are you sure you wish to delete this details?')) {
       axios.delete(`http://localhost:8070/usersremove/cosupervisordelete/${cosupervisorID}`).then((res) => {
+<<<<<<< HEAD
        alert('Details Deleted Successfully');
   
+=======
+
+       alert('Details Deleted Successfully');
+
+        toast.warning('Details Deleted Successfully', { position: toast.POSITION.TOP_CENTER });
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
         //alert("Delete Successfully")
         this.retrievecosupervisorDetails();
   
@@ -80,6 +99,10 @@ onDelete = (cosupervisorID) => {
                        <input className="form-control" type="search"
                     placeholder="Serach" name="searchQuery" startIcon={< SearchSharpIcon />} onChange={this.handleSearchArea} >
                 </input></div><br/>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -90,7 +113,15 @@ onDelete = (cosupervisorID) => {
                          <th scope='col'>Feild</th>
                            <th scope='col'>Staff ID</th>
                          <th scope='col'>Role</th>
+<<<<<<< HEAD
                      <th scope='col'>Email</th>
+=======
+
+                     <th scope='col'>Email</th>
+
+                       <th scope='col'>Email</th>
+                    <th scope='col'>Action</th>
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                  </tr>
              </thead>
                <tbody>
@@ -113,9 +144,17 @@ onDelete = (cosupervisorID) => {
                     )}
                       </tbody>     
                          </table>
+<<<<<<< HEAD
                             </div><br/><br/><br/><br/><br/><br/>
                             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>   
                             <Footer/>
+=======
+
+                            </div><br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>   
+                            <Footer/>
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                               </div>
     )
   }

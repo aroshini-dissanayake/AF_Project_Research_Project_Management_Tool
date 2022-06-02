@@ -57,11 +57,19 @@ export default function presantationpdfupload(){
                 alert(err)
             })
         });
+<<<<<<< HEAD
     }
     );
 }
  
     return (
+=======
+    })
+  
+    }
+    return (
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
         <div>
         <AdminNavBar/> 
            <br/><br/>
@@ -88,6 +96,10 @@ export default function presantationpdfupload(){
                   <br/><br/>
                      <Footer/>
                         </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
     
     )
 

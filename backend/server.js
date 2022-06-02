@@ -22,6 +22,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cors());
+
+//To accept the JSON Data
 app.use(express.json());
 
 const URL = process.env.MONGODB_URL;
@@ -66,7 +68,10 @@ app.use("/usersremove",usersremoveRoutes);
 app.use("/presantationpdf",presantationpdfuploadRoutes);
 app.use("/assignment",PDFUploadRouter);
 app.use("/marking",uploadmarkingRoutes);
+<<<<<<< HEAD
 
+=======
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)

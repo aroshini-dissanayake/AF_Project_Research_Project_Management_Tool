@@ -11,8 +11,11 @@ import Staff_Dashboard from './components/SS_Components/Staff_Dashboard';
 import DisplayStudentgroups from './components/SS_Components/Display_studentgroups';
 import ResearchTopic from './components/SS_Components/ResearchTopic';
 import Add_Feedback from './components/SS_Components/Add_Feedback'
+<<<<<<< HEAD
 import SupervisorAcceptTopic from './components/SS_Components/SupervisorAcceptTopic';
 import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcceptTopic';
+=======
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
 import StaffProfile from './components/SS_Components/StaffProfile';
 import Add_panel_member from './components/SS_Components/Add_panel_member'
 import PanelMembers from './components/SS_Components/PanelMembers';
@@ -52,6 +55,7 @@ import AddSupervisors from './components/IS_Components/Add_supervisor';
 import Display_co_supervisors from './components/IS_Components/Display_co_supervisors';
 import AddCoSupervisors from './components/IS_Components/Add_co_supervisor';
 import DocUpload from './components/IS_Components/DocUpload';
+<<<<<<< HEAD
 
 export default class App extends Component {
     render() {
@@ -96,6 +100,71 @@ export default class App extends Component {
           <Route path = "/evaluate" component={Evaluate}/>
           <Route path = "/uploadevaluate" component={uploadmarkingschemes}/>
 
+=======
+import SupervisorAcceptTopic from './components/SS_Components/SupervisorAcceptTopic';
+import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcceptTopic';
+import StaffProfile from './components/SS_Components/StaffProfile';
+import Add_panel_member from './components/SS_Components/Add_panel_member'
+import PanelMembers from './components/SS_Components/PanelMembers';
+import PDFUpload from './components/SS_Components/PDFUpload';
+import AdminViewStaff from './components/SS_Components/AdminViewStaff';
+import Add_Feedback from './components/SS_Components/Add_Feedback'
+import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
+import Homemarkingschemes from './components/RD_Components/homemarkingschemes';
+import Editmarkingschemes from './components/RD_Components/editmarkingschemes';
+import Markingschemesdetails from './components/RD_Components/markingschemesdetails';
+import Usersremove from './components/RD_Components/usersremove';
+import Supervisorremove from './components/RD_Components/supervisorremove';
+import CoSupervisorremove from './components/RD_Components/cosupervisorremove';
+import Studentsremove from './components/RD_Components/studentsremove';
+import presantationpdfupload from './components/RD_Components/presantationpdfupload';
+
+
+export default class App extends Component {
+    render() {
+      return (
+        <Router>
+          <Switch>
+
+
+    {/* Sajani */}
+          <Route path = "/" component={StudentHomePage} exact/>
+          <Route path = "/studentdashboard" component={StudentDashboard}/>
+          <Route path = "/groups" component={Groups}/>
+          <Route path = "/staff" component={BackendHomePage}/>
+          <Route path = "/stafflogin" component={StaffLogin}/>
+          <Route path = "/staffsignup" component={StaffSignup}/>
+          <Route path = "/staffdashboard" component={Staff_Dashboard}/>
+          <Route path = "/group/displaystudentgroups" component ={DisplayStudentgroups} />  
+          <Route path = "/topic/displayresearchtopic" component={ResearchTopic}/>
+          <Route path = "/addfeedback/:id" component={Add_Feedback}/>
+          <Route path = "/requestsupervisor" component={SupervisorAcceptTopic}/>
+          <Route path = "/requestcosupervisor" component={CoSupervisorAcceptTopic}/>
+          <Route path = "/staffprofile" component={StaffProfile}/>
+          <Route path = "/studentgroups/:id" component={Add_panel_member}/>
+          <Route path = "/panelmember" component={PanelMembers}/>
+          <Route path = "/pdfupload" component={PDFUpload}/>
+          <Route path = "/displayStaffRole" component={AdminViewStaff}/>
+
+    {/* Randy */}
+          <Route path = "/adminsignin" component={AdminLogin}/> 
+          <Route path = "/adminsignup" component={Adminregistration}/>  
+          <Route path = "/admindashboard" component={Admindashboard}/>  
+          <Route path = "/adminprofile" component={AdminProfile}/>  
+          <Route path = "/homemarkingschemes" component={Homemarkingschemes}/> 
+          <Route path = "/getcosupervisor" component={CoSupervisorremove}/>
+          <Route path = "/createmarkingadd" component={Createmarkingschemes}/>
+          <Route path = "/getsupervisor" component={Supervisorremove}/>
+          <Route path = "/getpanelmember" component={Usersremove}/>
+          <Route path = "/getstudent" component={Studentsremove}/>
+          <Route path = "/presantation" component={presantationpdfupload}/>
+          <Route path = "/createmarkingedit/:createmarkingID" component={Editmarkingschemes}/>
+          <Route path = "/createmarking/:createmarkingID" component={Markingschemesdetails}/>
+          <Route path = "/evaluateedit/:createmarkingID" component={Evaluateedit}/>
+          <Route path = "/evaluate" component={Evaluate}/>
+          <Route path = "/uploadevaluate" component={uploadmarkingschemes}/>
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
 
     {/* Aroshini */}
           <Route path = "/signin" component={StudentLogin}/>
@@ -105,6 +174,7 @@ export default class App extends Component {
           <Route path= "/groupss" component={Groupss}/>
           <Route path= "/display/:id" component={Add_Group_Members}/>
           <Route path = "/pdfdisplay" component={PDFDisplay}/> 
+<<<<<<< HEAD
        
 
     {/* Imaya */}
@@ -122,3 +192,24 @@ export default class App extends Component {
       )
     }
 }
+=======
+
+
+    {/* Imaya */}
+          <Route path = "/regtopic/displayresearchtopic" component={Display_researchtopics}/> 
+          <Route path = "/regtopic/research/:id" component={AddResearchTopic}/>
+          <Route path = "/regtopic/displaysupervisors" component={Display_supervisors}/>
+          <Route path = "/regtopic/addSupervisor/:id/:feild" component={AddSupervisors}/> 
+          <Route path = "/regtopic/displaycosupervisors" component={Display_co_supervisors}/> 
+          <Route path = "/regtopic/addcoSupervisor/:id/:feild" component={AddCoSupervisors}/> 
+          <Route path = "/document/submitdoc" component={DocUpload}/> 
+
+
+          </Switch>
+        </Router>
+      )
+    }
+}
+
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32

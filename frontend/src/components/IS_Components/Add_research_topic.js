@@ -4,7 +4,10 @@ import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
 import Button from '@material-ui/core/Button';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
 export default class Add_research_topic extends Component{
    constructor(props){  
        super(props);
@@ -14,13 +17,18 @@ export default class Add_research_topic extends Component{
     this.onChangeResearchfield = this.onChangeResearchfield .bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
        this.state={
            group_name:"",
            researchTopic:"",
            researchField:"",
        }
     }
- 
+
+
   async componentDidMount(){
        const id = this.props.match.params.id;
        await axios.get(`http://localhost:8070/student/display/${id}`).then((res)=>{
@@ -44,13 +52,25 @@ export default class Add_research_topic extends Component{
       })
     }
 
+<<<<<<< HEAD
    onSubmit = (e)=>{
+=======
+
+
+  
+  onSubmit(e) {
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
       e.preventDefault();
       const id = this.props.match.params.id;
       const topicinfo = {
         researchTopic: this.state.researchTopic,
         researchField: this.state.researchField,
         
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
        }
  
        axios.post(`http://localhost:8070/regtopic/research/${id}`,topicinfo).then((res)=>{ 
@@ -58,10 +78,15 @@ export default class Add_research_topic extends Component{
         alert("Research Topic and Field registered");
         window.location.href="/regtopic/displayresearchtopic"
       
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
    })
    .catch((e)=>{
    });
 }
+
  render(){
 return(
 <div>
@@ -73,6 +98,10 @@ return(
            <b><u>ADD RESEARCH TOPIC AND FIELD TO STUDENT GROUP</u></b></h3>
               <form onSubmit={this.onSubmit} className="text-color">
                 <div className="form-group">
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                   <div align="left"><br/> <br/>
                  <label style={{marginBottom:'2px'}}><b>Research Topic</b></label>
               <input type="userInput" required className="form-control" placeholder="Enter the Research Topic" value={this.state.researchTopic}
@@ -94,4 +123,4 @@ return(
   </div>          
        )
    }
-}
+  }

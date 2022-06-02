@@ -2,14 +2,22 @@ import React,{Component} from 'react' ;
 import axios from "axios";
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Button from '@material-ui/core/Button';
- 
+
 export default class Add_co_supervisor extends Component{
    constructor(props){  
        super(props);
 
+<<<<<<< HEAD
        this.onChangeGrpcoSupervisor = this.onChangeGrpcoSupervisor .bind(this);
        this.onSubmit = this.onSubmit.bind(this);  
 
+=======
+
+       this.onChangeGrpcoSupervisor = this.onChangeGrpcoSupervisor .bind(this);
+       this.onSubmit = this.onSubmit.bind(this);  
+
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
        this.state={
            group_name:"",
            researchTopic:"",
@@ -19,7 +27,7 @@ export default class Add_co_supervisor extends Component{
            cosupervisors:[]
        }
     }
- 
+    
   async componentDidMount(){
        const feild = this.props.match.params.feild
        const id = this.props.match.params.id;
@@ -33,8 +41,13 @@ export default class Add_co_supervisor extends Component{
            }
          })
        }
+<<<<<<< HEAD
     
    onChangeGrpcoSupervisor(e) {
+=======
+
+       onChangeGrpcoSupervisor(e) {
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
         this.setState({
             grpcoSupervisor: e.target.value
         })
@@ -45,6 +58,10 @@ export default class Add_co_supervisor extends Component{
 
        const id = this.props.match.params.id;
        const data = {
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
            grpcoSupervisor:this.state.grpcoSupervisor,
        }
 
@@ -54,6 +71,10 @@ export default class Add_co_supervisor extends Component{
             window.location.href="/regtopic/displaycosupervisors"
   
         })
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
    .catch((e)=>{
    });
 }
@@ -62,6 +83,10 @@ export default class Add_co_supervisor extends Component{
 return(
 <div>
    <StudentNavBar/>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
      <br/><br/><br/>
         <div align="center">
            <div className="card-header" style={{width:"820px",background:"#B7CEEC"}}><br/><br/>
@@ -70,7 +95,15 @@ return(
             <form onSubmit={this.onSubmit} className="text-color">
         <div className="form-group">
     <div align="left"><br/> 
+<<<<<<< HEAD
         <label style={{marginBottom:'2px'}}><b>Co-Supervisor Name</b></label>
+=======
+
+        <label style={{marginBottom:'2px'}}><b>Co-Supervisor Name</b></label>
+
+        <label style={{marginBottom:'2px'}}><b>Co-Supervisor Name</b></label>
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
             <input type="userInput" required className="form-control mt-2" placeholder="Enter Co-Supervisor Name" value={this.state.grpcoSupervisor}
                  onChange={this.onChangeGrpcoSupervisor}/>
                     </div></div><br/><br/>
@@ -98,11 +131,19 @@ return(
                     <tbody>
                 {this.state.cosupervisors.map((cosupervisors,index)=>(
              <tr key={index}>    
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                   <th scope='row'>{index + 1}</th>
                        <td>{cosupervisors.role}</td>
                            <td>{cosupervisors.name}</td>
                               <td>{cosupervisors.email}</td>
                                   <td>{cosupervisors.feild}</td>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                                     </tr>
                                     )
                                   )}

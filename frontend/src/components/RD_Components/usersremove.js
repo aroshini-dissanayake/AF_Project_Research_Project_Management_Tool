@@ -3,6 +3,14 @@ import axios from 'axios';
 import Footer from '../Layout/footer';
 import AdminNavBar from '../Layout/AdminNavBar';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
+<<<<<<< HEAD
+=======
+;
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
 
 
 export default class Usersremove extends Component {
@@ -27,6 +35,10 @@ retrievepanelmemberDetails(){
   })
  }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
  filterData(studentsremove, searchKey) {
   const result = studentsremove.filter((stud) =>
     stud.name.toLowerCase().includes(searchKey) ||
@@ -52,6 +64,10 @@ onDelete = (panelmemberID) => {
 
   if (window.confirm('Are you sure you wish to delete this details?')) {
     axios.delete(`http://localhost:8070/usersremove/panelmemberdelete/${panelmemberID}`).then((res) => {
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
       alert('Details Deleted Successfully');
 
       //alert("Delete Successfully")
@@ -64,6 +80,10 @@ onDelete = (panelmemberID) => {
 
 render() {
     return ( 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                             <div>
                           <AdminNavBar/>
                      <br/><br/>
@@ -73,6 +93,10 @@ render() {
                    <input className="form-control" type="search"
                       placeholder="Serach" name="searchQuery" startIcon={< SearchSharpIcon />} onChange={this.handleSearchArea} >
                  </input></div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -100,6 +124,10 @@ render() {
                      <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(usersremove._id)}>
               <i className="far fa-trash-alt"></i>&nbsp;Delete
             </a>   
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                      </td>              
                 </tr>
                   )
@@ -110,6 +138,10 @@ render() {
                             <br/><br/><br/><br/><br/><br/>
                             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>   
                             <Footer/>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                               </div>
     )
   }

@@ -1,11 +1,23 @@
 import axios from 'axios';
 import React, { Component, useState } from 'react'
 import Button from "@material-ui/core/Button";
+<<<<<<< HEAD
 import 'react-toastify/dist/ReactToastify.css';
 import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
 import AdminNavBar from '../Layout/AdminNavBar';
 import Footer from '../Layout/footer';
 
+=======
+
+import AdminNavBar from '../Layout/AdminNavBar';
+import Footer from '../Layout/footer';
+
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
+
+    toast.configure() 
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
 
     export default function Createmarkingschemes() {
 
@@ -26,17 +38,35 @@ import Footer from '../Layout/footer';
                 poor:poor,
                 comment:comment,
                 marks:marks,
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
             };
 
             axios.post("http://localhost:8070/createmarking/createmarkingadd",data)
             .then(()=>{
+<<<<<<< HEAD
              alert('Marking Added Successfully')
+=======
+
+             alert('Marking Added Successfully')
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
               window.setTimeout(function() {
                 window.location.href = '/homemarkingschemes';
             }, 2000);
             }).catch((err)=>{
               console.log(data)
+<<<<<<< HEAD
              alert('Create Marking Error Recheck All Data');
+=======
+
+             alert('Create Marking Error Recheck All Data');
+
+              toast.warning('Create Marking Error Recheck All Data',{position:toast.POSITION.TOP_CENTER});
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
             })
 
             setcriteria("");
@@ -51,8 +81,18 @@ import Footer from '../Layout/footer';
     // render() {
         return (
             <div>
+<<<<<<< HEAD
           <AdminNavBar/> 
           <br/><br/>
+=======
+
+          <AdminNavBar/> 
+          <br/><br/>
+
+          <AdminNavBar/> 
+          <br/><br/>
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
              <div className="pt-3" align="center" >
              <div className="card shadow mb-8 w-50">
                <div className="card-header py-3">
@@ -106,7 +146,13 @@ import Footer from '../Layout/footer';
                       placeholder="Enter Inputs"
                       onChange={(e)=>{
                         setavarage(e.target.value)}}
+<<<<<<< HEAD
                         required/>
+=======
+
+                        required/>
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                   </div>
 
 
@@ -120,8 +166,15 @@ import Footer from '../Layout/footer';
                       title="Please Enter Valid Inputs"
                       placeholder="Enter Inputs"
                       onChange={(e)=>{
+<<<<<<< HEAD
                         setpoor(e.target.value)}}
                         required/>
+=======
+
+                        setpoor(e.target.value)}}
+                        required/>
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                   </div>
     
                   
@@ -133,10 +186,18 @@ import Footer from '../Layout/footer';
                       name="comment"
                       id="comment" 
                       title="Please Enter Valid Inputs"
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                       // placeholder="Enter Inputs" 
                       onChange={(e)=>{
                         setcomment(e.target.value)}} 
                        readOnly/>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                   </div>
     
                  
@@ -150,10 +211,18 @@ import Footer from '../Layout/footer';
                       // maxLength="10"
                       // pattern ="\d{10}"
                       title="Please Enter Valid Inputs"
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                       // placeholder="Enter Marks"
                       onChange={(e)=>{
                         setmarks(e.target.value)}}
                         readOnly/>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                   </div>
                   <div className="form-group">
                     <Button className="form-group" type="submit" style={{ marginTop: '5px', background: "#F75D59", width: 100 + "%" }} startIcon={<AddCommentRoundedIcon/>}>
@@ -168,8 +237,15 @@ import Footer from '../Layout/footer';
             </div>
           </div>
         </div>
+<<<<<<< HEAD
         <br/><br/>
         <Footer/>
+=======
+
+        <br/><br/>
+        <Footer/>
+
+>>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
      </div>
       )
 }
