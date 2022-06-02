@@ -23,6 +23,30 @@ router.post("/signup", async (req, res) => {
       pwd,
       imageUrl
     } = req.body;
+
+//unit test
+if(!name || !nic  || !faculty ||  !student_id || !batch || !specialization || !phone || !DOB || !email || !password)
+return res
+.status(400)
+.json({errorMessage : "required"});
+
+if(name.length<4)
+return res.status(400).json({
+    errorMessage: "Please enter a first name of at least 3 characters.",
+});
+
+
+if(phone.length<5)
+return res.status(400).json({
+    errorMessage: "Please enter a first name of at least 3 characters.",
+});
+
+if(student_id.lenght <3)
+return res.status(400).json({
+  errorMessage: "Please Enter a Valid Student ID..!!"
+});    
+
+
   
  let student_a = await Student.findOne({ email });
   if (student_a) {
