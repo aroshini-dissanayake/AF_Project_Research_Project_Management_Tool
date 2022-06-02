@@ -7,10 +7,6 @@ let student = require('../../models/AA_models/student');
 //Get panel member Details
 
 router.get("/getpanelmember",async(req,res)=>{
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
     try{
     const panelmember = await staff.find({
     role: "Panel Memeber" 
@@ -48,10 +44,6 @@ router.route('/panelmemberdelete/:panelmemberID').delete((req,res)=>{
 
 router.get("/getsupervisor",async(req,res)=>{
     try{
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
         const supervisor = await staff.find({
         role: "Supervisor" 
         })
@@ -64,10 +56,6 @@ router.get("/getsupervisor",async(req,res)=>{
         console.log(error.message);
         res.status(500)
         .send({error:error.message});
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
     }
     })
 
@@ -107,10 +95,6 @@ router.get("/getcosupervisor",async(req,res)=>{
     })
 
     
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
 //Delete Supervisor details
 router.route('/cosupervisordelete/:cosupervisorID').delete((req,res)=>{
     staff.findByIdAndRemove(req.params.cosupervisorID).exec((err,deletecosupervisor)=>{

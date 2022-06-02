@@ -41,12 +41,9 @@ router.post('/adminsignup', async (req, res) => {
         errorMessage: "Please Enter a Valid SLIIT ID..!!"
       });
 
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
       //Check application has already created account using given email or SLIIT  id  
       let admin_a = await admin.findOne({ email });
       if (admin_a) {

@@ -1,15 +1,7 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-<<<<<<< HEAD
   "description": "",
-=======
-
-  "description": "",
-
-  "description": "",
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html"
@@ -24,10 +16,6 @@
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@material/icon-button": "^14.0.0",
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
     "@mui/icons-material": "^5.8.2",
     "@mui/material": "^5.8.2",
     "axios": "^0.27.2",

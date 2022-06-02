@@ -2,10 +2,6 @@ import React,{Component} from 'react' ;
 import axios from "axios";
 import StaffNavbar from "../Staff-Layout/StaffNavbar";
 import CheckIcon from '@mui/icons-material/Check';
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
 import Button from '@material-ui/core/Button';
 import ClearIcon from '@mui/icons-material/Clear';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
@@ -151,9 +147,5 @@ render(){
                   </table>
               </div> 
          </div>  
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
         )}
 }

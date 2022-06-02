@@ -4,12 +4,7 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Button from '@material-ui/core/Button';
-<<<<<<< HEAD
  
-=======
-import Footer from '../Layout/footer';
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
  
 export default class Display_supervisors extends Component{
    constructor(props){
@@ -126,9 +121,5 @@ filterData(studentgroups,searchKey){
                   </table>
                    </div><br/>
                    </div> 
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                               )}
                        }

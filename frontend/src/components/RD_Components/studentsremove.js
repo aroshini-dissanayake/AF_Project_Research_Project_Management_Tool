@@ -1,23 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import Footer from '../Layout/footer';
 import AdminNavBar from '../Layout/AdminNavBar';
 
 
-<<<<<<< HEAD
-=======
-
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-toast.configure()
-
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
 export default class Studentsremove extends Component {
     constructor(props){
         super(props);
@@ -83,10 +70,6 @@ handleSearchArea = (e) => {
  render() {
     return ( 
                         <div>
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                           <AdminNavBar/>
                      <br/><br/>
                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
@@ -100,10 +83,6 @@ handleSearchArea = (e) => {
                 </input></div>
 
                </div><br/>
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -119,11 +98,6 @@ handleSearchArea = (e) => {
                      <th scope='col'>Date Of Birth</th>
                      <th scope='col'>Email</th>
                      <th scope='col'>Action</th>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                  </tr>
              </thead>
                <tbody>
@@ -150,17 +124,9 @@ handleSearchArea = (e) => {
                       </tbody>     
                          </table>
                             </div>
-<<<<<<< HEAD
                             <br/><br/><br/><br/><br/><br/>
                             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                             <Footer/>
-=======
-
-                            <br/><br/><br/><br/><br/><br/>
-                            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                            <Footer/>
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                               </div>
     )
   }

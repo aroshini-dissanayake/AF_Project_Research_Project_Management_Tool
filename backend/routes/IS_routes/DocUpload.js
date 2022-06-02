@@ -10,11 +10,7 @@ const router = express.Router();
      try{
       let studentId = req.Std._id
       const student = await Student.findById(studentId)
-<<<<<<< HEAD
      
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
       if (!student) {
         throw new Error('There is no student')
      }

@@ -19,10 +19,6 @@ router.post("/presantation", (req, res) => {
 
 //get pdf 
 router.get("/presantationpdfdisplay",async (req, res) => {
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
   const pdf = await Presantation.find();
   try {
     res.json(pdf)
@@ -31,8 +27,4 @@ router.get("/presantationpdfdisplay",async (req, res) => {
     res.send({ status: "Error with PDF Fetched", error: error.message });
   }
 });
-<<<<<<< HEAD
-
-=======
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
   module.exports = router;

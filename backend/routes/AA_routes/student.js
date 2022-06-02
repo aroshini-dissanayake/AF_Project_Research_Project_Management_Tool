@@ -23,29 +23,6 @@ router.post("/signup", async (req, res) => {
       pwd,
       imageUrl
     } = req.body;
-
-//unit testing
-  if(!name || !nic || !faculty || !student_id || !batch || !specialization || !phone || !DOB || !email || !pwd || !imageUrl) 
-  return res
-  .status(400)
-  .json({errorMessage : "Required"});
-  
-  if(name.lenght <3)
-  return res.status(400).json({
-    errorMessage: "Please Enter a First name of atleaset 3 characters..!!"
-  });
-
-  if(nic.lenght >10)
-  return res.status(400).json({
-    errorMessage: "Please Enter a Valid NIC Number..!!"
-  });
-
-  if(student_id.lenght <3)
-  return res.status(400).json({
-    errorMessage: "Please Enter a Valid Student ID..!!"
-  });
-
-
   
  let student_a = await Student.findOne({ email });
   if (student_a) {

@@ -15,10 +15,6 @@ const supervisor = () => {
         
 const chatgroups = () => {
     window.location = `#`            
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
         }
 const marking = () => {
          window.location = `/evaluate`            
@@ -30,29 +26,17 @@ const uploadmarking = () => {
 export default class Staff_Dashboard extends Component {
     render(){
         return(
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
             <div>
             <StaffNavbar/>
              <div style={{ backgroundColor:"black" ,height:"500px"}} >
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
      <div class="carousel-item">
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
    <img src="https://static.sliit.lk/wp-content/uploads/2020/10/29121536/pdp-sliit.jpg" class="d-block w-100" alt="..."></img>
 </div>
    <div class="carousel-item">
       <img src="https://static.sliit.lk/wp-content/uploads/2020/01/06040608/SLIIT-BSc-Hons-in-Information-Technology-Specializing-in-Data-Science.jpg" class="d-block w-100" alt="..."></img>
          </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
             <div class="carousel-item">
               <img src="https://static.sliit.lk/wp-content/uploads/2018/05/research-slider-n1.jpg" class="d-block w-100" alt="..."></img>
             </div>
@@ -144,10 +128,6 @@ export default class Staff_Dashboard extends Component {
          <br/><br/>
       <Footer/>
   </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
         )
     }
 }

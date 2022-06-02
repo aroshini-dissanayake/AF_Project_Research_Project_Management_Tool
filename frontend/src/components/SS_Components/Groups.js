@@ -68,11 +68,7 @@ componentDidMount(){
                          </table>
                             </div>     
     
-<<<<<<< HEAD
   </div>
-=======
-</div>
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
     )
   }
 }

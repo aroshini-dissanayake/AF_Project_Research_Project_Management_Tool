@@ -39,16 +39,6 @@ render() {
 <div><AdminNavBar/>
 <br/><br/><br/>
       <div align="center" style= {{marginTop:'20px'}}>
-<<<<<<< HEAD
-
-=======
-
-          <h4>{criteria}</h4>
-          <h4>{good}</h4>
-          <hr/>
-
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
       <dl className="row">
   <div className="pt-3" align="center" background color="red">
     <div className="card shadow mb-8 w-50">
@@ -59,7 +49,6 @@ render() {
        
            <dt className="col-sm-3">Good</dt>
             <dd className="col-sm-9">{good}</dd>
-<<<<<<< HEAD
 
             <dt className="col-sm-3">Avarage</dt>
             <dd className="col-sm-9">{avarage}</dd>
@@ -70,18 +59,6 @@ render() {
            <dt className="col-sm-3">Comment</dt>
            <dd className="col-sm-9">{comment}</dd>
 
-=======
-
-            <dt className="col-sm-3">Avarage</dt>
-            <dd className="col-sm-9">{avarage}</dd>
-
-            <dt className="col-sm-3">Poor</dt>
-           <dd className="col-sm-9">{poor}</dd>
-
-           <dt className="col-sm-3">Comment</dt>
-           <dd className="col-sm-9">{comment}</dd>
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
            <dt className="col-sm-3">Marks</dt>
             <dd className="col-sm-9">{marks}</dd>
 

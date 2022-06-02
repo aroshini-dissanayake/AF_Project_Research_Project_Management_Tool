@@ -72,10 +72,6 @@ componentDidMount(){
 render(){
       return( 
          <div>
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
          <StaffNavbar/>  <br/><br/> <br/>
             <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Accept Supervisor Request</u></b></h3><br/><br/>
                <div className='container'>  
@@ -115,10 +111,6 @@ render(){
                       <div><Button style={{color:"#9F000F",fontFamily:"sans-serif"}}><b>{studentgroups.supervisortopicstatus}</b></Button></div>
 
                   }
-<<<<<<< HEAD
-=======
-
->>>>>>> d0a5cd10221efd4bd374f942d0eda83b42d67a32
                   </td>
                    <td>                       
                       <IconButton aria-label='btn btn-success' size="small"
