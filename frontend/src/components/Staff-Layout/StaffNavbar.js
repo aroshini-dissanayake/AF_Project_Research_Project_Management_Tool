@@ -13,19 +13,15 @@ export default class StaffNavbar extends Component {
 
        <div class="container">  
        <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
-       <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
+       <ul class="navbar-nav me-auto mb-2 mb-lg-0">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/staffdashboard" style={{color: "#ffff"}}>Dashboard</a>
-        </li>  &nbsp;&nbsp; &nbsp;&nbsp;
-
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/topic/displayresearchtopic" style={{color: "#ffff"}}>Research Topics</a>
-        </li>   &nbsp;&nbsp; &nbsp;&nbsp;
+          <a class="nav-link" aria-current="page" href="/staffdashboard" style={{color: "#ffff"}}><b>Dashboard</b></a>
+        </li>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: "#ffff"}}>
-            Faculties</a>
+            <b>Faculties</b></a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style={{background: "#ffff"}}>
             <li><a class="dropdown-item" href="#">Faculty of Computing</a></li>
             <li><a class="dropdown-item" href="#">Faculty of Business</a></li>
@@ -37,27 +33,46 @@ export default class StaffNavbar extends Component {
             <li><a class="dropdown-item" href="#">SLIIT International</a></li>
 
           </ul>      
-        </li>  &nbsp;&nbsp; &nbsp;&nbsp;
-        
+        </li>  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: "#ffff"}}>
+            <b>Resources</b> </a>
+           <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style={{background: "#ffff	"}}>
+             <li><a class="dropdown-item" href="#">Eduscope</a></li>
+             <li><a class="dropdown-item" href="#">AutoDesk</a></li>
+             <li><a class="dropdown-item" href="#">Sysco Network Academy</a></li>
+             <li><a class="dropdown-item" href="#">Microsoft Imagine</a></li>
+             <li><a class="dropdown-item" href="#">Github Student Support</a></li>
+             <li><a class="dropdown-item" href="#">Faculty of Graduate Studies and Research</a></li>
+             <li><a class="dropdown-item" href="#">AWS Educate</a></li>
+           </ul>      
+         </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: "#ffff"}}>
-            Libraries</a>
+            <b>Libraries</b></a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style={{background: "#ffff"}}>
             <li><a class="dropdown-item" href="#">SLIIT Online Library</a></li>
             <li><a class="dropdown-item" href="#">Digital Library</a></li>
             <li><a class="dropdown-item" href="#">Research & Publication</a></li>
           </ul>     
-        </li>  &nbsp;&nbsp; &nbsp;&nbsp;
-
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/requestsupervisor" style={{color: "#ffff"}}>Supervior Request</a>
-        </li>   &nbsp;&nbsp; &nbsp;&nbsp;
-
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/requestcosupervisor" style={{color: "#ffff"}}>Co-Supervior Request</a>
-        </li>  &nbsp;&nbsp; &nbsp;&nbsp;
-
-
+        </li>  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+        <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: "#ffff"}}>
+            <b>Suport Services</b> </a>
+           <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style={{background: "#ffff	"}}>
+             <li><a class="dropdown-item" href="#">Faculties</a></li>
+             <li><a class="dropdown-item" href="#">Student Afires</a></li>
+             <li><a class="dropdown-item" href="#">Examination</a></li>
+             <li><a class="dropdown-item" href="#">Career Guidance</a></li>
+             <li><a class="dropdown-item" href="#">Time Tables</a></li>
+             <li><a class="dropdown-item" href="#">Student IT services</a></li>
+           </ul>      
+         </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
 
       </ul>
             <form class="d-flex">

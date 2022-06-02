@@ -11,18 +11,27 @@ const studentgroupsSchema = new mongoose.Schema({
         type: String,
         required:false,
     },
+    
     topicstatus:{
         type: String,
         required:false,
     },
+
     supervisortopicstatus:{
         type: String,
         required:false,
     },
+
     cosupervisortopicstatus:{
         type: String,
         required:false,
-    }
+    },
+
+    feedback:{
+        type: String,
+        required:false,
+    },
+
 });
 
 const Studentgroup = mongoose.model("studentgroups",studentgroupsSchema);

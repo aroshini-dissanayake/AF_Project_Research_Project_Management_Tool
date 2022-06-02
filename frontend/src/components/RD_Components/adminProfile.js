@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import AdminNavBar from '../Layout/AdminNavBar';
 import BackendHomeNavBar from '../Layout/BackendHomeNavBar';
 import Footer from '../Layout/footer';
-
+import CircularProgress from '@material-ui/core/CircularProgress';
+import UpdateSliitProfile from './update-admin'
 
 const AdminProfile = () => {
     const [name, setname] = useState(null)
@@ -12,6 +12,7 @@ const AdminProfile = () => {
     const [sliitid, setsliitid] = useState(null)
     const [email, setemail] = useState(null)
     const [show, setShow] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const getUserData = async () => {
@@ -28,6 +29,7 @@ const AdminProfile = () => {
                   setsliitid(res.data.Admin.sliitid)
                   setemail(res.data.Admin.email)
                   setShow(res.data.Admin.show)
+                  setLoading(false)
 
                 }).catch((error) => {
                     console.log(error.message)
@@ -38,6 +40,12 @@ const AdminProfile = () => {
           }
           getUserData()
         }, [])
+
+
+ //update admin details
+ const updateUserProfile = () => {
+    setShow(true)
+  }
 
  //delete the staff member account
  const deleteAdmin = async () => {
@@ -50,7 +58,7 @@ const AdminProfile = () => {
     if (window.confirm('Are you sure you wish to delete this Account?')) {
         await axios.delete('http://localhost:8070/admin/admindelete', config)
         .then((res) => {
-          toast.success('Your account deleted successfuly',{position:toast.POSITION.TOP_CENTER});
+         alert('Your account deleted successfuly');
           localStorage.removeItem('Authorization')
           window.location="/adminsignup"
        
@@ -64,14 +72,21 @@ const AdminProfile = () => {
    const adminLogout = () => {
       if (window.confirm('Are you sure you wish to logout from this Account?')) {
         localStorage.removeItem('Authorization')
-        toast.success('Log out successfuly',{position:toast.POSITION.TOP_CENTER});
+       alert('Log out successfuly');
         window.location = "/"
       }
    }
 
+   if (loading) {
+    return <div className="d-flex justify-content-center" style={{ paddingTop: 400 }}>
+       <CircularProgress hidden={false} />
+    </div>
+ }
+
+
           return (
                       <div class="bod" style={{background:"#F8F8FF"}}>
-                   <BackendHomeNavBar/>
+                   <AdminNavBar/>
                <br/><br/><br/><br/><br/>       
            <div class="container">
        <div class="main-body">
@@ -133,7 +148,7 @@ const AdminProfile = () => {
                       <div class="col-sm-12"><br/>
                           <center>
                  <button style={{background: "#151B54", color:"#ffff"}} onClick={adminLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
-           <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteAdmin} class="btn btn " target="__blank">Delete Account</button></center>
+                 <button style={{background: "#9F000F", color:"#ffff"}} onClick={updateUserProfile} class="btn btn " target="__blank">Update Details</button></center>
        </div>
            </div>     
                </div>  
@@ -141,6 +156,14 @@ const AdminProfile = () => {
                         </div>
                       </div>
                  </div>
+<UpdateSliitProfile
+     upname= {name}
+     upphone= {phone}
+     upsliitid= {sliitid}
+     upemail= {email}
+     show={show}
+     onHide={() => setShow(false)}
+         />
              </div>
          </div>
      <br/><br/><br/><br/><br/><br/>       

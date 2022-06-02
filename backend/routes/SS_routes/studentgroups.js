@@ -171,6 +171,27 @@ router.post("/requestcosupervisor/:id/:msg", async (req, res) => {
 });
 
 
+//add feedback to student groups
+router.post("/addfeedback/:id", async (req, res) => {
+  const groupId = req.params.id;
+  try {
+    const group1 = await Studentgroups.findById(groupId);
+    if (!group1) {
+      throw new Error("There is no group..!!!");
+    }
+    const feed_back = req.body.feedback;
+    group1.feedback = feed_back;
+    await group1.save();
+
+    return res.status(200).json({
+      success: true,
+      studentgroups: group1,
+    });
+  } catch (error) {
+    res.status(500).send({ status: "error", error: error.message });
+  }
+});
+
 
 
 module.exports = router;
