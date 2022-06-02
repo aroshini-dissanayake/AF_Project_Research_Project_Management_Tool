@@ -20,7 +20,11 @@ export default class StudentNavBar extends Component {
         </li>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/groups" style={{color: "#ffff"}}><b>FeedBack</b></a>
+<<<<<<< HEAD
         </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=======
+        </li> &nbsp;&nbsp;&nbsp;&nbsp;
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
      
 
         <li class="nav-item dropdown">

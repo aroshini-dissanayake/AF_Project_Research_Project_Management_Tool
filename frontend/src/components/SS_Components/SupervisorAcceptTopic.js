@@ -29,6 +29,7 @@ filterData(studentgroups,searchKey){
        }
      });
    }
+  
    
 //retrieve student group details    
 componentDidMount(){
@@ -71,6 +72,7 @@ componentDidMount(){
 render(){
       return( 
          <div>
+<<<<<<< HEAD
          <StaffNavbar/>  <br/><br/> <br/>
             <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Accept Supervisor Request</u></b></h3><br/><br/>
                <div className='container'>  
@@ -110,6 +112,62 @@ render(){
                       <div><Button style={{color:"#9F000F",fontFamily:"sans-serif"}}><b>{studentgroups.supervisortopicstatus}</b></Button></div>
 
                   }
+=======
+            <StaffNavbar/>  <br/><br/> <br/>
+               <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Accept Supervisor Request</u></b></h3><br/><br/>
+                  <div className='container'>  
+                    <div className="col-md-3" >
+                       <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search " onChange={this.handleSearchArea}/>
+                          <br/> 
+                            </div>                        
+                              <table class="table">
+                           <thead>
+                       <tr bgcolor="#79BAEC">
+                   <th scope='col'>No</th>
+               <th scope='col'>Group Name</th>
+           <th scope='col'>Research Feild</th>
+        <th scope='col'>Research Topic</th>
+     <th scope='col'>Supervisor Name</th>
+        <th scope='col'>Status</th>
+          <th scope='col'>Accept</th>
+             <th scope='col'>Reject</th>
+                </tr>
+                   </thead>
+                      <tbody>
+                          {this.state.studentgroups.map((studentgroups,index) =>(
+                              <tr>
+                                <th scope='row'>{index + 1}</th>
+                             <td>{studentgroups.group_name}</td>
+                         <td>{studentgroups.researchField}</td>
+                     <td>{studentgroups.researchTopic}</td>
+                 <td>{studentgroups.grpSupervisor}</td>
+                   <td >
+                   {
+                     studentgroups.supervisortopicstatus === "Accepted" &&
+                     <div><Button style={{color:"green",fontFamily:"sans-serif"}}><b> { studentgroups.supervisortopicstatus}</b></Button></div>
+
+                     }
+                     {
+                         studentgroups.supervisortopicstatus === "Rejected" &&
+                         <div><Button style={{color:"#9F000F",fontFamily:"sans-serif"}}><b>{studentgroups.supervisortopicstatus}</b></Button></div>
+
+                     }
+                     </td>
+                      <td>                       
+                         <IconButton aria-label='btn btn-success' size="small"
+                            style={{background: "#008000"}}
+                               onClick={()=>{this.acceptTopic(studentgroups._id)}}>
+                                  <CheckIcon  fontSize="small" style={{color: "white"}}/>
+                                     </IconButton> 
+                                        </td>
+                                     <td>
+                                  &nbsp;&nbsp;
+                               <IconButton aria-label="delete" size="small"
+                           style={{background: "#9F000F"}}
+                       onClick={()=>{this.rejectTopic(studentgroups._id)}}>
+                    <ClearIcon fontSize="small"  style={{color: "white"}}/>
+                </IconButton>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
                   </td>
                    <td>                       
                       <IconButton aria-label='btn btn-success' size="small"

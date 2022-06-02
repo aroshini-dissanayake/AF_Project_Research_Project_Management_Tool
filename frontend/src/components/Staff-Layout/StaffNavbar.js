@@ -89,4 +89,8 @@ export default class StaffNavbar extends Component {
  </div>
         )
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b

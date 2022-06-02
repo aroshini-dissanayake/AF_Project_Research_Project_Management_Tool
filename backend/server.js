@@ -22,6 +22,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cors());
+
+//To accept the JSON Data
 app.use(express.json());
 
 const URL = process.env.MONGODB_URL;
@@ -51,8 +53,11 @@ const adminRouter = require('./routes/RG_routes/admin');
 const createmarkingRouter = require('./routes/RG_routes/createmarking');
 const usersremoveRoutes = require('./routes/RG_routes/usersremove');
 const presantationpdfuploadRoutes = require('./routes/RG_routes/presantationpdf');
+<<<<<<< HEAD
 const uploadmarkingRoutes = require('./routes/RG_routes/uploadmarking');
 
+=======
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 
 // rotues use
 app.use("/group",studentgroupRouter);
@@ -66,7 +71,6 @@ app.use("/usersremove",usersremoveRoutes);
 app.use("/presantationpdf",presantationpdfuploadRoutes);
 app.use("/assignment",PDFUploadRouter);
 app.use("/marking",uploadmarkingRoutes);
-
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)

@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import UpdateStaffProfile from './StaffUpdate';
+<<<<<<< HEAD
+=======
+import 'react-toastify/dist/ReactToastify.css';
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 import StaffNavbar from "../Staff-Layout/StaffNavbar";
 import Footer from '../Layout/footer';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -27,6 +31,7 @@ const StaffProfile = () => {
                }
                await axios.get("http://localhost:8070/staff/staffprofile", config)
                   .then((res) => {
+<<<<<<< HEAD
                      setname(res.data.Staff.name)
                      setphone(res.data.Staff.phone)
                      setfaculty(res.data.Staff.faculty)
@@ -36,6 +41,17 @@ const StaffProfile = () => {
                      setemail(res.data.Staff.email)
                      setpwd(res.data.Staff.pwd)
                      setLoading(false)
+=======
+                    setname(res.data.Staff.name)
+                    setphone(res.data.Staff.phone)
+                    setfaculty(res.data.Staff.faculty)
+                    setfeild(res.data.Staff.feild)
+                    setstaff_id(res.data.Staff.staff_id)
+                    setrole(res.data.Staff.role)
+                    setemail(res.data.Staff.email)
+                    setpwd(res.data.Staff.pwd)
+                    setLoading(false)
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
     
             }).catch((error) => {
                 console.log(error.message)
@@ -49,10 +65,11 @@ const StaffProfile = () => {
    
     //update staff member account details
     const updateStaffProfile = () => {
-        setShow(true)
-      }
+      setShow(true)
+    }
 
     //logout the staff menber account
+<<<<<<< HEAD
     const staffLogout = () => {
       if (window.confirm('Are you sure you wish to logout from this Account?')) {
        localStorage.removeItem('Authorization')
@@ -66,8 +83,25 @@ const StaffProfile = () => {
          <CircularProgress hidden={false} />
       </div>
    }
+=======
+         const staffLogout = () => {
+            if (window.confirm('Are you sure you wish to logout from this Account?')) {
+             localStorage.removeItem('Authorization')
+             alert('Log out successfuly');
+             window.location = "/"
+            }
+          }
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
+
+          if (loading) {
+            return <div className="d-flex justify-content-center" style={{ paddingTop: 400 }}>
+               <CircularProgress hidden={false} />
+            </div>
+         }
+
 
       return (
+<<<<<<< HEAD
                       <div class="bod" style={{background:"#F8F8FF"}}  >
                    <StaffNavbar/>
                <br/><br/><br/><br/>     
@@ -101,6 +135,22 @@ const StaffProfile = () => {
          <div class="row">
             <div class="col-sm-3">
                <h6 class="mb-0"><b>Phone Number</b></h6>
+=======
+                          <div class="bod" style={{background:"#F8F8FF"}}  >
+                       <StaffNavbar/>
+                    <br/><br/><br/><br/>     
+                 <div class="container">
+              <div class="main-body">
+            <div class="row gutters-sm">
+        <div class="col-md-4 mb-4">
+            <div class="d-flex flex-column align-items-center text-center">
+                <div class="mt-3">
+                    <div class="d-flex flex-column align-items-center text-center" >
+                        <img src="https://uxwing.com/wp-content/themes/uxwing/download/12-peoples-avatars/avatar.png"  class="rounded-circle" width="180" height="180"/>
+                            <div class="mt-3">
+                        <h4>{name}</h4>
+                    <h4>{staff_id}</h4>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
                </div>
            <div class="col-sm-9 text-secondary">
        {phone}
@@ -151,6 +201,7 @@ const StaffProfile = () => {
                       {email}
                   </div>
                </div>
+<<<<<<< HEAD
             <hr/> 
       <div class="row">
           <div class="col-sm-12">
@@ -184,6 +235,87 @@ onHide={() => setShow(false)}/>
 <br/><br/><br/><br/>           
 <Footer/>
 </div>
+=======
+           </div>
+               <hr/>
+                    <div class="row">
+                       <div class="col-sm-3">
+                           <h6 class="mb-0"><b>Faculty</b></h6>
+                              </div>
+                         <div class="col-sm-9 text-secondary">
+                     {faculty}
+                 </div>
+              </div>
+                    <hr/>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0"><b>Feild</b></h6>
+                                   </div>
+                               <div class="col-sm-9 text-secondary">
+                            {feild}
+                         </div>
+                    </div>
+                 <hr/>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"><b>Staff ID</b></h6>
+                           </div>
+                              <div class="col-sm-9 text-secondary">
+                                {staff_id}
+                              </div>
+                           </div>
+                        <hr/>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"><b>Role</b></h6>
+                           </div>
+                              <div class="col-sm-9 text-secondary">
+                              {role}
+                          </div>
+                      </div>
+                  <hr/>
+                    <div class="row">
+                        <div class="col-sm-3">
+                           <h6 class="mb-0"><b>Email</b></h6>
+                              </div>
+                                 <div class="col-sm-9 text-secondary">
+                                    {email}
+                                </div>
+                             </div>
+                          <hr/> 
+                    <div class="row">
+                        <div class="col-sm-12">
+                           <div class="row">
+                              <div class="col-sm-12"><br/>
+                                  <center>
+                <button style={{background: "#151B54", color:"#ffff"}} onClick={staffLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
+            <button style={{background: "#9F000F", color:"#ffff"}} onClick={updateStaffProfile} class="btn btn " target="__blank">Update Details</button></center>
+              </div>
+                  </div>     
+                      </div>  
+                          </div>
+                           </div>
+                      </div>
+                   </div>
+      <UpdateStaffProfile
+          upname ={name}
+          upphone ={phone}
+          upfaculty ={faculty}
+          upfeild ={feild}
+          upstaff_id ={staff_id}
+          uprole ={role}
+          upemail ={email} 
+          uppwd= {pwd}
+          show={show}
+          onHide={() => setShow(false)}/>    
+                </div>
+           </div>
+    
+
+           <br/><br/><br/><br/>           
+          <Footer/>
+      </div>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
    )
 }
  

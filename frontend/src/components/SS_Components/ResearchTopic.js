@@ -2,11 +2,18 @@ import React,{Component} from 'react' ;
 import axios from "axios";
 import StaffNavbar from "../Staff-Layout/StaffNavbar";
 import CheckIcon from '@mui/icons-material/Check';
+<<<<<<< HEAD
 import Button from '@material-ui/core/Button';
 import ClearIcon from '@mui/icons-material/Clear';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
 
+=======
+import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
+import ClearIcon from '@mui/icons-material/Clear';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 
 export default class ResearchTopic extends Component{
     constructor(props){
@@ -77,6 +84,7 @@ onReadirect(id){
 
 render(){
       return( 
+<<<<<<< HEAD
         <div>
         <StaffNavbar/>  <br/><br/> <br/>
            <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Research Topic Details</u></b></h3><br/><br/>
@@ -147,5 +155,77 @@ render(){
                   </table>
               </div> 
          </div>  
+=======
+         <div>
+            <StaffNavbar/>  <br/><br/> <br/>
+               <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Research Topic Details</u></b></h3><br/><br/>
+                  <div className='container'> 
+                    <div className="col-md-3" >
+                      <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search Group Name " onChange={this.handleSearchArea}/>
+                       <br/> 
+                         </div>    
+                            <table class="table">
+                          <thead>
+                       <tr bgcolor="#79BAEC">
+                     <th scope='col'>No</th>
+                  <th scope='col'>Group Name</th>
+               <th scope='col'>Research Feild</th>
+            <th scope='col'>Research Topic</th>
+         <th scope='col'>Status</th>
+     <th scope='col'>FeedBack</th>
+       <th scope='col'>Accept</th>
+          <th scope='col'>Reject</th>
+            <th scope='col'>Add</th>
+                </tr>
+                    </thead>
+                      <tbody>
+                          {this.state.studentgroups.map((studentgroups,index) =>(
+                              <tr>
+                                <th scope='row'>{index + 1}</th>
+                              <td>{studentgroups.group_name}</td>
+                          <td>{studentgroups.researchField}</td>
+                     <td>{studentgroups.researchTopic}</td>
+                     <td> 
+                    {
+                     studentgroups.topicstatus === "Accepted" &&
+                     <div><Button style={{color:"green",fontFamily:"sans-serif"}}><b> { studentgroups.topicstatus}</b></Button></div>
+
+                     }
+                     {
+                         studentgroups.topicstatus === "Rejected" &&
+                         <div><Button style={{color:"#9F000F",fontFamily:"sans-serif"}}><b>{studentgroups.topicstatus}</b></Button></div>
+
+                     }
+                     </td>
+                
+                   <td>{studentgroups.feedback}</td>
+                      <td>                       
+                         <IconButton aria-label='btn btn-success' size="small"
+                            style={{background: "#008000"}}
+                               onClick={()=>{this.acceptTopic(studentgroups._id)}}>
+                                  <CheckIcon  fontSize="small" style={{color: "white"}}/>
+                                     </IconButton> 
+                                        </td>
+                                     <td>
+                             <IconButton aria-label="delete" size="small"
+                       style={{background: "#9F000F"}}
+                 onClick={()=>{this.rejectTopic(studentgroups._id)}}>
+             <ClearIcon fontSize="small"  style={{color: "white"}}/>
+                </IconButton>
+                  </td>
+                      <td>
+                      <IconButton aria-label='btn btn-success' size="small"
+                style={{background: "#FBB917"}}
+            onClick={()=>this.onReadirect(studentgroups._id)} >
+              <AddCircleOutlineIcon  fontSize="small" style={{color: "black"}}/>
+                  </IconButton> 
+                      </td>
+                         </tr>
+                             ))}
+                          </tbody>
+                      </table>
+                  </div> 
+             </div>  
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
         )}
 }

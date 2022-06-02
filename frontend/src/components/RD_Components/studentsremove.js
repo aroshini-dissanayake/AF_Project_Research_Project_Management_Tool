@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+<<<<<<< HEAD
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import Footer from '../Layout/footer';
 import AdminNavBar from '../Layout/AdminNavBar';
 
+=======
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 
 export default class Studentsremove extends Component {
     constructor(props){
@@ -39,7 +46,11 @@ onDelete = (studentID) => {
 
   if (window.confirm('Are you sure you wish to delete this details?')) {
     axios.delete(`http://localhost:8070/usersremove/studentdelete/${studentID}`).then((res) => {
+<<<<<<< HEAD
       alert('Details Deleted Successfully');
+=======
+      toast.warning('Details Deleted Successfully', { position: toast.POSITION.TOP_CENTER });
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 
       //alert("Delete Successfully")
       this.retrievestudentsDetails();
@@ -48,6 +59,7 @@ onDelete = (studentID) => {
   }
 }
 
+<<<<<<< HEAD
 filterData(studentsremove, searchKey) {
   const result = studentsremove.filter((stud) =>
     stud.name.toLowerCase().includes(searchKey) ||
@@ -66,10 +78,13 @@ handleSearchArea = (e) => {
   });
 }
 
+=======
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 
  render() {
     return ( 
                         <div>
+<<<<<<< HEAD
                           <AdminNavBar/>
                      <br/><br/>
                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
@@ -83,6 +98,11 @@ handleSearchArea = (e) => {
                 </input></div>
 
                </div><br/>
+=======
+                     <br/><br/>
+                  <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
+              <b><u>All Students Details </u></b></h3><br/>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -97,7 +117,10 @@ handleSearchArea = (e) => {
                          <th scope='col'>Phone Number</th>
                      <th scope='col'>Date Of Birth</th>
                      <th scope='col'>Email</th>
+<<<<<<< HEAD
                      <th scope='col'>Action</th>
+=======
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
                  </tr>
              </thead>
                <tbody>
@@ -124,9 +147,12 @@ handleSearchArea = (e) => {
                       </tbody>     
                          </table>
                             </div>
+<<<<<<< HEAD
                             <br/><br/><br/><br/><br/><br/>
                             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                             <Footer/>
+=======
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
                               </div>
     )
   }

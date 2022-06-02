@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+<<<<<<< HEAD
 import Footer from '../Layout/footer';
 import AdminNavBar from '../Layout/AdminNavBar';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 
+=======
+import AdminNavBar from '../Layout/AdminNavBar';
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 
 export default class CoSupervisorremove extends Component {
     constructor(props){
@@ -33,7 +41,11 @@ onDelete = (cosupervisorID) => {
 
     if (window.confirm('Are you sure you wish to delete this details?')) {
       axios.delete(`http://localhost:8070/usersremove/cosupervisordelete/${cosupervisorID}`).then((res) => {
+<<<<<<< HEAD
        alert('Details Deleted Successfully');
+=======
+        toast.warning('Details Deleted Successfully', { position: toast.POSITION.TOP_CENTER });
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
   
         //alert("Delete Successfully")
         this.retrievecosupervisorDetails();
@@ -42,6 +54,7 @@ onDelete = (cosupervisorID) => {
     }
   }
 
+<<<<<<< HEAD
   filterData(cosupervisorremove, searchKey) {
 
     const result = cosupervisorremove.filter((cosupervisorre) =>
@@ -80,6 +93,15 @@ onDelete = (cosupervisorID) => {
                        <input className="form-control" type="search"
                     placeholder="Serach" name="searchQuery" startIcon={< SearchSharpIcon />} onChange={this.handleSearchArea} >
                 </input></div><br/>
+=======
+ render() {
+    return ( 
+                           <div>
+                        <AdminNavBar/>
+                     <br/><br/><br/>
+                  <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
+              <b><u>All Co-Supervisor Details </u></b></h3><br/><br/>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -90,7 +112,12 @@ onDelete = (cosupervisorID) => {
                          <th scope='col'>Feild</th>
                            <th scope='col'>Staff ID</th>
                          <th scope='col'>Role</th>
+<<<<<<< HEAD
                      <th scope='col'>Email</th>
+=======
+                       <th scope='col'>Email</th>
+                    <th scope='col'>Action</th>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
                  </tr>
              </thead>
                <tbody>
@@ -113,9 +140,13 @@ onDelete = (cosupervisorID) => {
                     )}
                       </tbody>     
                          </table>
+<<<<<<< HEAD
                             </div><br/><br/><br/><br/><br/><br/>
                             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>   
                             <Footer/>
+=======
+                            </div>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
                               </div>
     )
   }

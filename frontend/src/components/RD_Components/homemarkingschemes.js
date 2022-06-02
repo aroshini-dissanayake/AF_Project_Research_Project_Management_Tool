@@ -135,6 +135,10 @@ render() {
         <tbody>
           {this.state.createmarking.map((createmarking) => (
              <tr>
+<<<<<<< HEAD
+=======
+          {/* <th scope="row">{index+1}</th> */}
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
           <td>
             
             <a href={`/createmarking/${createmarking._id}`} style={{textDecoration:'none'}}>
@@ -145,9 +149,22 @@ render() {
           <td>{createmarking.good}</td>
           <td>{createmarking.avarage}</td>
           <td>{createmarking.poor}</td>
+<<<<<<< HEAD
           <td></td>
           <td></td>
           <td> 
+=======
+          <td>{createmarking.comment}</td>
+          <td>{createmarking.marks}</td>
+          <td> 
+            {/* <a className="btn btn-warning" href={`/createmarkingedit/${createmarking._id}`}>
+              <i classname="fas fa-edit"></i>&nbsp;Edit
+            </a>
+            &nbsp;
+            <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(createmarking._id)}>
+              <i className="far fa-trash-alt"></i>&nbsp;Delete */}
+
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
               <Button className="form-group" type="submit" style={{ background: "#C3FDB8", width: 10 + "%", align: "center" }} startIcon={<EditSharpIcon />} href={`/createmarkingedit/${createmarking._id}`}>
                         </Button>
 
@@ -155,18 +172,35 @@ render() {
                         <Button className="form-group" type="submit" style={{ background: "#F75D59", width: 10 + "%", align: "center" }} startIcon={<DeleteForeverSharpIcon />} onClick={() => this.onDelete(createmarking._id)}>
                         </Button>
 
+<<<<<<< HEAD
+=======
+
+
+            {/* </a> */}
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
               </td>
                  </tr>
 
           ))}
         </tbody>
         </table>
+<<<<<<< HEAD
         <div className="form-group">
                
                   <Button  href="/createmarkingadd" variant="contained" className="w-10" align="left" style={{ background: "#CCCCFF", width: +"%" }} startIcon={< AddCircleOutlinedIcon />}  >
                   Create New Point</Button>
               
               </div>   
+=======
+        {/* <button className="btn btn-success"><a href="/createmarkingadd" style={{textDecoration:'none',color:'white'}}> Create New Point</a></button> */}
+
+        <div className="form-group">
+                <a href="/createmarkingadd">
+                  <Button variant="contained" className="w-10" align="left" style={{ background: "#D5D6EA", width: +"%" }} startIcon={< AddCircleOutlinedIcon />}  >
+                  Create New Point</Button>
+                </a>
+              </div>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
       </div>
       </div>
       </div>

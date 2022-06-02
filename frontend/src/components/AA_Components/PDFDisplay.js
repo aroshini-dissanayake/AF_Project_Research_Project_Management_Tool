@@ -11,6 +11,7 @@ const PDFDisplay = () => {
     }]);
 
     useEffect(() => {
+<<<<<<< HEAD
       function getpdf(){
         axios.get("http://localhost:8070/presantationpdf/presantationpdfdisplay")   
           .then((res) => {
@@ -39,6 +40,35 @@ const PDFDisplay = () => {
                       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <Footer/>
   </div>
+=======
+        function getpdf(){
+          axios.get("http://localhost:8070/presantationpdf/presantationpdfdisplay")   
+            .then((res) => {
+              setpresantationpdfupload(res.data)
+            }).catch((error) => {
+              console.log(error.message)
+         })              
+    }
+        getpdf()
+    },[])
+    
+  return (
+    <div>
+      <StudentNavBar/> <br/><br/><br/>   
+        <center><h1><b><u>Download Template</u></b></h1><br/><br/>   
+           {presantationpdfupload.map(( doc) => (  
+             <div style={{marginTop:"10px"}}>
+               <Button variant="contained" className="w-6" 
+                  style={{background: "#151B54", width: 30+"%",color:"white"}}  
+                      href={doc.presantationpdfupload} download>
+                 {doc.docName} 
+                   </Button>
+                     </div> 
+        ) )} </center>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <Footer/>
+    </div>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
   )
 }
 export default PDFDisplay;

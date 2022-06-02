@@ -3,9 +3,12 @@ const validator = require("validator");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
-
 const studentSchema = new mongoose.Schema({
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
   name: {
     type: String,
     required: true,
@@ -35,7 +38,11 @@ const studentSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
   specialization: {
     type: String,
     required: true,

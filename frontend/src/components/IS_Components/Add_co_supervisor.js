@@ -2,13 +2,18 @@ import React,{Component} from 'react' ;
 import axios from "axios";
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Button from '@material-ui/core/Button';
- 
+
 export default class Add_co_supervisor extends Component{
    constructor(props){  
        super(props);
 
+<<<<<<< HEAD
        this.onChangeGrpcoSupervisor = this.onChangeGrpcoSupervisor .bind(this);
        this.onSubmit = this.onSubmit.bind(this);  
+=======
+     this.onChangeGrpcoSupervisor = this.onChangeGrpcoSupervisor .bind(this);
+     this.onSubmit = this.onSubmit.bind(this);
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 
        this.state={
            group_name:"",
@@ -19,7 +24,7 @@ export default class Add_co_supervisor extends Component{
            cosupervisors:[]
        }
     }
- 
+    
   async componentDidMount(){
        const feild = this.props.match.params.feild
        const id = this.props.match.params.id;
@@ -33,8 +38,12 @@ export default class Add_co_supervisor extends Component{
            }
          })
        }
+<<<<<<< HEAD
     
    onChangeGrpcoSupervisor(e) {
+=======
+       onChangeGrpcoSupervisor(e) {
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
         this.setState({
             grpcoSupervisor: e.target.value
         })
@@ -45,6 +54,7 @@ export default class Add_co_supervisor extends Component{
 
        const id = this.props.match.params.id;
        const data = {
+<<<<<<< HEAD
            grpcoSupervisor:this.state.grpcoSupervisor,
        }
 
@@ -54,14 +64,33 @@ export default class Add_co_supervisor extends Component{
             window.location.href="/regtopic/displaycosupervisors"
   
         })
+=======
+           
+           grpcoSupervisor:this.state.grpcoSupervisor,
+       }
+           
+            axios.post(`http://localhost:8070/regtopic/addcoSupervisor/${id}`,data).then((res)=>{ 
+            console.log(res.data)
+            alert("Co-Supervisor Requested");
+            window.location.href="/regtopic/displaycosupervisors"
+      
+   })
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
    .catch((e)=>{
    });
 }
 
+<<<<<<< HEAD
  render(){
 return(
 <div>
    <StudentNavBar/>
+=======
+render(){
+return(
+<div>
+<StudentNavBar/>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
      <br/><br/><br/>
         <div align="center">
            <div className="card-header" style={{width:"820px",background:"#B7CEEC"}}><br/><br/>
@@ -70,7 +99,11 @@ return(
             <form onSubmit={this.onSubmit} className="text-color">
         <div className="form-group">
     <div align="left"><br/> 
+<<<<<<< HEAD
         <label style={{marginBottom:'2px'}}><b>Co-Supervisor Name</b></label>
+=======
+        <label style={{marginBottom:'2px'}}><b>Co-Supervisor</b></label>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
             <input type="userInput" required className="form-control mt-2" placeholder="Enter Co-Supervisor Name" value={this.state.grpcoSupervisor}
                  onChange={this.onChangeGrpcoSupervisor}/>
                     </div></div><br/><br/>
@@ -98,11 +131,19 @@ return(
                     <tbody>
                 {this.state.cosupervisors.map((cosupervisors,index)=>(
              <tr key={index}>    
+<<<<<<< HEAD
                   <th scope='row'>{index + 1}</th>
                        <td>{cosupervisors.role}</td>
                            <td>{cosupervisors.name}</td>
                               <td>{cosupervisors.email}</td>
                                   <td>{cosupervisors.feild}</td>
+=======
+                <th scope='row'>{index + 1}</th>
+                     <td>{cosupervisors.role}</td>
+                           <td>{cosupervisors.name}</td>
+                           <td>{cosupervisors.email}</td>
+                               <td>{cosupervisors.feild}</td>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
                                     </tr>
                                     )
                                   )}

@@ -39,6 +39,13 @@ render() {
 <div><AdminNavBar/>
 <br/><br/><br/>
       <div align="center" style= {{marginTop:'20px'}}>
+<<<<<<< HEAD
+=======
+          <h4>{criteria}</h4>
+          <h4>{good}</h4>
+          <hr/>
+       
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 
       <dl className="row">
   <div className="pt-3" align="center" background color="red">

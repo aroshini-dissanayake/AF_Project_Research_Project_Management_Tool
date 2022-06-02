@@ -6,12 +6,15 @@ const auth = require("../../middleware/auth");
 const router = express.Router();
 
 //new
-
   router.post("/submitdoc", auth, async (req, res) => {
      try{
       let studentId = req.Std._id
       const student = await Student.findById(studentId)
+<<<<<<< HEAD
      
+=======
+      
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
       if (!student) {
         throw new Error('There is no student')
      }
@@ -24,6 +27,7 @@ const router = express.Router();
       studentID: studentId,
       studentName: req.Std.name,
       stdId: req.Std.student_id
+      
      };
 
     let newstdDocument= new StdDocument(dbDoc);

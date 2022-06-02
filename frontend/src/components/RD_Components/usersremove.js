@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+<<<<<<< HEAD
 import Footer from '../Layout/footer';
 import AdminNavBar from '../Layout/AdminNavBar';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 
+=======
+import axios from 'axios';
+import AdminNavBar from '../Layout/AdminNavBar';
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 
 export default class Usersremove extends Component {
     constructor(props){
@@ -27,6 +36,7 @@ retrievepanelmemberDetails(){
   })
  }
 
+<<<<<<< HEAD
  filterData(studentsremove, searchKey) {
   const result = studentsremove.filter((stud) =>
     stud.name.toLowerCase().includes(searchKey) ||
@@ -46,13 +56,19 @@ handleSearchArea = (e) => {
 }
 
 
+=======
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 //delete panelmember
 onDelete = (panelmemberID) => {
 
 
   if (window.confirm('Are you sure you wish to delete this details?')) {
     axios.delete(`http://localhost:8070/usersremove/panelmemberdelete/${panelmemberID}`).then((res) => {
+<<<<<<< HEAD
       alert('Details Deleted Successfully');
+=======
+      toast.warning('Details Deleted Successfully', { position: toast.POSITION.TOP_CENTER });
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 
       //alert("Delete Successfully")
       this.retrievepanelmemberDetails();
@@ -64,6 +80,7 @@ onDelete = (panelmemberID) => {
 
 render() {
     return ( 
+<<<<<<< HEAD
                             <div>
                           <AdminNavBar/>
                      <br/><br/>
@@ -73,6 +90,13 @@ render() {
                    <input className="form-control" type="search"
                       placeholder="Serach" name="searchQuery" startIcon={< SearchSharpIcon />} onChange={this.handleSearchArea} >
                  </input></div>
+=======
+                           <div>
+                        <AdminNavBar/>
+                     <br/><br/><br/>
+                  <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
+              <b><u>All Panel Member Details </u></b></h3><br/><br/>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -100,6 +124,7 @@ render() {
                      <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(usersremove._id)}>
               <i className="far fa-trash-alt"></i>&nbsp;Delete
             </a>   
+<<<<<<< HEAD
                      </td>              
                 </tr>
                   )
@@ -110,6 +135,15 @@ render() {
                             <br/><br/><br/><br/><br/><br/>
                             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>   
                             <Footer/>
+=======
+              </td>              
+                 </tr>
+                    )
+                     )}
+                       </tbody>     
+                         </table>
+                            </div>
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
                               </div>
     )
   }

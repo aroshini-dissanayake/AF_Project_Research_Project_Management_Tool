@@ -13,6 +13,22 @@ router.post("/research/:id", async (req, res) => {
      }
      const reserch_topic = req.body.researchTopic;
      const research_Field = req.body.researchField;
+
+    //  if(!reserch_topic || !research_Field)
+
+    //  return res
+    //  .status(400)
+    //  .json({errorMessage : "required"});
+
+    //   if(reserch_topic.length<4)
+    //   return res.status(400).json({
+    //   errorMessage: "Please enter a first name of at least 3 characters.",
+    //   });
+
+    //   if(research_Field.length<5)
+    //   return res.status(400).json({
+    //   errorMessage: "Please enter a first name of at least 3 characters.",
+    //   });
  
      group2.researchTopic = reserch_topic;
      group2.researchField = research_Field;
@@ -25,6 +41,30 @@ router.post("/research/:id", async (req, res) => {
      res.status(500).send({ status: "error", error: error.message });
    }
  });
+
+//  const {researchTopic,researchField} = req.body;
+
+
+//      const dbtopic = {
+//       researchTopic: researchTopic,
+//       researchField: researchField
+      
+//      };
+
+//     let group = new stdgroups(dbtopic);
+//     await group.save();
+//       res.status(200).send({ status: "Research Topic and Field added !!!", stdgroups: group2 });
+//     } catch (error) {
+//       console.log(error.message);
+//       res.status(500).send({ error: error.message });
+//     }
+//   });
+
+
+
+
+
+
 
  //delete researchtopic
 
@@ -92,6 +132,7 @@ router.post("/addSupervisor/:id", async (req, res) => {
     if (!group2) {
       throw new Error("There is no group..!!!");
     }
+
      const grp_Supervisor = req.body.grpSupervisor;
      group2.grpSupervisor = grp_Supervisor;
      await group2.save();

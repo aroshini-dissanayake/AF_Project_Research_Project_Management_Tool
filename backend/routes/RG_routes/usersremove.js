@@ -7,6 +7,7 @@ let student = require('../../models/AA_models/student');
 //Get panel member Details
 
 router.get("/getpanelmember",async(req,res)=>{
+<<<<<<< HEAD
     try{
     const panelmember = await staff.find({
     role: "Panel Memeber" 
@@ -26,6 +27,27 @@ router.get("/getpanelmember",async(req,res)=>{
  
 
 //Delete pannel members details
+=======
+  try{
+  const panelmember = await staff.find({
+  role: "Panel Memeber" 
+  })
+  res.status(201)
+  .send({
+  status : "Panel Member Retrive",
+  panelmember:panelmember
+  });
+  }catch(error){
+  console.log(error.message);
+  res.status(500)
+  .send({error:error.message});
+  }
+  })
+
+
+//Delete pannel members details
+
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 router.route('/panelmemberdelete/:panelmemberID').delete((req,res)=>{
     staff.findByIdAndRemove(req.params.panelmemberID).exec((err,deletestaff)=>{
         
@@ -44,6 +66,7 @@ router.route('/panelmemberdelete/:panelmemberID').delete((req,res)=>{
 
 router.get("/getsupervisor",async(req,res)=>{
     try{
+<<<<<<< HEAD
         const supervisor = await staff.find({
         role: "Supervisor" 
         })
@@ -56,6 +79,20 @@ router.get("/getsupervisor",async(req,res)=>{
         console.log(error.message);
         res.status(500)
         .send({error:error.message});
+=======
+    const supervisor = await staff.find({
+    role: "Supervisor" 
+    })
+    res.status(201)
+    .send({
+    status : "Supervisor Retrive",
+    supervisor:supervisor
+    });
+    }catch(error){
+    console.log(error.message);
+    res.status(500)
+    .send({error:error.message});
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
     }
     })
 
@@ -75,6 +112,7 @@ router.route('/supervisordelete/:supervisorID').delete((req,res)=>{
  });
 
 
+<<<<<<< HEAD
 // Get Co-Supervisor Details
 
 router.get("/getcosupervisor",async(req,res)=>{
@@ -95,6 +133,27 @@ router.get("/getcosupervisor",async(req,res)=>{
     })
 
     
+=======
+//Get Co-Supervisor Details
+
+router.get("/getcosupervisor",async(req,res)=>{
+    try{
+    const cosupervisor = await staff.find({
+    role: "Co-Supervisor" 
+    })
+    res.status(201)
+    .send({
+    status : "Cosupervisor Retrive",
+    cosupervisor:cosupervisor
+    });
+    }catch(error){
+    console.log(error.message);
+    res.status(500)
+    .send({error:error.message});
+    }
+    })
+
+>>>>>>> 12308ea2e9a8145d9e028563e21353ef8a9dc48b
 //Delete Supervisor details
 router.route('/cosupervisordelete/:cosupervisorID').delete((req,res)=>{
     staff.findByIdAndRemove(req.params.cosupervisorID).exec((err,deletecosupervisor)=>{
