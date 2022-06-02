@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import Button from "@material-ui/core/Button";
 import CheckCircleSharpIcon from '@material-ui/icons/CheckCircleSharp';
-import Footer from '../Layout/footer';
-import AdminNavBar from '../Layout/AdminNavBar';
+import StaffNavbar from "../Staff-Layout/StaffNavbar";
 
-
-export default class Editmarkingschemes extends Component {
+export default class Evaluateedit extends Component {
 
   constructor(props){
     super(props);
@@ -53,9 +51,10 @@ onSubmit = (e) =>{
   axios.put(`http://localhost:8070/createmarking/update/${createmarkingID}`,data).then((res) =>{
   if(res.data.success){
     if (window.confirm('Are you sure you wish to update this details?')) {
-    alert('Marking Scheme Updated Successfully'); 
-      window.location.href = '/homemarkingschemes';
- 
+   alert('Marking Scheme Updated Successfully');  
+      window.location.href = '/evaluate';
+
+
     this.setState(
    
       {
@@ -95,8 +94,7 @@ componentDidMount(){
   render() {
     return (
       <div>
-        <AdminNavBar/> 
-        <br/><br/>
+         <StaffNavbar/>
       <div className="pt-3" align="center" >
        <div className="card shadow mb-8 w-50">
          <div className="card-header py-3">
@@ -109,13 +107,13 @@ componentDidMount(){
         <div className="form-group" style={{marginBottom:'15px'}}>
               <label style={{marginBottom:'5px'}}>Criteria</label>
               <input type="text" className="form-control" name="criteria" placeholder="Enter Details" value={this.state.criteria}
-              onChange={this.handleInputChange}/>
+              onChange={this.handleInputChange}readOnly/>
            </div>
 
            <div className="form-group" style={{marginBottom:'15px'}}>
               <label style={{marginBottom:'5px'}}>Good (10-8)</label>
               <input type="text" className="form-control" name="good" placeholder="Enter Details" value={this.state.good}
-              onChange={this.handleInputChange} />
+              onChange={this.handleInputChange}readOnly/>
            </div>
 
 
@@ -123,29 +121,27 @@ componentDidMount(){
            <div className ="form-group" style={{marginBottom:'15px'}}>
               <label style={{marginBottom:'5px'}}>Avarage(4-7)</label>
               <input type="text" className="form-control" name="avarage" placeholder="Enter Details" value={this.state.avarage}
-             onChange={this.handleInputChange}/>
+             onChange={this.handleInputChange}readOnly/>
            </div>
 
            
            <div className ="form-group" style={{marginBottom:'15px'}}>
               <label style={{marginBottom:'5px'}}>Poor(0-3)</label>
               <input type="text" className="form-control" name="poor" placeholder="Enter Details" value={this.state.poor}
-             onChange={this.handleInputChange}/>
+             onChange={this.handleInputChange}readOnly/>
            </div>
 
           
            <div className ="form-group" style={{marginBottom:'15px'}}>
               <label style={{marginBottom:'5px'}}>Comment</label>
-
               <input type="text" className="form-control" name="comment"  value={this.state.comment}
-             onChange={this.handleInputChange}readOnly/>
-  </div>
+             onChange={this.handleInputChange}/>
+           </div>
 
            <div className ="form-group" style={{marginBottom:'15px'}}>
               <label style={{marginBottom:'5px'}}>Marks</label>
-
               <input type="text" className="form-control" name="marks"  value={this.state.marks}
-             onChange={this.handleInputChange}readOnly/>
+             onChange={this.handleInputChange}/>
            </div>
 <div>
       <Button className="form-group" type="submit"style={{background: "#F75D59", width: 100+"%"}} startIcon={< CheckCircleSharpIcon/>}  onClick={this.onSubmit}> 
@@ -158,8 +154,6 @@ componentDidMount(){
      </div>
      </div>
      </div>
-     <br/><br/><br/><br/>
-     <Footer/>
      </div>
      
 

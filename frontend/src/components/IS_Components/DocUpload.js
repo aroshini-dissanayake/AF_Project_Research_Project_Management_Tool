@@ -70,31 +70,33 @@ export default function DocUpload(){
 
 return (
     <div>
-       <StudentNavBar/> 
-          <br/><br/> <br/><br/>
-             <div align="center">
-               <div className="card-header" style={{width:"550px",background:"#E6E6FA"}}><br/><br/>
-            <h3 align="center">
-        <b><u>DOCUMENTS UPLOAD </u></b></h3>
-    <form action="" method="post" name="form" onSubmit={sendData}> 
+
+    <StudentNavBar/> 
+       <br/><br/> 
+          <div align="center">
+            <div className="card-header" style={{width:"550px",background:"#E6E6FA"}}><br/><br/>
+         <h3 align="center">
+     <b><u>DOCUMENTS UPLOAD </u></b></h3>
+ <form action="" method="post" name="form" onSubmit={sendData}> 
 <div className="col-lg-10 mt-2">    
-     <div align="left"><br/>
-          <label id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>File Upload</label>
-              <input type="file"  class="form-control" onChange={(e) => setdocUpload(e.target.files[0])} required/>  
-               </div>   
-               <br/>
-          <div align="left">
-     <label class="form-text" style={{marginBottom:'2px'}}>Group Name</label>
+  <div align="left"><br/>
+       <label id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>File Upload</label>
+           <input type="file"  class="form-control" onChange={(e) => setdocUpload(e.target.files[0])} required/>  
+            </div>   
+            <br/>
+       <div align="left">
+  <label class="form-text" style={{marginBottom:'2px'}}>Group Name</label>
 <input type="text"  class="form-control" onChange={(e) => setstdDocName(e.target.value)} placeholder="Please Enter the Group Name" required/>  
-  </div><br/> 
-     <button type="submit" class="btn btn-primary"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Submit</button>
-       </div>  <img src="https://cdni.iconscout.com/illustration/premium/thumb/girl-working-from-home-3406151-2840747.png" class="img-fluid" alt="Phone image" />
-          </form>
-             </div>
-               </div>
-            <br/><br/>
-        <Footer/>
-   </div>
+</div><br/> 
+  <button type="submit" class="btn btn-primary"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Submit</button>
+    </div>  <img src="https://cdni.iconscout.com/illustration/premium/thumb/girl-working-from-home-3406151-2840747.png" class="img-fluid" alt="Phone image" />
+       </form>
+          </div>
+            </div>
+         <br/><br/>
+     <Footer/>
+</div>
+
   
   )
 

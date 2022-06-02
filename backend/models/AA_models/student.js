@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 const studentSchema = new mongoose.Schema({
-  
+
   name: {
     type: String,
     required: true,
@@ -34,7 +34,7 @@ const studentSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
-  
+
   specialization: {
     type: String,
     required: true,
@@ -52,6 +52,7 @@ const studentSchema = new mongoose.Schema({
       }
     },
   },
+
   DOB: {
     type: String,
     required: true,
@@ -68,11 +69,13 @@ const studentSchema = new mongoose.Schema({
       }
     },
   },
+
   pwd: {
     type: String,
     required: true,
     trim: true,
   },
+
   imageUrl: {
     type: String,
   },

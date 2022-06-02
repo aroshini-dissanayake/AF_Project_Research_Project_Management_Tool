@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
 import UpdateProfile from './student-update'
 
-
-
-toast.configure()
 
 const Profile = () => {
     const [name, setname] = useState("");
@@ -63,7 +58,7 @@ const Profile = () => {
 
     const studentLogout = () => {
         if (window.confirm('Are you sure you wish to logout from this Account?')) {
-      toast.success('Log out successfuly',{position:toast.POSITION.TOP_CENTER});
+     alert('Log out successfuly');
       localStorage.removeItem('role')
       localStorage.removeItem('Authorization')
       window.location = "/signin"
@@ -182,7 +177,7 @@ const Profile = () => {
                     </div>
                     <hr/>
                     <div class="row">
-                      <div class="col-sm-12">
+                      <div class="col-sm-12"><br/>
                       <center><button onClick={updateUserProfile} class="btn btn-warning btn-lg ms-2 " target="__blank">Edit Profile Details</button></center>
                       </div>
                     </div>
@@ -191,7 +186,7 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          
+        
 <UpdateProfile
      upname= {name}
      upnic= {nic}

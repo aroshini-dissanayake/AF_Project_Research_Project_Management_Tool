@@ -26,7 +26,7 @@ const uploadFile = () => {
   window.location = `/pdfupload`
 }
 const faculties = () => {
-  window.location = `/faculties`
+  window.location = `/#`
 }
 
 

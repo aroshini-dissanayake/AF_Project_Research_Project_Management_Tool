@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import AdminNavBar from '../Layout/AdminNavBar';
 import BackendHomeNavBar from '../Layout/BackendHomeNavBar';
 import Footer from '../Layout/footer';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -59,7 +58,7 @@ const AdminProfile = () => {
     if (window.confirm('Are you sure you wish to delete this Account?')) {
         await axios.delete('http://localhost:8070/admin/admindelete', config)
         .then((res) => {
-          toast.success('Your account deleted successfuly',{position:toast.POSITION.TOP_CENTER});
+         alert('Your account deleted successfuly');
           localStorage.removeItem('Authorization')
           window.location="/adminsignup"
        
@@ -73,7 +72,7 @@ const AdminProfile = () => {
    const adminLogout = () => {
       if (window.confirm('Are you sure you wish to logout from this Account?')) {
         localStorage.removeItem('Authorization')
-        toast.success('Log out successfuly',{position:toast.POSITION.TOP_CENTER});
+       alert('Log out successfuly');
         window.location = "/"
       }
    }
@@ -87,7 +86,7 @@ const AdminProfile = () => {
 
           return (
                       <div class="bod" style={{background:"#F8F8FF"}}>
-                   <BackendHomeNavBar/>
+                   <AdminNavBar/>
                <br/><br/><br/><br/><br/>       
            <div class="container">
        <div class="main-body">

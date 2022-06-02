@@ -29,17 +29,20 @@ const groupreg = () => {
 const downloadtemplate = () => {
         window.location = `/pdfdisplay`            
     }       
+    
 const chatgroups = () => {
         window.location = `#`            
     }       
-        
-        
+                
+
 export default class StudentDashboard extends Component {
   render() {
     return (
       <div>
       <StudentNavBar/>    
+
        <div className="container" ><br/><br/><br/>
+
        <div class="row row-cols-1 row-cols-md-3 g-5" >
        <div class="col" style={{width: "19rem",color:"white"}} > 
                <div class="shadow h-60" id="cardcol1">

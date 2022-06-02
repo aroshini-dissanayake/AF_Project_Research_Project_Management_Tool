@@ -3,7 +3,6 @@ const Presantation = require('../../models/RG_models/presantation');
 const router = express.Router();
 
 
-
 router.post("/presantation", (req, res) => {
     let newpresantation= new Presantation(req.body);
     newpresantation.save((err) => {
@@ -20,13 +19,13 @@ router.post("/presantation", (req, res) => {
 
 //get pdf 
 router.get("/presantationpdfdisplay",async (req, res) => {
-    const pdf = await Presantation.find();
-    try {
-      res.json(pdf)
-    } catch (error) {
-      res.status(500)
-      res.send({ status: "Error with PDF Fetched", error: error.message });
-    }
-  });
-  
+
+  const pdf = await Presantation.find();
+  try {
+    res.json(pdf)
+  } catch (error) {
+    res.status(500)
+    res.send({ status: "Error with PDF Fetched", error: error.message });
+  }
+});
   module.exports = router;

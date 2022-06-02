@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import axios from 'axios';
+import Footer from '../Layout/footer';
 import AdminNavBar from '../Layout/AdminNavBar';
+import SearchSharpIcon from '@material-ui/icons/SearchSharp';
+;
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
+
 
 export default class Usersremove extends Component {
     constructor(props){
@@ -29,13 +32,34 @@ retrievepanelmemberDetails(){
   })
  }
 
+
+ filterData(studentsremove, searchKey) {
+  const result = studentsremove.filter((stud) =>
+    stud.name.toLowerCase().includes(searchKey) ||
+    stud.student_id.toLowerCase().includes(searchKey) 
+    
+  )
+  this.setState({studentsremove: result })
+}
+
+handleSearchArea = (e) => {
+  const searchKey = e.currentTarget.value;
+  axios.get("http://localhost:8070/usersremove/getstudent").then(res => {
+    if (res.data.success) {
+      this.filterData(res.data.existingstudent,searchKey)
+    }
+  });
+}
+
+
 //delete panelmember
 onDelete = (panelmemberID) => {
 
 
   if (window.confirm('Are you sure you wish to delete this details?')) {
     axios.delete(`http://localhost:8070/usersremove/panelmemberdelete/${panelmemberID}`).then((res) => {
-      toast.warning('Details Deleted Successfully', { position: toast.POSITION.TOP_CENTER });
+
+      alert('Details Deleted Successfully');
 
       //alert("Delete Successfully")
       this.retrievepanelmemberDetails();
@@ -47,11 +71,17 @@ onDelete = (panelmemberID) => {
 
 render() {
     return ( 
-                           <div>
-                        <AdminNavBar/>
-                     <br/><br/><br/>
+
+                            <div>
+                          <AdminNavBar/>
+                     <br/><br/>
                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
-              <b><u>All Panel Member Details </u></b></h3><br/><br/>
+              <b><u>All Panel Member Details </u></b></h3><br/>
+                <div className="col-lg-2 mt-2 mb-2">
+                   <input className="form-control" type="search"
+                      placeholder="Serach" name="searchQuery" startIcon={< SearchSharpIcon />} onChange={this.handleSearchArea} >
+                 </input></div>
+
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -79,13 +109,18 @@ render() {
                      <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(usersremove._id)}>
               <i className="far fa-trash-alt"></i>&nbsp;Delete
             </a>   
-              </td>              
-                 </tr>
-                    )
-                     )}
-                       </tbody>     
+
+                     </td>              
+                </tr>
+                  )
+                    )}
+                      </tbody>     
                          </table>
                             </div>
+                            <br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>   
+                            <Footer/>
+
                               </div>
     )
   }

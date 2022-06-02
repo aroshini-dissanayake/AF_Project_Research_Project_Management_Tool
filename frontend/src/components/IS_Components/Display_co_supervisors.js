@@ -5,6 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
 import Button from '@material-ui/core/Button';
+
  
 export default class Display_co_supervisors extends Component{
    constructor(props){
@@ -47,10 +48,25 @@ export default class Display_co_supervisors extends Component{
            }
        })
    }
- 
+
+    //search 
+    filterData(studentgroups,searchKey){
+      const result = studentgroups.filter((studentgroups)=>
+      studentgroups.group_name.toLowerCase().includes(searchKey)
+      )
+      this.setState({studentgroups:result})
+   }
+   handleSearchArea = (e)=>{
+      const searchKey = e.currentTarget.value;
+      axios.get("http://localhost:8070/regtopic/displaycosupervisors").then(res=>{
+         if(res.data.success){
+            this.filterData(res.data.existingstdgroups,searchKey)
+         }
+      });
+      }   
    render(){
        return(   
-           <div>
+               <div>
               <StudentNavBar/>  <br/><br/> <br/>
                <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Add Co-Supervisor </u></b></h3><br/><br/>
                  <div className='container'> 
@@ -68,7 +84,7 @@ export default class Display_co_supervisors extends Component{
            <th scope='col'>Supervisor</th>
         <th scope='col'>Co-Supervisor</th>
      <th scope='col'>Status</th>
-   <th scope='col'>Actions</th>
+   <th scope='col'>Request Co-Supervisor</th>
         </tr>
            </thead>
                <tbody>

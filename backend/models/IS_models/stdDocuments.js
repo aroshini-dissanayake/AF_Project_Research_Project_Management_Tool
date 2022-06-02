@@ -5,21 +5,23 @@ const stdDocumentsSchema = new mongoose.Schema({
         type: String,
         required:true,
     },
+
     studentID:{
         type: mongoose.Schema.Types.ObjectId,
          required: true,
          ref: "students",
        },
+
     studentName: {
         type: String,
         required: true
       },
+      
     stdId: {
        type: String,
        required: true
     },
-    
-  
+
     stdDocName:{
       type: String,
       required: true

@@ -70,7 +70,7 @@ componentDidMount(){
 
 render(){
       return( 
-         <div>
+        <div>
             <StaffNavbar/>  <br/><br/> <br/>
                <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Accept Co-Supervisor Request</u></b></h3><br/><br/>
                   <div className='container'>  
@@ -131,6 +131,6 @@ render(){
                           </tbody>
                              </table>
                                 </div>     
-                                   </div>  
+                                   </div>   
         )}
 }

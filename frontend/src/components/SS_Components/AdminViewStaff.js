@@ -97,4 +97,3 @@ handleSearchArea = (e)=>{
       )
     }
   }
-  

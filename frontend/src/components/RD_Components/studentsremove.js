@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import SearchSharpIcon from '@material-ui/icons/SearchSharp';
+import Footer from '../Layout/footer';
+import AdminNavBar from '../Layout/AdminNavBar';
+
+
+
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
+
 
 export default class Studentsremove extends Component {
     constructor(props){
@@ -39,7 +46,7 @@ onDelete = (studentID) => {
 
   if (window.confirm('Are you sure you wish to delete this details?')) {
     axios.delete(`http://localhost:8070/usersremove/studentdelete/${studentID}`).then((res) => {
-      toast.warning('Details Deleted Successfully', { position: toast.POSITION.TOP_CENTER });
+      alert('Details Deleted Successfully');
 
       //alert("Delete Successfully")
       this.retrievestudentsDetails();
@@ -48,13 +55,43 @@ onDelete = (studentID) => {
   }
 }
 
+filterData(studentsremove, searchKey) {
+  const result = studentsremove.filter((stud) =>
+    stud.name.toLowerCase().includes(searchKey) ||
+    stud.student_id.toLowerCase().includes(searchKey) 
+    
+  )
+  this.setState({studentsremove: result })
+}
+
+handleSearchArea = (e) => {
+  const searchKey = e.currentTarget.value;
+  axios.get("http://localhost:8070/usersremove/getstudent").then(res => {
+    if (res.data.success) {
+      this.filterData(res.data.existingstudent,searchKey)
+    }
+  });
+}
+
 
  render() {
     return ( 
                         <div>
+
+                          <AdminNavBar/>
                      <br/><br/>
                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
               <b><u>All Students Details </u></b></h3><br/>
+              <div className="col-md-3" >
+            {/* <input type="text" className="form-control" style={{marginBottom:'2px'}} onChange={this.handleSearchArea} placeholder="Search Theater or Booking Date"/> */}
+
+            <div className="col-lg-9 mt-2 mb-2">
+                <input className="form-control" type="search"
+                  placeholder="Serach" name="searchQuery" startIcon={< SearchSharpIcon />} onChange={this.handleSearchArea} >
+                </input></div>
+
+               </div><br/>
+
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -69,6 +106,9 @@ onDelete = (studentID) => {
                          <th scope='col'>Phone Number</th>
                      <th scope='col'>Date Of Birth</th>
                      <th scope='col'>Email</th>
+                     <th scope='col'>Action</th>
+
+
                  </tr>
              </thead>
                <tbody>
@@ -95,6 +135,11 @@ onDelete = (studentID) => {
                       </tbody>     
                          </table>
                             </div>
+
+                            <br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                            <Footer/>
+
                               </div>
     )
   }

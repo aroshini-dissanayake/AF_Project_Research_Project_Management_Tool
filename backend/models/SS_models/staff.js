@@ -4,7 +4,8 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 const staffSchema = new mongoose.Schema({
-    name :{
+    
+  name :{
         type: String,
         required: true,
         trim: true, 
@@ -27,6 +28,7 @@ const staffSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
+    
     feild: {
       type: String,
       required: true,

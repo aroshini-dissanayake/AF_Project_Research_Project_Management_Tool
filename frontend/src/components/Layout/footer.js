@@ -47,5 +47,3 @@ export default class footer extends Component {
         )
     }
 }
- 
-

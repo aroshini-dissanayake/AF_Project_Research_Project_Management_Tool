@@ -17,7 +17,7 @@ router.route('/createmarkingadd').post((req,res)=>{
         }
         
         return res.status(200).json({
-            success:"Deliverys saved successfully!!"
+            success:"New Marking Points added successfully!!"
         });
     });
 });
@@ -75,7 +75,6 @@ router.route('/delete/:createmarkingID').delete((req,res)=>{
  });
 
  //get specific data
-
  router.route('/:createmarkingID').get((req,res)=>{
       let createmarkingID = req.params.createmarkingID;
       Createmarking.findById(createmarkingID,(err,createmarking)=>{

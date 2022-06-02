@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React, { Component, useState } from 'react'
 import Button from "@material-ui/core/Button";
+
+import AdminNavBar from '../Layout/AdminNavBar';
+import Footer from '../Layout/footer';
+
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
@@ -27,18 +31,23 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
                 comment:comment,
                 marks:marks,
 
-
             };
 
             axios.post("http://localhost:8070/createmarking/createmarkingadd",data)
             .then(()=>{
-              toast.success('Marking Added Successfully',{position:toast.POSITION.TOP_CENTER})
+
+             alert('Marking Added Successfully')
+
               window.setTimeout(function() {
                 window.location.href = '/homemarkingschemes';
             }, 2000);
             }).catch((err)=>{
               console.log(data)
+
+             alert('Create Marking Error Recheck All Data');
+
               toast.warning('Create Marking Error Recheck All Data',{position:toast.POSITION.TOP_CENTER});
+
             })
 
             setcriteria("");
@@ -53,7 +62,13 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
     // render() {
         return (
             <div>
-          
+
+          <AdminNavBar/> 
+          <br/><br/>
+
+          <AdminNavBar/> 
+          <br/><br/>
+
              <div className="pt-3" align="center" >
              <div className="card shadow mb-8 w-50">
                <div className="card-header py-3">
@@ -107,7 +122,9 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
                       placeholder="Enter Inputs"
                       onChange={(e)=>{
                         setavarage(e.target.value)}}
-                    />
+
+                        required/>
+
                   </div>
 
 
@@ -121,7 +138,10 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
                       title="Please Enter Valid Inputs"
                       placeholder="Enter Inputs"
                       onChange={(e)=>{
-                        setpoor(e.target.value)}}/>
+
+                        setpoor(e.target.value)}}
+                        required/>
+
                   </div>
     
                   
@@ -133,9 +153,12 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
                       name="comment"
                       id="comment" 
                       title="Please Enter Valid Inputs"
-                      placeholder="Enter Inputs" 
+
+                      // placeholder="Enter Inputs" 
                       onChange={(e)=>{
-                        setcomment(e.target.value)}} />
+                        setcomment(e.target.value)}} 
+                       readOnly/>
+
                   </div>
     
                  
@@ -149,10 +172,12 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
                       // maxLength="10"
                       // pattern ="\d{10}"
                       title="Please Enter Valid Inputs"
-                      placeholder="Enter Marks"
+
+                      // placeholder="Enter Marks"
                       onChange={(e)=>{
                         setmarks(e.target.value)}}
-                    />
+                        readOnly/>
+
                   </div>
                   <div className="form-group">
                     <Button className="form-group" type="submit" style={{ marginTop: '5px', background: "#F75D59", width: 100 + "%" }} startIcon={<AddCommentRoundedIcon/>}>
@@ -167,6 +192,10 @@ import AddCommentRoundedIcon from '@mui/icons-material/AddCommentRounded';
             </div>
           </div>
         </div>
+
+        <br/><br/>
+        <Footer/>
+
      </div>
       )
 }
