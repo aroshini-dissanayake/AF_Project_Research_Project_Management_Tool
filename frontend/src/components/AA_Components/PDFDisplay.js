@@ -11,6 +11,7 @@ const PDFDisplay = () => {
     }]);
 
     useEffect(() => {
+
       function getpdf(){
         axios.get("http://localhost:8070/presantationpdf/presantationpdfdisplay")   
           .then((res) => {
@@ -39,6 +40,7 @@ const PDFDisplay = () => {
                       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <Footer/>
   </div>
+
   )
 }
 export default PDFDisplay;

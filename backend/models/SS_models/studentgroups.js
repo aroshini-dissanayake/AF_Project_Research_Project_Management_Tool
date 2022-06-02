@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const studentgroupsSchema = new mongoose.Schema({
 
     group_name:{
@@ -11,7 +10,7 @@ const studentgroupsSchema = new mongoose.Schema({
         type: String,
         required:false,
     },
-    
+
     topicstatus:{
         type: String,
         required:false,

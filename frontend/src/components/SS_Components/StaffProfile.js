@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import UpdateStaffProfile from './StaffUpdate';
+import 'react-toastify/dist/ReactToastify.css';
 import StaffNavbar from "../Staff-Layout/StaffNavbar";
 import Footer from '../Layout/footer';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -27,6 +28,7 @@ const StaffProfile = () => {
                }
                await axios.get("http://localhost:8070/staff/staffprofile", config)
                   .then((res) => {
+
                      setname(res.data.Staff.name)
                      setphone(res.data.Staff.phone)
                      setfaculty(res.data.Staff.faculty)
@@ -36,6 +38,7 @@ const StaffProfile = () => {
                      setemail(res.data.Staff.email)
                      setpwd(res.data.Staff.pwd)
                      setLoading(false)
+
     
             }).catch((error) => {
                 console.log(error.message)
@@ -49,10 +52,11 @@ const StaffProfile = () => {
    
     //update staff member account details
     const updateStaffProfile = () => {
-        setShow(true)
-      }
+      setShow(true)
+    }
 
     //logout the staff menber account
+
     const staffLogout = () => {
       if (window.confirm('Are you sure you wish to logout from this Account?')) {
        localStorage.removeItem('Authorization')
@@ -66,8 +70,8 @@ const StaffProfile = () => {
          <CircularProgress hidden={false} />
       </div>
    }
-
       return (
+
                       <div class="bod" style={{background:"#F8F8FF"}}  >
                    <StaffNavbar/>
                <br/><br/><br/><br/>     
@@ -101,6 +105,7 @@ const StaffProfile = () => {
          <div class="row">
             <div class="col-sm-3">
                <h6 class="mb-0"><b>Phone Number</b></h6>
+
                </div>
            <div class="col-sm-9 text-secondary">
        {phone}
@@ -151,6 +156,7 @@ const StaffProfile = () => {
                       {email}
                   </div>
                </div>
+
             <hr/> 
       <div class="row">
           <div class="col-sm-12">
@@ -184,6 +190,7 @@ onHide={() => setShow(false)}/>
 <br/><br/><br/><br/>           
 <Footer/>
 </div>
+
    )
 }
  

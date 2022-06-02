@@ -135,6 +135,7 @@ render() {
         <tbody>
           {this.state.createmarking.map((createmarking) => (
              <tr>
+
           <td>
             
             <a href={`/createmarking/${createmarking._id}`} style={{textDecoration:'none'}}>
@@ -145,22 +146,25 @@ render() {
           <td>{createmarking.good}</td>
           <td>{createmarking.avarage}</td>
           <td>{createmarking.poor}</td>
+
           <td></td>
           <td></td>
           <td> 
+
+
               <Button className="form-group" type="submit" style={{ background: "#C3FDB8", width: 10 + "%", align: "center" }} startIcon={<EditSharpIcon />} href={`/createmarkingedit/${createmarking._id}`}>
                         </Button>
 
                         &nbsp;
                         <Button className="form-group" type="submit" style={{ background: "#F75D59", width: 10 + "%", align: "center" }} startIcon={<DeleteForeverSharpIcon />} onClick={() => this.onDelete(createmarking._id)}>
                         </Button>
-
               </td>
                  </tr>
 
           ))}
         </tbody>
         </table>
+
         <div className="form-group">
                
                   <Button  href="/createmarkingadd" variant="contained" className="w-10" align="left" style={{ background: "#CCCCFF", width: +"%" }} startIcon={< AddCircleOutlinedIcon />}  >

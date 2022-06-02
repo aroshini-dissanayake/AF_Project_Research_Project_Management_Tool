@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
 import Button from '@material-ui/core/Button';
- 
+
  
 export default class Display_co_supervisors extends Component{
    constructor(props){
@@ -17,6 +17,23 @@ export default class Display_co_supervisors extends Component{
    onReadirect(id,feild){
        window.location.href = `/regtopic/addcoSupervisor/${id}/${feild}`
    }
+
+   //search 
+   filterData(studentgroups,searchKey){
+      const result = studentgroups.filter((studentgroups)=>
+      studentgroups.group_name.toLowerCase().includes(searchKey)
+      )
+      this.setState({studentgroups:result})
+   }
+   handleSearchArea = (e)=>{
+      const searchKey = e.currentTarget.value;
+      axios.get("http://localhost:8070/regtopic/displaycosupervisors").then(res=>{
+         if(res.data.success){
+            this.filterData(res.data.existingstdgroups,searchKey)
+         }
+      });
+      }   
+
    componentDidMount(){
       this.retrieveResearchTopics();
   }

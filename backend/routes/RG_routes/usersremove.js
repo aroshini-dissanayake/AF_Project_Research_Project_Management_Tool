@@ -7,6 +7,7 @@ let student = require('../../models/AA_models/student');
 //Get panel member Details
 
 router.get("/getpanelmember",async(req,res)=>{
+
     try{
     const panelmember = await staff.find({
     role: "Panel Memeber" 
@@ -44,6 +45,7 @@ router.route('/panelmemberdelete/:panelmemberID').delete((req,res)=>{
 
 router.get("/getsupervisor",async(req,res)=>{
     try{
+
         const supervisor = await staff.find({
         role: "Supervisor" 
         })
@@ -56,6 +58,7 @@ router.get("/getsupervisor",async(req,res)=>{
         console.log(error.message);
         res.status(500)
         .send({error:error.message});
+
     }
     })
 
@@ -95,6 +98,7 @@ router.get("/getcosupervisor",async(req,res)=>{
     })
 
     
+
 //Delete Supervisor details
 router.route('/cosupervisordelete/:cosupervisorID').delete((req,res)=>{
     staff.findByIdAndRemove(req.params.cosupervisorID).exec((err,deletecosupervisor)=>{

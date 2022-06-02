@@ -6,7 +6,7 @@ const presantationpdfSchema = new mongoose.Schema({
         type: String,
         required:true,
     },
-    
+
     docName:{
         type: String,
           required: true

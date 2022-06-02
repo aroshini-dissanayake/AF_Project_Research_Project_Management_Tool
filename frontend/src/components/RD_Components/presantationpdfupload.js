@@ -57,11 +57,11 @@ export default function presantationpdfupload(){
                 alert(err)
             })
         });
+    })
+  
     }
-    );
-}
- 
     return (
+
         <div>
         <AdminNavBar/> 
            <br/><br/>
@@ -88,6 +88,7 @@ export default function presantationpdfupload(){
                   <br/><br/>
                      <Footer/>
                         </div>
+
     
     )
 

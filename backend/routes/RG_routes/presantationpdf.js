@@ -19,6 +19,7 @@ router.post("/presantation", (req, res) => {
 
 //get pdf 
 router.get("/presantationpdfdisplay",async (req, res) => {
+
   const pdf = await Presantation.find();
   try {
     res.json(pdf)
@@ -27,5 +28,4 @@ router.get("/presantationpdfdisplay",async (req, res) => {
     res.send({ status: "Error with PDF Fetched", error: error.message });
   }
 });
-
   module.exports = router;

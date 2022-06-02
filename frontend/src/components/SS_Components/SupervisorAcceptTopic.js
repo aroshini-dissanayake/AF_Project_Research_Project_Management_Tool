@@ -29,6 +29,7 @@ filterData(studentgroups,searchKey){
        }
      });
    }
+  
    
 //retrieve student group details    
 componentDidMount(){
@@ -71,6 +72,7 @@ componentDidMount(){
 render(){
       return( 
          <div>
+
          <StaffNavbar/>  <br/><br/> <br/>
             <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Accept Supervisor Request</u></b></h3><br/><br/>
                <div className='container'>  
@@ -110,6 +112,7 @@ render(){
                       <div><Button style={{color:"#9F000F",fontFamily:"sans-serif"}}><b>{studentgroups.supervisortopicstatus}</b></Button></div>
 
                   }
+
                   </td>
                    <td>                       
                       <IconButton aria-label='btn btn-success' size="small"
