@@ -13,7 +13,6 @@ export default class Add_research_topic extends Component{
     this.onChangeResearchfield = this.onChangeResearchfield .bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
-
        this.state={
            group_name:"",
            researchTopic:"",
@@ -45,18 +44,13 @@ export default class Add_research_topic extends Component{
       })
     }
 
-
-
-  
-  onSubmit(e) {
-
+   onSubmit = (e)=>{
       e.preventDefault();
       const id = this.props.match.params.id;
       const topicinfo = {
         researchTopic: this.state.researchTopic,
         researchField: this.state.researchField,
         
-
        }
  
        axios.post(`http://localhost:8070/regtopic/research/${id}`,topicinfo).then((res)=>{ 
@@ -64,7 +58,6 @@ export default class Add_research_topic extends Component{
         alert("Research Topic and Field registered");
         window.location.href="/regtopic/displayresearchtopic"
       
-
    })
    .catch((e)=>{
    });
@@ -81,7 +74,6 @@ return(
            <b><u>ADD RESEARCH TOPIC AND FIELD TO STUDENT GROUP</u></b></h3>
               <form onSubmit={this.onSubmit} className="text-color">
                 <div className="form-group">
-
                   <div align="left"><br/> <br/>
                  <label style={{marginBottom:'2px'}}><b>Research Topic</b></label>
               <input type="userInput" required className="form-control" placeholder="Enter the Research Topic" value={this.state.researchTopic}

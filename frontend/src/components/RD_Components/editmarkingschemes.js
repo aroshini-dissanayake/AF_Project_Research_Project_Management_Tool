@@ -136,14 +136,12 @@ componentDidMount(){
           
            <div className ="form-group" style={{marginBottom:'15px'}}>
               <label style={{marginBottom:'5px'}}>Comment</label>
-
               <input type="text" className="form-control" name="comment"  value={this.state.comment}
              onChange={this.handleInputChange}readOnly/>
-  </div>
+           </div>
 
            <div className ="form-group" style={{marginBottom:'15px'}}>
               <label style={{marginBottom:'5px'}}>Marks</label>
-
               <input type="text" className="form-control" name="marks"  value={this.state.marks}
              onChange={this.handleInputChange}readOnly/>
            </div>

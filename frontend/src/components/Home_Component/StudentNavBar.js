@@ -20,7 +20,8 @@ export default class StudentNavBar extends Component {
         </li>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/groups" style={{color: "#ffff"}}><b>FeedBack</b></a>
-</li>
+        </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: "#ffff"}}>

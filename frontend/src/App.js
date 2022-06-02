@@ -11,6 +11,8 @@ import Staff_Dashboard from './components/SS_Components/Staff_Dashboard';
 import DisplayStudentgroups from './components/SS_Components/Display_studentgroups';
 import ResearchTopic from './components/SS_Components/ResearchTopic';
 import Add_Feedback from './components/SS_Components/Add_Feedback'
+import SupervisorAcceptTopic from './components/SS_Components/SupervisorAcceptTopic';
+import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcceptTopic';
 import StaffProfile from './components/SS_Components/StaffProfile';
 import Add_panel_member from './components/SS_Components/Add_panel_member'
 import PanelMembers from './components/SS_Components/PanelMembers';
@@ -50,31 +52,12 @@ import AddSupervisors from './components/IS_Components/Add_supervisor';
 import Display_co_supervisors from './components/IS_Components/Display_co_supervisors';
 import AddCoSupervisors from './components/IS_Components/Add_co_supervisor';
 import DocUpload from './components/IS_Components/DocUpload';
-import SupervisorAcceptTopic from './components/SS_Components/SupervisorAcceptTopic';
-import CoSupervisorAcceptTopic from './components/SS_Components/CoSupervisorAcceptTopic';
-import StaffProfile from './components/SS_Components/StaffProfile';
-import Add_panel_member from './components/SS_Components/Add_panel_member'
-import PanelMembers from './components/SS_Components/PanelMembers';
-import PDFUpload from './components/SS_Components/PDFUpload';
-import AdminViewStaff from './components/SS_Components/AdminViewStaff';
-import Add_Feedback from './components/SS_Components/Add_Feedback'
-import Createmarkingschemes from './components/RD_Components/createmarkingschemes';
-import Homemarkingschemes from './components/RD_Components/homemarkingschemes';
-import Editmarkingschemes from './components/RD_Components/editmarkingschemes';
-import Markingschemesdetails from './components/RD_Components/markingschemesdetails';
-import Usersremove from './components/RD_Components/usersremove';
-import Supervisorremove from './components/RD_Components/supervisorremove';
-import CoSupervisorremove from './components/RD_Components/cosupervisorremove';
-import Studentsremove from './components/RD_Components/studentsremove';
-import presantationpdfupload from './components/RD_Components/presantationpdfupload';
-
 
 export default class App extends Component {
     render() {
       return (
         <Router>
           <Switch>
-
 
     {/* Sajani */}
           <Route path = "/" component={StudentHomePage} exact/>
@@ -122,7 +105,7 @@ export default class App extends Component {
           <Route path= "/groupss" component={Groupss}/>
           <Route path= "/display/:id" component={Add_Group_Members}/>
           <Route path = "/pdfdisplay" component={PDFDisplay}/> 
-
+       
 
     {/* Imaya */}
           <Route path = "/regtopic/displayresearchtopic" component={Display_researchtopics}/> 
@@ -139,5 +122,3 @@ export default class App extends Component {
       )
     }
 }
-
-

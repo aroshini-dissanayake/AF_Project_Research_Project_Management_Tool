@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
 import Footer from '../Layout/footer';
 import AdminNavBar from '../Layout/AdminNavBar';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
-
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-toast.configure()
 
 
 export default class CoSupervisorremove extends Component {
@@ -38,11 +33,8 @@ onDelete = (cosupervisorID) => {
 
     if (window.confirm('Are you sure you wish to delete this details?')) {
       axios.delete(`http://localhost:8070/usersremove/cosupervisordelete/${cosupervisorID}`).then((res) => {
-
        alert('Details Deleted Successfully');
-
-        toast.warning('Details Deleted Successfully', { position: toast.POSITION.TOP_CENTER });
-
+  
         //alert("Delete Successfully")
         this.retrievecosupervisorDetails();
   
@@ -88,7 +80,6 @@ onDelete = (cosupervisorID) => {
                        <input className="form-control" type="search"
                     placeholder="Serach" name="searchQuery" startIcon={< SearchSharpIcon />} onChange={this.handleSearchArea} >
                 </input></div><br/>
-
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -99,11 +90,7 @@ onDelete = (cosupervisorID) => {
                          <th scope='col'>Feild</th>
                            <th scope='col'>Staff ID</th>
                          <th scope='col'>Role</th>
-
                      <th scope='col'>Email</th>
-
-                       <th scope='col'>Email</th>
-                    <th scope='col'>Action</th>
                  </tr>
              </thead>
                <tbody>
@@ -126,11 +113,9 @@ onDelete = (cosupervisorID) => {
                     )}
                       </tbody>     
                          </table>
-
                             </div><br/><br/><br/><br/><br/><br/>
                             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>   
                             <Footer/>
-
                               </div>
     )
   }

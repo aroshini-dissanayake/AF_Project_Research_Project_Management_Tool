@@ -70,7 +70,6 @@ export default function DocUpload(){
 
 return (
     <div>
-
     <StudentNavBar/> 
        <br/><br/> 
           <div align="center">

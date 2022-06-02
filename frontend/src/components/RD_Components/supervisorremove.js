@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
-
 import Footer from '../Layout/footer';
 import AdminNavBar from '../Layout/AdminNavBar';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
-
-import AdminNavBar from '../Layout/AdminNavBar';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-toast.configure()
 
 export default class Supervisorremove extends Component {
     constructor(props){
@@ -20,7 +12,7 @@ export default class Supervisorremove extends Component {
         };
     }  
 
-//retrive supervisor members 
+    //retrive supervisor members 
 componentDidMount(){
     this.retrievesupervisorDetails();
 } 
@@ -41,18 +33,14 @@ onDelete = (supervisorID) => {
 
     if (window.confirm('Are you sure you wish to delete this details?')) {
       axios.delete(`http://localhost:8070/usersremove/supervisordelete/${supervisorID}`).then((res) => {
-
        alert('Details Deleted Successfully');
-
-        toast.warning('Details Deleted Successfully', { position: toast.POSITION.TOP_CENTER });
-
+  
         //alert("Delete Successfully")
         this.retrievesupervisorDetails();
   
       })
     }
   }
-
   filterData(studentsremove, searchKey) {
     const result = studentsremove.filter((stud) =>
       stud.name.toLowerCase().includes(searchKey) ||
@@ -84,7 +72,6 @@ onDelete = (supervisorID) => {
                   placeholder="Serach" name="searchQuery" startIcon={< SearchSharpIcon />} onChange={this.handleSearchArea} >
                 </input></div>
              <div className='container'>  
-
        <table className = "table table-hover">
           <thead>
              <tr bgcolor="#79BAEC">
@@ -93,10 +80,7 @@ onDelete = (supervisorID) => {
                        <th scope='col'>Faculty</th>
                          <th scope='col'>Feild</th>
                            <th scope='col'>Staff ID</th>
-     <th scope='col'>Role</th>
-
                          <th scope='col'>Role</th>
-
                         <th scope='col'>Email</th>
                      <th scope='col'>Action</th>
                  </tr>
@@ -110,7 +94,6 @@ onDelete = (supervisorID) => {
                                  <td>{supervisorremove.feild}</td>
                             <td>{supervisorremove.staff_id}</td>
                         <td>{supervisorremove.role}</td>
-
                    <td>{supervisorremove.email}</td>
                    <td>
                      <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(supervisorremove._id)}>
@@ -118,13 +101,11 @@ onDelete = (supervisorID) => {
             </a>   
                      </td>              
                 </tr>
-
                   )
                     )}
                       </tbody>     
                          </table>
                             </div>
-
                             <br/><br/><br/><br/><br/><br/>
                             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                             <Footer/>

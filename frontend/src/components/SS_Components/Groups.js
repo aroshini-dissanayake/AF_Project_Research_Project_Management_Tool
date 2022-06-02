@@ -68,7 +68,7 @@ componentDidMount(){
                          </table>
                             </div>     
     
-</div>
+  </div>
     )
   }
 }

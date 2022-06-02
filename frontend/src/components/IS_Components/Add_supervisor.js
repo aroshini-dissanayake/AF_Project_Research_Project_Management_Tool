@@ -22,7 +22,7 @@ export default class Add_supervisor extends Component{
   async componentDidMount(){
     const feild = this.props.match.params.feild
     const id = this.props.match.params.id
-
+      
        await axios.get(`http://localhost:8070/regtopic/getsupervisor/${feild}`).then((res)=>{
       
        if(res.data.success){
@@ -43,7 +43,6 @@ export default class Add_supervisor extends Component{
        e.preventDefault();
        const id = this.props.match.params.id;
        const data = {
-
         grpSupervisor:this.state.grpSupervisor,
        }
  
@@ -51,7 +50,6 @@ export default class Add_supervisor extends Component{
         console.log(res.data)
         alert("Supervisor Requested");
         window.location.href="/regtopic/displaysupervisors"
-
    })
    .catch((e)=>{
    });
@@ -70,12 +68,10 @@ render(){
        <form onSubmit={this.onSubmit} className="text-color">
    <div className="form-group">
 <div align="left"><br/> 
-
    <label style={{marginBottom:'2px'}}><b> Supervisor Name</b></label>
       <input type="userInput" required className="form-control mt-2" placeholder="Enter Supervisor Name" value={this.state.grpSupervisor}
          onChange={this.onChangeGrpSupervisor}/>
            </div></div><br/><br/>
-
                <Button variant="contained" className="w-6" style={{background: "#151B54", width: 30+"%",color:"white"}}
                    disableElevation type="submit">Request Supervisor</Button>
                      </form>

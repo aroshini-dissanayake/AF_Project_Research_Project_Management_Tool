@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import Footer from '../Layout/footer';
 import AdminNavBar from '../Layout/AdminNavBar';
-
-
-
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-toast.configure()
 
 
 export default class Studentsremove extends Component {
@@ -77,7 +70,6 @@ handleSearchArea = (e) => {
  render() {
     return ( 
                         <div>
-
                           <AdminNavBar/>
                      <br/><br/>
                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
@@ -91,7 +83,6 @@ handleSearchArea = (e) => {
                 </input></div>
 
                </div><br/>
-
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -107,8 +98,6 @@ handleSearchArea = (e) => {
                      <th scope='col'>Date Of Birth</th>
                      <th scope='col'>Email</th>
                      <th scope='col'>Action</th>
-
-
                  </tr>
              </thead>
                <tbody>
@@ -135,11 +124,9 @@ handleSearchArea = (e) => {
                       </tbody>     
                          </table>
                             </div>
-
                             <br/><br/><br/><br/><br/><br/>
                             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                             <Footer/>
-
                               </div>
     )
   }

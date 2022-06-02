@@ -19,7 +19,6 @@ router.post("/presantation", (req, res) => {
 
 //get pdf 
 router.get("/presantationpdfdisplay",async (req, res) => {
-
   const pdf = await Presantation.find();
   try {
     res.json(pdf)

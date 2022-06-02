@@ -39,12 +39,6 @@ render() {
 <div><AdminNavBar/>
 <br/><br/><br/>
       <div align="center" style= {{marginTop:'20px'}}>
-
-          <h4>{criteria}</h4>
-          <h4>{good}</h4>
-          <hr/>
-
-
       <dl className="row">
   <div className="pt-3" align="center" background color="red">
     <div className="card shadow mb-8 w-50">

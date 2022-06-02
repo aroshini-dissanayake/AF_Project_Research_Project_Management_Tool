@@ -3,11 +3,6 @@ import axios from 'axios';
 import Footer from '../Layout/footer';
 import AdminNavBar from '../Layout/AdminNavBar';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
-;
-
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-toast.configure()
 
 
 export default class Usersremove extends Component {
@@ -31,7 +26,6 @@ retrievepanelmemberDetails(){
     }
   })
  }
-
 
  filterData(studentsremove, searchKey) {
   const result = studentsremove.filter((stud) =>
@@ -58,7 +52,6 @@ onDelete = (panelmemberID) => {
 
   if (window.confirm('Are you sure you wish to delete this details?')) {
     axios.delete(`http://localhost:8070/usersremove/panelmemberdelete/${panelmemberID}`).then((res) => {
-
       alert('Details Deleted Successfully');
 
       //alert("Delete Successfully")
@@ -71,7 +64,6 @@ onDelete = (panelmemberID) => {
 
 render() {
     return ( 
-
                             <div>
                           <AdminNavBar/>
                      <br/><br/>
@@ -81,7 +73,6 @@ render() {
                    <input className="form-control" type="search"
                       placeholder="Serach" name="searchQuery" startIcon={< SearchSharpIcon />} onChange={this.handleSearchArea} >
                  </input></div>
-
            <div className='container'>  
        <table className = "table table-hover">
           <thead>
@@ -109,7 +100,6 @@ render() {
                      <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(usersremove._id)}>
               <i className="far fa-trash-alt"></i>&nbsp;Delete
             </a>   
-
                      </td>              
                 </tr>
                   )
@@ -120,7 +110,6 @@ render() {
                             <br/><br/><br/><br/><br/><br/>
                             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>   
                             <Footer/>
-
                               </div>
     )
   }
