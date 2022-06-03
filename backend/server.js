@@ -21,7 +21,14 @@ app.use(bodyParser.urlencoded({
   parameterLimit:50000
 }));
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://loclhost:1234"],
+}));
+
+app.get("/",(req,res)=>{
+  res.json("server has started")
+})
+
 
 //To accept the JSON Data
 app.use(express.json());
