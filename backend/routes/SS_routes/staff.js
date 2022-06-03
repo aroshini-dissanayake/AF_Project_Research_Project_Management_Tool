@@ -22,7 +22,7 @@ router.post("/staffsignup", async (req, res) => {
       } = req.body;
 
   //unit test
-  if(!name || !phone  || !faculty ||  !feild || !staff_id || !role || !email || !password)
+  if(!name || !phone  || !faculty ||  !feild || !staff_id || !role || !email || !pwd)
   return res
   .status(400)
   .json({errorMessage : "required"});

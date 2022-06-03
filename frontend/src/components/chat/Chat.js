@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
-import StudentNavBar from '../Layout/StudentHomeNavBar';
 import Footer from '../Layout/footer';
 
 function Chat({ socket, username, room }) {
@@ -33,9 +32,9 @@ function Chat({ socket, username, room }) {
 
   return (
       <div>
-    <StudentNavBar/>
-    <div className="chat-window">
-      <div className="chat-header">
+        <center><br/><br/><br/><br/>
+    <div className="chat-window" >
+      <div className="chat-header" >
         <p>Live Chat</p>
       </div>
       <div className="chat-body">
@@ -64,7 +63,7 @@ function Chat({ socket, username, room }) {
         <input
           type="text"
           value={currentMessage}
-          placeholder="Hey..."
+          placeholder="Enter Message Here....."
           onChange={(event) => {
             setCurrentMessage(event.target.value);
           }}
@@ -75,6 +74,7 @@ function Chat({ socket, username, room }) {
         <button onClick={sendMessage}>&#9658;</button>
       </div>
     </div>
+    </center><br/><br/><br/><br/>
     <Footer/>
     </div>
   );

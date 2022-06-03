@@ -103,14 +103,6 @@ export default class StudentDashboard extends Component {
         </div>
            </div>
 
-         <div class="col" style={{width: "40rem",color:"white"}} > 
-      <div class="shadow h-60" id="cardcol1">
-   <div class="card-body" style={{background: "#151B54"}} onClick={groupreg}>
-<h5 class="card-title" id="dashh5"  align="left"><b>Co-Supervisor Request</b></h5>
-  </div>
-     </div>
-        </div>
-
         <div class="col" style={{width: "40rem",color:"white"}} > 
       <div class="shadow h-60" id="cardcol1">
   <div class="card-body" style={{background: "#151B54"}} onClick={regresearchtopic} >
@@ -153,14 +145,6 @@ export default class StudentDashboard extends Component {
       <div class="shadow h-60" id="cardcol1">
   <div class="card-body" style={{background: "#151B54"}} onClick={downloadtemplate}>
 <h5 class="card-title" id="dashh5" align="left"><b>Download Template</b></h5>
-  </div>
-     </div>
-        </div>
-
-        <div class="col" style={{width: "40rem",color:"white"}} > 
-      <div class="shadow h-60" id="cardcol1">
-  <div class="card-body" style={{background: "#151B54"}} onClick={downloadtemplate}>
-<h5 class="card-title" id="dashh5" align="left"><b>Course Overview</b></h5>
   </div>
      </div>
         </div>

@@ -75,10 +75,8 @@ handleSearchArea = (e) => {
                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
               <b><u>All Students Details </u></b></h3><br/>
               <div className="col-md-3" >
-            {/* <input type="text" className="form-control" style={{marginBottom:'2px'}} onChange={this.handleSearchArea} placeholder="Search Theater or Booking Date"/> */}
-
             <div className="col-lg-9 mt-2 mb-2">
-                <input className="form-control" type="search"
+                <input className="form-control" type="search" style={{marginLeft:"75px"}}
                   placeholder="Serach" name="searchQuery" startIcon={< SearchSharpIcon />} onChange={this.handleSearchArea} >
                 </input></div>
 
