@@ -44,10 +44,10 @@ export default class StudentDashboard extends Component {
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
      <div class="carousel-item">
-   <img src="https://static.sliit.lk/wp-content/uploads/2020/10/29121536/pdp-sliit.jpg" class="d-block w-100" alt="..."></img>
+   <img src="https://static.sliit.lk/wp-content/uploads/2022/05/26060204/Microsoft-Imagine-Cup-2022-Team-Nana-Shilpa-of-SLIIT-Faculty-of-Computing.jpg" class="d-block w-100" alt="..."></img>
 </div>
    <div class="carousel-item">
-      <img src="https://static.sliit.lk/wp-content/uploads/2020/01/06040608/SLIIT-BSc-Hons-in-Information-Technology-Specializing-in-Data-Science.jpg" class="d-block w-100" alt="..."></img>
+      <img src="https://static.sliit.lk/wp-content/uploads/2022/04/28110910/SLIIT-Centre-for-Open-and-Distance-Education.jpg" class="d-block w-100" alt="..."></img>
          </div>
             <div class="carousel-item">
               <img src="https://static.sliit.lk/wp-content/uploads/2018/05/research-slider-n1.jpg" class="d-block w-100" alt="..."></img>
@@ -67,16 +67,9 @@ export default class StudentDashboard extends Component {
        <span class="carousel-control-next-icon" aria-hidden="true"></span>
            <span class="visually-hidden">Next</span>
              </button>
-          <div class="col" style={{width: "100rem",color:"white"}} > 
-        <div class="shadow h-60" id="cardcol1">
-     <div class="card-body" style={{background: "#C11B17"}} >
-  <h5 class="card-title" id="dashh5"  align="center"><b> Final Exam Links</b></h5>
-    </div>
-        </div>
-           </div> 
         </div> 
       </div>
-   <div className="container" ><br/><br/><br/><br/>
+   <div className="container" ><br/>
       <div class="row row-cols-1 row-cols-md-3 g-4" > 
         <div class="col" style={{width: "80rem",color:"black"}} >
           <div class="shadow h-60" id="cardcol1">
