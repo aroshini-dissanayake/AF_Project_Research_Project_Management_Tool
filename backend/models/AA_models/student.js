@@ -80,6 +80,11 @@ const studentSchema = new mongoose.Schema({
     type: String,
   },
 
+  status: {
+    type:String,
+    default: "pending"
+  },
+
   tokens: [
     {
       token: {

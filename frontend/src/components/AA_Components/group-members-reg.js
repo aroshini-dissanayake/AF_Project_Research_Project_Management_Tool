@@ -57,7 +57,7 @@ export default class Add_Group_Members extends Component{
           }    
     })
     .catch((e)=>{
-      alert('This group already have 4 members',e.message)
+      alert('Error with Registering member',e.message)
     });
 }
   
