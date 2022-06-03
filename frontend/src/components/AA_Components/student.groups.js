@@ -71,7 +71,7 @@ export default class Groupss extends Component{
                    </div>
                       </form>     
                         </div>
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 <Footer/>  
             </div> 
         )}

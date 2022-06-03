@@ -14,7 +14,7 @@ const supervisor = () => {
         }
         
 const chatgroups = () => {
-    window.location = `#`            
+    window.location = `/chatdialog`            
         }
 const marking = () => {
          window.location = `/evaluate`            
@@ -55,16 +55,9 @@ export default class Staff_Dashboard extends Component {
        <span class="carousel-control-next-icon" aria-hidden="true"></span>
            <span class="visually-hidden">Next</span>
              </button>
-          <div class="col" style={{width: "100rem",color:"white"}} > 
-        <div class="shadow h-60" id="cardcol1">
-     <div class="card-body" style={{background: "#C11B17"}} >
-  <h5 class="card-title" id="dashh5"  align="center"><b> Final Exam Links</b></h5>
-    </div>
-        </div>
-           </div> 
         </div> 
       </div>
-   <div className="container" ><br/><br/><br/><br/>
+   <div className="container" ><br/>
       <div class="row row-cols-1 row-cols-md-3 g-4" > 
         <div class="col" style={{width: "80rem",color:"black"}} >
           <div class="shadow h-60" id="cardcol1">

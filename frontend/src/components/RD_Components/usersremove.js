@@ -70,7 +70,7 @@ render() {
                   <h3 align="center" style={{fontSize:'30px',fontFamily:"Times New Roman"}}>
               <b><u>All Panel Member Details </u></b></h3><br/>
                 <div className="col-lg-2 mt-2 mb-2">
-                   <input className="form-control" type="search"
+                   <input className="form-control" type="search" style={{marginLeft:"75px"}}
                       placeholder="Serach" name="searchQuery" startIcon={< SearchSharpIcon />} onChange={this.handleSearchArea} >
                  </input></div>
            <div className='container'>  

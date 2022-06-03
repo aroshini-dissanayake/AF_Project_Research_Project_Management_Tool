@@ -20,12 +20,11 @@ router.post("/signup", async (req, res) => {
       phone,
       DOB,
       email,
-      pwd,
-      imageUrl
+      pwd
     } = req.body;
 
 //unit test
-if(!name || !nic  || !faculty ||  !student_id || !batch || !specialization || !phone || !DOB || !email || !password)
+if(!name || !nic  || !faculty ||  !student_id || !batch || !specialization || !phone || !DOB || !email || !pwd)
 return res
 .status(400)
 .json({errorMessage : "required"});
@@ -38,7 +37,7 @@ return res.status(400).json({
 
 if(phone.length<5)
 return res.status(400).json({
-    errorMessage: "Please enter a first name of at least 3 characters.",
+    errorMessage: "Please enter a phone number of at least 3 characters.",
 });
 
 if(student_id.lenght <3)
@@ -70,7 +69,6 @@ return res.status(400).json({
       DOB: DOB,
       email: email,
       pwd: pwd,
-      imageUrl: imageUrl
     };
 
     const newstudent = new Student(student_a);
@@ -134,7 +132,6 @@ router.put('/update', auth, async (req, res) => {
       DOB,
       email,
       pwd,
-      imageUrl
 
     } = req.body;
 
@@ -155,8 +152,7 @@ router.put('/update', auth, async (req, res) => {
       phone: phone,
       DOB: DOB,
       email: email,
-      pwd: pwd,
-      imageUrl: imageUrl
+      pwd: pwd
       })
 
     res.status(200).send({status: 'Student Profile Updated', Std: studentUpdate})

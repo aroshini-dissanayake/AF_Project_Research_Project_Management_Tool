@@ -95,6 +95,14 @@ export default class BackendHomeNavBar extends Component {
                   startIcon={<AccountCircleIcon />}
                 >
                Staff
+              </Button>     &nbsp;&nbsp;
+              <Button
+                  href='/'
+                  style={{ color:"black",  background:"#C6DEFF" }}
+                  variant="outlined"
+                  startIcon={<AccountCircleIcon />}
+                >
+               Back
               </Button>     
               </div>
             </div>
