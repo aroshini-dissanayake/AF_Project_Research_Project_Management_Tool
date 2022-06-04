@@ -15,22 +15,22 @@ router.post("/research/:id", async (req, res) => {
      const research_Field = req.body.researchField;
 
  
-     //unit test
-     if(!reserch_topic || !research_Field)
+    //  //unit test
+    //  if(!reserch_topic || !research_Field)
 
-     return res
-     .status(400)
-     .json({errorMessage : "required"});
+    //  return res
+    //  .status(400)
+    //  .json({errorMessage : "required"});
 
-      if(reserch_topic.length<4)
-      return res.status(400).json({
-      errorMessage: "Please enter a first name of at least 3 characters.",
-      });
+    //   if(reserch_topic.length<4)
+    //   return res.status(400).json({
+    //   errorMessage: "Please enter a first name of at least 3 characters.",
+    //   });
 
-      if(research_Field.length<5)
-      return res.status(400).json({
-      errorMessage: "Please enter a first name of at least 3 characters.",
-      });
+    //   if(research_Field.length<5)
+    //   return res.status(400).json({
+    //   errorMessage: "Please enter a first name of at least 3 characters.",
+    //   });
 
      group2.researchTopic = reserch_topic;
      group2.researchField = research_Field;
