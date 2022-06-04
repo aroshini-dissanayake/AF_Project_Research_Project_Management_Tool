@@ -116,10 +116,8 @@ router.post('/login', async (req, res) => {
       }
     });
 
-    //update
-
+//update
 router.put('/update', auth, async (req, res) => {
-
   try {
     const {
       name,
@@ -131,16 +129,12 @@ router.put('/update', auth, async (req, res) => {
       phone,
       DOB,
       email,
-      pwd,
-
-    } = req.body;
-
+      pwd,  } = req.body;
     let Std = await Student.findOne({student_id})
 
     if (!Std) {
       throw new Error('There is no student account')
     }
-
     const studentUpdate = await Student.findByIdAndUpdate(req.Std.id, 
       {
       name: name,
@@ -156,7 +150,6 @@ router.put('/update', auth, async (req, res) => {
       })
 
     res.status(200).send({status: 'Student Profile Updated', Std: studentUpdate})
-
   } catch (error) {
     res.status(500).send({error: error.message})
     console.log(error)
@@ -164,7 +157,6 @@ router.put('/update', auth, async (req, res) => {
 });
 
   //logout
-
   router.post("/logout", auth, async (req, res) => {
 
     try {
@@ -181,19 +173,14 @@ router.put('/update', auth, async (req, res) => {
   });
 
   //group register
-
   router.post("/groupReg", async (req, res) => {
     try {
-      const {
-        
+      const {      
         group_name,
-
       } = req.body;
-
-      group1 = {
-    
+     
+      group1 = { 
           group_name: group_name,
-
       };
 
       let groupName = await group.findOne({ group_name });
@@ -216,24 +203,17 @@ router.put('/update', auth, async (req, res) => {
 
 
   //register members
-
-  router.post("/groupReg/:id",auth, async (req, res) => {
-    
-    const groupId = req.params.id
-    
+  router.post("/groupReg/:id",auth, async (req, res) => {  
+    const groupId = req.params.id  
     try {
-      
       const group1 = await group.findById(groupId)
       const student = await Student.findById(req.Std._id);
-
       if (!group1) {
         throw new Error('There is no group..!!!')
-      }
-      
+      }   
       if (!student) {
         throw new Error('There is no Student');
       }
-
       //check wether the student group is full or not.
       const arrLength = group1.groupMembers.length;
       // const stdt = await group.findOne(student_id);
@@ -241,23 +221,15 @@ router.put('/update', auth, async (req, res) => {
       if(arrLength >= 4){
         throw new Error('This group already have 4 members..!!!')
       }
-
       //check wether the student is regstered to a group or not.
       if (student.status == "Registered") {
         throw new Error("Student already registered in a group...!!!");
       }
       else{
         const grp_status = "Registered";
-
         student.status = grp_status;
-
         await student.save()
-
-
-      //add registering member details to student group db
-      // const id1 = await Student.find({  m_student_id},{"_id":1});
-      // const mem1 = await Student.findById(id1); 
-
+        
       let student_groupItem = {
         sid:student._id,
         student_id: student.student_id,

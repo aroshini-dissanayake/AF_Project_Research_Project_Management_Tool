@@ -19,7 +19,7 @@ router.post('/adminsignup', async (req, res) => {
 
       } = req.body
 
-//unit test
+     //unit test
       if(!name || !phone  || !sliitid ||  !email || !password  )
       return res
       .status(400)
@@ -40,9 +40,6 @@ router.post('/adminsignup', async (req, res) => {
       return res.status(400).json({
         errorMessage: "Please Enter a Valid SLIIT ID..!!"
       });
-
-
-
 
       //Check application has already created account using given email or SLIIT  id  
       let admin_a = await admin.findOne({ email });
@@ -170,7 +167,6 @@ router.get("/panelmember",async(req,res)=>{
 });
 
 //update
-
 router.put('/update', adminauth, async (req, res) => {
   try {
     const {
@@ -198,96 +194,5 @@ router.put('/update', adminauth, async (req, res) => {
     console.log(error)
   }
 });
-
-
-//update
-router.put('/update', adminauth, async (req, res) => {
-  try {
-    const {
-      name,
-      phone,
-      sliitid,
-      email  } = req.body;
-
-    let Admin = await admin.findOne({sliitid})
-    if (!Admin) {
-      throw new Error('There is no admin account')
-    }
-
-    const adminUpdate = await admin.findByIdAndUpdate(req.Admin.id, {
-      name: name,
-      phone: phone,
-      sliitid: sliitid,
-      email: email
-      })
-
-    res.status(200).send({status: 'Admin Profile Updated', Admin: adminUpdate})
-
-  } catch (error) {
-    res.status(500).send({error: error.message})
-    console.log(error)
-  }
-});
-
-
-//update
-router.put('/update', adminauth, async (req, res) => {
-  try {
-    const {
-      name,
-      phone,
-      sliitid,
-      email  } = req.body;
-
-    let Admin = await admin.findOne({sliitid})
-    if (!Admin) {
-      throw new Error('There is no admin account')
-    }
-
-    const adminUpdate = await admin.findByIdAndUpdate(req.Admin.id, {
-      name: name,
-      phone: phone,
-      sliitid: sliitid,
-      email: email
-      })
-
-    res.status(200).send({status: 'Admin Profile Updated', Admin: adminUpdate})
-
-  } catch (error) {
-    res.status(500).send({error: error.message})
-    console.log(error)
-  }
-});
-
-
-//update
-router.put('/update', adminauth, async (req, res) => {
-  try {
-    const {
-      name,
-      phone,
-      sliitid,
-      email  } = req.body;
-
-    let Admin = await admin.findOne({sliitid})
-    if (!Admin) {
-      throw new Error('There is no admin account')
-    }
-
-    const adminUpdate = await admin.findByIdAndUpdate(req.Admin.id, {
-      name: name,
-      phone: phone,
-      sliitid: sliitid,
-      email: email
-      })
-
-    res.status(200).send({status: 'Admin Profile Updated', Admin: adminUpdate})
-
-  } catch (error) {
-    res.status(500).send({error: error.message})
-    console.log(error)
-  }
-});
-
 
 module.exports = router;

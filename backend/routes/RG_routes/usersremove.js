@@ -5,11 +5,10 @@ let student = require('../../models/AA_models/student');
 
 
 //Get panel member Details
-
 router.get("/getpanelmember",async(req,res)=>{
     try{
     const panelmember = await staff.find({
-    role: "Panel Memeber" 
+    role: "Panel Member" 
     })
         res.status(201)
             .send({
@@ -22,8 +21,6 @@ router.get("/getpanelmember",async(req,res)=>{
             .send({error:error.message});
         }
   })
-
- 
 
 //Delete pannel members details
 router.route('/panelmemberdelete/:panelmemberID').delete((req,res)=>{
@@ -41,7 +38,6 @@ router.route('/panelmemberdelete/:panelmemberID').delete((req,res)=>{
 
 
 //Get supervisor Details
-
 router.get("/getsupervisor",async(req,res)=>{
     try{
         const supervisor = await staff.find({
@@ -60,7 +56,6 @@ router.get("/getsupervisor",async(req,res)=>{
     })
 
 //Delete Supervisor details
-
 router.route('/supervisordelete/:supervisorID').delete((req,res)=>{
     staff.findByIdAndRemove(req.params.supervisorID).exec((err,deletesupervisor)=>{
         
@@ -76,7 +71,6 @@ router.route('/supervisordelete/:supervisorID').delete((req,res)=>{
 
 
 // Get Co-Supervisor Details
-
 router.get("/getcosupervisor",async(req,res)=>{
     try{
         const cosupervisor = await staff.find({
@@ -95,7 +89,7 @@ router.get("/getcosupervisor",async(req,res)=>{
     })
 
     
-//Delete Supervisor details
+//Delete co-Supervisor details
 router.route('/cosupervisordelete/:cosupervisorID').delete((req,res)=>{
     staff.findByIdAndRemove(req.params.cosupervisorID).exec((err,deletecosupervisor)=>{
         
@@ -110,7 +104,6 @@ router.route('/cosupervisordelete/:cosupervisorID').delete((req,res)=>{
  });
 
  //Get student Details
-
     router.route('/getstudent').get((req,res) =>{
         student.find().exec((err,student) =>{
             

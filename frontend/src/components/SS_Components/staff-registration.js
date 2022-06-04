@@ -118,7 +118,7 @@ export default function StaffSignup(){
                               <option value="Select Role">Select Role</option>
                               <option value="Supervisor">Supervisor</option>
                               <option value="Co-Supervisor">Co-Supervisor</option>
-                              <option value="Panel Memeber">Panel Memeber</option>
+                              <option value="Panel Member">Panel Member</option>
                         </select>
                     </div>
               </div>
