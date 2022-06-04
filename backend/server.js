@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cors({
-  origin: ["http://loclhost:1234"],
+  origin: ["http://localhost:1234"],
 }));
 
 app.get("/",(req,res)=>{

@@ -40,7 +40,7 @@ return res.status(400).json({
     errorMessage: "Please enter a phone number of at least 3 characters.",
 });
 
-if(student_id.lenght <3)
+if(student_id.length <3)
 return res.status(400).json({
   errorMessage: "Please Enter a Valid Student ID..!!"
 });    
