@@ -14,6 +14,8 @@ router.post("/research/:id", async (req, res) => {
      const reserch_topic = req.body.researchTopic;
      const research_Field = req.body.researchField;
 
+ 
+    //  //unit test
     //  if(!reserch_topic || !research_Field)
 
     //  return res
@@ -29,7 +31,7 @@ router.post("/research/:id", async (req, res) => {
     //   return res.status(400).json({
     //   errorMessage: "Please enter a first name of at least 3 characters.",
     //   });
- 
+
      group2.researchTopic = reserch_topic;
      group2.researchField = research_Field;
      await group2.save();
@@ -41,30 +43,6 @@ router.post("/research/:id", async (req, res) => {
      res.status(500).send({ status: "error", error: error.message });
    }
  });
-
-//  const {researchTopic,researchField} = req.body;
-
-
-//      const dbtopic = {
-//       researchTopic: researchTopic,
-//       researchField: researchField
-      
-//      };
-
-//     let group = new stdgroups(dbtopic);
-//     await group.save();
-//       res.status(200).send({ status: "Research Topic and Field added !!!", stdgroups: group2 });
-//     } catch (error) {
-//       console.log(error.message);
-//       res.status(500).send({ error: error.message });
-//     }
-//   });
-
-
-
-
-
-
 
  //delete researchtopic
 
@@ -124,7 +102,6 @@ router.route("/displayresearchtopic/:id").get((req, res) => {
 
 
  //add supervisor to student groups
-
 router.post("/addSupervisor/:id", async (req, res) => {
   const groupId2 = req.params.id;
   try {
@@ -147,7 +124,6 @@ router.post("/addSupervisor/:id", async (req, res) => {
 });
 
 //add co-supervisor to student groups
-
 router.post("/addcoSupervisor/:id", async (req, res) => {
   const groupId2 = req.params.id;
   try {
@@ -169,7 +145,6 @@ router.post("/addcoSupervisor/:id", async (req, res) => {
 });
 
 //get supervisor details
-
 router.route("/displaysupervisors").get((req, res) => {
   stdgroups.find().exec((err, stdgroups) => {
     if (err) {
@@ -185,7 +160,6 @@ router.route("/displaysupervisors").get((req, res) => {
  });
 
  //get co-supervisor details
-
 router.route("/displaycosupervisors").get((req, res) => {
   stdgroups.find().exec((err, stdgroups) => {
     if (err) {

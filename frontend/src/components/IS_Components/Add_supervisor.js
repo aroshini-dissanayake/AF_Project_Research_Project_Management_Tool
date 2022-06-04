@@ -100,7 +100,7 @@ render(){
                 <th scope='row'>{index + 1}</th>
                    <td>{supervisors.role}</td>
                       <td>{supervisors.name}</td>
-                        <td>{cosupervisors.email}</td>
+                        <td>{supervisors.email}</td>
                            <td>{supervisors.feild}</td>
                               </tr>
                                     )

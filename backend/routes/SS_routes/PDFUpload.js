@@ -22,7 +22,6 @@ router.post("/assignmentgroups", auth, async (req, res) => {
        adminid: req.Admin.sliitid
    };
 
-
    let newgroupAssignment= new GroupAssignment(pdf);
    await newgroupAssignment.save();
      res.status(200).send({ status: "Document Upload Successfully !!!", GroupAssignment: newgroupAssignment });

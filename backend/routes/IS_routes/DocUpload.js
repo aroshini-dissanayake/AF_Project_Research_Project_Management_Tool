@@ -2,7 +2,6 @@ const express = require("express");
 const StdDocument = require('../../models/IS_models/stdDocuments');
 const Student = require("../../models/AA_models/student");
 const auth = require("../../middleware/auth");
-
 const router = express.Router();
 
 //new
@@ -10,20 +9,17 @@ const router = express.Router();
      try{
       let studentId = req.Std._id
       const student = await Student.findById(studentId)
-     
       if (!student) {
         throw new Error('There is no student')
      }
 
      const {docUpload,stdDocName} = req.body;
-
      const dbDoc = {
       docUpload: docUpload,
       stdDocName:stdDocName,
       studentID: studentId,
       studentName: req.Std.name,
-      stdId: req.Std.student_id
-      
+      stdId: req.Std.student_id   
      };
 
     let newstdDocument= new StdDocument(dbDoc);
@@ -35,7 +31,6 @@ const router = express.Router();
     }
   });
 
-
 //get pdf 
 router.get("/pdfdisplay",async (req, res) => {
   const pdf = await StdDocument.find();
@@ -46,6 +41,5 @@ router.get("/pdfdisplay",async (req, res) => {
     res.send({ status: "Error with PDF Fetched", error: error.message });
   }
 });
-
 
 module.exports = router;

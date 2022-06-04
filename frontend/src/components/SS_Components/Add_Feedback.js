@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import AdminNavBar from '../Layout/AdminNavBar';
+import StaffNavbar from "../Staff-Layout/StaffNavbar";
 import Button from '@material-ui/core/Button';
 import Footer from '../Layout/footer';
 
@@ -43,7 +43,7 @@ axios.post(`http://localhost:8070/group/addfeedback/${id}`,data).then((res)=>{
 render() {
   return (
       <div>
-        <AdminNavBar/> 
+        <StaffNavbar/> 
           <br/>
             <div align="center">
               <div className="card-header" style={{width:"500px",background:"#E6E6FA"}}><br/><br/>
