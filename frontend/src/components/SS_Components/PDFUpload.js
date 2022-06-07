@@ -69,7 +69,7 @@ export default function PDFUpload(){
     return (
       <div>
          <AdminNavBar/> 
-            <br/><br/> <br/><br/>
+            <br/><br/>
               <div align="center">
                  <div className="card-header" style={{width:"550px",background:"#E6E6FA"}}><br/><br/>
               <h3 align="center">

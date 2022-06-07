@@ -3,7 +3,6 @@ import axios from "axios";
 import { Modal } from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 import SendIcon from '@material-ui/icons/Send';
-import {toast} from 'react-toastify';
 
 const UpdateSliitProfile = ({
     upname,
@@ -36,10 +35,8 @@ const UpdateSliitProfile = ({
 
       await axios.put('http://localhost:8070/admin/update', updateObject, config)
       .then((res) => {
-        toast.success('Your details updated successfully',{position:toast.POSITION.TOP_CENTER});
-        window.setTimeout(function() {
+       alert('Your details updated successfully');
           window.location = "/adminprofile"
-      }, 2000);
         
       })
       .catch((err) => {

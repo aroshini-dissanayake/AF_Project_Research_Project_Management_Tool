@@ -21,7 +21,14 @@ app.use(bodyParser.urlencoded({
   parameterLimit:50000
 }));
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:1234"],
+}));
+
+app.get("/",(req,res)=>{
+  res.json("server has started")
+})
+
 
 //To accept the JSON Data
 app.use(express.json());
@@ -51,6 +58,9 @@ const topicRouter = require("./routes/IS_routes/topic");
 const DocUploadRouter = require("./routes/IS_routes/DocUpload");
 const adminRouter = require('./routes/RG_routes/admin');
 const createmarkingRouter = require('./routes/RG_routes/createmarking');
+const usersremoveRoutes = require('./routes/RG_routes/usersremove');
+const presantationpdfuploadRoutes = require('./routes/RG_routes/presantationpdf');
+const uploadmarkingRoutes = require('./routes/RG_routes/uploadmarking');
 
 
 // rotues use
@@ -60,9 +70,47 @@ app.use("/staff",staffRouter);
 app.use("/regtopic",topicRouter);
 app.use("/document",DocUploadRouter);
 app.use("/admin",adminRouter);
+app.use("/createmarking",createmarkingRouter);
+app.use("/usersremove",usersremoveRoutes);
+app.use("/presantationpdf",presantationpdfuploadRoutes);
 app.use("/assignment",PDFUploadRouter);
-
+app.use("/marking",uploadmarkingRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
 })
+
+const http = require("http");
+
+const { Server } = require("socket.io");
+ 
+ 
+const server = http.createServer(app);
+ 
+const io = new Server(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+  },
+});
+ 
+io.on("connection", (socket) => {
+  console.log(`User Connected: ${socket.id}`);
+ 
+  socket.on("join_room", (data) => {
+    socket.join(data);
+    console.log(`User with ID: ${socket.id} joined room: ${data}`);
+  });
+ 
+  socket.on("send_message", (data) => {
+    socket.to(data.room).emit("receive_message", data);
+  });
+ 
+  socket.on("disconnect", () => {
+    console.log("User Disconnected", socket.id);
+  });
+});
+ 
+server.listen(3001, () => {
+  console.log(" RUNNING ON PORT 3001");
+});

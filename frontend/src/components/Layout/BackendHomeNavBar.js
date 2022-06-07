@@ -16,7 +16,8 @@ export default class BackendHomeNavBar extends Component {
        <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
        <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
 
-     
+       <a  aria-expanded="false" style={{color: "#FF8C00",fontFamily:"initial",fontSize:"35px"}}><b>STAFF </b> </a>&nbsp;&nbsp;&nbsp;
+ 
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/topic/displayresearchtopic" style={{color: "#ffff"}}></a>
         </li>  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -62,10 +63,12 @@ export default class BackendHomeNavBar extends Component {
         </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        
       </ul>
-      
+
             <IconButton type="button" data-bs-toggle="modal"  data-bs-target="#exampleModal">
-            <i class="fa fa-user-circle fa-lg  mt-3 fa-2x"  aria-hidden="true" type="submit" style={{color: "#ffff"}} ></i>  &nbsp;&nbsp;&nbsp;&nbsp;     
+            <i class="fa fa-user-circle fa-lg  mt-3 fa-2x"  aria-hidden="true" type="submit" style={{color: "#ffff"}} ></i>  &nbsp;&nbsp;
             </IconButton>
+
+           
 
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -92,6 +95,14 @@ export default class BackendHomeNavBar extends Component {
                   startIcon={<AccountCircleIcon />}
                 >
                Staff
+              </Button>     &nbsp;&nbsp;
+              <Button
+                  href='/'
+                  style={{ color:"black",  background:"#C6DEFF" }}
+                  variant="outlined"
+                  startIcon={<AccountCircleIcon />}
+                >
+               Back
               </Button>     
               </div>
             </div>

@@ -4,9 +4,7 @@ const Createmarking = require('../../models/RG_models/createmarking');
 const router = express.Router();
 
 //create createmarking
-
 router.route('/createmarkingadd').post((req,res)=>{
-
     let newCreatemarking = new Createmarking(req.body);
     newCreatemarking.save((err)=>{
        
@@ -14,25 +12,21 @@ router.route('/createmarkingadd').post((req,res)=>{
             return res.status(400).json({
                 error:err
             });
-        }
-        
+        }    
         return res.status(200).json({
-            success:"Deliverys saved successfully!!"
+            success:"New Marking Points added successfully!!"
         });
     });
 });
 
 //get createmarking
-
 router.route('/displaycreatemarking').get((req,res) =>{
-      Createmarking.find().exec((err,createmarking) =>{
-          
+      Createmarking.find().exec((err,createmarking) =>{      
           if(err){
               return res.status(400),json({
                   error:err
               });
-          }
-          
+          }         
           return res.status(200).json({
               success:true,
               existingCreatemarking:createmarking
@@ -42,7 +36,6 @@ router.route('/displaycreatemarking').get((req,res) =>{
   });
 
   //update createmarking
-
 router.route('/update/:createmarkingID').put((req,res)=>{
     Createmarking.findByIdAndUpdate(
         req.params.createmarkingID,{
@@ -75,7 +68,6 @@ router.route('/delete/:createmarkingID').delete((req,res)=>{
  });
 
  //get specific data
-
  router.route('/:createmarkingID').get((req,res)=>{
       let createmarkingID = req.params.createmarkingID;
       Createmarking.findById(createmarkingID,(err,createmarking)=>{

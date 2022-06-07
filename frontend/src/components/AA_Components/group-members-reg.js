@@ -1,6 +1,5 @@
 import React,{Component} from 'react' ;
 import axios from "axios";
-import {toast} from 'react-toastify';
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
 
@@ -45,18 +44,20 @@ export default class Add_Group_Members extends Component{
           };
 
         axios.post(`http://localhost:8070/student/groupReg/${id}`,data, config).then((res)=>{  
+          alert('Added You To This Group Successfully')
+          window.location.reload();
         if(res.data.success){
             this.setState({
                 student_id:"",
                 name:"",
                 email:"" ,
                 phone:"",
-           }).then(()=>{
-           toast.success('Added You To This Group Successfully',{position:toast.POSITION.TOP_CENTER})
-           }
-        )}    
+                
+           })
+          }    
     })
     .catch((e)=>{
+      alert('Error with Registering member',e.message)
     });
 }
   

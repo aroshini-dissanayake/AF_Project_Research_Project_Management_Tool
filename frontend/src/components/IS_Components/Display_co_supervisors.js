@@ -4,6 +4,8 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
 import StudentNavBar from '../Home_Component/StudentNavBar';
 import Footer from '../Layout/footer';
+import Button from '@material-ui/core/Button';
+ 
  
 export default class Display_co_supervisors extends Component{
    constructor(props){
@@ -15,6 +17,23 @@ export default class Display_co_supervisors extends Component{
    onReadirect(id,feild){
        window.location.href = `/regtopic/addcoSupervisor/${id}/${feild}`
    }
+
+   //search 
+   filterData(studentgroups,searchKey){
+      const result = studentgroups.filter((studentgroups)=>
+      studentgroups.group_name.toLowerCase().includes(searchKey)
+      )
+      this.setState({studentgroups:result})
+   }
+   handleSearchArea = (e)=>{
+      const searchKey = e.currentTarget.value;
+      axios.get("http://localhost:8070/regtopic/displaycosupervisors").then(res=>{
+         if(res.data.success){
+            this.filterData(res.data.existingstdgroups,searchKey)
+         }
+      });
+      }   
+
    componentDidMount(){
       this.retrieveResearchTopics();
   }
@@ -29,13 +48,32 @@ export default class Display_co_supervisors extends Component{
            }
        })
    }
- 
+
+    //search 
+    filterData(studentgroups,searchKey){
+      const result = studentgroups.filter((studentgroups)=>
+      studentgroups.group_name.toLowerCase().includes(searchKey)
+      )
+      this.setState({studentgroups:result})
+   }
+   handleSearchArea = (e)=>{
+      const searchKey = e.currentTarget.value;
+      axios.get("http://localhost:8070/regtopic/displaycosupervisors").then(res=>{
+         if(res.data.success){
+            this.filterData(res.data.existingstdgroups,searchKey)
+         }
+      });
+      }   
    render(){
        return(   
-           <div>
+               <div>
               <StudentNavBar/>  <br/><br/> <br/>
                <h3 align="center" style={{fontSize:'35px',fontFamily:"Times New Roman"}}><b><u>Add Co-Supervisor </u></b></h3><br/><br/>
                  <div className='container'> 
+                 <div className="col-md-3" >
+                       <input type="text" className="form-control" style={{marginBottom:'2px'}} placeholder="Search by Group Name " onChange={this.handleSearchArea}/>
+                          <br/> 
+                            </div> 
                    <table class="table">
                       <thead>
                          <tr bgcolor="#79BAEC">
@@ -46,7 +84,7 @@ export default class Display_co_supervisors extends Component{
            <th scope='col'>Supervisor</th>
         <th scope='col'>Co-Supervisor</th>
      <th scope='col'>Status</th>
-   <th scope='col'>Actions</th>
+   <th scope='col'>Request Co-Supervisor</th>
         </tr>
            </thead>
                <tbody>
@@ -59,7 +97,18 @@ export default class Display_co_supervisors extends Component{
                           <td>{studentgroups.researchField}</td>
                           <td>{studentgroups.grpSupervisor}</td>
                           <td>{studentgroups.grpcoSupervisor}</td>
-                          <td>{studentgroups.cosupervisortopicstatus}</td>
+                          <td>
+                          {
+                     studentgroups.cosupervisortopicstatus === "Accepted" &&
+                     <div><Button style={{color:"green",fontFamily:"sans-serif"}}><b> { studentgroups.cosupervisortopicstatus}</b></Button></div>
+
+                     }
+                     {
+                         studentgroups.cosupervisortopicstatus === "Rejected" &&
+                         <div><Button style={{color:"#9F000F",fontFamily:"sans-serif"}}><b>{studentgroups.cosupervisortopicstatus}</b></Button></div>
+
+                     }
+                      </td>
                        <td>                      
                             <IconButton aria-label='btn btn-success' size="small"
                                style={{background: "#FBB917"}}

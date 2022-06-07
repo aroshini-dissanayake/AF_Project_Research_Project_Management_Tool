@@ -25,7 +25,7 @@ export default class footer extends Component {
                             <div class="col-md-3 item">
                                 <h3>About</h3>
                                 <ul>
-                                    <p>SLIIT Campus DS Project</p>
+                                    <p>SLIIT Campus AF Project</p>
                                 </ul>
                             </div>
                             <div class="col-md-3 item text">
@@ -47,5 +47,3 @@ export default class footer extends Component {
         )
     }
 }
- 
-

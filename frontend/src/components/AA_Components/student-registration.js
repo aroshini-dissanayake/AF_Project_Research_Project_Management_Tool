@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import axios from "axios";
 import Footer from '../Layout/footer';
-import StudentNavBar from '../Layout/StudentNavBar';
+import StudentNavBar from '../Layout/StudentHomeNavBar';
 
 export default function Signup(){
 

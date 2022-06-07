@@ -22,7 +22,6 @@ router.post("/assignmentgroups", auth, async (req, res) => {
        adminid: req.Admin.sliitid
    };
 
-
    let newgroupAssignment= new GroupAssignment(pdf);
    await newgroupAssignment.save();
      res.status(200).send({ status: "Document Upload Successfully !!!", GroupAssignment: newgroupAssignment });
@@ -32,17 +31,5 @@ router.post("/assignmentgroups", auth, async (req, res) => {
    }
  });
 
-
-
-// //get pdf 
-// router.get("/pdfdisplay",async (req, res) => {
-//   const pdf = await GroupAssignment.find();
-//   try {
-//     res.json(pdf)
-//   } catch (error) {
-//     res.status(500)
-//     res.send({ status: "Error with PDF Fetched", error: error.message });
-//   }
-// });
 
 module.exports = router;

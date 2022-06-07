@@ -21,6 +21,28 @@ router.post("/staffsignup", async (req, res) => {
         pwd
       } = req.body;
 
+  //unit test
+  if(!name || !phone  || !faculty ||  !feild || !staff_id || !role || !email || !pwd)
+  return res
+  .status(400)
+  .json({errorMessage : "required"});
+
+  if(name.length<4)
+  return res.status(400).json({
+      errorMessage: "Please enter a first name of at least 3 characters.",
+  });
+
+
+  if(phone.length<5)
+  return res.status(400).json({
+      errorMessage: "Please enter a phone number of at least 3 characters.",
+  });
+
+  if(staff_id.length <3)
+  return res.status(400).json({
+    errorMessage: "Please Enter a Valid Staff ID..!!"
+  });    
+
  //Check application has already created account using given email or SLIIT staff id  
   let staff_a = await staff.findOne({ email });
       if (staff_a) {
